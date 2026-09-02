@@ -1,0 +1,167 @@
+.page {
+  max-width: var(--w-wide);
+  margin-inline: auto;
+  padding: 31px 0 0;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  gap: var(--sp-30);
+  align-items: start;
+}
+
+/* ---------- left column ---------- */
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-large);
+  font-weight: 600;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.heading:not(:first-child) {
+  margin-top: 31px;
+}
+
+.place {
+  font-size: var(--fs-medium);
+  color: var(--c-text-soft);
+  padding-bottom: 6px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 19px;
+}
+
+.row,
+.rowWide {
+  display: grid;
+  background: var(--c-green-pale);
+  padding: 6px 14px;
+  font-size: var(--fs-body);
+  gap: 8px;
+}
+
+.row {
+  grid-template-columns: 66.66% 33.33%;
+}
+
+.rowWide {
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+.requisites {
+  background: var(--c-green-pale);
+  padding: 6px 14px;
+  font-size: var(--fs-body);
+}
+
+/* ---------- right column ---------- */
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 23px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  background: var(--c-green-pale);
+}
+
+.formTitle {
+  font-size: var(--fs-medium);
+  padding-bottom: var(--sp-20);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.field em {
+  font-style: normal;
+  opacity: 0.7;
+}
+
+.field input,
+.field textarea {
+  font: inherit;
+  font-family: var(--font-body);
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: var(--c-white);
+  border-radius: 0;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid var(--c-green-dark);
+  outline-offset: -2px;
+}
+
+.submit {
+  align-self: flex-start;
+  font-family: var(--font-display);
+}
+
+.sent {
+  padding: 24px 16px;
+  background: var(--c-green-pale);
+}
+
+.sent h4 {
+  margin: 12px 0 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-medium);
+  font-weight: 600;
+}
+
+.back {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.map {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+@media (max-width: 820px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1140px) {
+  .page {
+    padding-inline: var(--sp-30);
+  }
+}

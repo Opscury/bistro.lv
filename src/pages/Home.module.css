@@ -1,0 +1,47 @@
+.page {
+  padding-top: 82px;
+}
+
+.grid {
+  max-width: 917px; /* 2 × 400px tiles + 117px gap, as on the original */
+  margin-inline: auto;
+  padding-inline: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 117px;
+  row-gap: 55px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.tile:hover,
+.tile:focus-visible {
+  opacity: 0.88;
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.label {
+  width: 100%;
+}
+
+@media (max-width: 780px) {
+  .page {
+    padding-top: 40px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    row-gap: 40px;
+  }
+}

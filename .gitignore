@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+*.local
+
+# Full-size originals extracted from the saved bistro.lv pages.
+# public/img holds the optimised 1400px WebP versions the site uses.
+_source-images-fullsize
+_delete-me
