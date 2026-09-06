@@ -1,159 +1,1189 @@
+/* ===============================================================
+   KONDITOREJA — vizuālā sistēma
+   ---------------------------------------------------------------
+   Divi novērojumi nosaka visu pārējo:
+
+   1) Silva logotipa zaļā ir #019047 — spilgtāka nekā WordPress
+      tēmas #004823, ko izmantoja pārējā vietne.
+   2) Visiem 118 produktu foto ir viens un tas pats fons: #dfe0e7.
+
+   Tāpēc lapas fons ir tieši #dfe0e7 — attēlu malas pazūd un
+   izstrādājumi "peld" uz lapas. Vienīgais baltais ir pasūtījuma
+   lapa un preces logs: papīrs uz letes.
+
+   Marķieri sākas ar --k-, un tie dzīvo tikai šajā lapā, lai
+   pārējās sešas lapas paliktu neskartas.
+   =============================================================== */
+
 .page {
-  /* The original constrains this page to 950px (1440 − 2×245). */
-  max-width: 950px;
+  --k-bg: #dfe0e7;
+  --k-paper: #ffffff;
+  --k-ink: #14161c;
+  --k-ink-2: #565b69;
+  --k-ink-3: #82879a;
+  --k-rule: #c3c5d0;
+  --k-rule-soft: #d4d6df;
+  --k-green: #017a3c;        /* teksts un pogas — 5.5:1 uz balta */
+  --k-green-bright: #019047; /* logotipa zaļā — tikai kontūrām */
+
+  --k-display: "Bricolage Grotesque", "Raleway", sans-serif;
+  --k-body: "Inter", sans-serif;
+  --k-mono: "DM Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --k-gut: 20px;
+
+  background: var(--k-bg);
+  color: var(--k-ink);
+  font-family: var(--k-body);
+  padding-bottom: 1px; /* notur fona krāsu zem pēdējās atkāpes */
+}
+
+.shell {
+  max-width: 1020px;
   margin-inline: auto;
-  padding: 0;
+  padding-inline: var(--k-gut);
 }
 
-/* ---------- category dropdown ---------- */
+/* Viens redzams fokusa gredzens visai lapai — tastatūras lietotājam
+   vienmēr jāredz, kur viņš atrodas. */
+.page :focus-visible {
+  outline: 2px solid var(--k-green-bright);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 
-.menuWrap {
-  position: relative;
-  padding: 20px 0;
+/* utilītas ------------------------------------------------------ */
+
+.label {
+  font-family: var(--k-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--k-ink-3);
+}
+
+.num {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------
+   1. Masthead
+   --------------------------------------------------------------- */
+
+.mast {
+  padding-top: clamp(28px, 7vw, 64px);
+  padding-bottom: 4px;
+}
+
+
+.title {
+  font-family: var(--k-display);
+  font-variation-settings: "wght" 700, "wdth" 86, "opsz" 72;
+  font-size: clamp(46px, 13.5vw, 108px);
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  text-transform: lowercase;
+  margin: 0;
+  color: var(--k-ink);
+}
+
+
+/* ---------------------------------------------------------------
+   2. Satura rādītājs — punktu līnijas, skaits monospace
+   --------------------------------------------------------------- */
+
+.index {
+  margin-top: clamp(28px, 5vw, 48px);
+  padding-top: 14px;
+  border-top: 2px solid var(--k-ink);
+}
+
+.indexList {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0 0;
+  columns: 1;
+}
+
+.indexList a {
   display: flex;
-  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 0;
+  font-family: var(--k-display);
+  font-variation-settings: "wght" 500, "wdth" 96;
+  font-size: 17px;
+  text-transform: lowercase;
+  color: var(--k-ink);
+  break-inside: avoid;
 }
 
-.menuButton {
-  display: inline-flex;
+.indexList a:hover span,
+.indexList a:focus-visible span {
+  color: var(--k-green);
+}
+
+.leader {
+  flex: 1;
+  min-width: 24px;
+  border-bottom: 1px dotted var(--k-rule);
+  transform: translateY(-4px);
+}
+
+
+/* ---------------------------------------------------------------
+   3. Sadaļas
+   --------------------------------------------------------------- */
+
+.section {
+  padding-top: clamp(40px, 7vw, 72px);
+}
+
+.sectionHead {
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--k-ink);
+}
+
+.heading {
+  font-family: var(--k-display);
+  font-variation-settings: "wght" 600, "wdth" 90, "opsz" 40;
+  font-size: clamp(27px, 6vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+
+.note {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 0 4px;
+  font-size: 13px;
+  color: var(--k-ink-2);
+}
+
+.noteValue {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  color: var(--k-ink);
+}
+
+/* ---------------------------------------------------------------
+   4. Ēdienkartes rinda
+   --------------------------------------------------------------- */
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  /* pārlūkošana: divas kolonnas jau uz telefona */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+}
+
+/* pasūtīšana: viena kolonna, lai pietiek vietas vadīklām */
+.menuListOrder {
+  grid-template-columns: 1fr;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-display);
-  font-size: var(--fs-medium);
-  font-weight: 600;
-  color: #000;
+  gap: 0 12px;
+  min-width: 0;
+  border-bottom: 1px solid var(--k-rule-soft);
+  border-left: 3px solid transparent;
+  padding-right: 2px;
+  transition: border-color 0.15s ease;
+}
+
+.rowActive {
+  border-left-color: var(--k-green-bright);
+}
+
+.rowMain {
+  display: contents;
   background: none;
   border: 0;
   padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
   cursor: pointer;
 }
 
-.chevron,
-.chevronOpen {
-  transition: transform 0.2s ease;
-}
-
-.chevronOpen {
-  transform: rotate(180deg);
-}
-
-.submenu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-  margin: 0;
-  padding: 12px 0;
-  list-style: none;
-  background: var(--c-white);
-  border: 2px solid var(--c-green-pale);
-  min-width: 300px;
-  box-shadow: var(--shadow-natural);
-}
-
-.submenu a {
-  display: block;
-  padding: 6px 20px;
-  font-family: var(--font-display);
-  font-size: clamp(16.29px, 1.018rem + ((1vw - 3.2px) * 1.146), 25px);
-  font-weight: 600;
-  text-align: center;
-}
-
-.submenu a:hover,
-.submenu a:focus-visible {
-  background: var(--c-green-pale);
-}
-
-/* ---------- sections ---------- */
-
-.heading {
-  font-family: var(--font-display);
-  font-size: var(--fs-large);
-  font-weight: 600;
-  margin: 0;
-  padding: 12px var(--sp-30) var(--sp-20);
-  scroll-margin-top: 110px;
-}
-
-.note {
-  padding: 0 var(--sp-30);
-  color: var(--c-brown);
-  font-family: var(--font-display);
-  font-size: var(--fs-body);
-  font-weight: 700;
-}
-
-.section .rule {
-  margin: var(--sp-20) 0;
-}
-
-/* ---------- product grid ---------- */
-
-.grid {
-  list-style: none;
-  margin: 0 0 var(--sp-40);
-  padding: 0 50px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  background: var(--c-green-pale);
-  box-shadow: var(--shadow-natural);
-}
-
-.card img {
-  width: 100%;
-  aspect-ratio: 1;
+/* Foto fons (#dfe0e7) sakrīt ar lapas fonu, tāpēc attēla malas nav
+   redzamas un izstrādājumi šķiet noliki tieši uz lapas. */
+.thumb {
+  width: 88px;
+  height: 88px;
   object-fit: cover;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
-.body {
-  flex: 1;
+.thumbEmpty {
+  width: 88px;
+  height: 88px;
+}
+
+.rowMain:hover .thumb {
+  transform: scale(1.06);
+}
+
+.rowText {
+  min-width: 0;
+  padding: 12px 0;
+}
+
+.rowName {
+  display: block;
+  font-family: var(--k-display);
+  font-variation-settings: "wght" 500, "wdth" 100;
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+
+.rowMain:hover .rowName {
+  color: var(--k-green);
+}
+
+.rowDesc {
+  display: block;
+  padding-top: 2px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--k-ink-2);
+}
+
+.rowMeta {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 15px 10px 14px;
-  text-align: center;
-}
-
-.name {
-  font-family: var(--font-display);
-  font-size: var(--fs-body);
-  font-weight: 600;
-}
-
-.desc {
-  font-family: var(--font-display);
-  font-size: var(--fs-small);
-}
-
-.meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
   padding-top: 6px;
-  font-size: var(--fs-small);
-  font-weight: 600;
 }
 
-.weight {
+.rowPrice {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.rowWeight {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
   font-weight: 400;
+  color: var(--k-ink-3);
 }
 
-@media (max-width: 1000px) {
+.rowMore {
+  font-family: var(--k-mono);
+  font-size: 12px;
+  color: var(--k-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rowAction {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* apaļā pievienošanas poga — klusa miera stāvoklī */
+.addBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--k-green-bright);
+  background: transparent;
+  color: var(--k-green);
+  font-size: 22px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.addBtn:hover,
+.addBtn:focus-visible {
+  background: var(--k-green);
+  border-color: var(--k-green);
+  color: var(--k-paper);
+}
+
+.addBtn:active {
+  transform: scale(0.92);
+}
+
+/* Pārlūkošanas šūna: attēls virsū, teksts apakšā. Šaurā kolonnā
+   nosaukumam blakus bildei pietrūkst vietas, un tas lūztu pa zilbēm. */
+.menuList:not(.menuListOrder) .row {
+  grid-template-columns: 1fr;
+  align-items: start;
+  border-left: 0;
+  padding-right: 0;
+}
+
+.menuList:not(.menuListOrder) .thumb,
+.menuList:not(.menuListOrder) .thumbEmpty {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.menuList:not(.menuListOrder) .rowDesc,
+.menuList:not(.menuListOrder) .rowWeight {
+  display: none;
+}
+
+.menuList:not(.menuListOrder) .rowName {
+  font-size: 15px;
+}
+
+.menuList:not(.menuListOrder) .rowText {
+  padding: 2px 0 14px;
+}
+
+.menuList:not(.menuListOrder) .rowMeta {
+  padding-top: 3px;
+  gap: 2px 8px;
+}
+
+.menuList:not(.menuListOrder) .rowPrice {
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------------------
+   5. Daudzuma pārslēgs
+   --------------------------------------------------------------- */
+
+.stepper,
+.stepperCompact {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1.5px solid var(--k-green-bright);
+  border-radius: 999px;
+  background: var(--k-paper);
+  overflow: hidden;
+}
+
+.stepper button,
+.stepperCompact button {
+  width: 38px;
+  min-height: 44px;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--k-green);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.stepperCompact button {
+  width: 32px;
+  min-height: 40px;
+  font-size: 14px;
+}
+
+.stepper button:hover,
+.stepperCompact button:hover {
+  background: var(--k-green);
+  color: var(--k-paper);
+}
+
+.stepperValue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding-inline: 2px;
+  font-family: var(--k-mono);
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--k-ink);
+}
+
+.stepperValue input {
+  width: 34px;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  text-align: right;
+  background: none;
+  color: inherit;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.stepperValue input::-webkit-outer-spin-button,
+.stepperValue input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* atgriešanās pie rādītāja */
+.backToIndex {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: var(--k-mono);
+  font-size: 12px;
+  color: var(--k-ink-3);
+}
+
+.backToIndex:hover,
+.backToIndex:focus-visible {
+  color: var(--k-green);
+}
+
+/* ---------------------------------------------------------------
+   6. Preces logs
+   --------------------------------------------------------------- */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(20, 22, 28, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.sheet :focus-visible {
+  outline: 2px solid var(--k-green-bright);
+  outline-offset: 2px;
+}
+
+.sheet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  background: var(--k-paper);
+  color: var(--k-ink);
+}
+
+.sheetClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: var(--k-ink);
+  background: var(--k-paper);
+  border: 1px solid var(--k-rule);
+  cursor: pointer;
+}
+
+.sheetScroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* pelēkais paliktnis, lai foto fons neizceltos uz baltā papīra */
+.sheetFigure {
+  margin: 0;
+  background: var(--k-bg);
+}
+
+.sheetImg {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.sheetBody {
+  padding: 20px var(--k-gut) 24px;
+}
+
+.sheetCategory {
+  font-family: var(--k-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--k-ink-3);
+}
+
+.sheetTitle {
+  font-family: var(--k-display);
+  font-variation-settings: "wght" 600, "wdth" 94;
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 6px 0 0;
+}
+
+.sheetDesc {
+  padding-top: 6px;
+  font-size: 14px;
+  color: var(--k-ink-2);
+}
+
+.facts {
+  margin: 18px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--k-rule);
+}
+
+.facts > div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--k-rule-soft);
+}
+
+.facts dt {
+  font-size: 13px;
+  color: var(--k-ink-2);
+}
+
+.facts dd {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+  font-size: 14px;
+  text-align: right;
+}
+
+.sheetSub {
+  font-family: var(--k-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--k-ink-3);
+  margin: 22px 0 8px;
+}
+
+.allergenList {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.badges li {
+  padding: 4px 11px;
+  border: 1px solid var(--k-green-bright);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--k-green);
+}
+
+.placeholder {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--k-ink-3);
+}
+
+.sheetInfo {
+  padding-top: 12px;
+  font-size: 14px;
+}
+
+.sheetFooter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px var(--k-gut);
+  border-top: 1px solid var(--k-rule);
+  background: var(--k-paper);
+}
+
+.sheetSum {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  white-space: nowrap;
+  color: var(--k-ink-2);
+}
+
+.sheetAdd {
+  flex: 1;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------
+   7. Pogas
+   --------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--k-green);
+  color: var(--k-paper);
+  font-family: var(--k-body);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--k-ink);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--k-green);
+  box-shadow: inset 0 0 0 1.5px var(--k-green-bright);
+}
+
+.btnGhost:hover,
+.btnGhost:focus-visible {
+  background: var(--k-green);
+  color: var(--k-paper);
+}
+
+/* ---------------------------------------------------------------
+   8. Lipīgā josla
+   --------------------------------------------------------------- */
+
+.cartBar {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  margin-top: 40px;
+  background: var(--k-paper);
+  border-top: 1px solid var(--k-rule);
+}
+
+.cartBarInner {
+  max-width: 1020px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px var(--k-gut);
+}
+
+.cartBarText {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-size: 13px;
+  min-width: 0;
+}
+
+.cartBarSum {
+  color: var(--k-ink-2);
+}
+
+.cartBarActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.exitBtn {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  background: none;
+  font-family: var(--k-body);
+  font-size: 13px;
+  color: var(--k-ink-3);
+  cursor: pointer;
+}
+
+.exitBtn:hover,
+.exitBtn:focus-visible {
+  color: var(--k-ink);
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------------------
+   9. Aicinājums
+   --------------------------------------------------------------- */
+
+.ctaBlock {
+  margin-top: clamp(48px, 8vw, 88px);
+  padding-top: 28px;
+  border-top: 2px solid var(--k-ink);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ctaTitle {
+  font-family: var(--k-display);
+  font-variation-settings: "wght" 600, "wdth" 92;
+  font-size: clamp(24px, 5vw, 36px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.ctaText {
+  max-width: 38ch;
+  padding-top: 8px;
+  font-size: 14px;
+  color: var(--k-ink-2);
+}
+
+/* ---------------------------------------------------------------
+   10. PASŪTĪJUMA LAPA — signatūras elements
+   --------------------------------------------------------------- */
+
+.order {
+  margin: clamp(40px, 7vw, 72px) auto 0;
+  max-width: 560px;
+  scroll-margin-top: 90px;
+}
+
+.slip {
+  position: relative;
+  background: var(--k-paper);
+  padding: 22px var(--k-gut) 26px;
+  box-shadow: 0 1px 2px rgba(20, 22, 28, 0.06), 0 8px 24px rgba(20, 22, 28, 0.07);
+}
+
+.slipHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--k-ink);
+}
+
+.slipTitle {
+  font-family: var(--k-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--k-ink-3);
+  color: var(--k-ink);
+}
+
+.orderClose {
+  width: 36px;
+  height: 36px;
+  margin: -8px -8px -8px 0;
+  border: 0;
+  background: none;
+  color: var(--k-ink-2);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.orderClose:hover {
+  color: var(--k-ink);
+}
+
+/* rindas kā uz čeka */
+.cartList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cartLine {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 11px 0;
+  border-bottom: 1px dotted var(--k-rule);
+}
+
+.cartName {
+  font-family: var(--k-display);
+  font-variation-settings: "wght" 500, "wdth" 100;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.cartMeta {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--k-ink-3);
+  padding-top: 2px;
+}
+
+.cartRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  grid-row: span 2;
+}
+
+.cartSum {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  white-space: nowrap;
+  min-width: 68px;
+  text-align: right;
+}
+
+.totalWrap {
+  padding-top: 14px;
+}
+
+.totalRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 2px solid var(--k-ink);
+}
+
+.totalLabel {
+  font-family: var(--k-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--k-ink-3);
+  color: var(--k-ink);
+}
+
+.totalValue {
+  font-family: var(--k-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 19px;
+}
+
+.totalNote {
+  padding-top: 8px;
+  max-width: 38ch;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--k-ink-3);
+}
+
+/* zīmogs — nes "šis nav pirkums" vēstījumu vienā skatienā */
+
+
+
+
+
+.empty {
+  padding: 16px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--k-ink-2);
+}
+
+.orderSub {
+  font-family: var(--k-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--k-ink-3);
+  color: var(--k-ink);
+  display: block;
+  margin: 26px 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--k-rule);
+}
+
+
+
+/* pasūtīšanas režīma ieslēgšana ---------------------------------- */
+
+.startOrder {
+  padding: 18px 0 4px;
+  border-bottom: 1px solid var(--k-rule);
+  margin-bottom: 8px;
+}
+
+.startOrderText {
+  max-width: 40ch;
+  padding-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--k-ink-2);
+}
+
+.startOrderNote {
+  padding: 12px 0 18px;
+  font-size: 13px;
+  color: var(--k-ink-3);
+}
+
+/* formas lauki --------------------------------------------------- */
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 14px;
+}
+
+.field > span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--k-ink-2);
+}
+
+.field em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--k-ink-3);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--k-body);
+  font-size: 16px;
+  padding: 11px 12px;
+  min-height: 46px;
+  border: 0;
+  border-bottom: 1.5px solid var(--k-rule);
+  background: #f4f5f8;
+  color: var(--k-ink);
+  width: 100%;
+  border-radius: 2px 2px 0 0;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--k-green-bright);
+  outline-offset: 1px;
+  border-bottom-color: var(--k-green-bright);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 92px;
+}
+
+.hint {
+  padding-top: 2px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--k-ink-3);
+}
+
+
+
+.error {
+  padding: 11px 13px;
+  margin-bottom: 12px;
+  background: #fdecea;
+  border-left: 3px solid #b3261e;
+  font-size: 13px;
+}
+
+.submit {
+  width: 100%;
+}
+
+/* nosūtīts ------------------------------------------------------- */
+
+.sentBox {
+  padding: 4px 0 8px;
+}
+
+.sentBox h3 {
+  font-family: var(--k-display);
+  font-variation-settings: "wght" 600, "wdth" 94;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  margin: 0 0 10px;
+}
+
+.sentBox p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--k-ink-2);
+}
+
+.sentNote {
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+.sentNote a {
+  color: var(--k-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sentActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 18px;
+}
+
+.sentActions > * {
+  flex: 1 1 190px;
+}
+
+/* ---------------------------------------------------------------
+   11. Lielāki ekrāni
+   --------------------------------------------------------------- */
+
+@media (min-width: 700px) {
   .page {
-    padding-inline: var(--sp-30);
+    --k-gut: 32px;
+  }
+
+  .indexList {
+    columns: 2;
+    column-gap: 56px;
+  }
+
+  .indexList a {
+    font-size: 19px;
+  }
+
+  .menuList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 32px;
+  }
+
+  .menuListOrder {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+  }
+
+  .row {
+    gap: 0 18px;
+  }
+
+  .menuList:not(.menuListOrder) .rowName {
+    font-size: 17px;
+  }
+
+  .menuList:not(.menuListOrder) .rowDesc {
+    display: block;
+  }
+
+  .thumb,
+  .thumbEmpty {
+    width: 104px;
+    height: 104px;
+  }
+
+  .rowName {
+    font-size: 18px;
+  }
+
+  .rowText {
+    padding: 15px 0;
+  }
+
+  .addBtn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .backdrop {
+    padding: 32px;
   }
 }
 
-@media (max-width: 820px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 560px) {
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .backdrop {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .sheet {
+    max-width: none;
+    max-height: 93vh;
+  }
+
+  .sheetFooter {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .cartBarInner {
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumb,
+  .addBtn,
+  .btn {
+    transition: none;
+  }
+
+  .rowMain:hover .thumb {
+    transform: none;
   }
 }

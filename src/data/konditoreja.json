@@ -9,56 +9,80 @@
         "name": "Vēja zirdziņš",
         "desc": null,
         "weight": null,
-        "price": "14.00 €/1 kg"
+        "price": "14.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "abolu_bananu_bruklenu.webp",
         "name": "Ābolu, banānu, brūkleņu",
         "desc": null,
         "weight": null,
-        "price": "14.00 €/1 kg"
+        "price": "14.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "rabarberu-zemenu_ar_varito_kremu-1.webp",
         "name": "Rabarberu – zemeņu",
         "desc": "Ar vārīto krēmu",
         "weight": null,
-        "price": "14.00 €/1 kg"
+        "price": "14.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "biezpienae28093marcipana.webp",
         "name": "Biezpiena – marcipāna",
         "desc": null,
         "weight": null,
-        "price": "14.00 €/1 kg"
+        "price": "14.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "ar_varito_kremu_un_drumstalam-1.webp",
         "name": "Tradicionālais",
         "desc": "Ar vārīto krēmu un drumstalām",
         "weight": null,
-        "price": "12.00 €/1 kg"
+        "price": "12.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "tradicionalais_ar_sokoladi.webp",
         "name": "Tradicionālais",
         "desc": "Ar vārīto krēmu un šokolādi",
         "weight": null,
-        "price": "13.00 €/1 kg"
+        "price": "13.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kanela_ar_varito_kremu_2.webp",
         "name": "Kanēļa",
         "desc": "Ar vārīto krēmu",
         "weight": null,
-        "price": "13.00 €/1 kg"
+        "price": "13.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "klingeris_ziemassvetku.webp",
         "name": "Ziemassvētku",
         "desc": null,
         "weight": null,
-        "price": "13.00 €/1 kg"
+        "price": "13.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   },
@@ -72,42 +96,60 @@
         "name": "Sāļais",
         "desc": "Ar žāvētu cūkgaļu",
         "weight": null,
-        "price": "14.00 €/1 kg"
+        "price": "14.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "salais_ar_vistu.webp",
         "name": "Sāļais",
         "desc": "Ar vārītu vistas gaļu",
         "weight": null,
-        "price": "14.00 €/1 kg"
+        "price": "14.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "tunca-zalumu.webp",
         "name": "Tunča – zaļumu",
         "desc": null,
         "weight": null,
-        "price": "14.00 €/1 kg"
+        "price": "14.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "pikantais_tunca.webp",
         "name": "Pikantais tunča",
         "desc": "Ar tomātu mērci",
         "weight": null,
-        "price": "13.00 €/1 kg"
+        "price": "13.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "vegetarais_ar_darzeniem.webp",
         "name": "Veģetārais",
         "desc": "Ar dārzeņiem",
         "weight": null,
-        "price": "12.00 €/1 kg"
+        "price": "12.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "ar_ceptiem_sampinjoniem_un_sieru-2.webp",
         "name": "Veģetārais",
         "desc": "Ar ceptiem šampinjoniem un sieru",
         "weight": null,
-        "price": "13.00 €/1 kg"
+        "price": "13.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   },
@@ -121,63 +163,90 @@
         "name": "Ābolu – drumstalu",
         "desc": null,
         "weight": null,
-        "price": "8.00 €/1 kg"
+        "price": "8.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "abolu_platsmaize-1.webp",
         "name": "Ābolu",
         "desc": null,
         "weight": null,
-        "price": "9.50 €/1 kg"
+        "price": "9.50 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "abolu_krejuma.webp",
         "name": "Ābolu – krējuma",
         "desc": null,
         "weight": null,
-        "price": "10.00 €/1 kg"
+        "price": "10.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "rabarberue28093krejuma-1.webp",
         "name": "Rabarberu – krējuma",
         "desc": null,
         "weight": null,
-        "price": "11.00 €/1 kg"
+        "price": "11.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "rabarberue28093drumstalu.webp",
         "name": "Rabarberu – drumstalu",
         "desc": null,
         "weight": null,
-        "price": "9.50 €/1 kg"
+        "price": "9.50 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "biezpiena_ar_rozinem.webp",
         "name": "Biezpiena ar rozīnēm",
         "desc": null,
         "weight": null,
-        "price": "11.00 €/1 kg"
+        "price": "11.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "biezpiena.webp",
         "name": "Biezpiena",
         "desc": null,
         "weight": null,
-        "price": "12.00 €/1 kg"
+        "price": "12.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "sala_platsmaize-2.webp",
         "name": "Sāļā",
         "desc": null,
         "weight": null,
-        "price": "12.00 €/1 kg"
+        "price": "12.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "burkanu-valriekstu_kekss-1.webp",
         "name": "Burkānu – valriekstu kēkss",
         "desc": null,
         "weight": null,
-        "price": "14.00 €/1 kg"
+        "price": "14.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   },
@@ -191,105 +260,150 @@
         "name": "Speķa pīrādziņš",
         "desc": null,
         "weight": "25 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "buljona_piradzins.webp",
         "name": "Buljona pīrādziņš",
         "desc": null,
         "weight": "30 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kartainas_miklas_speka_piradzins.webp",
         "name": "Kārtainās mīklas speķa pīrādziņš",
         "desc": null,
         "weight": "25 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kartainas_miklas_radzins.webp",
         "name": "Kārtainās mīklas radziņš",
         "desc": "Ar gaļu un sieru",
         "weight": "30 g",
-        "price": "0.55 €"
+        "price": "0.55 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "siera_radzins-1.webp",
         "name": "Siera radziņš",
         "desc": null,
         "weight": "25 g",
-        "price": "0.45 €"
+        "price": "0.45 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "strudele_ar_sampinjoniem.webp",
         "name": "Štrūdele ar šampinjoniem",
         "desc": null,
         "weight": "20 g",
-        "price": "0.60 €"
+        "price": "0.60 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kapostu-olu_piradzins.webp",
         "name": "Kāpostu – olas pīrādziņš",
         "desc": null,
         "weight": "25 g",
-        "price": "0.45 €"
+        "price": "0.45 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kapostu_piradzins.webp",
         "name": "Kāpostu pīrādziņš",
         "desc": null,
         "weight": "25 g",
-        "price": "0.45 €"
+        "price": "0.45 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "pavasara_piradzins_ar_olu.webp",
         "name": "Pavasara pīrādziņš",
         "desc": "Ar olu un lociņiem",
         "weight": "25 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "vasaras_piradzins_ar_olu-1.webp",
         "name": "Vasaras pīrādziņš",
         "desc": "Ar olu un ceptiem sīpoliem",
         "weight": "30 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "vasaras_piradzins_ar_senem-1.webp",
         "name": "Vasaras pīrādziņš",
         "desc": "Ar sēnēm un ceptiem sīpoliem",
         "weight": "35 g",
-        "price": "0.60 €"
+        "price": "0.60 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "vasaras_piradzins_ar_tunci-3.webp",
         "name": "Vasaras pīrādziņš",
         "desc": "Ar tunci",
         "weight": "35 g",
-        "price": "0.65 €"
+        "price": "0.65 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "picas_piradzins-1.webp",
         "name": "Picas pīrādziņš",
         "desc": null,
         "weight": "30 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "burkanu_maizite-1.webp",
         "name": "Burkānu maizīte",
         "desc": null,
         "weight": "30 g",
-        "price": "0.45 €"
+        "price": "0.45 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "salais_klingeritis.webp",
         "name": "Sāļais kliņģerītis",
         "desc": "Ar ķimenēm",
         "weight": "35 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   },
@@ -303,42 +417,60 @@
         "name": "Vēja zirdziņš",
         "desc": "Ogu maizīte",
         "weight": "45 g",
-        "price": "0.70€"
+        "price": "0.70€",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "karamelu_maizite-1.webp",
         "name": "Karameļu maizīte",
         "desc": null,
         "weight": "30 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "magonu_bulcina_ar_sokoladi.webp",
         "name": "Magoņu maizīte",
         "desc": "Ar šokolādes glazūru",
         "weight": "30 g",
-        "price": "0.55 €"
+        "price": "0.55 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kanela_maizite.webp",
         "name": "Kanēļa maizīte",
         "desc": null,
         "weight": "25 g",
-        "price": "0.45 €"
+        "price": "0.45 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "biezpiena_citronu.webp",
         "name": "Biezpiena – citronu maizīte",
         "desc": null,
         "weight": "25 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kafijas_maizite-3.webp",
         "name": "Kafijas maizīte",
         "desc": null,
         "weight": "30 g",
-        "price": "0.50 €"
+        "price": "0.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   },
@@ -352,63 +484,90 @@
         "name": "Asorti",
         "desc": null,
         "weight": null,
-        "price": "17.00 €/1 kg"
+        "price": "17.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "mandelu_sirsninas.webp",
         "name": "Mandeļu sirsniņas",
         "desc": null,
         "weight": null,
-        "price": "18.50 €/1 kg"
+        "price": "18.50 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "buca.webp",
         "name": "Buča",
         "desc": "Ar vārītu iebiezināto pienu",
         "weight": null,
-        "price": "18.00 €/1 kg"
+        "price": "18.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "vines_pirkstini.webp",
         "name": "Vīnes pirkstiņi",
         "desc": "Ar trifeļu pildījumu",
         "weight": null,
-        "price": "17.00 €/1 kg"
+        "price": "17.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "riekstins.webp",
         "name": "Riekstiņš",
         "desc": null,
         "weight": "25 g",
-        "price": "0.55 €"
+        "price": "0.55 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "sokolades_cipsu_lielcepums.webp",
         "name": "Šokolādes čipsu lielcepums",
         "desc": null,
         "weight": "50 g",
-        "price": "1.10 €"
+        "price": "1.10 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "mandelu_cepums_florence.webp",
         "name": "Florence",
         "desc": "Mandeļu cepums",
         "weight": "35 g",
-        "price": "0.75 €"
+        "price": "0.75 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "siera_pikantie.webp",
         "name": "Siera pikantie",
         "desc": null,
         "weight": null,
-        "price": "18.50 €/1 kg"
+        "price": "18.50 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "pikantais_siera_radzins.webp",
         "name": "Pikantais siera radziņš",
         "desc": null,
         "weight": "40 g",
-        "price": "0.95 €"
+        "price": "0.95 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   },
@@ -422,245 +581,350 @@
         "name": "Aveņu laiviņa",
         "desc": "Ar iebiezinātā piena krēmu",
         "weight": "45 g",
-        "price": "1.05 €"
+        "price": "1.05 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "avenu-iebiezinata_piena_krema_grozins-3.webp",
         "name": "Aveņu groziņš",
         "desc": "Ar iebiezinātā piena krēmu",
         "weight": "35 g",
-        "price": "0.85 €"
+        "price": "0.85 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "zemenu-iebiezinata_piena_krema_grozins-2.webp",
         "name": "Zemeņu groziņš",
         "desc": "Ar iebiezinātā piena krēmu",
         "weight": "30 g",
-        "price": "0.80 €"
+        "price": "0.80 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kivi_grozins.webp",
         "name": "Kivi groziņš",
         "desc": "Ar vārīto krēmu",
         "weight": "35 g",
-        "price": "0.85 €"
+        "price": "0.85 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "mandarinu_laivina.webp",
         "name": "Mandarīnu laiviņa",
         "desc": "Ar vārīto krēmu",
         "weight": "55 g",
-        "price": "0.95 €"
+        "price": "0.95 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "grozins_ar_varito_kremu_un_mandariniem-1.webp",
         "name": "Mandarīnu groziņš",
         "desc": "Ar vārīto krēmu",
         "weight": "45 g",
-        "price": "0.90 €"
+        "price": "0.90 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "auglu-putukrejuma_grozins_liels.webp",
         "name": "Augļu – putukrējuma groziņš",
         "desc": "Vidējais",
         "weight": "50 g",
-        "price": "1.05 €"
+        "price": "1.05 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "auglu-putukrejuma_grozins_mazs.webp",
         "name": "Augļu – putukrējuma groziņš",
         "desc": "Mazais",
         "weight": "25 g",
-        "price": "0.75 €"
+        "price": "0.75 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "grozins_dzervenu_marcipana.webp",
         "name": "Dzērveņu – marcipāna groziņš",
         "desc": null,
         "weight": "30 g",
-        "price": "0.85 €"
+        "price": "0.85 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "grozins_marcipana_ar_varito_kremu-2.webp",
         "name": "Marcipāna groziņš",
         "desc": "Ar vārīto krēmu",
         "weight": "25 g",
-        "price": "0.70 €"
+        "price": "0.70 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "valriekstu_grozins.webp",
         "name": "Valriekstu – karameļu groziņš",
         "desc": null,
         "weight": "25 g",
-        "price": "0.65 €"
+        "price": "0.65 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "karamelu_grozins.webp",
         "name": "Karameļu groziņš",
         "desc": null,
         "weight": "30 g",
-        "price": "0.65 €"
+        "price": "0.65 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "grozins_meringa-citrona-1.webp",
         "name": "Meringa – citronu krēma groziņš",
         "desc": null,
         "weight": "25 g",
-        "price": "0.80 €"
+        "price": "0.80 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "zefira_grozins.webp",
         "name": "Zefīra groziņš",
         "desc": null,
         "weight": "35 g",
-        "price": "0.85 €"
+        "price": "0.85 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "canolli.webp",
         "name": "Cannoli",
         "desc": "Ar Ricotta sieru",
         "weight": "30 g",
-        "price": "0.90 €"
+        "price": "0.90 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "eklera_pufs_ar_mascarpone-2.webp",
         "name": "Eklērpufs",
         "desc": "Ar maskarpone krēmu",
         "weight": "25 g",
-        "price": "1.00 €"
+        "price": "1.00 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "vecriga_maza.webp",
         "name": "Vecrīga",
         "desc": null,
         "weight": "30 g",
-        "price": "0.75 €"
+        "price": "0.75 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "eklers_mazs.webp",
         "name": "Eklers",
         "desc": null,
         "weight": "30 g",
-        "price": "0.85 €"
+        "price": "0.85 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "skudru_puznis.webp",
         "name": "Skudru pūznis",
         "desc": null,
         "weight": "50 g",
-        "price": "0.95 €"
+        "price": "0.95 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "mandelu_radzins.webp",
         "name": "Mandeļu radziņš",
         "desc": null,
         "weight": "30 g",
-        "price": "1.10 €"
+        "price": "1.10 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kuka_pistaciju-siera_maza-1.webp",
         "name": "Siera – pistāciju kūciņa",
         "desc": null,
         "weight": "40 g",
-        "price": "1.10 €"
+        "price": "1.10 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kucina_siera-zemenu_maza-1.webp",
         "name": "Siera – zemeņu kūciņa",
         "desc": null,
         "weight": "38 g",
-        "price": "1.00 €"
+        "price": "1.00 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "miljonars.webp",
         "name": "Miljonārs",
         "desc": null,
         "weight": "30 g",
-        "price": "1.00 €"
+        "price": "1.00 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "siera_braunijs_mazais-2.webp",
         "name": "Siera braunijs",
         "desc": null,
         "weight": "25 g",
-        "price": "0.95 €"
+        "price": "0.95 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "sokolades-valriekstu_ar_ogam.webp",
         "name": "Šokolādes – valriekstu ar ogām",
         "desc": null,
         "weight": "35 g",
-        "price": "1.30 €"
+        "price": "1.30 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "sarkanais_samts.webp",
         "name": "Sarkanais samts",
         "desc": null,
         "weight": "25 g",
-        "price": "0.75 €"
+        "price": "0.75 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "biezpiena_avenu_kucina-2.webp",
         "name": "Biezpiena – aveņu",
         "desc": "Ar balto šokolādi",
         "weight": "30 g",
-        "price": "1.05 €"
+        "price": "1.05 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "biezpiena_dzeltena_kucina.webp",
         "name": "Biezpiena dzeltenā kūciņa",
         "desc": null,
         "weight": "30 g",
-        "price": "0.75 €"
+        "price": "0.75 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "burkankuka_ar_mascarpone-4.webp",
         "name": "Burkānkūka",
         "desc": "Ar maskarpone krēmu",
         "weight": "35 g",
-        "price": "1.05 €"
+        "price": "1.05 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "burkanu_keksins_mazais.webp",
         "name": "Burkānu kēkss",
         "desc": "Ar skābā krējuma micīti",
         "weight": "20 g",
-        "price": "0.70 €"
+        "price": "0.70 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "maskarpones-citronu.webp",
         "name": "Maskarpones – citronu",
         "desc": "Ar marakujas želeju",
         "weight": "25 g",
-        "price": "0.95 €"
+        "price": "0.95 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "apelsinu_kucina.webp",
         "name": "Apelsīnu kūciņa",
         "desc": "Ar putukrējuma krēmu un šokolādes biskvītu",
         "weight": "30 g",
-        "price": "0.95 €"
+        "price": "0.95 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "mellenu_kucina.webp",
         "name": "Melleņu kūciņa",
         "desc": "Ar skābā krējuma krēmu",
         "weight": "30 g",
-        "price": "1.00 €"
+        "price": "1.00 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "dzervenu-putukrejuma_ar_dzervenu_zelejas_kartinu.webp",
         "name": "Dzērveņu – putukrējuma",
         "desc": "Ar dzērveņu želejas kārtiņu",
         "weight": "30 g",
-        "price": "1.00 €"
+        "price": "1.00 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kucina_kafijas_pupina-1.webp",
         "name": "Kafijas pupiņa",
         "desc": null,
         "weight": "30 g",
-        "price": "1.10 €"
+        "price": "1.10 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   },
@@ -674,140 +938,200 @@
         "name": "Vecrīga",
         "desc": null,
         "weight": "65 g",
-        "price": "1.40 €"
+        "price": "1.40 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "eklers_liels.webp",
         "name": "Eklērs",
         "desc": null,
         "weight": "60 g",
-        "price": "1.50 €"
+        "price": "1.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "medus_kuka.webp",
         "name": "Medus kūka",
         "desc": null,
         "weight": "100 g",
-        "price": "2.00 €"
+        "price": "2.00 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "biezpiena_majina_2.webp",
         "name": "Biezpiena mājiņa",
         "desc": null,
         "weight": "100 g",
-        "price": "2.10 €"
+        "price": "2.10 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "siera-pistaciju_kuka_liela-2.webp",
         "name": "Siera – pistāciju kūka",
         "desc": null,
         "weight": "85 g",
-        "price": "2.30 €"
+        "price": "2.30 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "siera-zemenu_kuka_liela-2.webp",
         "name": "Siera  – zemeņu kūka",
         "desc": null,
         "weight": "100 g",
-        "price": "2.20 €"
+        "price": "2.20 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "siera_braunijs.webp",
         "name": "Siera braunijs",
         "desc": "Ar sāļo karameli",
         "weight": "85 g",
-        "price": "2.00 €"
+        "price": "2.00 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "kuka_karamelu_siera.webp",
         "name": "Karameļu siera kūka",
         "desc": null,
         "weight": "110 g",
-        "price": "2.75 €"
+        "price": "2.75 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "riekstu-sokolades_kuka.webp",
         "name": "Riekstu – šokolādes kūka",
         "desc": null,
         "weight": "95 g",
-        "price": "2.30 €"
+        "price": "2.30 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "sarkanais_samts_kuka.webp",
         "name": "Sarkanais samts",
         "desc": null,
         "weight": "120 g",
-        "price": "2.50 €"
+        "price": "2.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "pavlova.webp",
         "name": "Pavlova",
         "desc": null,
         "weight": "100 g",
-        "price": "3.00 €"
+        "price": "3.00 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "lielcepums_mila_sirds-2.webp",
         "name": "Mīļā sirds",
         "desc": "Ar mandeļu masu un balto šokolādi",
         "weight": "100 g",
-        "price": "3.20 €"
+        "price": "3.20 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "zefira_radzins.webp",
         "name": "Zefīra radziņš ar šokolādi",
         "desc": null,
         "weight": "50 g",
-        "price": "1.40 €"
+        "price": "1.40 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "karamelu_radzins.webp",
         "name": "Karameļu radziņš",
         "desc": null,
         "weight": "65 g",
-        "price": "1.55 €"
+        "price": "1.55 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "karamelu_kekss.webp",
         "name": "Karameļu kēkss",
         "desc": "Ar karameļu pildījumu, Toffee glazūru",
         "weight": "120 g",
-        "price": "2.40 €"
+        "price": "2.40 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "sokolades_kekss-2.webp",
         "name": "Šokolādes kēkss",
         "desc": "Ar šokolādes pildījumu",
         "weight": "120 g",
-        "price": "2.40 €"
+        "price": "2.40 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "stiligais_kekss-2.webp",
         "name": "“Stilīgais” kēkss",
         "desc": null,
         "weight": "65 g",
-        "price": "1.90 €"
+        "price": "1.90 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "smaragda_kekss.webp",
         "name": "Smaragda kēkss",
         "desc": "Ar maskarpone – pistāciju krēmu",
         "weight": "75 g",
-        "price": "2.60 €"
+        "price": "2.60 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "grozins_zefira_tels_eglite.webp",
         "name": "Zefīra tēls",
         "desc": "Eglīte",
         "weight": "40 g",
-        "price": "1.50 €"
+        "price": "1.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "grozins_zefira_tels_sniegavirs-1.webp",
         "name": "Zefīra tēls",
         "desc": "Sniegavīrs",
         "weight": "40 g",
-        "price": "1.50 €"
+        "price": "1.50 €",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   },
@@ -821,63 +1145,90 @@
         "name": "Medus torte",
         "desc": "Ar brūkleņu ievārījumu",
         "weight": null,
-        "price": "20.00 €/1 kg"
+        "price": "20.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "medus_kuka-1.webp",
         "name": "Medus torte",
         "desc": null,
         "weight": null,
-        "price": "19.00 €/1 kg"
+        "price": "19.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "jogurta-kirsu_torte.webp",
         "name": "Jogurta – ķiršu torte",
         "desc": null,
         "weight": null,
-        "price": "19.50 €/1 kg"
+        "price": "19.50 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "biezpiena_torte_ar_avenem.webp",
         "name": "Biezpiena torte",
         "desc": "Ar avenēm želejā",
         "weight": null,
-        "price": "18.00 €/1 kg"
+        "price": "18.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "torte_kafijas.webp",
         "name": "Kafijas putukrējuma torte",
         "desc": null,
         "weight": null,
-        "price": "20.00 €/1 kg"
+        "price": "20.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "torte_sarkanais_samts-1.webp",
         "name": "Sarkanais samts",
         "desc": null,
         "weight": null,
-        "price": "20.00 €/1 kg"
+        "price": "20.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "torte_sokolades_ar_bananiem-1.webp",
         "name": "Šokolādes torte ar banāniem",
         "desc": null,
         "weight": null,
-        "price": "20.50 €/1 kg"
+        "price": "20.50 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "avenu_tarte.webp",
         "name": "Aveņu tarte",
         "desc": "Ar vārīto kremu",
         "weight": null,
-        "price": "18.00 €/1 kg"
+        "price": "18.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       },
       {
         "img": "bavarijas_rulete.webp",
         "name": "Bavārijas rulete",
         "desc": null,
         "weight": null,
-        "price": "19.00 €/1 kg"
+        "price": "19.00 €/1 kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   },
@@ -891,7 +1242,10 @@
         "name": "Pasūtījumu tortes",
         "desc": null,
         "weight": null,
-        "price": "25.00-30.00 €/kg"
+        "price": "25.00-30.00 €/kg",
+        "allergens": null,
+        "diet": null,
+        "info": null
       }
     ]
   }
