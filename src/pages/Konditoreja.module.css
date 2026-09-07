@@ -1,28 +1,26 @@
 /* ===============================================================
    KONDITOREJA — vizuālā sistēma
    ---------------------------------------------------------------
-   Divi novērojumi nosaka visu pārējo:
+   Lapas fons ir silti krēmīgs (#FFFCF2) — tas dod lielāku kontrastu
+   ar tekstu nekā iepriekšējais vēsi pelēkais. Produktu foto fons ir
+   izgriezts (caurspīdīgs), tāpēc izstrādājumi "peld" tieši uz lapas.
+   Vienīgais baltais ir pasūtījuma lapa un preces logs: papīrs uz letes.
 
-   1) Silva logotipa zaļā ir #019047 — spilgtāka nekā WordPress
-      tēmas #004823, ko izmantoja pārējā vietne.
-   2) Visiem 118 produktu foto ir viens un tas pats fons: #dfe0e7.
-
-   Tāpēc lapas fons ir tieši #dfe0e7 — attēlu malas pazūd un
-   izstrādājumi "peld" uz lapas. Vienīgais baltais ir pasūtījuma
-   lapa un preces logs: papīrs uz letes.
+   Zaļā ir #019047 — Silva logotipa krāsa, nevis WordPress tēmas
+   #004823, ko izmantoja pārējā vietne.
 
    Marķieri sākas ar --k-, un tie dzīvo tikai šajā lapā, lai
    pārējās sešas lapas paliktu neskartas.
    =============================================================== */
 
 .page {
-  --k-bg: #dfe0e7;
+  --k-bg: #fffcf2;
   --k-paper: #ffffff;
   --k-ink: #14161c;
   --k-ink-2: #565b69;
-  --k-ink-3: #82879a;
-  --k-rule: #c3c5d0;
-  --k-rule-soft: #d4d6df;
+  --k-ink-3: #6e7382;
+  --k-rule: #dcd5c4;
+  --k-rule-soft: #eae4d6;
   --k-green: #017a3c;        /* teksts un pogas — 5.5:1 uz balta */
   --k-green-bright: #019047; /* logotipa zaļā — tikai kontūrām */
 
@@ -510,13 +508,14 @@
 .sheetFigure {
   margin: 0;
   background: var(--k-bg);
+  padding: 10px 0;
 }
 
 .sheetImg {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: contain;
-  object-position: left center;
+  object-position: center;
 }
 
 .sheetBody {
@@ -1002,7 +1001,7 @@
   min-height: 46px;
   border: 0;
   border-bottom: 1.5px solid var(--k-rule);
-  background: #f4f5f8;
+  background: #f8f4ea;
   color: var(--k-ink);
   width: 100%;
   border-radius: 2px 2px 0 0;

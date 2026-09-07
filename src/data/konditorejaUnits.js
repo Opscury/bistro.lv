@@ -84,7 +84,7 @@ export function pricing(item, categoryId) {
     step: isKg ? limits.kgStep ?? DEFAULT_LIMITS.kgStep : 1,
     decimals: isKg ? 1 : 0,
     priceText: item.price || "",
-    // Ēdienkartē cenas ir rakstītas nevienādi ("14.00 €/1 kg", "0.70€").
+    // Piedāvājumā cenas ir rakstītas nevienādi ("14.00 €/1 kg", "0.70€").
     // Šī ir sakārtota, īsāka versija, kas neplīst pušu šaurā kolonnā.
     shortPrice: shortPrice(min, max, isKg),
   };

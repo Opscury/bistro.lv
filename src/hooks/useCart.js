@@ -26,7 +26,7 @@ function load() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return {};
     const parsed = JSON.parse(raw);
-    // izmet preces, kuru vairs nav katalogā (piem., pēc ēdienkartes maiņas)
+    // izmet preces, kuru vairs nav katalogā (piem., pēc piedāvājuma maiņas)
     return Object.fromEntries(
       Object.entries(parsed).filter(
         ([k, v]) => CATALOG.has(k) && typeof v === "number" && v > 0

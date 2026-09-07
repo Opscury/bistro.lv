@@ -13,7 +13,7 @@ export default function CartBar({ cart, onOpen, onExit }) {
       <div className={styles.cartBarInner}>
         <p className={styles.cartBarText}>
           {n === 0 ? (
-            <span>Atzīmējiet preces ēdienkartē</span>
+            <span>Atzīmējiet preces piedāvājumā</span>
           ) : (
             <>
               <span>

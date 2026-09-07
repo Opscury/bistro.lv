@@ -47,7 +47,7 @@
 html {
   scroll-behavior: smooth;
   /* offset for the sticky header when jumping to an #anchor */
-  scroll-padding-top: 110px;
+  scroll-padding-top: 88px;
 }
 
 body {

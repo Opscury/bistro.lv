@@ -23,7 +23,7 @@ export default function Header() {
       <div className={styles.bar}>
         <header className={styles.inner}>
           <Link to="/" className={styles.logo} aria-label="Silva — sākumlapa">
-            <img src="/img/silva_logo.webp" alt="Silva" width="140" height="70" />
+            <img src="/img/silva_logo.webp" alt="Silva" width="104" height="52" />
           </Link>
 
           <button

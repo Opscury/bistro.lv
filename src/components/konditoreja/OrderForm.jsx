@@ -114,7 +114,7 @@ export default function OrderForm({
             <div className={styles.startOrder}>
               <p className={styles.startOrderText}>
                 Vēlaties pasūtīt konkrētas preces? Ieslēdziet pasūtījuma
-                veidošanu — ēdienkartē parādīsies pogas, ar kurām atzīmēt preces
+                veidošanu — piedāvājumā parādīsies pogas, ar kurām atzīmēt preces
                 un daudzumu.
               </p>
               <button
@@ -132,7 +132,7 @@ export default function OrderForm({
             <>
               {cart.lines.length === 0 ? (
                 <p className={styles.empty}>
-                  Lapa vēl ir tukša. Atgriezieties ēdienkartē un atzīmējiet
+                  Lapa vēl ir tukša. Atgriezieties piedāvājumā un atzīmējiet
                   preces ar <b aria-hidden="true">+</b> pogu.
                 </p>
               ) : (
@@ -172,7 +172,7 @@ export default function OrderForm({
                       </span>
                     </p>
                     <p className={styles.totalNote}>
-                      Aprēķināts pēc ēdienkartes cenām. Gala cenu un datumu
+                      Aprēķināts pēc piedāvājuma cenām. Gala cenu un datumu
                       apstiprinām, sazinoties ar Jums.
                     </p>
                   </div>
@@ -221,7 +221,7 @@ export default function OrderForm({
 
           <label className={styles.field}>
             <span>
-              {orderMode ? "Piezīmes, uzraksts uz tortes" : "Ziņojums"}
+              {orderMode ? "Piezīmes" : "Ziņojums"}
             </span>
             <textarea rows={5} value={values.message} onChange={update("message")} />
           </label>

@@ -11,7 +11,7 @@
 .inner {
   max-width: var(--w-header);
   margin-inline: auto;
-  padding: 15px 50px 9px;
+  padding: 10px 50px 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +19,7 @@
 }
 
 .logo img {
-  width: 140px;
+  width: 104px;
   height: auto;
 }
 
@@ -28,12 +28,12 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-  gap: 26px;
+  gap: 22px;
 }
 
 .link {
   font-family: var(--font-display);
-  font-size: var(--fs-medium);
+  font-size: clamp(15px, 0.75rem + 0.55vw, 19px);
   font-weight: 600;
   letter-spacing: 0.01em;
   color: #000;
@@ -86,12 +86,13 @@
 
 @media (max-width: 900px) {
   .inner {
-    padding: 12px 20px;
+    padding: 9px 20px;
     gap: 16px;
   }
 
   .toggle {
     display: block;
+    padding: 8px;
   }
 
   .nav {
@@ -113,7 +114,7 @@
   }
 
   .link {
-    font-size: 20px;
+    font-size: 19px;
     padding: 8px 0;
   }
 }

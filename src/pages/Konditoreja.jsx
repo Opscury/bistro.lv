@@ -11,9 +11,9 @@ import styles from "./Konditoreja.module.css";
 /** Satura rādītājs ar punktu līnijām un izstrādājumu skaitu. */
 function MenuIndex() {
   return (
-    <nav className={styles.index} aria-label="Ēdienkartes sadaļas">
-      <p className={styles.label} id="edienkarte">
-        Ēdienkarte
+    <nav className={styles.index} aria-label="Piedāvājuma sadaļas">
+      <p className={styles.label} id="piedavajums">
+        Piedāvājums
       </p>
       <ol className={styles.indexList}>
         {categories.map((cat) => (
@@ -98,7 +98,7 @@ export default function Konditoreja() {
   const cart = useCart();
   const [openEntry, setOpenEntry] = useState(null);
   const [formOpen, setFormOpen] = useState(false);
-  // Pasūtīšanas režīms sākas izslēgts — lapa vispirms ir ēdienkarte.
+  // Pasūtīšanas režīms sākas izslēgts — lapa vispirms ir piedāvājums.
   // Ja pārlūkā jau ir saglabātas preces, režīms atgriežas pats.
   const [orderMode, setOrderMode] = useState(() => cart.lines.length > 0);
   const menuRef = useRef(null);
@@ -175,8 +175,8 @@ export default function Konditoreja() {
                 })}
               </ul>
 
-              <a className={styles.backToIndex} href="#edienkarte">
-                ↑ ēdienkarte
+              <a className={styles.backToIndex} href="#piedavajums">
+                ↑ piedāvājums
               </a>
             </section>
           ))}
@@ -186,7 +186,7 @@ export default function Konditoreja() {
           <div>
             <h2 className={styles.ctaTitle}>sazināties vai pasūtīt</h2>
             <p className={styles.ctaText}>
-              Uzrakstiet mums ziņu vai izveidojiet pasūtījumu no ēdienkartes.
+              Uzrakstiet mums ziņu vai izveidojiet pasūtījumu no piedāvājuma.
               Pasūtījums nav pirkums — mēs sazināsimies un visu apstiprināsim.
             </p>
           </div>
