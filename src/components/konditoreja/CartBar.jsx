@@ -1,4 +1,5 @@
 import { formatRange } from "../../data/konditorejaUnits.js";
+import ui from "../../styles/Page.module.css";
 import styles from "../../pages/Konditoreja.module.css";
 
 /**
@@ -28,15 +29,10 @@ export default function CartBar({ cart, onOpen, onExit }) {
         </p>
 
         <div className={styles.cartBarActions}>
-          <button
-            type="button"
-            className={styles.exitBtn}
-            onClick={onExit}
-            title="Preces paliek saglabātas"
-          >
+          <button type="button" className={styles.exitBtn} onClick={onExit} title="Preces paliek saglabātas">
             Iziet
           </button>
-          <button type="button" className={styles.btn} onClick={onOpen}>
+          <button type="button" className={ui.btn} onClick={onOpen}>
             Pasūtījuma lapa
           </button>
         </div>

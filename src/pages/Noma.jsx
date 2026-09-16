@@ -1,140 +1,185 @@
+import { Link } from "react-router-dom";
+import Gallery from "../components/Gallery.jsx";
+import Img from "../components/Img.jsx";
+import PriceRows from "../components/PriceRows.jsx";
 import Slideshow from "../components/Slideshow.jsx";
+import { venues } from "../data/lines.js";
 import { galleries } from "../data/site.js";
+import ui from "../styles/Page.module.css";
 import styles from "./Noma.module.css";
 
-export default function Noma() {
+// Zāles īres cenas — nosaukums ........ cena
+const prices = [
+  {
+    title: "Mazā zāle",
+    note: null,
+    rows: [
+      { name: "Ar ēdināšanu", price: "30 €/h" },
+      { name: "Bez ēdināšanas", size: "no 3 stundām", price: "40 €/h" },
+      { name: "Bez ēdināšanas", size: "1–2 stundas", price: "50 €/h" },
+    ],
+  },
+  {
+    title: "Lielā zāle",
+    note: "ietver arī mazo zāli",
+    rows: [
+      { name: "Ar ēdināšanu", price: "40 €/h" },
+      { name: "Bez ēdināšanas", size: "no 3 stundām", price: "45 €/h" },
+      { name: "Bez ēdināšanas", size: "1–2 stundas", price: "60 €/h" },
+    ],
+  },
+];
+
+/** Pontons un peldterase — viens un tas pats bloks. */
+function Venue({ venue, gallery, children }) {
+  const id = `noma-${venue.id}`;
   return (
-    <div className={styles.page}>
-      {/* ---------------- Telpu noma ---------------- */}
-      <h1 className="page-title">TELPU NOMA</h1>
-
-      <div className="panel">
-        <p>
-          Bistro “Silva” 2. stāvā atrodas viesību un semināru zāle, kas ar
-          bīdāmo sienu viegli transformējama divās atsevišķās telpās. Tā ir
-          lieliski piemērota semināriem, konferencēm, svinībām un neformāliem
-          pasākumiem līdz 90 cilvēkiem.
-        </p>
-        <p className={styles.bold}>
-          Zāle ir aprīkota ar visu nepieciešamo veiksmīgam pasākumam:
-        </p>
-        <p>
-          ◦ Tehniskais aprīkojums: ekrāns, apskaņošanas sistēma, WiFi, baltā
-          tāfele.
-        </p>
-        <p>
-          ◦ Papildu ērtības: garderobe, atsevišķas labierīcības vīriešiem un
-          sievietēm, kondicionieris.
-        </p>
-        <p>
-          Ērti vienu no telpām izmantot sapulču, semināru vai citu aktivitāšu
-          norisei, bet otru – kafijas pauzēm, pusdienām.
-        </p>
-        <p>
-          Mēs nodrošinām pilnu servisu un plašu ēdienkarti, kas ietver plates,
-          uzkodas, pamatēdienus, salātus, zupas, dzērienus un pašu gatavotus
-          konditorejas izstrādājumus. Katram pasākumam izstrādājam individuālu
-          ēdienkarti, ņemot vērā jūsu vēlmes un īpašās vajadzības.
-        </p>
-      </div>
-
-      <div className={styles.spacer20} />
-
-      <div className={styles.split}>
-        <div className="panel">
-          <p className={styles.bold}>Zāles īres cenas Mazā zāle:</p>
-          <p className={styles.tight}>◦ Ar ēdināšanu: 30 EUR/h</p>
-          <p className={styles.tight}>◦ Bez ēdināšanas (no 3 stundām): 40 EUR/h</p>
-          <p className={styles.tight}>◦ Bez ēdināšanas (1–2 stundas): 50 EUR/h</p>
-          <p className={styles.bold}>Lielā zāle (ietver arī mazo zāli):</p>
-          <p className={styles.tight}>◦ Ar ēdināšanu: 40 EUR/h</p>
-          <p className={styles.tight}>◦ Bez ēdināšanas (no 3 stundām): 45 EUR/h</p>
-          <p className={styles.tight}>◦ Bez ēdināšanas (1–2 stundas): 60 EUR/h</p>
-        </div>
-        <div className={styles.wideCol}>
-          <Slideshow images={galleries.banketuZale} alt="Banketu zāle" />
-        </div>
-      </div>
-
-      <hr className="rule" />
-
-      {/* ---------------- Pontons ---------------- */}
-      <section className={styles.section}>
-        <h2 className="section-title">Pontons Silva</h2>
-
-        <div className="panel">
-          <p>
-            Pontons Silva, uz Driksas upes Jelgavas centrā, piedāvā gleznainu
-            skatu uz Driksas promenādi un Trīsvienības baznīcas torni, netālu no
-            koncertzāles “Mītava”. Piemērots pasākumiem līdz 30 personām,
-            Pontons piedāvā omulīgu saunu relaksācijai un plašu jumta terasi,
-            kas pieejama labos laikapstākļos.
-          </p>
-          <p>
-            Netālu atrodas pilsētas stāvlaukums, nodrošinot ērtu piekļuvi
-            viesiem. Par gardām maltītēm un nevainojamu apkalpošanu rūpējas
-            kafejnīca Silva ar savu profesionālo viesmīļu komandu.
-          </p>
-          <p>Pontons Silva ir lieliska izvēle jūsu īpašajiem pasākumiem!</p>
-        </div>
-
-        <div className={styles.splitNarrow}>
-          <img src="/img/pontons_main.webp" alt="Pontons Silva" loading="lazy" />
-          <Slideshow images={galleries.pontons} alt="Pontons" />
-        </div>
-
-        <div className={styles.center}>
-          <a
-            className="btn"
-            href="https://www.pontons.lv/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Uzzināt vairāk
+    <section className={ui.section} aria-labelledby={id}>
+      <div className={ui.sectionHead}>
+        <h2 className={ui.heading} id={id}>
+          {venue.name}
+        </h2>
+        <p className={ui.facts}>
+          <span>līdz {venue.capacity} personām</span>
+          <a href={venue.href} target="_blank" rel="noreferrer">
+            {venue.site} ↗
           </a>
-        </div>
-      </section>
+        </p>
+      </div>
 
-      <hr className="rule" />
+      <div className={`${ui.prose} ${styles.venueText}`}>{children}</div>
 
-      {/* ---------------- Peldterase ---------------- */}
-      <section className={styles.section}>
-        <h2 className="section-title">Peldterase Jelgavā</h2>
+      <div className={styles.venuePhotos}>
+        <Img
+          className={styles.venueMain}
+          name={venue.photo}
+          alt={venue.alt}
+          sizes="(min-width: 700px) 494px, 100vw"
+        />
+        <Gallery images={gallery} alt={venue.name} featured={4} columns={2} />
+      </div>
 
-        <div className="panel">
+      <div className={`${ui.actions} ${styles.venueActions}`}>
+        <a className={`${ui.btn} ${ui.btnGhost}`} href={venue.href} target="_blank" rel="noreferrer">
+          Uzzināt vairāk ↗
+        </a>
+        <Link className={ui.btn} to="/banketi#pieteikums">
+          Pieteikt pasākumu
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+export default function Noma() {
+  const [zale, pontons, peldterase] = venues;
+
+  return (
+    <div className={ui.page} data-cluster="banketi">
+      <div className={ui.shell}>
+        <header className={ui.mast}>
+          <h1 className={ui.title}>telpu noma</h1>
+        </header>
+
+        {/* ---------------- Zāle ---------------- */}
+        <section className={ui.section} aria-labelledby="noma-zale">
+          <div className={ui.sectionHead}>
+            <h2 className={ui.heading} id="noma-zale">
+              {zale.title}
+            </h2>
+          </div>
+
+          <div className={styles.hall}>
+            <div className={ui.prose}>
+              <p>
+                Bistro Silva 2. stāvā atrodas viesību un semināru zāle, kas ar bīdāmo sienu viegli
+                transformējama divās atsevišķās telpās. Tā ir piemērota semināriem, konferencēm, svinībām
+                un neformāliem pasākumiem līdz 90 cilvēkiem.
+              </p>
+              <p>
+                <strong>Zāle ir aprīkota ar visu nepieciešamo veiksmīgam pasākumam:</strong>
+              </p>
+              <ul className={ui.list}>
+                <li>Tehniskais aprīkojums: ekrāns, apskaņošanas sistēma, WiFi, baltā tāfele.</li>
+                <li>Papildu ērtības: garderobe, atsevišķas labierīcības vīriešiem un sievietēm, kondicionieris.</li>
+              </ul>
+              <p>
+                Ērti vienu no telpām izmantot sapulču, semināru vai citu aktivitāšu norisei, bet otru –
+                kafijas pauzēm, pusdienām.
+              </p>
+              <p>
+                Mēs nodrošinām pilnu servisu un plašu ēdienkarti, kas ietver plates, uzkodas, pamatēdienus,
+                salātus, zupas, dzērienus un pašu gatavotus konditorejas izstrādājumus. Katram pasākumam
+                izstrādājam individuālu ēdienkarti, ņemot vērā jūsu vēlmes un īpašās vajadzības.
+              </p>
+            </div>
+
+            <div className={styles.hallMedia}>
+              <Slideshow images={galleries.banketuZale} alt="Banketu zāle" />
+            </div>
+          </div>
+        </section>
+
+        {/* ---------------- Cenas ---------------- */}
+        <section className={ui.section} aria-labelledby="noma-cenas">
+          <div className={ui.sectionHead}>
+            <h2 className={ui.heading} id="noma-cenas">
+              zāles īres cenas
+            </h2>
+          </div>
+
+          <div className={styles.prices}>
+            {prices.map((group) => (
+              <div key={group.title}>
+                <h3 className={ui.sub}>
+                  {group.title}
+                  {group.note && <em> ({group.note})</em>}
+                </h3>
+                <PriceRows rows={group.rows} ariaLabel={group.title} />
+              </div>
+            ))}
+          </div>
+          <div className={`${ui.actions} ${styles.venueActions}`}>
+            <Link className={ui.btn} to="/banketi#pieteikums">
+              Pieteikt pasākumu
+            </Link>
+          </div>
+        </section>
+
+        {/* ---------------- Pontons ---------------- */}
+        <Venue venue={pontons} gallery={galleries.pontons}>
           <p>
-            Peldterase Driksas upē, blakus koncertzālei “Mītava”, ir ideāla
-            vieta pasākumiem līdz 40 personām. Pieejams arī stāvlaukums.
-            Lielākiem pasākumiem peldterasi var apvienot ar Pontonu SILVA
-            (Pontons.lv), iegūstot vairāk vietas. Nākamajā sezonā būs iespējams
-            peldterasi pārvietot uz citām vietām Lielupes un Driksas krastos.
-            Par gardiem ēdieniem un laipnu apkalpošanu gādās kafejnīca Silva,
+            Pontons Silva, uz Driksas upes Jelgavas centrā, piedāvā gleznainu skatu uz Driksas promenādi
+            un Trīsvienības baznīcas torni, netālu no koncertzāles “Mītava”. Piemērots pasākumiem līdz 30
+            personām, Pontons piedāvā omulīgu saunu relaksācijai un plašu jumta terasi, kas pieejama
+            labos laikapstākļos.
+          </p>
+          <p>
+            Netālu atrodas pilsētas stāvlaukums, nodrošinot ērtu piekļuvi viesiem. Par gardām maltītēm un
+            nevainojamu apkalpošanu rūpējas Silva ar savu profesionālo viesmīļu komandu.
+          </p>
+        </Venue>
+
+        {/* ---------------- Peldterase ---------------- */}
+        <Venue venue={peldterase} gallery={galleries.peldterase}>
+          <p>
+            Peldterase Driksas upē, blakus koncertzālei “Mītava”, ir ideāla vieta pasākumiem līdz 40
+            personām. Pieejams arī stāvlaukums. Lielākiem pasākumiem peldterasi var apvienot ar Pontonu
+            Silva, iegūstot vairāk vietas. Par gardiem ēdieniem un laipnu apkalpošanu gādā Silva,
             nodrošinot pilnvērtīgu svētku pieredzi.
           </p>
-        </div>
+        </Venue>
 
-        <div className={styles.splitNarrow}>
-          <img
-            src="/img/peldterase_main.webp"
-            alt="Peldterase Jelgavā"
-            loading="lazy"
-          />
-          <Slideshow images={galleries.peldterase} alt="Peldterase" />
+        <div className={ui.cta}>
+          <div>
+            <h2 className={ui.ctaTitle}>kontakti</h2>
+            <p className={ui.ctaText}>Adreses, darba laiki un tālruņi visām Silva vietām.</p>
+          </div>
+          <Link className={ui.btn} to="/kontakti">
+            Visi kontakti
+          </Link>
         </div>
-
-        <div className={styles.center}>
-          <a
-            className="btn"
-            href="https://www.peldterase.lv/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Uzzināt vairāk
-          </a>
-        </div>
-      </section>
-
-      <hr className="rule" />
+      </div>
     </div>
   );
 }

@@ -1,47 +1,103 @@
-.page {
-  padding-top: 82px;
+/* ===============================================================
+   SĀKUMLAPA — tikai izkārtojums; izskats nāk no styles/Page.module.css.
+   Četras līnijas ir četras rindas ēdienkartē: foto, nosaukums ar
+   punktu līniju, apraksts un viena rinda faktu.
+   =============================================================== */
+
+.mast {
+  padding-top: clamp(28px, 6vw, 56px);
+}
+
+.title {
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 700, "wdth" 86, "opsz" 72;
+  font-size: clamp(40px, 8.2vw, 84px);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-transform: lowercase;
+  text-wrap: balance;
+  margin: 10px 0 0;
+  max-width: 13.5em;
+  color: var(--c-ink);
 }
 
 .grid {
-  max-width: 917px; /* 2 × 400px tiles + 117px gap, as on the original */
-  margin-inline: auto;
-  padding-inline: 20px;
+  list-style: none;
+  margin: clamp(24px, 5vw, 44px) 0 0;
+  padding: 0;
+  border-top: 2px solid var(--c-ink);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 117px;
-  row-gap: 55px;
+  grid-template-columns: 1fr;
+  column-gap: 32px;
 }
 
-.tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: opacity 0.2s ease;
+.entry {
+  border-bottom: 1px solid var(--c-rule);
 }
 
-.tile:hover,
-.tile:focus-visible {
-  opacity: 0.88;
+.entry:last-child {
+  border-bottom: 0;
 }
 
-.photo {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+/* visa šūna ir viena saite */
+.link {
+  display: block;
+  padding: 20px 0 26px;
+  color: inherit;
 }
 
-.label {
-  width: 100%;
+.link:hover .name,
+.link:focus-visible .name,
+.link:hover .arrow,
+.link:focus-visible .arrow {
+  color: var(--c-green);
 }
 
-@media (max-width: 780px) {
-  .page {
-    padding-top: 40px;
+.link:hover .arrow {
+  transform: translateX(3px);
+}
+
+.name {
+  font-size: clamp(27px, 6vw, 34px);
+}
+
+.arrow {
+  font-size: 20px;
+}
+
+.venues {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px 32px;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    row-gap: 40px;
+  .entry:last-child {
+    border-bottom: 1px solid var(--c-rule);
+  }
+
+  .entry:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .link {
+    padding: 28px 0 32px;
+  }
+
+  .venues {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link:hover .arrow {
+    transform: none;
   }
 }

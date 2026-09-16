@@ -1,0 +1,233 @@
+# Decap CMS — satura rediģēšana bez koda.
+# Ieslēgšana (vienreiz, Netlify): Site settings → Identity → Enable;
+# Registration → Invite only; Services → Git Gateway → Enable; tad uzaicina
+# redaktorus (Identity → Invite users). Pēc tam: https://bistro.lv/admin/
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    update: "Saturs: {{collection}} — {{author-name}}"
+
+locale: lv
+site_url: https://bistro.lv
+display_url: https://bistro.lv
+logo_url: /silva-logo.svg
+
+media_folder: public/img
+public_folder: /img
+
+collections:
+  - name: vietas
+    label: "Vietas un darba laiki"
+    files:
+      - name: lines
+        label: "Vietas, adreses, darba laiki, tālruņi"
+        file: src/data/lines.json
+        format: json
+        fields:
+          - label: "Uzņēmums"
+            name: company
+            widget: object
+            fields:
+              - { label: "Nosaukums", name: name, widget: string }
+              - { label: "Juridiskais nosaukums", name: legalName, widget: string }
+              - { label: "Dibināts", name: founded, widget: number, value_type: int }
+              - { label: "Pilsēta", name: city, widget: string }
+              - { label: "Vietnes adrese", name: url, widget: string }
+              - { label: "Instagram saite", name: instagram, widget: string }
+              - { label: "Instagram konts", name: instagramHandle, widget: string }
+              - { label: "Tālrunis atsauksmēm", name: feedbackPhone, widget: string }
+              - { label: "E-pasts atsauksmēm", name: feedbackEmail, widget: string }
+              - { label: "Rekvizīti (rindas)", name: requisites, widget: list, field: { label: "Rinda", name: line, widget: string } }
+          - label: "Vietas"
+            name: lines
+            widget: list
+            allow_add: false
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "ID (nemainīt)", name: id, widget: string }
+              - { label: "Nosaukums", name: name, widget: string }
+              - { label: "Klasteris", name: cluster, widget: select, options: [core, teja, banketi] }
+              - { label: "Ceļš", name: path, widget: string }
+              - { label: "Schema tips", name: schemaType, widget: string }
+              - label: "Adrese"
+                name: address
+                widget: object
+                required: false
+                fields:
+                  - { label: "Iela", name: street, widget: string }
+                  - { label: "Pilsēta", name: city, widget: string }
+                  - { label: "Pasta indekss", name: postal, widget: string }
+              - label: "Darba laiks"
+                name: hours
+                widget: list
+                required: false
+                summary: "{{fields.open}}–{{fields.close}}"
+                fields:
+                  - { label: "Dienas", name: days, widget: select, multiple: true, options: [Mo, Tu, We, Th, Fr, Sa, Su] }
+                  - { label: "No (HH:MM)", name: open, widget: string, required: false }
+                  - { label: "Līdz (HH:MM)", name: close, widget: string, required: false }
+                  - { label: "Brīvdiena", name: closed, widget: boolean, required: false, default: false }
+              - { label: "Tālrunis", name: phone, widget: string, required: false }
+              - { label: "Tālruņa apraksts", name: phoneLabel, widget: string, required: false }
+              - { label: "E-pasts", name: email, widget: string, required: false }
+              - { label: "Foto (sākumlapai)", name: photo, widget: image, allow_multiple: false }
+              - { label: "Foto apraksts", name: alt, widget: string }
+              - { label: "Apraksts (sākumlapai)", name: desc, widget: text }
+          - label: "Vietas pasākumiem"
+            name: venues
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "ID", name: id, widget: string }
+              - { label: "Nosaukums", name: name, widget: string }
+              - { label: "Pilns nosaukums", name: title, widget: string, required: false }
+              - { label: "Ceļš vietnē", name: path, widget: string, required: false }
+              - { label: "Ārējā saite", name: href, widget: string, required: false }
+              - { label: "Vietnes vārds", name: site, widget: string, required: false }
+              - { label: "Ietilpība", name: capacity, widget: number, value_type: int }
+              - { label: "Kur", name: where, widget: string }
+              - { label: "Foto", name: photo, widget: image }
+              - { label: "Foto apraksts", name: alt, widget: string }
+              - { label: "Apraksts", name: desc, widget: text }
+
+  - name: bistro
+    label: "Bistro ēdienkartes"
+    files:
+      - name: menu
+        label: "Ēdienkartes (nedēļas, brokastu, dzērienu)"
+        file: src/data/menu.json
+        format: json
+        fields:
+          - label: "Pusdienu ēdienkarte"
+            name: lunch
+            widget: object
+            fields:
+              - { label: "Rādīt ēdienkarti lapā kā rindas (ne tikai PDF)", name: showRows, widget: boolean, default: false }
+              - { label: "Nosaukums", name: title, widget: string }
+              - { label: "Laiks", name: time, widget: string, required: false }
+              - { label: "Spēkā no", name: validFrom, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+              - { label: "Spēkā līdz", name: validTo, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false, required: false }
+              - { label: "PDF fails", name: pdf, widget: file, media_folder: "public/menu", public_folder: "/menu" }
+              - { label: "Foto (kartītei)", name: photo, widget: image, required: false }
+              - { label: "Piezīme", name: note, widget: string, required: false }
+              - label: "Sadaļas"
+                name: sections
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Sadaļa", name: title, widget: string }
+                  - { label: "Mērvienība (piem. €/gab.)", name: unit, widget: string, required: false }
+                  - label: "Ēdieni"
+                    name: items
+                    widget: list
+                    required: false
+                    summary: "{{fields.name}} — {{fields.price}}"
+                    fields:
+                      - { label: "Nosaukums", name: name, widget: string }
+                      - { label: "Svars", name: weight, widget: string, required: false }
+                      - { label: "Cena", name: price, widget: string }
+                      - { label: "Datums (dienas zupām)", name: date, widget: string, required: false }
+                      - { label: "Veselīgāka izvēle", name: healthy, widget: boolean, required: false, default: false }
+                  - label: "Grupas (piem. katru dienu / dienas zupas)"
+                    name: groups
+                    widget: list
+                    required: false
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: "Grupa", name: title, widget: string }
+                      - label: "Ēdieni"
+                        name: items
+                        widget: list
+                        summary: "{{fields.name}} — {{fields.price}}"
+                        fields:
+                          - { label: "Nosaukums", name: name, widget: string }
+                          - { label: "Svars", name: weight, widget: string, required: false }
+                          - { label: "Cena", name: price, widget: string }
+                          - { label: "Datums (YYYY-MM-DD)", name: date, widget: string, required: false }
+                          - { label: "Veselīgāka izvēle", name: healthy, widget: boolean, required: false, default: false }
+          - label: "Brokastu ēdienkarte"
+            name: breakfast
+            widget: object
+            fields:
+              - { label: "Nosaukums", name: title, widget: string }
+              - { label: "Laiks", name: time, widget: string, required: false }
+              - { label: "Spēkā no", name: validFrom, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+              - { label: "Spēkā līdz", name: validTo, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false, required: false }
+              - { label: "PDF fails", name: pdf, widget: file, media_folder: "public/menu", public_folder: "/menu" }
+              - { label: "Foto", name: photo, widget: image }
+          - label: "Dzērienkarte"
+            name: drinks
+            widget: object
+            fields:
+              - { label: "Nosaukums", name: title, widget: string }
+              - { label: "Laiks", name: time, widget: string, required: false }
+              - { label: "Spēkā no", name: validFrom, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+              - { label: "Spēkā līdz", name: validTo, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false, required: false }
+              - { label: "PDF fails", name: pdf, widget: file, media_folder: "public/menu", public_folder: "/menu" }
+              - { label: "Foto", name: photo, widget: image }
+
+  - name: konditoreja
+    label: "Konditorejas piedāvājums"
+    files:
+      - name: konditoreja
+        label: "Preces un cenas"
+        file: src/data/konditoreja.json
+        format: json
+        fields:
+          - { label: "Cenas spēkā no", name: pricesValidFrom, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+          - { label: "Pasūtījumu tālrunis", name: orderPhone, widget: string }
+          - { label: "Pasūtījumu e-pasts", name: orderEmail, widget: string }
+          - { label: "Cik dienas iepriekš jāpasūta", name: leadDays, widget: number, value_type: int }
+          - label: "Kategorijas"
+            name: categories
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ID (nemainīt)", name: id, widget: string }
+              - { label: "Nosaukums", name: title, widget: string }
+              - { label: "Piezīme (minimālais pasūtījums)", name: note, widget: string, required: false }
+              - label: "Preces"
+                name: items
+                widget: list
+                summary: "{{fields.name}} — {{fields.price}}"
+                fields:
+                  - { label: "Foto", name: img, widget: image, required: false }
+                  - { label: "Nosaukums", name: name, widget: string }
+                  - { label: "Apraksts", name: desc, widget: string, required: false }
+                  - { label: "Svars", name: weight, widget: string, required: false }
+                  - { label: "Cena (piem. 14.00 €/1 kg vai 0.50 €)", name: price, widget: string }
+                  - { label: "Silvas klasika", name: classic, widget: boolean, required: false, default: false }
+                  - label: "Alergēni (ES 14)"
+                    name: allergens
+                    widget: select
+                    multiple: true
+                    required: false
+                    options:
+                      - "Glutēnu saturoši graudaugi"
+                      - "Olas"
+                      - "Piens (laktoze)"
+                      - "Rieksti"
+                      - "Zemesrieksti"
+                      - "Soja"
+                      - "Sezama sēklas"
+                      - "Zivis"
+                      - "Vēžveidīgie"
+                      - "Gliemji"
+                      - "Selerijas"
+                      - "Sinepes"
+                      - "Lupīna"
+                      - "Sēra dioksīds un sulfīti"
+                  - label: "Īpašības"
+                    name: diet
+                    widget: select
+                    multiple: true
+                    required: false
+                    options:
+                      - { label: "Vegāns", value: vegan }
+                      - { label: "Veģetārs", value: vegetarian }
+                      - { label: "Bez lipekļa", value: gluten-free }
+                      - { label: "Bez laktozes", value: lactose-free }
+                      - { label: "Bez cukura", value: sugar-free }
+                  - { label: "Papildu informācija", name: info, widget: text, required: false }

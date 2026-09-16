@@ -1,18 +1,62 @@
-import { useRef, useState } from "react";
-import categories from "../data/konditoreja.json";
+import { useEffect, useRef, useState } from "react";
+import data from "../data/konditoreja.json";
 import { itemKey, pricing } from "../data/konditorejaUnits.js";
+import { lineById, telHref } from "../data/lines.js";
 import useCart from "../hooks/useCart.js";
+import Masthead from "../components/Masthead.jsx";
+import CategoryBar from "../components/konditoreja/CategoryBar.jsx";
 import CartBar from "../components/konditoreja/CartBar.jsx";
 import ItemSheet from "../components/konditoreja/ItemSheet.jsx";
 import OrderForm from "../components/konditoreja/OrderForm.jsx";
 import QtyStepper from "../components/konditoreja/QtyStepper.jsx";
+import Img from "../components/Img.jsx";
+import { ORDERING_ENABLED } from "../lib/features.js";
+import { track } from "../lib/analytics.js";
+import ui from "../styles/Page.module.css";
 import styles from "./Konditoreja.module.css";
 
-/** Satura rādītājs ar punktu līnijām un izstrādājumu skaitu. */
+const categories = data.categories;
+const ORDER_PHONE = data.orderPhone;
+const ORDER_EMAIL = data.orderEmail;
+
+/**
+ * Noslēgums, kamēr pasūtījumu sistēma ir izslēgta: tālrunis un e-pasts.
+ * Kad ORDERING_ENABLED = true, tā vietā ir forma.
+ */
+function PhoneOrderCta() {
+  return (
+    <div className={ui.cta}>
+      <div>
+        <h2 className={ui.ctaTitle}>pasūtījumi</h2>
+        <p className={ui.ctaText}>
+          Kūkas, tortes un citus izstrādājumus pasūtiet pa tālruni vai e-pastu — sazināsimies un
+          visu apstiprināsim. Pasūtījumus pieņemam vismaz {data.leadDays} dienas iepriekš.
+        </p>
+        <p className={ui.facts}>
+          <a href={telHref(ORDER_PHONE)}>{ORDER_PHONE}</a>
+          <a href={`mailto:${ORDER_EMAIL}`}>{ORDER_EMAIL}</a>
+        </p>
+      </div>
+      <div className={ui.actions}>
+        <a
+          className={`${ui.btn} ${ui.btnGhost}`}
+          href={`mailto:${ORDER_EMAIL}?subject=${encodeURIComponent("Konditorejas pasūtījums")}`}
+        >
+          Rakstīt e-pastu
+        </a>
+        <a className={ui.btn} href={telHref(ORDER_PHONE)} onClick={() => track("zvans", { vieta: "konditoreja" })}>
+          Zvanīt
+        </a>
+      </div>
+    </div>
+  );
+}
+
+/** Satura rādītājs ar punktu līnijām. */
 function MenuIndex() {
   return (
     <nav className={styles.index} aria-label="Piedāvājuma sadaļas">
-      <p className={styles.label} id="piedavajums">
+      <p className={ui.label} id="piedavajums">
         Piedāvājums
       </p>
       <ol className={styles.indexList}>
@@ -36,48 +80,39 @@ function MenuIndex() {
  */
 function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty }) {
   const { item, p } = entry;
+  const hasComposition = Boolean(item.allergens?.length);
 
   return (
     <li className={qty ? `${styles.row} ${styles.rowActive}` : styles.row}>
       <button type="button" className={styles.rowMain} onClick={onOpen}>
         {item.img ? (
-          <img
-            className={styles.thumb}
-            src={`/img/${item.img}`}
-            alt=""
-            loading="lazy"
-          />
+          <span className={styles.thumbBox}>
+            <Img className={styles.thumb} name={item.img} alt="" sizes="(min-width: 700px) 300px, 45vw" />
+          </span>
         ) : (
           <span className={styles.thumbEmpty} aria-hidden="true" />
         )}
 
         <span className={styles.rowText}>
-          <span className={styles.rowName}>{item.name}</span>
+          <span className={styles.rowName}>
+            {item.name}
+            {item.classic && <span className={ui.tag}>silvas klasika</span>}
+          </span>
           {item.desc && <span className={styles.rowDesc}>{item.desc}</span>}
           <span className={styles.rowMeta}>
             <span className={styles.rowPrice}>{p.shortPrice}</span>
-            {item.weight && (
-              <span className={styles.rowWeight}>{item.weight}</span>
-            )}
-            <span className={styles.rowMore}>sastāvs</span>
+            {item.weight && <span className={styles.rowWeight}>{item.weight}</span>}
+            <span className={styles.rowMore}>{hasComposition ? "sastāvs" : "vairāk"}</span>
           </span>
         </span>
 
-        <span className="visually-hidden">
-          Apskatīt informāciju par: {item.name}
-        </span>
+        <span className="visually-hidden">Apskatīt informāciju par: {item.name}</span>
       </button>
 
       {orderMode && (
         <div className={styles.rowAction}>
           {qty ? (
-            <QtyStepper
-              p={p}
-              qty={qty}
-              name={item.name}
-              compact
-              onChange={onSetQty}
-            />
+            <QtyStepper p={p} qty={qty} name={item.name} compact onChange={onSetQty} />
           ) : (
             <button
               type="button"
@@ -95,13 +130,20 @@ function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty }) {
 }
 
 export default function Konditoreja() {
+  const line = lineById.konditoreja;
   const cart = useCart();
   const [openEntry, setOpenEntry] = useState(null);
   const [formOpen, setFormOpen] = useState(false);
   // Pasūtīšanas režīms sākas izslēgts — lapa vispirms ir piedāvājums.
-  // Ja pārlūkā jau ir saglabātas preces, režīms atgriežas pats.
-  const [orderMode, setOrderMode] = useState(() => cart.lines.length > 0);
+  // Ja pārlūkā jau ir saglabātas preces, režīms ieslēdzas pats (pēc
+  // pirmās izdrukas, lai sakristu ar statisko HTML).
+  const [orderMode, setOrderMode] = useState(false);
   const menuRef = useRef(null);
+
+  useEffect(() => {
+    if (ORDERING_ENABLED && cart.ready && cart.lines.length > 0) setOrderMode(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cart.ready]);
 
   // Kad režīms ieslēdzas, klients jāaizved atpakaļ pie precēm.
   const enableOrderMode = () => {
@@ -118,49 +160,43 @@ export default function Konditoreja() {
     setFormOpen(false);
   };
 
-  const listClass = orderMode
-    ? `${styles.menuList} ${styles.menuListOrder}`
-    : styles.menuList;
+  const listClass = orderMode ? `${styles.menuList} ${styles.menuListOrder}` : styles.menuList;
 
   return (
-    <div className={styles.page}>
-      <div className={styles.shell}>
-        <header className={styles.mast}>
-          <h1 className={styles.title}>konditoreja</h1>
-        </header>
-
+    <div className={ui.page} data-cluster={line.cluster}>
+      <div className={ui.shell}>
+        <Masthead line={line} />
         <MenuIndex />
+      </div>
 
+      {/* fiksēta josla zem galvenes; parādās, kad rādītājs aizritināts */}
+      <CategoryBar categories={categories} />
+
+      <div className={ui.shell}>
         <div ref={menuRef}>
           {categories.map((cat) => (
-            <section key={cat.id} className={styles.section}>
-              <div className={styles.sectionHead}>
-                <h2 id={cat.id} className={styles.heading}>
+            <section key={cat.id} className={ui.section} aria-labelledby={cat.id}>
+              <div className={ui.sectionHead}>
+                <h2 id={cat.id} className={ui.heading}>
                   {cat.title}
                 </h2>
+                {cat.note && (
+                  <p className={ui.facts}>
+                    <span>
+                      minimālais pasūtījums{" "}
+                      {cat.note
+                        .replace(/^Pasūtījuma minimālais daudzums\s*/i, "")
+                        .replace(/^Standarta tortes minimālais svars\s*/i, "")}
+                    </span>
+                  </p>
+                )}
               </div>
-
-              {cat.note && (
-                <p className={styles.note}>
-                  <span>Minimālais pasūtījums</span>
-                  <span className={styles.noteValue}>
-                    {cat.note.replace(/^Pasūtījuma minimālais daudzums\s*/i, "")
-                      .replace(/^Standarta tortes minimālais svars\s*/i, "")}
-                  </span>
-                </p>
-              )}
 
               <ul className={listClass}>
                 {cat.items.map((item) => {
                   const key = itemKey(cat.id, item);
                   const p = pricing(item, cat.id);
-                  const entry = {
-                    item,
-                    p,
-                    categoryId: cat.id,
-                    categoryTitle: cat.title,
-                    key,
-                  };
+                  const entry = { item, p, categoryId: cat.id, categoryTitle: cat.title, key };
                   return (
                     <MenuRow
                       key={key}
@@ -174,34 +210,34 @@ export default function Konditoreja() {
                   );
                 })}
               </ul>
-
-              <a className={styles.backToIndex} href="#piedavajums">
-                ↑ piedāvājums
-              </a>
             </section>
           ))}
         </div>
 
-        <div className={styles.ctaBlock}>
-          <div>
-            <h2 className={styles.ctaTitle}>sazināties vai pasūtīt</h2>
-            <p className={styles.ctaText}>
-              Uzrakstiet mums ziņu vai izveidojiet pasūtījumu no piedāvājuma.
-              Pasūtījums nav pirkums — mēs sazināsimies un visu apstiprināsim.
-            </p>
-          </div>
-          {!formOpen && (
-            <button
-              type="button"
-              className={styles.btn}
-              onClick={() => setFormOpen(true)}
-            >
-              Sazināties vai pasūtīt
-            </button>
-          )}
-        </div>
+        <p className={ui.note}>
+          Informāciju par alergēniem sniedzam konditorejā un pa tālruni {ORDER_PHONE}.
+        </p>
 
-        {formOpen && (
+        {!ORDERING_ENABLED && <PhoneOrderCta />}
+
+        {ORDERING_ENABLED && (
+          <div className={ui.cta}>
+            <div>
+              <h2 className={ui.ctaTitle}>sazināties vai pasūtīt</h2>
+              <p className={ui.ctaText}>
+                Uzrakstiet mums ziņu vai izveidojiet pasūtījumu no piedāvājuma. Pasūtījums nav
+                pirkums — mēs sazināsimies un visu apstiprināsim.
+              </p>
+            </div>
+            {!formOpen && (
+              <button type="button" className={ui.btn} onClick={() => setFormOpen(true)}>
+                Sazināties vai pasūtīt
+              </button>
+            )}
+          </div>
+        )}
+
+        {ORDERING_ENABLED && formOpen && (
           <OrderForm
             cart={cart}
             orderMode={orderMode}
@@ -224,11 +260,7 @@ export default function Konditoreja() {
       )}
 
       {orderMode && !formOpen && (
-        <CartBar
-          cart={cart}
-          onOpen={() => setFormOpen(true)}
-          onExit={exitOrderMode}
-        />
+        <CartBar cart={cart} onOpen={() => setFormOpen(true)} onExit={exitOrderMode} />
       )}
     </div>
   );

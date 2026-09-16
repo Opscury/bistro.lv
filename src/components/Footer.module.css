@@ -1,13 +1,107 @@
+/* ---------------------------------------------------------------
+   Kājene — hairline, četras kolonnas ar vietām, apakšā Silvas fakti.
+   Uz tās pašas čaulas kā galvene un saturs.
+   --------------------------------------------------------------- */
+
 .footer {
-  margin-top: 48px;
-  padding: 25px 0;
-  background: var(--c-green-pale);
+  margin-top: clamp(48px, 8vw, 96px);
+  border-top: 1px solid var(--c-rule);
+  background: var(--c-bg);
 }
 
-.text {
-  max-width: var(--w-content);
+.inner {
+  max-width: calc(var(--w-shell) + 2 * var(--gut));
   margin-inline: auto;
-  padding-inline: var(--sp-30);
-  text-align: center;
-  font-size: var(--fs-small);
+  padding: 28px var(--gut) max(22px, env(safe-area-inset-bottom));
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 24px;
+}
+
+.col {
+  min-width: 0;
+}
+
+.colTitle {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 600, "wdth" 94, "opsz" 24;
+  font-size: 19px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-transform: lowercase;
+  margin-bottom: 8px;
+}
+
+.colTitle:hover,
+.colTitle:focus-visible {
+  color: var(--c-green);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--c-ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.line {
+  display: block;
+}
+
+a.line:hover,
+a.line:focus-visible {
+  color: var(--c-green);
+}
+
+.bottom {
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-rule-soft);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.facts,
+.legal {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--c-ink-2);
+}
+
+.facts > * {
+  white-space: nowrap;
+}
+
+.facts > * + *::before {
+  content: "\00a0\00b7\0020";
+  white-space: normal;
+  color: var(--c-orn);
+}
+
+.facts a:hover,
+.facts a:focus-visible,
+.legal a:hover,
+.legal a:focus-visible {
+  color: var(--c-green);
+}
+
+.legal a {
+  text-decoration: underline;
+  text-decoration-color: var(--c-rule);
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px 32px;
+  }
 }

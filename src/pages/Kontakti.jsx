@@ -1,174 +1,229 @@
 import { useState } from "react";
-import { contact } from "../data/site.js";
+import { Link } from "react-router-dom";
+import {
+  company, lines, hoursRows, fullAddress, mapLinks, telHref, phoneList, emailList,
+} from "../data/lines.js";
+import { sendForm, fieldsToText, SEND_METHOD } from "../lib/sendForm.js";
+import { track } from "../lib/analytics.js";
+import { ENQUIRY_FORM_ENABLED } from "../lib/features.js";
+import ui from "../styles/Page.module.css";
 import styles from "./Kontakti.module.css";
 
-/** One label/value row on the pale-green background. */
-function Row({ label, value, wide }) {
-  return (
-    <div className={wide ? styles.rowWide : styles.row}>
-      <span>{label}</span>
-      <span>{value}</span>
-    </div>
-  );
-}
-
 function ContactForm() {
-  const [sent, setSent] = useState(false);
-  const [values, setValues] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: "",
-  });
+  const [sent, setSent] = useState(null);
+  const [error, setError] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const [values, setValues] = useState({ name: "", phone: "", email: "", message: "" });
+  const to = lines.find((l) => l.id === "banketi").email;
 
-  const update = (field) => (e) =>
-    setValues((v) => ({ ...v, [field]: e.target.value }));
+  const update = (field) => (e) => setValues((v) => ({ ...v, [field]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // The original site posted to a Jetpack form endpoint. Until a backend
-    // is wired up, hand the message to the visitor's mail client.
-    const body = `${values.message}\n\n${values.name}\n${values.phone}\n${values.email}`;
-    window.location.href = `mailto:banketins@inbox.lv?subject=${encodeURIComponent(
-      "Ziņa no bistro.lv"
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setError(null);
+    setBusy(true);
+    try {
+      const res = await sendForm("kontakti", values, {
+        to,
+        subject: "Ziņa no bistro.lv",
+        body: fieldsToText([
+          ["Ziņa", values.message],
+          ["Vārds", values.name],
+          ["Telefons", values.phone],
+          ["E-pasts", values.email],
+        ]),
+      });
+      track("forma", { veids: "kontakti" });
+      setSent(res.method);
+    } catch {
+      setError(`Ziņu neizdevās nosūtīt. Rakstiet uz ${to}.`);
+    } finally {
+      setBusy(false);
+    }
   };
 
   if (sent) {
     return (
-      <div className={styles.sent}>
+      <div className={ui.slip} aria-live="polite">
+        <p className={`${ui.label} ${ui.slipHead}`}>Ziņa mums</p>
+        <h3 className={ui.sentTitle}>{sent === "mailto" ? "vēstule sagatavota" : "ziņa nosūtīta"}</h3>
+        <p className={ui.sentText}>
+          {sent === "mailto"
+            ? "Jūsu e-pasta programmā atvērās vēstule — nosūtiet to, un mēs atbildēsim. Ja tā neatvērās, rakstiet uz "
+            : "Paldies! Atbildēsim uz norādīto e-pastu vai tālruni. Steidzamiem jautājumiem rakstiet uz "}
+          <a href={`mailto:${to}`}>{to}</a>.
+        </p>
         <button
           type="button"
-          className={styles.back}
-          onClick={() => setSent(false)}
+          className={`${ui.btn} ${ui.btnGhost} ${styles.back}`}
+          onClick={() => setSent(null)}
         >
-          ← Back
+          ← Atpakaļ
         </button>
-        <h4>Jūsu ziņa ir aizsūtīta</h4>
       </div>
     );
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <p className={styles.formTitle}>Nosūtiet mums ziņu šeit!</p>
+    <form className={ui.slip} onSubmit={handleSubmit} name="kontakti">
+      <p className={`${ui.label} ${ui.slipHead}`}>Ziņa mums</p>
+      <p className={ui.slipTitle}>Nosūtiet mums ziņu šeit!</p>
 
-      <div className={styles.formRow}>
-        <label className={styles.field}>
+      <div className={ui.formRow}>
+        <label className={ui.field}>
           <span>
             Vārds <em>(nepieciešams)</em>
           </span>
-          <input
-            type="text"
-            required
-            value={values.name}
-            onChange={update("name")}
-          />
+          <input id="k-name" name="name" type="text" required autoComplete="name" value={values.name} onChange={update("name")} />
         </label>
 
-        <label className={styles.field}>
+        <label className={ui.field}>
           <span>
             Telefona Nr. <em>(nepieciešams)</em>
           </span>
-          <input
-            type="tel"
-            required
-            value={values.phone}
-            onChange={update("phone")}
-          />
+          <input id="k-phone" name="phone" type="tel" required autoComplete="tel" value={values.phone} onChange={update("phone")} />
         </label>
       </div>
 
-      <label className={styles.field}>
+      <label className={ui.field}>
         <span>
           E-pasts <em>(nepieciešams)</em>
         </span>
-        <input
-          type="email"
-          required
-          value={values.email}
-          onChange={update("email")}
-        />
+        <input id="k-email" name="email" type="email" required autoComplete="email" value={values.email} onChange={update("email")} />
       </label>
 
-      <label className={styles.field}>
+      <label className={ui.field}>
         <span>Ziņojums</span>
-        <textarea rows={7} value={values.message} onChange={update("message")} />
+        <textarea id="k-message" name="message" rows={6} value={values.message} onChange={update("message")} />
       </label>
 
-      <button type="submit" className={`btn ${styles.submit}`}>
-        Sūtīt
+      {error && <p className={ui.error}>{error}</p>}
+
+      <button type="submit" className={`${ui.btn} ${ui.submit}`} disabled={busy}>
+        {busy ? "Sūta…" : SEND_METHOD === "mailto" ? "Sagatavot vēstuli" : "Sūtīt"}
       </button>
     </form>
   );
 }
 
-export default function Kontakti() {
+function Place({ line }) {
+  const maps = mapLinks(line);
   return (
-    <div className={styles.page}>
-      <div className={styles.columns}>
-        <div className={styles.info}>
-          <h1 className={styles.heading}>DARBA LAIKS</h1>
-          {contact.hours.map((group) => (
-            <div key={group.place} className={styles.group}>
-              <p className={styles.place}>{group.place}</p>
-              {group.rows.map(([label, value]) => (
-                <Row key={label} label={label} value={value} />
-              ))}
-            </div>
-          ))}
+    <div className={styles.place}>
+      <h3 className={ui.sub}>{line.name}</h3>
+      <p className={styles.address}>{fullAddress(line)}</p>
+      <ul className={ui.rows}>
+        {hoursRows(line, { long: true }).map((r) => (
+          <li key={r.label} className={ui.row}>
+            <span className={ui.rowLabel}>{r.label}</span>
+            <i className={ui.leader} aria-hidden="true" />
+            <span className={r.closed ? `${ui.rowValue} ${ui.rowMuted}` : ui.rowValue}>{r.value}</span>
+          </li>
+        ))}
+        {line.phone && (
+          <li className={ui.row}>
+            <span className={ui.rowLabel}>{line.phoneLabel || "Tālrunis"}</span>
+            <i className={ui.leader} aria-hidden="true" />
+            <a className={ui.rowValue} href={telHref(line.phone)} onClick={() => track("zvans", { vieta: line.id })}>
+              {line.phone}
+            </a>
+          </li>
+        )}
+      </ul>
+      <p className={`${ui.facts} ${styles.mapLinks}`}>
+        <a href={maps.google} target="_blank" rel="noreferrer">
+          Google Maps ↗
+        </a>
+        <a href={maps.waze} target="_blank" rel="noreferrer">
+          Waze ↗
+        </a>
+      </p>
+    </div>
+  );
+}
 
-          <h2 className={styles.heading}>Tālruņi</h2>
-          <div className={styles.group}>
-            {contact.phones.map(([label, value]) => (
-              <Row
-                key={label}
-                label={label}
-                value={
-                  <a href={`tel:${value.replace(/\s/g, "")}`}>{value}</a>
-                }
-              />
-            ))}
+export default function Kontakti() {
+  const places = lines.filter((l) => l.address);
+
+  return (
+    <div className={ui.page}>
+      <div className={ui.shell}>
+        <header className={ui.mast}>
+          <h1 className={ui.title}>kontakti</h1>
+          <p className={ui.facts}>
+            <span>{company.name}</span>
+            <span>{company.city}</span>
+            <span>kopš {company.founded}</span>
+          </p>
+        </header>
+
+        <div className={styles.columns}>
+          <div className={styles.info}>
+            <section aria-labelledby="k-vietas">
+              <h2 className={styles.heading} id="k-vietas">
+                vietas un darba laiks
+              </h2>
+              <div className={styles.places}>
+                {places.map((l) => (
+                  <Place key={l.id} line={l} />
+                ))}
+              </div>
+            </section>
+
+            <section aria-labelledby="k-talruni">
+              <h2 className={styles.heading} id="k-talruni">
+                tālruņi
+              </h2>
+              <ul className={ui.rows}>
+                {phoneList().map((p) => (
+                  <li key={p.value} className={ui.row}>
+                    <span className={ui.rowLabel}>{p.label}</span>
+                    <i className={ui.leader} aria-hidden="true" />
+                    <a className={ui.rowValue} href={telHref(p.value)}>
+                      {p.value}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section aria-labelledby="k-epasts">
+              <h2 className={styles.heading} id="k-epasts">
+                e-pasts
+              </h2>
+              <ul className={ui.rows}>
+                {emailList().map((e) => (
+                  <li key={e.value} className={styles.stack}>
+                    <span className={styles.stackLabel}>{e.label}</span>
+                    <a className={styles.stackValue} href={`mailto:${e.value}`}>
+                      {e.value}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section aria-labelledby="k-rekviziti" id="rekviziti">
+              <h2 className={styles.heading} id="k-rekviziti">
+                rekvizīti
+              </h2>
+              <div className={styles.requisites}>
+                {company.requisites.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
+            </section>
           </div>
 
-          <h2 className={styles.heading}>Adreses</h2>
-          <div className={styles.group}>
-            {contact.addresses.map(([label, value]) => (
-              <Row key={label} label={label} value={value} wide />
-            ))}
+          <div className={styles.side}>
+            <ContactForm />
+            {ENQUIRY_FORM_ENABLED && (
+              <p className={ui.note}>
+                Banketu pieteikumus ērtāk sūtīt no <Link to="/banketi#pieteikums">banketu lapas</Link> — tur
+                ir lauki datumam, viesu skaitam un vietai.
+              </p>
+            )}
           </div>
-
-          <h2 className={styles.heading}>E-pasts</h2>
-          <div className={styles.group}>
-            {contact.emails.map(([label, value]) => (
-              <Row
-                key={label}
-                label={label}
-                value={<a href={`mailto:${value}`}>{value}</a>}
-                wide
-              />
-            ))}
-          </div>
-
-          <h2 className={styles.heading}>Rekvizīti</h2>
-          <div className={styles.requisites}>
-            {contact.requisites.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
-          </div>
-        </div>
-
-        <div className={styles.side}>
-          <ContactForm />
-          <iframe
-            className={styles.map}
-            src={contact.mapSrc}
-            title="Karte — Driksas iela 7, Jelgava"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          />
         </div>
       </div>
     </div>

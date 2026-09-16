@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import categories from "../data/konditoreja.json";
+import data from "../data/konditoreja.json";
 import { itemKey, pricing } from "../data/konditorejaUnits.js";
 
 const STORAGE_KEY = "silva-konditoreja-cart-v1";
 
 /** Ātrai meklēšanai: atslēga -> { item, category, pricing } */
 const CATALOG = new Map();
-for (const cat of categories) {
+for (const cat of data.categories) {
   for (const item of cat.items) {
     CATALOG.set(itemKey(cat.id, item), {
       item,
@@ -40,17 +40,26 @@ function load() {
 /**
  * Konditorejas grozs. Nav pirkums — tikai saraksts, ko klients nosūta
  * kā pieteikumu. Glabājas pārlūkā, lai nepazustu, pārlādējot lapu.
+ * Pārlūka atmiņu nolasa tikai pēc pirmās izdrukas, lai statiskais HTML
+ * (prerender) un pirmais React skats sakristu.
  */
 export default function useCart() {
-  const [qtys, setQtys] = useState(load);
+  const [qtys, setQtys] = useState({});
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    setQtys(load());
+    setReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!ready) return;
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(qtys));
     } catch {
       /* privātais režīms u.tml. — grozs vienkārši nesaglabāsies */
     }
-  }, [qtys]);
+  }, [qtys, ready]);
 
   const setQty = useCallback((key, qty) => {
     const entry = CATALOG.get(key);
@@ -115,6 +124,7 @@ export default function useCart() {
     lines,
     count: lines.length,
     total,
+    ready,
     add,
     setQty,
     remove,

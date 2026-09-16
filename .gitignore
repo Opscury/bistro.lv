@@ -1,9 +1,12 @@
 node_modules
 dist
+.env
+.env.*
+!.env.example
 .DS_Store
-*.local
+Thumbs.db
 
-# Full-size originals extracted from the saved bistro.lv pages.
-# public/img holds the optimised 1400px WebP versions the site uses.
-_source-images-fullsize
-_delete-me
+# atkritumi no izstrādes — dzēšami, nevis komitējami
+_delete-me/
+# oriģinālie pilna izmēra attēli (202 MB) — glabāt ārpus repo
+_source-images-fullsize/

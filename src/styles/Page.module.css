@@ -1,0 +1,786 @@
+/* ===============================================================
+   KOPĪGĀS LAPU DETAĻAS
+   ---------------------------------------------------------------
+   Visas lapas lieto šo moduli: krēmīgs fons, melnas līnijas, mazie
+   burti Bricolage Grotesque, DM Mono faktiem un cipariem, punktu
+   līnijas starp nosaukumu un vērtību. Katrai lapai ir savs mazs
+   modulis tikai izkārtojumam.
+
+   Marķieri nāk no global.css (--c-*, --font-*, --w-shell, --gut,
+   --line-* klasteru vērtības).
+   =============================================================== */
+
+.page {
+  padding-bottom: 1px;
+  background: var(--line-ground);
+}
+
+.shell {
+  max-width: var(--w-shell);
+  margin-inline: auto;
+  padding-inline: var(--gut);
+}
+
+/* ---------------------------------------------------------------
+   Masthead — viens vārds mazajiem burtiem, zem tā fakti
+   --------------------------------------------------------------- */
+
+.mast {
+  padding-top: clamp(28px, 7vw, 64px);
+  padding-bottom: clamp(24px, 5vw, 44px);
+  border-bottom: 2px solid var(--line-rule);
+}
+
+/* Silvas atbalstītajām līnijām — mazs "Silva" virs nosaukuma */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(10px, 2vw, 16px);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--c-ink-2);
+}
+
+.eyebrowMark {
+  height: 18px;
+  width: auto;
+}
+
+.title {
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 700, "wdth" 86, "opsz" 72;
+  font-size: clamp(46px, 13.5vw, 108px);
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  text-transform: lowercase;
+  text-wrap: balance;
+  margin: 0;
+  color: var(--c-ink);
+}
+
+.lead {
+  max-width: 44ch;
+  padding-top: clamp(16px, 3vw, 24px);
+  font-size: clamp(16px, 2.2vw, 18px);
+  line-height: 1.5;
+  color: var(--c-ink);
+}
+
+/* ---------------------------------------------------------------
+   Fakti — adrese · laiks · tālrunis, monospace kā uz čeka.
+   Rinda lūst tikai aiz punkta. Tas ir teksts, pēc kura rīkojas,
+   tāpēc 14px, un saitēm ir 24px augsts skāriena lauks.
+   --------------------------------------------------------------- */
+
+.facts {
+  padding-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.75;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink-2);
+}
+
+.facts > * {
+  white-space: nowrap;
+}
+
+.facts > * + *::before {
+  content: "\00a0\00b7\0020";
+  white-space: normal;
+  color: var(--c-orn);
+}
+
+.facts a {
+  display: inline-block;
+  padding: 2px 0;
+  color: var(--c-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--c-rule);
+  text-underline-offset: 4px;
+}
+
+.facts a:hover,
+.facts a:focus-visible {
+  color: var(--c-green);
+  text-decoration-color: var(--c-green-bright);
+}
+
+/* ---------------------------------------------------------------
+   Sadaļas
+   --------------------------------------------------------------- */
+
+.section {
+  padding-top: clamp(40px, 7vw, 72px);
+  scroll-margin-top: calc(var(--header-h) + var(--sticky-extra) + 12px);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  padding-bottom: 10px;
+  margin-bottom: clamp(18px, 3vw, 26px);
+  border-bottom: 2px solid var(--line-rule);
+}
+
+.sectionHead .facts {
+  padding-top: 0;
+}
+
+.heading {
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 600, "wdth" 90, "opsz" 40;
+  font-size: clamp(27px, 6vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+/* mazāks virsraksts sadaļas iekšienē */
+.sub {
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 600, "wdth" 94, "opsz" 24;
+  font-size: clamp(20px, 3.4vw, 24px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-transform: lowercase;
+  margin: 0 0 10px;
+}
+
+.sub em {
+  font-style: normal;
+  font-variation-settings: "wght" 400, "wdth" 100;
+  font-size: 0.72em;
+  letter-spacing: 0;
+  color: var(--c-ink-2);
+}
+
+/* strukturāla etiķete — mono lielie burti */
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--c-ink-2);
+}
+
+/* ---------------------------------------------------------------
+   Teksts
+   --------------------------------------------------------------- */
+
+.prose {
+  max-width: 62ch;
+  font-size: 16px;
+  line-height: 1.62;
+  color: var(--c-ink);
+}
+
+.prose p + p,
+.prose p + .list,
+.prose .list + p {
+  margin-top: 0.85em;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--c-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* saraksts ar īsu domuzīmi */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  position: relative;
+  padding-left: 1.3em;
+}
+
+.list li + li {
+  margin-top: 0.35em;
+}
+
+.list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--c-orn);
+}
+
+/* piezīme zem sadaļas — mono, mazs */
+.note {
+  padding-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--c-ink-3);
+}
+
+/* ---------------------------------------------------------------
+   Rindas ar punktu līniju: nosaukums ........ vērtība
+   --------------------------------------------------------------- */
+
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Garš nosaukums lūst pats sevī; punktu līnija un vērtība paliek
+   pie tā pēdējās rindas. */
+.row {
+  display: flex;
+  align-items: baseline;
+  align-items: last baseline;
+  column-gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--c-rule-soft);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.rowLabel {
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.rowLabel small {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--c-ink-3);
+  white-space: nowrap;
+  margin-left: 6px;
+}
+
+.leader {
+  flex: 1 1 24px;
+  min-width: 24px;
+  border-bottom: 1px dotted var(--c-rule);
+  transform: translateY(-4px);
+}
+
+.rowValue {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+a.rowValue {
+  display: inline-block;
+  padding: 3px 0;
+}
+
+a.rowValue:hover,
+a.rowValue:focus-visible {
+  color: var(--c-green);
+}
+
+.rowMuted {
+  color: var(--c-ink-3);
+  font-weight: 400;
+}
+
+/* mazs zīmols rindā: "silvas klasika", "veselīgāka izvēle" */
+.tag {
+  display: inline-block;
+  vertical-align: 1px;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border: 1px solid var(--c-green-bright);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--c-green);
+  white-space: nowrap;
+}
+
+/* klusāks zīmols — ēdienkartes "veselīgāk" */
+.tagSoft {
+  border-color: transparent;
+  padding-inline: 0;
+  margin-left: 6px;
+}
+
+/* ---------------------------------------------------------------
+   Kartīte: foto, nosaukums ar punktu līniju un bultiņu
+   --------------------------------------------------------------- */
+
+.card {
+  display: block;
+  color: inherit;
+}
+
+.frame {
+  overflow: hidden;
+  background: var(--c-rule-soft);
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+a.card:hover .photo {
+  transform: scale(1.03);
+}
+
+.nameRow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-top: 14px;
+}
+
+.name {
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 600, "wdth" 90, "opsz" 32;
+  font-size: clamp(22px, 4.6vw, 27px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  margin: 0;
+  transition: color 0.15s ease;
+}
+
+.arrow {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1;
+  color: var(--c-ink-2);
+  white-space: nowrap;
+  transition: color 0.15s ease, transform 0.25s ease;
+}
+
+a.card:hover .name,
+a.card:focus-visible .name,
+a.card:hover .arrow,
+a.card:focus-visible .arrow {
+  color: var(--c-green);
+}
+
+a.card:hover .arrow {
+  transform: translateX(3px);
+}
+
+.cardMeta {
+  padding-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink-2);
+}
+
+.cardText {
+  padding-top: 8px;
+  max-width: 42ch;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--c-ink-2);
+}
+
+/* ---------------------------------------------------------------
+   Soļi — "kā tas notiek": numurs mono, nosaukums, teksts
+   --------------------------------------------------------------- */
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px 32px;
+  counter-reset: step;
+}
+
+.step {
+  counter-increment: step;
+  padding-top: 12px;
+  border-top: 1px solid var(--c-rule);
+}
+
+.step::before {
+  content: counter(step, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--c-ink-3);
+  margin-bottom: 8px;
+}
+
+.stepTitle {
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 600, "wdth" 94, "opsz" 24;
+  font-size: 21px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-transform: lowercase;
+  margin: 0 0 6px;
+}
+
+.stepText {
+  max-width: 34ch;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--c-ink-2);
+}
+
+@media (min-width: 700px) {
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------------------------------------------------------------
+   Čipu josla — kategoriju izvēle, kas paliek redzama ritinot
+   --------------------------------------------------------------- */
+
+.chipBar {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--c-bg) 94%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--c-rule);
+  /* lapas augšā paslēpta — tur ir satura rādītājs */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+}
+
+.chipBarVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s;
+}
+
+.chipShell {
+  max-width: calc(var(--w-shell) + 2 * var(--gut));
+  margin-inline: auto;
+  padding-inline: var(--gut);
+}
+
+.chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 500, "wdth" 96;
+  font-size: 15px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.chip:hover,
+.chip:focus-visible {
+  color: var(--c-green);
+}
+
+@media (min-width: 900px) {
+  .chips {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+}
+
+.chipActive {
+  background: var(--c-ink);
+  color: var(--c-paper);
+}
+
+.chipActive:hover,
+.chipActive:focus-visible {
+  color: var(--c-paper);
+}
+
+/* ---------------------------------------------------------------
+   Pogas
+   --------------------------------------------------------------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--c-green);
+  color: var(--c-paper);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--c-ink);
+  color: var(--c-paper);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--c-green);
+  box-shadow: inset 0 0 0 1.5px var(--c-green-bright);
+}
+
+.btnGhost:hover,
+.btnGhost:focus-visible {
+  background: var(--c-green);
+  color: var(--c-paper);
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------------------
+   Forma uz "papīra" — Kontakti, banketu pieteikums, pasūtījuma lapa
+   --------------------------------------------------------------- */
+
+.slip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-paper);
+  padding: 22px var(--gut) 26px;
+  box-shadow: 0 1px 2px rgba(20, 22, 28, 0.06), 0 8px 24px rgba(20, 22, 28, 0.07);
+}
+
+.slipHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--c-ink);
+  color: var(--c-ink);
+}
+
+.slipTitle {
+  padding: 16px 0 18px;
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 600, "wdth" 94;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 14px;
+}
+
+.field > span {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--c-ink-2);
+}
+
+.field em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--c-ink-3);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 12px;
+  border: 0;
+  border-bottom: 1.5px solid var(--c-rule);
+  border-radius: 2px 2px 0 0;
+  background: #f8f4ea;
+  color: var(--c-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+
+.field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--c-ink-2) 50%),
+    linear-gradient(135deg, var(--c-ink-2) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 20px, calc(100% - 13px) 20px;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 34px;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--c-green-bright);
+  outline-offset: 1px;
+  border-bottom-color: var(--c-green-bright);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.hint {
+  padding-top: 2px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--c-ink-3);
+}
+
+.error {
+  padding: 11px 13px;
+  margin-bottom: 12px;
+  background: var(--c-error-bg);
+  border-left: 3px solid var(--c-error);
+  font-size: 14px;
+}
+
+.submit {
+  align-self: stretch;
+  margin-top: 4px;
+}
+
+.sentTitle {
+  margin: 16px 0 8px;
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 600, "wdth" 94;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+}
+
+.sentText {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--c-ink-2);
+}
+
+.sentText a {
+  color: var(--c-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 560px) {
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Noslēgums — tāpat visās lapās
+   --------------------------------------------------------------- */
+
+.cta {
+  margin-top: clamp(48px, 8vw, 88px);
+  padding-top: 26px;
+  border-top: 2px solid var(--line-rule);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ctaTitle {
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 600, "wdth" 92;
+  font-size: clamp(24px, 5vw, 36px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.ctaText {
+  max-width: 40ch;
+  padding-top: 8px;
+  font-size: 14.5px;
+  color: var(--c-ink-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo,
+  .name,
+  .arrow,
+  .btn,
+  .chip,
+  .chipBar {
+    transition: none;
+  }
+
+  a.card:hover .photo,
+  a.card:hover .arrow {
+    transform: none;
+  }
+}

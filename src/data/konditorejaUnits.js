@@ -100,7 +100,8 @@ function shortPrice(min, max, isKg) {
 
 /** Stabila atslēga grozam — vārds var atkārtoties, attēls nē. */
 export function itemKey(categoryId, item) {
-  return `${categoryId}|${item.img || item.name}`;
+  const img = (item.img || "").replace(/^\/?img\//, "");
+  return `${categoryId}|${img || item.name}`;
 }
 
 /** 1 -> "1 kg", 1.5 -> "1.5 kg", 12 -> "12 gab." */

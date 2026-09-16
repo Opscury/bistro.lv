@@ -1,0 +1,186 @@
+{
+  "company": {
+    "name": "Silva",
+    "legalName": "SIA “Viktorija B”",
+    "founded": 1994,
+    "city": "Jelgava",
+    "url": "https://bistro.lv",
+    "instagram": "https://www.instagram.com/bistro_silva/",
+    "instagramHandle": "@bistro_silva",
+    "feedbackPhone": "+371 29 266 586",
+    "feedbackEmail": "siaviktorijab@inbox.lv",
+    "requisites": [
+      "SIA “Viktorija B”",
+      "Reģ. Nr. 43603036429",
+      "AS Citadele banka",
+      "Konts LV35PARX0012116960003"
+    ]
+  },
+  "lines": [
+    {
+      "id": "bistro",
+      "name": "bistro",
+      "cluster": "core",
+      "path": "/bistro",
+      "schemaType": "Restaurant",
+      "address": {
+        "street": "Driksas iela 9",
+        "city": "Jelgava",
+        "postal": "LV-3001"
+      },
+      "hours": [
+        {
+          "days": [
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr"
+          ],
+          "open": "08:00",
+          "close": "17:00"
+        },
+        {
+          "days": [
+            "Sa",
+            "Su"
+          ],
+          "closed": true
+        }
+      ],
+      "phone": null,
+      "email": null,
+      "photo": "sadala_bistro.webp",
+      "alt": "Trīs bļodas ar pusdienu ēdieniem uz lina galdauta",
+      "desc": "Jauna ēdienkarte katru nedēļu. Darba dienu rītos līdz 11.00 – brokastu piedāvājums."
+    },
+    {
+      "id": "konditoreja",
+      "name": "konditoreja",
+      "cluster": "core",
+      "path": "/konditoreja",
+      "schemaType": "Bakery",
+      "address": {
+        "street": "Driksas iela 7",
+        "city": "Jelgava",
+        "postal": "LV-3001"
+      },
+      "hours": [
+        {
+          "days": [
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr"
+          ],
+          "open": "09:00",
+          "close": "18:00"
+        },
+        {
+          "days": [
+            "Sa"
+          ],
+          "open": "09:00",
+          "close": "16:00"
+        },
+        {
+          "days": [
+            "Su"
+          ],
+          "open": "10:00",
+          "close": "16:00"
+        }
+      ],
+      "phone": "+371 20 20 21 17",
+      "phoneLabel": "Konditorejas pasūtījumiem",
+      "email": "banketins@inbox.lv",
+      "photo": "sadala_konditoreja.webp",
+      "alt": "Riekstu kēkss ar glazūru uz koka dēlīša",
+      "desc": "Kūkas, kliņģeri, smalkmaizītes un viss cits, ko sirds kāro! Nāc baudīt uz vietas vai pasūti."
+    },
+    {
+      "id": "tejas-namins",
+      "name": "tējas namiņš",
+      "cluster": "teja",
+      "path": "/tejas-namins",
+      "schemaType": "CafeOrCoffeeShop",
+      "address": {
+        "street": "Pilssalas iela 2a",
+        "city": "Jelgava",
+        "postal": "LV-3001"
+      },
+      "hours": [
+        {
+          "days": [
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa",
+            "Su"
+          ],
+          "open": "11:00",
+          "close": "20:00"
+        }
+      ],
+      "phone": "+371 22 119 119",
+      "phoneLabel": "Tējas namiņš",
+      "email": null,
+      "photo": "sadala_tejas_namins.webp",
+      "alt": "Tējas namiņš Pasta salā ziemas vakarā",
+      "desc": "Omulīgs namiņš Pasta salā starp Lielupi un Driksu, kur baudīt dzērienus, sāļas uzkodas un saldus našķus."
+    },
+    {
+      "id": "banketi",
+      "name": "banketi",
+      "cluster": "banketi",
+      "path": "/banketi",
+      "schemaType": "FoodService",
+      "address": null,
+      "hours": [],
+      "phone": "+371 22 00 98 89",
+      "phoneLabel": "Banketu pasūtījumiem",
+      "email": "banketins@inbox.lv",
+      "photo": "sadala_banketi.webp",
+      "alt": "Klāts svētku galds ar ziediem un dzērieniem",
+      "desc": "Ēdienkartes pielāgotas jebkuram pasākumam. Sazinieties ar mums, lai sastādītu Jums piemērotu ēdienkarti."
+    }
+  ],
+  "venues": [
+    {
+      "id": "zale",
+      "name": "viesību zāle",
+      "path": "/noma",
+      "capacity": 90,
+      "where": "Bistro Silva, 2. stāvs",
+      "photo": "banketu_zale_1.webp",
+      "alt": "Klāti galdi viesību zālē",
+      "desc": "Bīdāmā siena, ekrāns, apskaņošana, WiFi. Semināriem, konferencēm un svinībām.",
+      "title": "viesību un semināru zāle"
+    },
+    {
+      "id": "pontons",
+      "name": "pontons",
+      "href": "https://www.pontons.lv/",
+      "site": "pontons.lv",
+      "capacity": 30,
+      "where": "uz Driksas, Jelgavas centrā",
+      "photo": "sadala_pontons.webp",
+      "alt": "Pontons uz Driksas saulrietā",
+      "desc": "Banketu zāle mierīgajos Driksas ūdeņos ar saunu un jumta terasi."
+    },
+    {
+      "id": "peldterase",
+      "name": "peldterase",
+      "href": "https://www.peldterase.lv/",
+      "site": "peldterase.lv",
+      "capacity": 40,
+      "where": "Driksas upē pie koncertzāles “Mītava”",
+      "photo": "sadala_peldterase.webp",
+      "alt": "Izgaismota peldterase uz ūdens vakarā",
+      "desc": "Pasākumi uz ūdens; lielākiem pasākumiem apvienojama ar pontonu."
+    }
+  ]
+}

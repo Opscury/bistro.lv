@@ -1,52 +1,64 @@
-import { galleries } from "../data/site.js";
+import { Link } from "react-router-dom";
+import Gallery from "../components/Gallery.jsx";
+import Img from "../components/Img.jsx";
+import Masthead from "../components/Masthead.jsx";
+import { lineById } from "../data/lines.js";
+import { galleries, tejasOffer } from "../data/site.js";
+import ui from "../styles/Page.module.css";
 import styles from "./TejasNamins.module.css";
 
 export default function TejasNamins() {
+  const line = lineById["tejas-namins"];
+
   return (
-    <div className={styles.page}>
-      <h1 className="page-title">TĒJAS NAMIŅŠ</h1>
+    <div className={ui.page} data-cluster={line.cluster}>
+      <div className={ui.shell}>
+        <Masthead line={line} />
 
-      <div className={styles.intro}>
-        <div className={styles.textCol}>
-          <div className="panel">
-            <p>
-              Omulīgs Tējas namiņš, kas atrodas Pilssalas ielā 2A starp Lielupi
-              un Driksu, kur baudīt dažādas tējas, kafiju, saldējumu, gardas
-              kūkas un smalkmaizītes. Ir neliels, bet pārdomāts karsto ēdienu
-              piedāvājums.
-            </p>
-            <p>
-              No namiņa paveras skaists skats uz pilsētu, upi un upes
-              strūklakām. Visu gadu ir iespēja baudīt dzērienus un ēdienus pie
-              āra galdiņiem.
-            </p>
+        <section className={ui.section} aria-label="Par tējas namiņu">
+          <div className={styles.intro}>
+            <div className={styles.textCol}>
+              <div className={ui.prose}>
+                {tejasOffer.intro.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+              <Img
+                className={styles.wideShot}
+                name={tejasOffer.wideShot}
+                alt="Tējas namiņš vasarā starp kokiem Pasta salā"
+                sizes="(min-width: 700px) 494px, 100vw"
+                loading="eager"
+              />
+            </div>
+
+            <Img
+              className={styles.poster}
+              name={tejasOffer.poster.photo}
+              alt={tejasOffer.poster.alt}
+              sizes="(min-width: 700px) 494px, 100vw"
+            />
           </div>
-          <img
-            className={styles.wideShot}
-            src="/img/tejas_namins_1_1-6.webp"
-            alt="Tējas namiņš"
-            loading="lazy"
-          />
-        </div>
+        </section>
 
-        <div className={styles.imageCol}>
-          <img
-            src="/img/Saldejuma-kokteili.webp"
-            alt="Saldējuma kokteiļi"
-            loading="lazy"
-          />
-        </div>
-      </div>
+        <section className={ui.section} aria-labelledby="tejas-galerija">
+          <div className={ui.sectionHead}>
+            <h2 className={ui.heading} id="tejas-galerija">
+              galerija
+            </h2>
+          </div>
+          <Gallery images={galleries.tejasNamins} alt="Tējas namiņš" featured={8} columns={4} />
+        </section>
 
-      <div className={styles.gallery}>
-        {galleries.tejasNamins.map((src, i) => (
-          <img
-            key={src}
-            src={`/img/${src}`}
-            alt={`Tējas namiņš ${i + 1}`}
-            loading="lazy"
-          />
-        ))}
+        <div className={ui.cta}>
+          <div>
+            <h2 className={ui.ctaTitle}>kontakti</h2>
+            <p className={ui.ctaText}>Adreses, darba laiki un tālruņi visām Silva vietām.</p>
+          </div>
+          <Link className={ui.btn} to="/kontakti">
+            Visi kontakti
+          </Link>
+        </div>
       </div>
     </div>
   );

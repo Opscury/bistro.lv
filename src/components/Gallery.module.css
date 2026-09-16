@@ -1,0 +1,145 @@
+/* Galerija — režģis bez rāmja, lielais skats uz tumša fona,
+   apaļas papīra bultiņas un mono skaitītājs kā pārējā sistēmā. */
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+.thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--c-rule-soft);
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.thumb:hover img,
+.thumb:focus-visible img {
+  transform: scale(1.03);
+}
+
+.more {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--c-ink);
+}
+
+/* ---------- lielais skats ---------- */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 56px 12px 48px;
+  background: rgba(20, 22, 28, 0.92);
+}
+
+.big {
+  max-width: 100%;
+  max-height: calc(100vh - 104px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.close {
+  position: absolute;
+  top: max(10px, env(safe-area-inset-top));
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--c-ink);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0 0 3px;
+  border: 0;
+  border-radius: 50%;
+  font-family: var(--font-body);
+  font-size: 26px;
+  line-height: 1;
+  color: var(--c-ink);
+  background: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+}
+
+.arrow:hover,
+.arrow:focus-visible,
+.close:hover,
+.close:focus-visible {
+  background: var(--c-green);
+  color: var(--c-paper);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.counter {
+  position: absolute;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumb img {
+    transition: none;
+  }
+  .thumb:hover img {
+    transform: none;
+  }
+}

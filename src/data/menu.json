@@ -1,0 +1,652 @@
+{
+  "lunch": {
+    "showRows": false,
+    "title": "Pusdienu ēdienkarte",
+    "time": "11.00–17.00",
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-07",
+    "pdf": "/menu/pusdienas.pdf",
+    "note": "Ar lapiņu atzīmēti ēdieni, kas ir draudzīgāki veselībai.",
+    "sections": [
+      {
+        "title": "Zupas",
+        "groups": [
+          {
+            "title": "Katru dienu",
+            "items": [
+              {
+                "name": "Soļanka",
+                "price": "2.50"
+              },
+              {
+                "name": "Aukstā biešu zupa",
+                "price": "2.25"
+              },
+              {
+                "name": "Kabaču biezzupa ar zaļo mērci",
+                "price": "2.40"
+              }
+            ]
+          },
+          {
+            "title": "Dienas zupas",
+            "items": [
+              {
+                "name": "Borščs",
+                "price": "2.10",
+                "date": "2026-09-01"
+              },
+              {
+                "name": "Svaigu kāpostu zupa ar cūkgaļu",
+                "price": "2.00",
+                "date": "2026-09-02"
+              },
+              {
+                "name": "Laša zupa",
+                "price": "2.90",
+                "date": "2026-09-03"
+              },
+              {
+                "name": "Pupiņu -frikadeļu zupa",
+                "price": "2.10",
+                "date": "2026-09-04"
+              },
+              {
+                "name": "Dārzeņu zupa ar seleriju (veģetārā)",
+                "price": "2.00",
+                "date": "2026-09-07"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Pankūkas",
+        "items": [
+          {
+            "name": "Kartupeļu pankūka",
+            "price": "1.40",
+            "weight": "85g"
+          },
+          {
+            "name": "Plānā pankūka",
+            "price": "1.40",
+            "weight": "105g"
+          },
+          {
+            "name": "Plānā pankūka ar āboliem, apelsīnu un smiltsērkšķu ievārījumu",
+            "price": "2.00",
+            "weight": "160g"
+          },
+          {
+            "name": "Plānā pankūka ar ābolu- karameļu pildījumu",
+            "price": "2.00",
+            "weight": "140g"
+          },
+          {
+            "name": "Plānā pankūka ar biezpienu",
+            "price": "2.00",
+            "weight": "145g"
+          },
+          {
+            "name": "Plānā pankūka ar sieru un šķiņķi",
+            "price": "2.00",
+            "weight": "120g"
+          },
+          {
+            "name": "Plānā pankūka ar sirdi un olu",
+            "price": "2.00",
+            "weight": "110g"
+          },
+          {
+            "name": "Plānā pankūka ar banāniem un šokolādi",
+            "price": "2.05",
+            "weight": "155g"
+          },
+          {
+            "name": "Plānā pankūka ar ziedkāpostiem, sieru, burkāniem, kabačiem",
+            "price": "2.10",
+            "weight": "165g"
+          },
+          {
+            "name": "Plānā pankūka ar gaļas pildījumu",
+            "price": "2.15",
+            "weight": "130g"
+          },
+          {
+            "name": "Plānā pankūka ar sēnēm un sieru",
+            "price": "2.15",
+            "weight": "120g"
+          },
+          {
+            "name": "Plānā pankūka ar vistas gaļu un sēnēm",
+            "price": "2.20",
+            "weight": "130g"
+          },
+          {
+            "name": "Plānā pankūka ar laša pildījumu",
+            "price": "2.45",
+            "weight": "135g"
+          },
+          {
+            "name": "Šokolādes un karameļu mērces",
+            "price": "0.55",
+            "weight": "30g"
+          },
+          {
+            "name": "Ievārījums",
+            "price": "0.60",
+            "weight": "40g"
+          },
+          {
+            "name": "Skābais krējums",
+            "price": "0.65",
+            "weight": "50g"
+          }
+        ],
+        "unit": "€/gab."
+      },
+      {
+        "title": "Sveramie salāti",
+        "items": [
+          {
+            "name": "Biešu salāti Marokāņu gaumē ar olīveļļu",
+            "price": "8.50",
+            "healthy": true
+          },
+          {
+            "name": "Vinegrets",
+            "price": "9.50",
+            "healthy": true
+          },
+          {
+            "name": "Ābolu-puravu salāti",
+            "price": "9.90"
+          },
+          {
+            "name": "Jūras kāpostu salāti",
+            "price": "9.90"
+          },
+          {
+            "name": "Sēņu vinegrets ar baltajām pupiņām",
+            "price": "10.50"
+          },
+          {
+            "name": "Burkānu salāti ar valriekstiem un ananāsiem",
+            "price": "10.90",
+            "healthy": true
+          },
+          {
+            "name": "Kāpostu - krabju salāti",
+            "price": "11.00"
+          },
+          {
+            "name": "Krabju salāti",
+            "price": "11.00"
+          },
+          {
+            "name": "Rasols",
+            "price": "11.00"
+          },
+          {
+            "name": "Seleriju salāti ar krējuma-majonēzes mērci",
+            "price": "11.00"
+          },
+          {
+            "name": "Sēņu (šampinjonu) salāti",
+            "price": "11.50"
+          },
+          {
+            "name": "Pupiņu salāti ar gaļu",
+            "price": "12.00"
+          },
+          {
+            "name": "Siļķe kažokā",
+            "price": "12.00"
+          },
+          {
+            "name": "Krabju nūjiņu salāti ar sēnēm",
+            "price": "12.50"
+          },
+          {
+            "name": "Kūpinātas vistas salāti ar pupiņu pākstīm",
+            "price": "12.50"
+          },
+          {
+            "name": "Makaronu salāti ar sēnēm un šķiņķi",
+            "price": "12.90"
+          },
+          {
+            "name": "Brokoļu - seleriju salāti ar valriekstiem",
+            "price": "13.00",
+            "healthy": true
+          },
+          {
+            "name": "Pupiņu - siera salāti ar krabju nūjiņām",
+            "price": "13.00"
+          },
+          {
+            "name": "Siera salāti",
+            "price": "13.00"
+          },
+          {
+            "name": "Zaļie salāti ar brokoļiem, spinātiem, gurķi un olīveļļas mērci",
+            "price": "13.00",
+            "healthy": true
+          },
+          {
+            "name": "Jūras kāpostu salāti ar žāvēto šķiņķi un sieru",
+            "price": "13.50"
+          },
+          {
+            "name": "Pupiņu, žāvētas vistas, šampinjonu salāti",
+            "price": "13.50"
+          },
+          {
+            "name": "Makaronu - brokoļu, šķiņķa salāti",
+            "price": "14.00"
+          },
+          {
+            "name": "Salāti grieķu gaumē",
+            "price": "15.00",
+            "healthy": true
+          }
+        ],
+        "unit": "€/1kg"
+      },
+      {
+        "title": "Porciju salāti",
+        "items": [
+          {
+            "name": "Rasols",
+            "price": "2.50",
+            "weight": "200g"
+          },
+          {
+            "name": "Siera salāti ar tomātiem un majonēzi",
+            "price": "2.50",
+            "weight": "180g"
+          },
+          {
+            "name": "Liellopu gaļas salāti",
+            "price": "3.30",
+            "weight": "200g"
+          },
+          {
+            "name": "Dārzeņu salāti ar tunci un majonēzi",
+            "price": "3.50",
+            "weight": "185g"
+          },
+          {
+            "name": "Kvinojas un augļu pokijs ar fetu un citronu- medus sinepju mērci",
+            "price": "4.25",
+            "weight": "220g/30g",
+            "healthy": true
+          },
+          {
+            "name": "Dārzeņu salāti ar grilētu vistu, sarkanajiem sīpoliem un mango - čili mērci",
+            "price": "4.50",
+            "weight": "200g/30g"
+          },
+          {
+            "name": "Zaļā spēka bļoda ar šķeltajiem zirņiem un citronu-medus, sinepju mērci",
+            "price": "4.55",
+            "weight": "320g/30g",
+            "healthy": true
+          },
+          {
+            "name": "Suši salāti ar lasi un Poke mērci",
+            "price": "4.65",
+            "weight": "270g",
+            "healthy": true
+          },
+          {
+            "name": "Salāti ar grilētu vistu un brokoļiem, sinepju-eļļas mērci",
+            "price": "4.90",
+            "weight": "295g",
+            "healthy": true
+          },
+          {
+            "name": "Cēzara salāti ar vistas fileju",
+            "price": "5.10",
+            "weight": "250g",
+            "healthy": true
+          },
+          {
+            "name": "Laša - avokado salāti ar sojas-eļļas mērci",
+            "price": "6.50",
+            "weight": "295g/35g",
+            "healthy": true
+          },
+          {
+            "name": "Dārzeņu un augļu bārs",
+            "price": "10.00",
+            "weight": "1 kg"
+          }
+        ]
+      },
+      {
+        "title": "Piedevu salāti",
+        "items": [
+          {
+            "name": "Biešu - zirnīšu salāti ar majonēzi",
+            "price": "0.85"
+          },
+          {
+            "name": "Burkānu - ābolu salāti ar olīveļļas mērci",
+            "price": "0.95",
+            "healthy": true
+          },
+          {
+            "name": "Tomātu - gurķu salāti ar krējumu",
+            "price": "0.95"
+          },
+          {
+            "name": "Redīsu - gurķu salāti ar krējumu",
+            "price": "1.00"
+          },
+          {
+            "name": "Dārzeņu salāti ar ziedkāpostiem un olīveļļu",
+            "price": "1.05",
+            "healthy": true
+          }
+        ],
+        "unit": "100g"
+      },
+      {
+        "title": "Karstās piedevas",
+        "items": [
+          {
+            "name": "Vārīti griķi",
+            "price": "1.35",
+            "weight": "200g",
+            "healthy": true
+          },
+          {
+            "name": "Vārīti rīsi",
+            "price": "1.35",
+            "weight": "200g"
+          },
+          {
+            "name": "Vārīti kartupeļi",
+            "price": "1.90",
+            "weight": "250g"
+          },
+          {
+            "name": "Grūbu sautējums ar dārzeņiem",
+            "price": "2.40",
+            "weight": "250g"
+          },
+          {
+            "name": "Burkānu - zirnīšu sautējums",
+            "price": "2.55",
+            "weight": "200g"
+          },
+          {
+            "name": "FRI kartupeļi",
+            "price": "2.60",
+            "weight": "250g"
+          },
+          {
+            "name": "Dārzeņu sautējums \"Meksikāņu gaumē\"",
+            "price": "2.90",
+            "weight": "250g"
+          },
+          {
+            "name": "Kabaču sautējums",
+            "price": "2.90",
+            "weight": "250g",
+            "healthy": true
+          },
+          {
+            "name": "Tvaicēti dārzeņi",
+            "price": "2.95",
+            "weight": "250g",
+            "healthy": true
+          },
+          {
+            "name": "Ziedkāpostu sacepums",
+            "price": "2.95",
+            "weight": "200g"
+          },
+          {
+            "name": "Grilēti dārzeņi ar čili mērci",
+            "price": "3.20",
+            "weight": "250g",
+            "healthy": true
+          },
+          {
+            "name": "Turku zirņu un vistas sautējums ar kokosriekstu pienu",
+            "price": "3.90",
+            "weight": "250g",
+            "healthy": true
+          }
+        ],
+        "unit": "€/porc."
+      },
+      {
+        "title": "Siltās mērces",
+        "items": [
+          {
+            "name": "Siltā krējuma mērce",
+            "price": "1.00"
+          },
+          {
+            "name": "Šampinjonu mērce",
+            "price": "1.25"
+          },
+          {
+            "name": "Saldi asā čili mērce",
+            "price": "1.35"
+          }
+        ],
+        "unit": "100g"
+      },
+      {
+        "title": "Gaļa un zivis",
+        "items": [
+          {
+            "name": "Vistas kotlete",
+            "price": "2.50",
+            "weight": "100g"
+          },
+          {
+            "name": "Cepta vistas fileja",
+            "price": "2.90",
+            "weight": "110g"
+          },
+          {
+            "name": "Vistas rullītis ar sēnēm un sieru",
+            "price": "3.35",
+            "weight": "120g",
+            "healthy": true
+          },
+          {
+            "name": "Vistas stroganovs",
+            "price": "3.70",
+            "weight": "200g"
+          },
+          {
+            "name": "Vistas fileja ar cūkgaļas krūtiņu un dārzeņu pildījumu",
+            "price": "3.75",
+            "weight": "150g",
+            "healthy": true
+          },
+          {
+            "name": "Plovs ar vistas gaļu",
+            "price": "4.50",
+            "weight": "300g"
+          },
+          {
+            "name": "Tītara gaļa dārzeņos",
+            "price": "3.50",
+            "weight": "300g",
+            "healthy": true
+          },
+          {
+            "name": "Mājas kotlete",
+            "price": "2.30",
+            "weight": "90g"
+          },
+          {
+            "name": "Pildīts kabacis ar malto gaļu un rīsiem",
+            "price": "2.65",
+            "weight": "220g",
+            "healthy": true
+          },
+          {
+            "name": "Cūkgaļas karbonāde",
+            "price": "2.90",
+            "weight": "110g"
+          },
+          {
+            "name": "Kāpostu tītenis ar mērci",
+            "price": "2.95",
+            "weight": "120/100g"
+          },
+          {
+            "name": "Kārtainā cūkgaļas fileja ar sieru",
+            "price": "3.35",
+            "weight": "155g"
+          },
+          {
+            "name": "Karbonāde franču gaumē",
+            "price": "3.50",
+            "weight": "190g"
+          },
+          {
+            "name": "Cūkgaļas gulašs krējuma mērcē ar ķimenēm",
+            "price": "3.55",
+            "weight": "200g"
+          },
+          {
+            "name": "Aknu plācenītis",
+            "price": "1.95",
+            "weight": "90g"
+          },
+          {
+            "name": "Cepts heks ar sieru un papriku",
+            "price": "3.75",
+            "weight": "190g"
+          },
+          {
+            "name": "Saldajā krējumā sautēta sama fileja ar ziedkāpostiem",
+            "price": "3.80",
+            "weight": "175g"
+          }
+        ]
+      },
+      {
+        "title": "Aukstās mērces",
+        "items": [
+          {
+            "name": "Sinepes 30g, Tomātu mērce",
+            "price": "0.50",
+            "weight": "40g"
+          },
+          {
+            "name": "Hamburgeru, ķiploku mērce",
+            "price": "0.55",
+            "weight": "40g"
+          },
+          {
+            "name": "Uzkodu mērce, majonēze",
+            "price": "0.55",
+            "weight": "40g"
+          },
+          {
+            "name": "Mārrutki",
+            "price": "0.55",
+            "weight": "30g"
+          },
+          {
+            "name": "Mango - čili",
+            "price": "0.60",
+            "weight": "50g"
+          },
+          {
+            "name": "Medus - sinepju",
+            "price": "0.65",
+            "weight": "50g"
+          },
+          {
+            "name": "Pesto mērce",
+            "price": "1.00",
+            "weight": "30g"
+          }
+        ],
+        "unit": "€/porc."
+      },
+      {
+        "title": "Deserti",
+        "items": [
+          {
+            "name": "Cepts ābols ar putukrējumu un vaniļas mērci",
+            "price": "2.00",
+            "weight": "160g"
+          },
+          {
+            "name": "Augļu asorti",
+            "price": "2.10",
+            "weight": "185g",
+            "healthy": true
+          },
+          {
+            "name": "Kārtainais auzu pārslu deserts ar ķiršu ķīseli",
+            "price": "2.10",
+            "weight": "165g"
+          },
+          {
+            "name": "Kārtainais deserts ar zemenēm",
+            "price": "2.10",
+            "weight": "135g"
+          },
+          {
+            "name": "Melleņu krēms ar vaniļas mērci",
+            "price": "2.10",
+            "weight": "150g"
+          },
+          {
+            "name": "Rīsu deserts ar ogu ķīseli",
+            "price": "2.10",
+            "weight": "185g"
+          },
+          {
+            "name": "Panna cotta ar šokolādes musu",
+            "price": "2.20",
+            "weight": "160g"
+          },
+          {
+            "name": "Mandeļu krēms ar aveņu mērci",
+            "price": "2.35",
+            "weight": "170g",
+            "healthy": true
+          },
+          {
+            "name": "Biezpiena, persiku un zemeņu deserts",
+            "price": "2.40",
+            "weight": "195g"
+          }
+        ],
+        "unit": "€/porc."
+      }
+    ],
+    "photo": "bistro_edienkarte.webp"
+  },
+  "breakfast": {
+    "title": "Brokastu ēdienkarte",
+    "time": "8.00–11.00",
+    "validFrom": "2026-04-27",
+    "validTo": null,
+    "pdf": "/menu/brokastis.pdf",
+    "photo": "bistro_brokastis.webp"
+  },
+  "drinks": {
+    "title": "Dzērienkarte",
+    "time": null,
+    "validFrom": "2026-01-01",
+    "validTo": null,
+    "pdf": "/menu/dzerieni.pdf",
+    "photo": "bistro_dzerienkarte.webp"
+  }
+}

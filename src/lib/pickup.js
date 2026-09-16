@@ -1,8 +1,10 @@
-/* Saņemšanas datums. Laiku klients vairs neizvēlas — to saskaņojam,
-   sazinoties ar viņu.                                                */
+/* Saņemšanas datums. Laiku klients neizvēlas — to saskaņojam,
+   sazinoties ar viņu. Dienu skaits ir konditoreja.json (leadDays). */
+
+import data from "../data/konditoreja.json";
 
 /** Cik dienas iepriekš jāpiesaka pasūtījums. */
-export const LEAD_DAYS = 2;
+export const LEAD_DAYS = data.leadDays ?? 2;
 
 const iso = (d) => {
   const p = (n) => String(n).padStart(2, "0");

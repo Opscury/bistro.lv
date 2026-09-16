@@ -1,3 +1,9 @@
+/* ---------------------------------------------------------------
+   Galvene — krēmīga josla, neaiztiktais logotips (SVG), mazie burti
+   Bricolage izvēlnē. Tā pati 1020px čaula kā saturam, lai logotips
+   stāv uz satura kreisās malas.
+   --------------------------------------------------------------- */
+
 .sticky {
   position: sticky;
   top: 0;
@@ -5,21 +11,26 @@
 }
 
 .bar {
-  background: var(--c-white);
+  background: var(--c-bg);
 }
 
 .inner {
-  max-width: var(--w-header);
+  max-width: calc(var(--w-shell) + 2 * var(--gut));
   margin-inline: auto;
-  padding: 10px 50px 8px;
+  padding: 13px var(--gut) 11px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 75px;
+  gap: 40px;
+}
+
+.logo {
+  display: block;
+  flex: 0 0 auto;
 }
 
 .logo img {
-  width: 104px;
+  width: 96px;
   height: auto;
 }
 
@@ -27,53 +38,75 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  align-items: center;
-  gap: 22px;
+  align-items: baseline;
+  gap: 4px 28px;
 }
 
 .link {
-  font-family: var(--font-display);
-  font-size: clamp(15px, 0.75rem + 0.55vw, 19px);
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: #000;
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 500, "wdth" 96;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: -0.005em;
+  text-transform: lowercase;
+  color: var(--c-ink);
   white-space: nowrap;
+  padding: 8px 0;
   transition: color 0.15s ease;
 }
 
 .link:hover,
 .link:focus-visible,
 .active {
-  color: var(--c-green-dark);
+  color: var(--c-green);
+}
+
+.active {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--c-green-bright);
 }
 
 .rule {
   border: 0;
-  height: 2px;
-  background: var(--c-green-pale);
-  max-width: var(--w-header);
-  margin: 0 auto;
+  height: 1px;
+  background: var(--c-rule);
+  margin: 0;
 }
 
-/* ---------- mobile ---------- */
+/* ---------- mobilā izvēlne ---------- */
 
 .toggle {
   display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
   background: none;
   border: 0;
-  padding: 10px;
+  padding: 0;
   cursor: pointer;
 }
 
 .bars,
 .bars::before,
 .bars::after {
+  position: absolute;
+  left: 10px;
+  top: 21px;
   display: block;
-  width: 26px;
+  width: 24px;
   height: 2px;
-  background: #000;
+  background: var(--c-ink);
   content: "";
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.bars::before,
+.bars::after {
+  left: 0;
+  top: 0;
 }
 
 .bars::before {
@@ -81,18 +114,30 @@
 }
 
 .bars::after {
-  transform: translateY(6px);
+  transform: translateY(8px);
+}
+
+/* atvērtā stāvoklī svītras kļūst par ✕ */
+.toggleOpen .bars {
+  background: transparent;
+}
+
+.toggleOpen .bars::before {
+  transform: rotate(45deg);
+}
+
+.toggleOpen .bars::after {
+  transform: rotate(-45deg);
 }
 
 @media (max-width: 900px) {
   .inner {
-    padding: 9px 20px;
+    padding: 9px var(--gut) 8px;
     gap: 16px;
   }
 
   .toggle {
     display: block;
-    padding: 8px;
   }
 
   .nav {
@@ -101,12 +146,13 @@
     left: 0;
     right: 0;
     top: 100%;
-    background: var(--c-white);
+    background: var(--c-bg);
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
-    padding: 16px 20px 24px;
-    border-bottom: 2px solid var(--c-green-pale);
+    gap: 0;
+    padding: 10px var(--gut) 22px;
+    border-bottom: 1px solid var(--c-rule);
+    box-shadow: 0 16px 32px rgba(20, 22, 28, 0.08);
   }
 
   .navOpen {
@@ -114,7 +160,20 @@
   }
 
   .link {
-    font-size: 19px;
-    padding: 8px 0;
+    font-size: 24px;
+    padding: 12px 0;
+  }
+
+  .active {
+    text-underline-offset: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .bars,
+  .bars::before,
+  .bars::after {
+    transition: none;
   }
 }

@@ -1,81 +1,133 @@
-# Silva — bistro.lv rebuild
+# Silva — bistro.lv
 
-A faithful rebuild of **bistro.lv** (Bistro SILVA, Jelgava) as a React app.
-The original was a WordPress site on the *Assembler* theme; this is a plain
-Vite + React + React Router single-page app with no CMS behind it yet.
+Silvas (Jelgava, kopš 1994) vietne: bistro, konditoreja, tējas namiņš,
+banketi, telpu noma, kontakti. Vite + React 19 + React Router 7, plain CSS
+ar globāliem marķieriem un CSS moduli katrai lapai. Būvējot katrs ceļš
+kļūst par gatavu HTML (prerender), attēli dabū mazākas kopijas, un
+`sitemap.xml` uzrakstās pats.
 
-## Running it
+## Darbam
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # production build into dist/
-npm run preview  # serve the production build
+npm run dev        # http://localhost:5173
+npm run build      # dist/ — klienta būve + prerender + attēlu kopijas
+npm run preview    # rāda dist/ tā, kā to rādīs hostings
+npm run menu -- "ceļš/uz/Bistro-edienkarte-15.09.-21.09.pdf"   # nedēļas ēdienkarte
 ```
 
-## What's where
+`npm run build:spa` būvē bez prerender (tikai ātrai pārbaudei).
+
+## Kas kur
 
 ```
-index.html                 loads Inter + Raleway from Google Fonts
+index.html                 galva: meta, fonti (preload), slēptās Netlify formas
+netlify.toml               būve, galvenes; public/_redirects — vecās adreses, SPA
 src/
-  main.jsx                 entry point, mounts BrowserRouter
-  App.jsx                  the seven routes
-  styles/global.css        design tokens (colours, widths, type scale) + shared classes
-  components/
-    Layout.jsx             header + <Outlet/> + footer
-    Header.jsx             sticky nav, collapses to a burger menu under 900px
-    Footer.jsx
-    Slideshow.jsx          replaces the Jetpack slideshow block
-    ScrollToTop.jsx        resets scroll on route change, honours #anchors
-  pages/                   one .jsx + one .module.css per page
+  main.jsx                 hydrate (prerender) vai render (dev)
+  entry-server.jsx         servera ieeja prerender skriptam
+  App.jsx                  ceļi + 404
   data/
-    site.js                nav, contact details, gallery image lists, page copy bits
-    konditoreja.json       118 products across 10 categories, extracted from the original
+    lines.json             VIENS AVOTS: vietas, adreses, darba laiki, tālruņi, e-pasti
+    lines.js               palīgi: faktu rindas, darba laika formāts, JSON-LD
+    menu.json              bistro ēdienkartes (nedēļas HTML rindas + PDF, brokastis, dzērieni)
+    konditoreja.json       118 preces 10 kategorijās, klasika, cenu datums, saldējums
+    konditorejaUnits.js    cenu parsēšana, minimālie daudzumi
+    meta.js                katras lapas <title>, apraksts, OG attēls
+    site.js                izvēlne, teksti, galeriju saraksti
+  styles/global.css        fonti (@font-face), marķieri, līniju klasteri
+  styles/Page.module.css   kopīgie būvbloki: masthead, fakti, rindas, pogas, formas
+  components/              Header, Footer, Layout, Masthead, Img, Gallery, Slideshow,
+                           PriceRows, WeeklyMenu, EnquiryForm, konditoreja/*
+  pages/                   viena lapa = .jsx + .module.css tikai izkārtojumam
+  hooks/                   useCart (grozs), usePageMeta (title/meta pārlūkā)
+  lib/                     sendForm (formu transports), features (slēdži),
+                           orderSubmit, pickup, analytics
+scripts/
+  prerender.mjs            dist/<ceļš>/index.html katram ceļam, 404.html, sitemap
+  vite-plugin-img.mjs      attēlu kopijas 320/640 px + __IMG_MANIFEST__
+  menu-from-pdf.mjs        PDF -> menu.json
 public/
-  img/                     317 images, resized to max 1400px and converted to WebP
-  menu/                    the three PDF menus
+  img/                     attēli (oriģināli līdz 1400 px, WebP)
+  menu/                    pusdienas.pdf, brokastis.pdf, dzerieni.pdf (stabili nosaukumi)
+  fonts/                   Bricolage Grotesque, Inter, DM Mono (woff2, pašu serverī)
+  og/                      kopīgošanas attēli 1200×630
+  admin/                   Decap CMS (satura rediģēšana bez koda)
+  silva-logo.svg, favicon.svg
+docs/                      pārskats un izmaiņu apraksts
 ```
 
-Styling is plain CSS: one `global.css` for tokens and shared bits, and a CSS
-Module next to each component so class names can't collide.
+## Dizaina sistēma
 
-## Design tokens
+Krēmīgs fons `#fbf7f2`, tinte `#14161c`, otrās pakāpes teksts `#565b69`,
+mazais teksts `#61667a` (5.1:1), zaļā `#017a3c` pogām un saitēm,
+logotipa zaļā `#019047` tikai kontūrām un fokusa gredzeniem. Bricolage
+Grotesque (mazie burti) virsrakstiem, Inter tekstam, DM Mono faktiem un
+cipariem. Viss ir `global.css` un `Page.module.css`; lapu moduļi nes tikai
+izkārtojumu.
 
-Lifted from the original site, so colours and spacing match:
+**Līniju klasteri** (zīmola arhitektūra — Configured Hybrid): bistro un
+konditoreja ir pati Silva; tējas namiņš un banketi ir Silvas atbalstītas
+līnijas ar mazu "Silva · kopš 1994" virs nosaukuma. Katrai lapai ir
+`data-cluster="core|teja|banketi"`, un `global.css` tam dod `--line-ground`,
+`--line-accent`, `--line-rule`. Šobrīd vērtības ir apzināti tuvas pamatam;
+tās aizpilda pēc 2. viļņa koncepta testa — bez pārbūves.
 
-| Token | Value | Used for |
-| --- | --- | --- |
-| `--c-green-pale` | `#e6f4ec` | info panels, product cards, separators, footer |
-| `--c-green-dark` | `#004823` | buttons |
-| `--c-amber` | `#f7b05b` | button hover |
-| `--c-text` | `#1e1e1e` | body text |
-| `--c-brown` | `#4e342e` | the "minimum order" notes |
-| `--w-wide` | `1080px` | the main content column |
-| `--w-content` | `620px` | narrow text blocks |
+## Kā mainīt saturu
 
-Fonts: **Inter** for body, **Raleway** for headings and buttons.
+Trīs ceļi, no vienkāršākā:
 
-## Known gaps
+1. **/admin** (Decap CMS) — formas, kas raksta `src/data/*.json` tieši
+   GitHub repozitorijā; katrs saglabājums = jauna būve. Jāieslēdz vienreiz
+   Netlify: Identity (Invite only) + Git Gateway, tad uzaicina redaktorus.
+2. **JSON faili** `src/data/` — darba laiki (`lines.json`), ēdienkartes
+   (`menu.json`), preces un cenas (`konditoreja.json`). Pēc labošanas —
+   commit, hostings pārbūvē.
+3. **Nedēļas ēdienkarte no PDF**: `npm run menu -- fails.pdf` nolasa
+   PDF, uzraksta `menu.json` un nokopē PDF uz `public/menu/pusdienas.pdf`.
+   Datumus ņem no faila nosaukuma (`…-15.09.-21.09.pdf`) vai
+   `--no 2026-09-15 --lidz 2026-09-21`. PDF pirms tam vēlams eksportēt
+   ≤ 500 KB (150 dpi) — tagadējie 5 MB faili telefonā veras 15 sekundes.
 
-- **The contact form has no backend.** The original posted to Jetpack's form
-  handler. For now the form opens the visitor's mail client with the message
-  pre-filled. Wiring it to a real endpoint is the first thing to do.
-- **The Google Map** on Kontakti is an `<iframe>` pointing at Google's embed
-  URL for Driksas iela 7. The original embedded a saved map; swap in a proper
-  Maps Embed API key if you want it stable.
-- **Menus are PDFs**, exactly as on the original. The lunch menu changes weekly,
-  so this is the obvious candidate for a CMS or a simple upload flow.
-- **Category anchors on Konditoreja** — the original only had an `id` on the
-  first heading, so nine of the ten dropdown links were broken. All ten work here.
-- **Deploying:** this is a client-side SPA, so the host must rewrite unknown
-  paths to `index.html` (Netlify `_redirects`, Vercel rewrites, or `try_files`
-  in nginx). Without that, a hard refresh on `/konditoreja` 404s.
+Ja `validTo` pagājis vairāk nekā nedēļu, bistro lapa pati parāda piezīmi,
+ka ēdienkarte ir iepriekšējās nedēļas.
 
-## Folders you can delete
+## Formas un pasūtījumi
 
-- `_delete-me/` — a stale `node_modules` from a failed install plus two build
-  tarballs used during development. Delete the whole folder, then run
-  `npm install`.
-- `_source-images-fullsize/` — the original full-size images (202 MB) before
-  optimisation. Kept only in case you want to re-export at different sizes;
-  nothing references them.
+`src/lib/sendForm.js` sūta Kontaktu ziņu, banketu pieteikumu un
+konditorejas pasūtījumu. Trīs režīmi (`.env.example`):
+
+- `VITE_FORM_ENDPOINT=https://…` — jebkurš JSON POST galapunkts;
+- `VITE_NETLIFY_FORMS=true` — Netlify Forms (slēptās formas ir `index.html`);
+- nekas — atver e-pasta programmu (mailto). Pogas tad saka "Sagatavot vēstuli".
+
+Konditorejas pasūtījumu sistēma (`src/lib/features.js`) ieslēdzas pati,
+kad ir formu serveris. Pirms tam jāvienojas, kas atbild uz pasūtījumiem
+un cik ātri; `VITE_ORDERING=off` to tur izslēgtu arī ar serveri.
+
+## Attēli
+
+`public/img/` glabā oriģinālus. Būvējot `scripts/vite-plugin-img.mjs`
+uzģenerē `vārds-320.webp` un `vārds-640.webp` (kešo
+`node_modules/.cache/silva-img/`), un `<Img name="…" sizes="…">` raksta
+`srcset` + `width/height`. Jaunam attēlam neko darīt nevajag — nomet
+`public/img/` un būvē. Izstrādē (`npm run dev`) kopijas taisa pēc
+pieprasījuma.
+
+## Publicēšana
+
+Netlify vai Cloudflare Pages no GitHub repozitorija: `npm run build`,
+publicē `dist/`. `public/_redirects` pārsūta vecās WordPress adreses uz
+jaunajām un dod SPA rezervi; `dist/404.html` ir īstā 404 lapa. Pēc
+pārslēgšanas: Search Console ar `https://bistro.lv/sitemap.xml`, un
+24 stundu 404 žurnāla pārbaude.
+
+Vides mainīgie hostingā: skat. `.env.example`.
+
+## Zināmie darbi
+
+Skat. `docs/changes-2026-09.md` (kas izdarīts) un
+`docs/site-review-2026-09.md` (pārskats un plāns). Atklātie: produktu
+foto pārfotografēšana, alergēnu dati precēm, cenu pārbaude pret aktuālo
+cenrādi, e-pasta adreses savā domēnā, `_delete-me/` un
+`_source-images-fullsize/` izņemšana no repozitorija.

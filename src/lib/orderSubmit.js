@@ -1,32 +1,18 @@
 /* ---------------------------------------------------------------
-   Pasūtījuma pieteikuma nosūtīšana
-   ---------------------------------------------------------------
-   !!! ŠEIT VĒL NAV ĪSTA BACKEND !!!
-
-   Šobrīd pieteikums tiek nodots klienta e-pasta programmai (mailto),
-   tāpēc klientam pašam jānospiež "Sūtīt". Tas darbojas, bet daļa
-   klientu pazudīs pa ceļam.
-
-   Kad būs izvēlēts hostings, jāaizvieto TIKAI `sendOrder` funkcijas
-   iekšpuse — piemēram:
-
-     const res = await fetch("/api/order", {
-       method: "POST",
-       headers: { "Content-Type": "application/json" },
-       body: JSON.stringify(payload),
-     });
-     if (!res.ok) throw new Error("send failed");
-     return { method: "api" };
-
-   Serverim jāsūta vēstule uz ORDER_EMAIL.
+   Konditorejas pasūtījuma pieteikuma nosūtīšana.
+   Transportu (serveris / Netlify / mailto) izvēlas lib/sendForm.js —
+   šeit tikai pasūtījuma teksts.
    --------------------------------------------------------------- */
 
 import { formatQty, formatEur, formatRange } from "../data/konditorejaUnits.js";
+import data from "../data/konditoreja.json";
+import { sendForm } from "./sendForm.js";
 
-export const ORDER_EMAIL = "banketins@inbox.lv";
+export const ORDER_EMAIL = data.orderEmail;
+export const ORDER_PHONE = data.orderPhone;
 
 /** "2026-09-12" -> "12.09.2026" */
-function lvDate(iso) {
+export function lvDate(iso) {
   if (!iso) return "—";
   const [y, m, d] = iso.split("-");
   return `${d}.${m}.${y}`;
@@ -50,7 +36,7 @@ export function buildOrderText(payload) {
     "PASŪTĪJUMA PIETEIKUMS (nav apstiprināts pasūtījums)",
     "",
     "PRECES:",
-    ...rows,
+    ...(rows.length ? rows : ["  —"]),
     "",
     `Aptuvenā summa: ${formatRange(total.min, total.max)}${
       total.unknown ? " + preces, kurām cena precizējama" : ""
@@ -71,7 +57,7 @@ export function buildOrderText(payload) {
 
 /**
  * Nosūta pieteikumu.
- * @returns {Promise<{method: "mailto"|"api"}>}
+ * @returns {Promise<{method: "api"|"netlify"|"mailto"}>}
  */
 export async function sendOrder(payload) {
   const body = buildOrderText(payload);
@@ -79,13 +65,18 @@ export async function sendOrder(payload) {
     payload.pickup.date ? ` — ${lvDate(payload.pickup.date)}` : ""
   }`;
 
-  // --- pagaidu risinājums, līdz būs serveris ---
-  window.location.href =
-    `mailto:${ORDER_EMAIL}` +
-    `?subject=${encodeURIComponent(subject)}` +
-    `&body=${encodeURIComponent(body)}`;
-
-  return { method: "mailto" };
+  return sendForm(
+    "pasutijums",
+    {
+      name: payload.customer.name,
+      phone: payload.customer.phone,
+      email: payload.customer.email,
+      date: payload.pickup.date,
+      message: payload.message,
+      order: body,
+    },
+    { to: ORDER_EMAIL, subject, body }
+  );
 }
 
 export { formatEur };

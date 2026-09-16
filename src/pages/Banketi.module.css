@@ -1,58 +1,68 @@
-.page {
-  max-width: var(--w-wide);
-  margin-inline: auto;
-  padding: 0 0 0;
+/* Banketi — tikai izkārtojums; izskats nāk no styles/Page.module.css */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px 48px;
+  align-items: start;
 }
 
-.lead {
-  font-weight: 600;
-  padding-top: 12px;
+.events {
+  columns: 2;
+  column-gap: 24px;
+  max-width: 34ch;
 }
 
-.panel .lead:first-child {
-  padding-top: 0;
+.events li {
+  break-inside: avoid;
 }
 
-.cta {
-  display: flex;
-  justify-content: center;
-  padding: 9px 0 64px;
+.venueNote {
+  padding-top: 18px;
+  font-size: 15px;
+  color: var(--c-ink-2);
 }
 
 .grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 10px;
-  row-gap: 70px;
+  grid-template-columns: 1fr;
+  gap: 36px 32px;
 }
 
 .block {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  min-width: 0;
 }
 
-.label {
-  width: 100%;
+.blockName {
+  margin-bottom: 10px;
 }
 
-@media (max-width: 900px) {
+.enquiryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px 48px;
+  align-items: start;
+}
+
+@media (min-width: 700px) {
+  .about {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 44px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .enquiryGrid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
   }
 }
 
-@media (max-width: 620px) {
+@media (min-width: 900px) {
   .grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin-inline: auto;
-  }
-}
-
-@media (max-width: 1140px) {
-  .page {
-    padding-inline: var(--sp-30);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

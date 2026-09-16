@@ -1,0 +1,18 @@
+# Vecās WordPress adreses -> jaunās (301)
+/bistro/            /bistro         301
+/konditoreja/       /konditoreja    301
+/tejas-namins/      /tejas-namins   301
+/telpu-noma         /noma           301
+/telpu-noma/        /noma           301
+/noma/              /noma           301
+/banketi/           /banketi        301
+/kontakti/          /kontakti       301
+/menu/Bistro-edienkarte-*   /menu/pusdienas.pdf   301
+/menu/brokastu-edienkarte-* /menu/brokastis.pdf   301
+/menu/dzerienu-karte-*      /menu/dzerieni.pdf    301
+/wp-content/uploads/*       /                     302
+
+# Vienas lapas lietotne: nezināmi ceļi -> index.html (200), lai pārlūkā
+# atveras 404 lapa ar galveni; īstu 404 statusu dod dist/404.html tur,
+# kur hostings to atbalsta.
+/*    /index.html   200

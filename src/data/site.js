@@ -1,85 +1,84 @@
-// Site-wide content, lifted verbatim from the original bistro.lv pages.
+// Vietnes saturs, kas nav vietu fakti (tie ir lines.json) un nav
+// konditorejas piedāvājums (konditoreja.json) vai bistro ēdienkartes
+// (menu.json). Galeriju attēlu saraksti un tējas namiņa piedāvājums.
 
+import { lines, venues } from "./lines.js";
+
+// Izvēlne — tādā pašā secībā kā sākumlapa: bistro un konditoreja
+// (Silvas ikdienas pāris), tējas namiņš, banketi, tad vietas un kontakti.
 export const nav = [
-  { to: "/bistro", label: "BISTRO" },
-  { to: "/konditoreja", label: "KONDITOREJA" },
-  { to: "/tejas-namins", label: "TĒJAS NAMIŅŠ" },
-  { to: "/noma", label: "TELPU NOMA" },
-  { to: "/banketi", label: "BANKETI" },
-  { to: "/kontakti", label: "KONTAKTI" },
+  ...lines.map((l) => ({ to: l.path, label: l.name })),
+  { to: "/noma", label: "Telpu noma" },
+  { to: "/kontakti", label: "Kontakti" },
 ];
 
-export const footerText = "© Bistro SILVA, 2020";
+// Sākumlapas masthead — Silvas diena piecos vārdos.
+export const homeTitle = "brokastis, pusdienas, kūkas, tēja un svinības";
 
-// Home page: six tiles, each a square photo above a caption image.
-export const homeTiles = [
-  { photo: "sadala_bistro", label: "poga_bistro-1", to: "/bistro", alt: "Bistro" },
-  { photo: "sadala_konditoreja", label: "poga_konditoreja-1", to: "/konditoreja", alt: "Konditoreja" },
-  { photo: "sadala_banketi", label: "poga_banketi-1", to: "/banketi", alt: "Banketi" },
-  { photo: "sadala_tejas_namins", label: "poga_tejas_namins-1", to: "/tejas-namins", alt: "Tējas namiņš" },
-  { photo: "sadala_pontons", label: "poga_pontons", href: "https://pontons.lv/", alt: "Pontons" },
-  { photo: "sadala_peldterase", label: "poga_peldterase-1", href: "https://peldterase.lv/", alt: "Peldterase" },
+// Sākumlapa: "par Silvu". Fakti no lines.json (company), teksts šeit.
+export const aboutText = [
+  "Silva ir ģimenes uzņēmums Jelgavā kopš 1994. gada. Viena virtuve gatavo visām četrām vietām — bistro un konditorejai Driksas ielā, tējas namiņam Pasta salā un banketiem tur, kur tie notiek.",
+  "Vai tās ir pusdienas darba dienā, kūka svētkiem vai galds simts viesiem — mērķis nemainās: plaša izvēle un kvalitāte, uz kuru var paļauties.",
 ];
 
-// Bistro page: three menu cards linking to the PDF menus.
-export const bistroMenus = [
-  { photo: "bistro_edienkarte", label: "poga_edienkarte-1", pdf: "/menu/Bistro-edienkarte-01.09.-07.09.pdf", alt: "Ēdienkarte" },
-  { photo: "bistro_brokastis", label: "poga_brokastis-1", pdf: "/menu/brokastu-edienkarte-no-27.04.26.pdf", alt: "Brokastu ēdienkarte" },
-  { photo: "bistro_dzerienkarte", label: "poga_dzerienkarte", pdf: "/menu/dzerienu-karte-2026.pdf", alt: "Dzērienu karte" },
-];
-
-export const contact = {
-  hours: [
-    {
-      place: "BISTRO",
-      rows: [
-        ["Pirmdien-piektdien", "8.00-17.00"],
-        ["Sestdien, svētdien", "brīvdiena"],
-      ],
-    },
-    {
-      place: "KONDITOREJA",
-      rows: [
-        ["Pirmdien-piektdien", "9.00-18.00"],
-        ["Sestdien", "9.00-16.00"],
-        ["Svētdien", "10.00-16.00"],
-      ],
-    },
-    {
-      place: "TĒJAS NAMIŅŠ",
-      rows: [["Pirmdien-svētdien", "11.00-20.00"]],
-    },
-  ],
-  phones: [
-    ["Banketu pasūtījumiem:", "+371 22 00 98 89"],
-    ["Konditorejas pasūtījumiem:", "+371 20 20 21 17"],
-    ["Tējas namiņš SILVA:", "+371 22 119 119"],
-    ["Tālrunis atsauksmēm:", "+371 29 266 586"],
-  ],
-  addresses: [
-    ["Konditoreja – kafejnīca:", "Driksas iela 7, Jelgava, LV-3001, Latvia"],
-    ["Bistro:", "Driksas iela 9, Jelgava, LV-3001, Latvia"],
-    ["Tējas namiņš:", "Pilssalas iela 2a, Jelgava, LV-3001, Latvia"],
-  ],
-  emails: [
-    ["Banketu un konditorejas pasūtījumiem:", "banketins@inbox.lv"],
-    ["Atsauksmēm:", "siaviktorijab@inbox.lv"],
-  ],
-  requisites: [
-    "SIA “Viktorija B”",
-    "Konts LV35PARX0012116960003",
-    "AS Citadele banka",
-    "Reģ. Nr. 43603036429",
-  ],
-  mapSrc:
-    "https://www.google.com/maps?q=Driksas+iela+7,+Jelgava,+LV-3001,+Latvia&output=embed",
+// Bistro: grupu ēdināšana (bloks bez cenām — pēc pieprasījuma) un
+// saldējuma plakāts.
+export const bistroGroups = {
+  photo: "grupu_edinasana_bilde.webp",
+  title: "Grupu ēdināšana",
+  note: "Pēc pieprasījuma",
+  alt: "Klāts galds bistro zālē pie loga",
+  text: "Ekskursiju grupām, kolektīviem un sapulcēm — pusdienas bistro zālē vai izbraukumā. Sastādām piedāvājumu pēc jūsu grupas lieluma un laika.",
 };
 
-// Helper: build a numbered list of gallery image names, e.g. seq("kazas_", 37)
+export const bistroPoster = {
+  photo: "Saldejums-konditoreja.webp",
+  alt: "Konditorejā: vaniļas saldējums vafeļu konusā 1.50 € / 65 g, trauciņā 1.95 € / 150 g; saldējuma kokteilis (sula pēc izvēles) 4.00 € / 400 ml",
+};
+
+// Tējas namiņš: ievads, plašais foto un kokteiļu plakāts.
+export const tejasOffer = {
+  intro: [
+    "Omulīgs tējas namiņš Pilssalas ielā 2A starp Lielupi un Driksu, kur baudīt dažādas tējas, kafiju, saldējumu, gardas kūkas un smalkmaizītes. Ir neliels, bet pārdomāts karsto ēdienu piedāvājums.",
+    "No namiņa paveras skaists skats uz pilsētu, upi un upes strūklakām. Visu gadu var sēdēt arī pie āra galdiņiem.",
+  ],
+  wideShot: "tejas_namins_1_1-6.webp",
+  poster: {
+    photo: "Saldejuma-kokteili.webp",
+    alt: "Saldējuma–piena kokteiļi, 6.00 € / 350 ml: bubble gum, šokolādes, karameļu, matcha, zemeņu, oreo",
+  },
+};
+
+// Banketi: kā tas notiek, pasākumu veidi, kur.
+export const banketiSteps = [
+  {
+    title: "Sazinieties",
+    text: "Pastāstiet par pasākumu — datums, viesu skaits, vieta un tas, kas jums svarīgi.",
+  },
+  {
+    title: "Piedāvājums",
+    text: "Sastādām ēdienkarti un tāmi tieši jūsu pasākumam; pielāgojam, kamēr viss der.",
+  },
+  {
+    title: "Apstiprinājums",
+    text: "Saskaņojam detaļas, laiku un noformējumu. Pasākuma dienā par galdu rūpējamies mēs.",
+  },
+];
+
+export const banketiEvents = [
+  "kāzas", "bildināšanas", "kristības", "jubilejas", "atvadu mielasti",
+  "korporatīvie pasākumi", "semināri un konferences", "kafijas pauzes", "prezentācijas",
+];
+
+export const banketiVenueNote =
+  "Bistro Silva zālē Jelgavas centrā, uz pontona vai peldterases, vai jebkurā citā jums vēlamā vietā — pilī, meža būdiņā, uz ūdens vai citur. Piedāvājumā plates, uzkodas, pamatēdieni, salāti, zupas, karstās uzkodas, dzērieni un pašu konditorejas izstrādājumi; pēc iepriekšējas vienošanās arī piegāde.";
+
+export { venues };
+
+// Banketu galerijas — nosaukumi un attēli. `featured` ir tie, ko rāda
+// režģī (6 gab.); pārējie atveras lielajā skatā.
 const seq = (prefix, n, suffix = ".webp") =>
   Array.from({ length: n }, (_, i) => `${prefix}${i + 1}${suffix}`);
-
-// Helper: inclusive integer range, e.g. range(2, 22) -> [2 … 22]
 const range = (from, to) =>
   Array.from({ length: to - from + 1 }, (_, i) => from + i);
 
@@ -115,3 +114,13 @@ export const galleries = {
     "448181453_1270366787566806_6680653767805566037_n",
   ].map((n) => `${n}.webp`),
 };
+
+export const banketiGalleries = [
+  { key: "jubilejas", title: "Jubilejas" },
+  { key: "kazas", title: "Kāzas" },
+  { key: "korporativie", title: "Korporatīvie pasākumi" },
+  { key: "kafijasPauzes", title: "Kafijas pauzes" },
+  { key: "brokastis", title: "Brokastis" },
+  { key: "atvaduMielasts", title: "Atvadu mielasts" },
+  { key: "salsmaize", title: "Sālsmaize" },
+];

@@ -8,6 +8,7 @@ import TejasNamins from "./pages/TejasNamins.jsx";
 import Noma from "./pages/Noma.jsx";
 import Banketi from "./pages/Banketi.jsx";
 import Kontakti from "./pages/Kontakti.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/noma" element={<Noma />} />
           <Route path="/banketi" element={<Banketi />} />
           <Route path="/kontakti" element={<Kontakti />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
