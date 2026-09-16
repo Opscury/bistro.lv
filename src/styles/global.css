@@ -134,6 +134,7 @@
 
 :root {
   --c-bg: #fbf7f2;           /* lapas fons, visai vietnei */
+  --c-bar: #f2ecdf;          /* galvenes josla — mazliet tumšāks krēms nekā lapa */
   --c-paper: #ffffff;        /* "papīrs": lapiņas, logi, formas */
   --c-ink: #14161c;          /* teksts, biezās līnijas */
   --c-ink-2: #565b69;        /* otrās pakāpes teksts (6.4:1 uz fona) */

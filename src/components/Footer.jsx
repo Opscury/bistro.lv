@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { company, lines, hoursRows, telHref } from "../data/lines.js";
 import styles from "./Footer.module.css";
 
 /**
  * Kājene četru vietu uzņēmumam: katra vieta ar adresi un laiku, divi
  * tālruņi, Instagram, "Silva · Jelgava · kopš 1994" un rekvizīti.
+ * Vietu režģis ir tikai sākumlapā — citās lapās paliek apakšējā rinda.
  * Gads ir aprēķināts — nekad vairs "2020".
  */
 export default function Footer() {
+  const { pathname } = useLocation();
+  const showPlaces = pathname === "/";
   const year = new Date().getFullYear();
   const places = lines.filter((l) => l.address);
   const banketi = lines.find((l) => l.id === "banketi");
@@ -15,6 +18,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
+        {showPlaces && (
         <div className={styles.grid}>
           {places.map((l) => (
             <div key={l.id} className={styles.col}>
@@ -55,8 +59,9 @@ export default function Footer() {
             </p>
           </div>
         </div>
+        )}
 
-        <div className={styles.bottom}>
+        <div className={showPlaces ? styles.bottom : `${styles.bottom} ${styles.bottomOnly}`}>
           <p className={styles.facts}>
             <span>{company.name}</span>
             <span>{company.city}</span>

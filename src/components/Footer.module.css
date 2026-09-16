@@ -68,6 +68,13 @@ a.line:focus-visible {
   gap: 8px 24px;
 }
 
+/* citās lapās kājene ir tikai šī rinda — bez augšējās atstarpes */
+.bottomOnly {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
 .facts,
 .legal {
   font-family: var(--font-mono);

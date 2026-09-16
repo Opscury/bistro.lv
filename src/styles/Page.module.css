@@ -31,6 +31,17 @@
   border-bottom: 2px solid var(--line-rule);
 }
 
+/* tikai nosaukums (bez ievada): bez līnijas, mazāka atstarpe līdz
+   pirmajai sadaļai — tās virsraksta līnija ir pirmā līnija lapā */
+.mastBare {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.mastBare + .section {
+  padding-top: clamp(28px, 5vw, 44px);
+}
+
 /* Silvas atbalstītajām līnijām — mazs "Silva" virs nosaukuma */
 .eyebrow {
   display: flex;

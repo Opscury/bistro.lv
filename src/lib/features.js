@@ -15,3 +15,8 @@ export const ORDERING_ENABLED =
 // Pagaidām izslēgta — tās vietā tālrunis, e-pasts un poga uz Kontaktiem.
 // Ieslēgt, kad ir formu serveris un kāds atbild uz pieteikumiem.
 export const ENQUIRY_FORM_ENABLED = false;
+
+// Sākumlapas sadaļa "par Silvu" (ģimenes uzņēmums · viena virtuve ·
+// četras vietas + divas rindkopas). Pagaidām izslēgta; teksts paliek
+// data/site.js (aboutText). Ieslēgt, kad teksts ir saskaņots.
+export const ABOUT_ENABLED = false;

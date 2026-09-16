@@ -51,7 +51,7 @@ export default function Bistro() {
   return (
     <div className={ui.page} data-cluster={line.cluster}>
       <div className={ui.shell}>
-        <Masthead line={line} lead={line.desc} />
+        <Masthead line={line} />
 
         {showRows ? (
           <WeeklyMenu menu={lunch} />
@@ -103,7 +103,7 @@ export default function Bistro() {
               <p className={ui.cardMeta}>{bistroGroups.note}</p>
               <p className={ui.cardText}>{bistroGroups.text}</p>
               <div className={`${ui.actions} ${styles.groupsActions}`}>
-                <Link className={`${ui.btn} ${ui.btnGhost}`} to="/banketi#pieteikums">
+                <Link className={`${ui.btn} ${ui.btnGhost}`} to="/kontakti">
                   Pieteikt grupu
                 </Link>
               </div>

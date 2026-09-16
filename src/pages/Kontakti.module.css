@@ -1,100 +1,294 @@
-/* Kontakti — izkārtojums; forma un rindas nāk no styles/Page.module.css */
+/* ---------------------------------------------------------------
+   Kontakti — mierīgs izkārtojums: mazas mono etiķetes sadaļām,
+   vietas kā kartītes uz "papīra", darba laiks divās kolonnās bez
+   punktu līnijām. Forma nāk no styles/Page.module.css.
+   --------------------------------------------------------------- */
 
-.columns {
+.block {
+  padding-top: clamp(32px, 5vw, 48px);
+}
+
+/* sadaļas etiķete — mono lielie burti, tievs svītrojums zem tās */
+.label {
+  display: block;
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--c-rule);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--c-ink-2);
+}
+
+/* ---------- kartītes ---------- */
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 48px;
-  align-items: start;
-  padding-top: clamp(28px, 5vw, 44px);
+  gap: 16px;
 }
 
-/* ---------- kreisā kolonna ---------- */
-
-.info {
+.card {
   display: flex;
   flex-direction: column;
-  gap: clamp(36px, 6vw, 52px);
+  align-items: flex-start;
   min-width: 0;
+  padding: 20px 22px 22px;
+  background: var(--c-paper);
+  border: 1px solid var(--c-rule);
+  border-radius: 4px;
 }
 
-.heading {
+.cardName {
   font-family: var(--font-head);
-  font-variation-settings: "wght" 600, "wdth" 90, "opsz" 40;
-  font-size: clamp(27px, 5vw, 36px);
-  line-height: 1;
+  font-variation-settings: "wght" 600, "wdth" 92, "opsz" 28;
+  font-size: 24px;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   text-transform: lowercase;
-  margin: 0 0 14px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--c-ink);
+  margin: 0 0 10px;
 }
 
-.places {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
+.cardText {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--c-ink-2);
+  margin-bottom: 14px;
 }
 
-.place {
-  min-width: 0;
-}
-
+/* adrese ir poga — parāda vietu kartē zem kartītēm */
 .address {
+  display: block;
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--c-ink);
+  cursor: pointer;
+}
+
+.address:hover,
+.address:focus-visible {
+  color: var(--c-green);
+}
+
+.addressHint {
+  display: block;
+  padding-top: 4px;
   font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 500;
-  padding-bottom: 4px;
+  font-size: 12px;
+  color: var(--c-green);
+  text-decoration: underline;
+  text-decoration-color: var(--c-rule);
+  text-underline-offset: 4px;
 }
 
-.mapLinks {
-  padding-top: 8px;
+.cardSelected {
+  border-color: var(--c-green-bright);
 }
 
-.stack {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 9px 0;
-  border-bottom: 1px solid var(--c-rule-soft);
+.cardSelected .addressHint {
+  text-decoration: none;
 }
 
-.stack:last-child {
-  border-bottom: 0;
+/* darba laiks: diena | laiks, bez punktu līnijām */
+/* darba laiks aizņem visu brīvo vietu, lai tālrunis visās kartītēs ir apakšā */
+.hours {
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 10px 0 12px;
+  border-top: 1px solid var(--c-rule-soft);
 }
 
-.stackLabel {
+/* tālrunis apakšā, ar līniju virs tā — visās kartītēs vienā līmenī */
+.cardFoot {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--c-rule-soft);
+}
+
+
+.hoursRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 3px 0;
+}
+
+.hours dt {
   font-size: 14px;
   color: var(--c-ink-2);
 }
 
-.stackValue {
-  display: inline-block;
-  padding: 3px 0;
+.hours dd {
+  margin: 0;
   font-family: var(--font-mono);
   font-size: 14px;
   font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.closed {
+  color: var(--c-ink-3);
+  font-weight: 400;
+}
+
+/* tālrunis un e-pasts — lieli, ar skāriena lauku */
+.phone,
+.email {
+  display: inline-block;
+  padding: 2px 0;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink);
   overflow-wrap: anywhere;
 }
 
-.stackValue:hover,
-.stackValue:focus-visible {
+.phone:hover,
+.phone:focus-visible,
+.email:hover,
+.email:focus-visible {
   color: var(--c-green);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.links a {
+  display: inline-block;
+  padding: 2px 0;
+  color: var(--c-green);
+  text-decoration: underline;
+  text-decoration-color: var(--c-rule);
+  text-underline-offset: 4px;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  text-decoration-color: var(--c-green-bright);
+}
+
+/* ---------- karte ---------- */
+
+.map {
+  margin-top: 16px;
+  background: var(--c-paper);
+  border: 1px solid var(--c-rule);
+  border-radius: 4px;
+  overflow: hidden;
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
+.mapHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--c-rule-soft);
+}
+
+.mapTitle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  font-family: var(--font-head);
+  font-variation-settings: "wght" 600, "wdth" 94;
+  font-size: 17px;
+  text-transform: lowercase;
+}
+
+.mapAddress {
+  font-family: var(--font-mono);
+  font-variation-settings: normal;
+  font-size: 13px;
+  text-transform: none;
+  color: var(--c-ink-2);
+}
+
+.mapOpen {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--c-green);
+  text-decoration: underline;
+  text-decoration-color: var(--c-rule);
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
+.mapOpen:hover,
+.mapOpen:focus-visible {
+  text-decoration-color: var(--c-green-bright);
+}
+
+.mapFrame {
+  display: block;
+  width: 100%;
+  height: clamp(280px, 45vw, 420px);
+  border: 0;
+  background: var(--c-rule-soft);
+}
+
+/* bez kartītes — atsauksmju tālrunis un e-pasts */
+.plain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
 .requisites {
   font-family: var(--font-mono);
   font-size: 14px;
   line-height: 1.8;
+  color: var(--c-ink-2);
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------- labā kolonna ---------- */
+.requisites p:first-child {
+  color: var(--c-ink);
+  font-weight: 500;
+}
+
+/* ---------- apakšējās divas kolonnas ---------- */
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px 56px;
+  align-items: start;
+}
+
+.info {
+  min-width: 0;
+}
 
 .side {
   display: flex;
   flex-direction: column;
   gap: 14px;
   min-width: 0;
+  padding-top: clamp(32px, 5vw, 48px);
 }
 
 .side a {
@@ -108,10 +302,15 @@
   margin-top: 18px;
 }
 
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 900px) {
   .columns {
     grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-    gap: 56px;
   }
 
   .side {

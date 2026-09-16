@@ -3,7 +3,7 @@ import EnquiryForm from "../components/EnquiryForm.jsx";
 import Gallery from "../components/Gallery.jsx";
 import Masthead from "../components/Masthead.jsx";
 import { lineById, venues, telHref } from "../data/lines.js";
-import { banketiEvents, banketiGalleries, banketiSteps, banketiVenueNote, galleries } from "../data/site.js";
+import { banketiGalleries, banketiText, galleries } from "../data/site.js";
 import { track } from "../lib/analytics.js";
 import { ENQUIRY_FORM_ENABLED } from "../lib/features.js";
 import ui from "../styles/Page.module.css";
@@ -15,70 +15,59 @@ export default function Banketi() {
   return (
     <div className={ui.page} data-cluster={line.cluster}>
       <div className={ui.shell}>
-        <Masthead
-          line={line}
-          lead="Individuāli sastādīta ēdienkarte jūsu pasākumam — pie mums vai tur, kur svinat jūs."
-        />
+        <Masthead line={line} />
 
-        <section className={ui.section} aria-labelledby="banketi-ka">
-          <div className={ui.sectionHead}>
-            <h2 className={ui.heading} id="banketi-ka">
-              kā tas notiek
-            </h2>
-            <p className={ui.facts}>
-              <a href="#pieteikums">pieteikums ↓</a>
-            </p>
-          </div>
-          <ol className={ui.steps}>
-            {banketiSteps.map((s) => (
-              <li key={s.title} className={ui.step}>
-                <h3 className={ui.stepTitle}>{s.title}</h3>
-                <p className={ui.stepText}>{s.text}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <section className={ui.section} aria-labelledby="banketi-kam">
-          <div className={styles.about}>
-            <div>
-              <h2 className={ui.sub} id="banketi-kam">
-                pasākumi
+        {/* teksts pēc oriģinālās vietnes: pielāgotas ēdienkartes, izbraukuma ēdināšana */}
+        {banketiText.map((block, i) => (
+          <section key={block.id} className={ui.section} aria-labelledby={`banketi-${block.id}`}>
+            <div className={ui.sectionHead}>
+              <h2 className={ui.heading} id={`banketi-${block.id}`}>
+                {block.title}
               </h2>
-              <ul className={`${ui.list} ${styles.events}`}>
-                {banketiEvents.map((e) => (
-                  <li key={e}>{e}</li>
-                ))}
-              </ul>
             </div>
-            <div>
-              <h2 className={ui.sub}>kur</h2>
-              <ul className={ui.rows}>
-                {venues.map((v) => (
-                  <li key={v.id} className={ui.row}>
-                    {v.href ? (
-                      <a className={ui.rowLabel} href={v.href} target="_blank" rel="noreferrer">
-                        {v.name} ↗
-                      </a>
-                    ) : (
-                      <Link className={ui.rowLabel} to={v.path}>
-                        {v.name}
-                      </Link>
-                    )}
-                    <i className={ui.leader} aria-hidden="true" />
-                    <span className={ui.rowValue}>līdz {v.capacity}</span>
-                  </li>
+
+            {i === 1 ? (
+              <div className={styles.about}>
+                <div className={ui.prose}>
+                  {block.paragraphs.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+                <div>
+                  <h3 className={ui.sub}>kur</h3>
+                  <ul className={ui.rows}>
+                    {venues.map((v) => (
+                      <li key={v.id} className={ui.row}>
+                        {v.href ? (
+                          <a className={ui.rowLabel} href={v.href} target="_blank" rel="noreferrer">
+                            {v.name} ↗
+                          </a>
+                        ) : (
+                          <Link className={ui.rowLabel} to={v.path}>
+                            {v.name}
+                          </Link>
+                        )}
+                        <i className={ui.leader} aria-hidden="true" />
+                        <span className={ui.rowValue}>līdz {v.capacity}</span>
+                      </li>
+                    ))}
+                    <li className={ui.row}>
+                      <span className={ui.rowLabel}>izbraukumā — pilī, meža būdiņā, uz ūdens</span>
+                      <i className={ui.leader} aria-hidden="true" />
+                      <span className={`${ui.rowValue} ${ui.rowMuted}`}>pēc vienošanās</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div className={ui.prose}>
+                {block.paragraphs.map((p) => (
+                  <p key={p}>{p}</p>
                 ))}
-                <li className={ui.row}>
-                  <span className={ui.rowLabel}>izbraukumā — pilī, meža būdiņā, uz ūdens</span>
-                  <i className={ui.leader} aria-hidden="true" />
-                  <span className={`${ui.rowValue} ${ui.rowMuted}`}>pēc vienošanās</span>
-                </li>
-              </ul>
-              <p className={`${ui.prose} ${styles.venueNote}`}>{banketiVenueNote}</p>
-            </div>
-          </div>
-        </section>
+              </div>
+            )}
+          </section>
+        ))}
 
         <section className={ui.section} aria-labelledby="banketi-galerija">
           <div className={ui.sectionHead}>

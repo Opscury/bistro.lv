@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Img from "../components/Img.jsx";
-import { company, lines, venues } from "../data/lines.js";
+import { lines, venues } from "../data/lines.js";
 import { homeTitle, aboutText } from "../data/site.js";
+import { ABOUT_ENABLED } from "../lib/features.js";
 import ui from "../styles/Page.module.css";
 import styles from "./Home.module.css";
 
@@ -90,15 +91,8 @@ export default function Home() {
   return (
     <div className={ui.page}>
       <div className={ui.shell}>
-        <header className={styles.mast}>
-          <p className={ui.label}>
-            {company.name} · {company.city} · kopš {company.founded}
-          </p>
-          <h1 className={styles.title}>
-            <span className="visually-hidden">Silva, Jelgava: </span>
-            {homeTitle}
-          </h1>
-        </header>
+        {/* virsraksts tikai ekrānlasītājam — lapa sākas ar četrām vietām */}
+        <h1 className="visually-hidden">Silva, Jelgava: {homeTitle}</h1>
 
         {/* četras līnijas: bistro + konditoreja (Silvas ikdiena), tējas namiņš, banketi */}
         <ul className={styles.grid} aria-label="Silvas vietas">
@@ -107,6 +101,7 @@ export default function Home() {
           ))}
         </ul>
 
+        {ABOUT_ENABLED && (
         <section className={ui.section} aria-labelledby="par-silvu">
           <div className={ui.sectionHead}>
             <h2 className={ui.heading} id="par-silvu">
@@ -124,6 +119,7 @@ export default function Home() {
             ))}
           </div>
         </section>
+        )}
 
         <section className={ui.section} aria-labelledby="vietas">
           <div className={ui.sectionHead}>

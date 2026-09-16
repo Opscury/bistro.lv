@@ -49,29 +49,26 @@ export const tejasOffer = {
   },
 };
 
-// Banketi: kā tas notiek, pasākumu veidi, kur.
-export const banketiSteps = [
+// Banketi: teksts pēc oriģinālās vietnes — divi bloki, katrs ar divām
+// rindkopām. "kur" rindas nāk no lines.json (venues).
+export const banketiText = [
   {
-    title: "Sazinieties",
-    text: "Pastāstiet par pasākumu — datums, viesu skaits, vieta un tas, kas jums svarīgi.",
+    id: "edienkartes",
+    title: "pielāgotas ēdienkartes",
+    paragraphs: [
+      "Mēs piedāvājam individuāli pielāgotas ēdienkartes visdažādākajiem pasākumiem – kāzām, bildināšanām, kristībām, jubilejām, bēru mielastiem, kā arī korporatīvajiem pasākumiem, semināriem, konferenču kafijas pauzēm, prezentācijām un citiem nozīmīgiem dzīves notikumiem.",
+      "Piedāvājumā ir plates, uzkodas, pamatēdieni, salāti, zupas, karstās uzkodas, dzērieni un pašu gatavoti konditorejas izstrādājumi. Pēc iepriekšējas vienošanās varam nodrošināt arī pasūtījumu piegādi. Neatkarīgi no pasākuma veida, mēs parūpēsimies, lai jūsu svinības būtu īpašas.",
+    ],
   },
   {
-    title: "Piedāvājums",
-    text: "Sastādām ēdienkarti un tāmi tieši jūsu pasākumam; pielāgojam, kamēr viss der.",
-  },
-  {
-    title: "Apstiprinājums",
-    text: "Saskaņojam detaļas, laiku un noformējumu. Pasākuma dienā par galdu rūpējamies mēs.",
+    id: "izbraukums",
+    title: "izbraukuma ēdināšana",
+    paragraphs: [
+      "Mūsu pakalpojumi pieejami gan Bistro “Silva” telpās Jelgavas centrā, pontonā vai uz peldterases, gan jebkurā citā jums vēlamā vietā – pilī, meža būdiņā, uz ūdens vai citur.",
+      "Mēs strādājam ar tuvākiem un tālākiem galamērķiem, nodrošinot skaisti noformētus galdus, atbilstošas dekorācijas un profesionālu apkalpošanu, kas padarīs jūsu pasākumu neaizmirstamu. Mūsu komanda parūpēsies, lai jūs pilnībā izbaudītu savu īpašo notikumu.",
+    ],
   },
 ];
-
-export const banketiEvents = [
-  "kāzas", "bildināšanas", "kristības", "jubilejas", "atvadu mielasti",
-  "korporatīvie pasākumi", "semināri un konferences", "kafijas pauzes", "prezentācijas",
-];
-
-export const banketiVenueNote =
-  "Bistro Silva zālē Jelgavas centrā, uz pontona vai peldterases, vai jebkurā citā jums vēlamā vietā — pilī, meža būdiņā, uz ūdens vai citur. Piedāvājumā plates, uzkodas, pamatēdieni, salāti, zupas, karstās uzkodas, dzērieni un pašu konditorejas izstrādājumi; pēc iepriekšējas vienošanās arī piegāde.";
 
 export { venues };
 

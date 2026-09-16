@@ -1,8 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  company, lines, hoursRows, fullAddress, mapLinks, telHref, phoneList, emailList,
-} from "../data/lines.js";
+import { company, lines, hoursRows, mapLinks, telHref } from "../data/lines.js";
 import { sendForm, fieldsToText, SEND_METHOD } from "../lib/sendForm.js";
 import { track } from "../lib/analytics.js";
 import { ENQUIRY_FORM_ENABLED } from "../lib/features.js";
@@ -106,105 +104,149 @@ function ContactForm() {
   );
 }
 
-function Place({ line }) {
-  const maps = mapLinks(line);
+/** Google Maps iegultā karte bez API atslēgas — "q=…&output=embed". */
+function mapEmbedSrc(line) {
+  const q = encodeURIComponent(`Silva ${line.name}, ${line.address.street}, ${line.address.city}, Latvia`);
+  return `https://www.google.com/maps?q=${q}&z=16&hl=lv&output=embed`;
+}
+
+/**
+ * Viena vieta kā kartīte: nosaukums, adrese (poga — parāda vietu kartē),
+ * darba laiks tabulā, tālrunis apakšā vienā līmenī visās kartītēs.
+ */
+function Place({ line, selected, onSelect }) {
   return (
-    <div className={styles.place}>
-      <h3 className={ui.sub}>{line.name}</h3>
-      <p className={styles.address}>{fullAddress(line)}</p>
-      <ul className={ui.rows}>
+    <li className={selected ? `${styles.card} ${styles.cardSelected}` : styles.card}>
+      <h3 className={styles.cardName}>{line.name}</h3>
+      <button
+        type="button"
+        className={styles.address}
+        aria-pressed={selected}
+        onClick={() => onSelect(line.id)}
+        title="Parādīt kartē"
+      >
+        {line.address.street}
+        <br />
+        {line.address.city}, {line.address.postal}
+        <span className={styles.addressHint}>{selected ? "kartē ↓" : "parādīt kartē ↓"}</span>
+      </button>
+
+      <dl className={styles.hours}>
         {hoursRows(line, { long: true }).map((r) => (
-          <li key={r.label} className={ui.row}>
-            <span className={ui.rowLabel}>{r.label}</span>
-            <i className={ui.leader} aria-hidden="true" />
-            <span className={r.closed ? `${ui.rowValue} ${ui.rowMuted}` : ui.rowValue}>{r.value}</span>
-          </li>
+          <div key={r.label} className={styles.hoursRow}>
+            <dt>{r.label}</dt>
+            <dd className={r.closed ? styles.closed : undefined}>{r.value}</dd>
+          </div>
         ))}
-        {line.phone && (
-          <li className={ui.row}>
-            <span className={ui.rowLabel}>{line.phoneLabel || "Tālrunis"}</span>
-            <i className={ui.leader} aria-hidden="true" />
-            <a className={ui.rowValue} href={telHref(line.phone)} onClick={() => track("zvans", { vieta: line.id })}>
-              {line.phone}
-            </a>
-          </li>
-        )}
-      </ul>
-      <p className={`${ui.facts} ${styles.mapLinks}`}>
-        <a href={maps.google} target="_blank" rel="noreferrer">
-          Google Maps ↗
-        </a>
-        <a href={maps.waze} target="_blank" rel="noreferrer">
-          Waze ↗
-        </a>
-      </p>
-    </div>
+      </dl>
+
+      {line.phone && (
+        <div className={styles.cardFoot}>
+          <a className={styles.phone} href={telHref(line.phone)} onClick={() => track("zvans", { vieta: line.id })}>
+            {line.phone}
+          </a>
+        </div>
+      )}
+    </li>
   );
 }
 
 export default function Kontakti() {
   const places = lines.filter((l) => l.address);
+  const banketi = lines.find((l) => l.id === "banketi");
+  const [selectedId, setSelectedId] = useState(places[0].id);
+  const selected = places.find((l) => l.id === selectedId) ?? places[0];
+  const mapRef = useRef(null);
+
+  const select = (id) => {
+    setSelectedId(id);
+    track("karte", { vieta: id });
+    // uz telefona karte ir zem kartītēm — aizritinām līdz tai
+    mapRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
 
   return (
     <div className={ui.page}>
       <div className={ui.shell}>
-        <header className={ui.mast}>
+        <header className={`${ui.mast} ${ui.mastBare}`}>
           <h1 className={ui.title}>kontakti</h1>
-          <p className={ui.facts}>
-            <span>{company.name}</span>
-            <span>{company.city}</span>
-            <span>kopš {company.founded}</span>
-          </p>
         </header>
 
+        {/* ---------- vietas: trīs kartītes vienā rindā ---------- */}
+        <section className={styles.block} aria-labelledby="k-vietas">
+          <h2 className={styles.label} id="k-vietas">
+            vietas un darba laiks
+          </h2>
+          <ul className={styles.cards}>
+            {places.map((l) => (
+              <Place key={l.id} line={l} selected={l.id === selectedId} onSelect={select} />
+            ))}
+          </ul>
+
+          {/* karte — rāda izvēlēto vietu; adrese kartītē to pārslēdz */}
+          <div className={styles.map} ref={mapRef}>
+            <div className={styles.mapHead}>
+              <p className={styles.mapTitle}>
+                <span>Silva, {selected.name}</span>
+                <span className={styles.mapAddress}>
+                  {selected.address.street}, {selected.address.city}, {selected.address.postal}
+                </span>
+              </p>
+              <a className={styles.mapOpen} href={mapLinks(selected).google} target="_blank" rel="noreferrer">
+                Atvērt Google Maps ↗
+              </a>
+            </div>
+            <iframe
+              key={selected.id}
+              className={styles.mapFrame}
+              src={mapEmbedSrc(selected)}
+              title={`Karte: Silva ${selected.name}, ${selected.address.street}`}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </section>
+
+        {/* ---------- banketi + rekvizīti | forma ---------- */}
         <div className={styles.columns}>
           <div className={styles.info}>
-            <section aria-labelledby="k-vietas">
-              <h2 className={styles.heading} id="k-vietas">
-                vietas un darba laiks
+            <section className={styles.block} aria-labelledby="k-banketi">
+              <h2 className={styles.label} id="k-banketi">
+                banketi un pasākumi
               </h2>
-              <div className={styles.places}>
-                {places.map((l) => (
-                  <Place key={l.id} line={l} />
-                ))}
+              <div className={styles.card}>
+                <h3 className={styles.cardName}>{banketi.name}</h3>
+                <p className={styles.cardText}>Pasākumu ēdināšana, telpu noma, konditorejas pasūtījumi.</p>
+                <a className={styles.phone} href={telHref(banketi.phone)} onClick={() => track("zvans", { vieta: "banketi" })}>
+                  {banketi.phone}
+                </a>
+                <a className={styles.email} href={`mailto:${banketi.email}`}>
+                  {banketi.email}
+                </a>
+                <p className={styles.links}>
+                  <Link to="/banketi">banketi →</Link>
+                  <Link to="/noma">telpu noma →</Link>
+                </p>
               </div>
             </section>
 
-            <section aria-labelledby="k-talruni">
-              <h2 className={styles.heading} id="k-talruni">
-                tālruņi
+            <section className={styles.block} aria-labelledby="k-atsauksmes">
+              <h2 className={styles.label} id="k-atsauksmes">
+                atsauksmēm un jautājumiem
               </h2>
-              <ul className={ui.rows}>
-                {phoneList().map((p) => (
-                  <li key={p.value} className={ui.row}>
-                    <span className={ui.rowLabel}>{p.label}</span>
-                    <i className={ui.leader} aria-hidden="true" />
-                    <a className={ui.rowValue} href={telHref(p.value)}>
-                      {p.value}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div className={styles.plain}>
+                <a className={styles.phone} href={telHref(company.feedbackPhone)}>
+                  {company.feedbackPhone}
+                </a>
+                <a className={styles.email} href={`mailto:${company.feedbackEmail}`}>
+                  {company.feedbackEmail}
+                </a>
+              </div>
             </section>
 
-            <section aria-labelledby="k-epasts">
-              <h2 className={styles.heading} id="k-epasts">
-                e-pasts
-              </h2>
-              <ul className={ui.rows}>
-                {emailList().map((e) => (
-                  <li key={e.value} className={styles.stack}>
-                    <span className={styles.stackLabel}>{e.label}</span>
-                    <a className={styles.stackValue} href={`mailto:${e.value}`}>
-                      {e.value}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section aria-labelledby="k-rekviziti" id="rekviziti">
-              <h2 className={styles.heading} id="k-rekviziti">
+            <section className={styles.block} aria-labelledby="k-rekviziti" id="rekviziti">
+              <h2 className={styles.label} id="k-rekviziti">
                 rekvizīti
               </h2>
               <div className={styles.requisites}>

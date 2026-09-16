@@ -165,7 +165,7 @@ export default function Konditoreja() {
   return (
     <div className={ui.page} data-cluster={line.cluster}>
       <div className={ui.shell}>
-        <Masthead line={line} />
+        <Masthead line={line} rule />
         <MenuIndex />
       </div>
 

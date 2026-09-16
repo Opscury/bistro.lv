@@ -16,14 +16,14 @@
   letter-spacing: -0.035em;
   text-transform: lowercase;
   text-wrap: balance;
-  margin: 10px 0 0;
+  margin: 0;
   max-width: 13.5em;
   color: var(--c-ink);
 }
 
 .grid {
   list-style: none;
-  margin: clamp(24px, 5vw, 44px) 0 0;
+  margin: clamp(28px, 6vw, 56px) 0 0;
   padding: 0;
   border-top: 2px solid var(--c-ink);
   display: grid;

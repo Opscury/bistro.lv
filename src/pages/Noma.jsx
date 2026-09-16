@@ -63,7 +63,7 @@ function Venue({ venue, gallery, children }) {
         <a className={`${ui.btn} ${ui.btnGhost}`} href={venue.href} target="_blank" rel="noreferrer">
           Uzzināt vairāk ↗
         </a>
-        <Link className={ui.btn} to="/banketi#pieteikums">
+        <Link className={ui.btn} to="/kontakti">
           Pieteikt pasākumu
         </Link>
       </div>
@@ -77,7 +77,7 @@ export default function Noma() {
   return (
     <div className={ui.page} data-cluster="banketi">
       <div className={ui.shell}>
-        <header className={ui.mast}>
+        <header className={`${ui.mast} ${ui.mastBare}`}>
           <h1 className={ui.title}>telpu noma</h1>
         </header>
 
@@ -140,7 +140,7 @@ export default function Noma() {
             ))}
           </div>
           <div className={`${ui.actions} ${styles.venueActions}`}>
-            <Link className={ui.btn} to="/banketi#pieteikums">
+            <Link className={ui.btn} to="/kontakti">
               Pieteikt pasākumu
             </Link>
           </div>
@@ -169,16 +169,6 @@ export default function Noma() {
             nodrošinot pilnvērtīgu svētku pieredzi.
           </p>
         </Venue>
-
-        <div className={ui.cta}>
-          <div>
-            <h2 className={ui.ctaTitle}>kontakti</h2>
-            <p className={ui.ctaText}>Adreses, darba laiki un tālruņi visām Silva vietām.</p>
-          </div>
-          <Link className={ui.btn} to="/kontakti">
-            Visi kontakti
-          </Link>
-        </div>
       </div>
     </div>
   );
