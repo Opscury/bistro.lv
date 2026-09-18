@@ -25,7 +25,7 @@
   list-style: none;
   margin: clamp(28px, 6vw, 56px) 0 0;
   padding: 0;
-  border-top: 2px solid var(--c-ink);
+  border-top: 1px solid var(--c-rule);
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 32px;
@@ -91,6 +91,12 @@
     padding: 28px 0 32px;
   }
 
+  .venues {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
   .venues {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

@@ -1,0 +1,31 @@
+<!doctype html><html lang="lv"><head><meta charset="utf-8">
+<title>Silva — fontu salīdzinājums</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baumans&family=Righteous&family=Comfortaa:wght@600;700&family=Quicksand:wght@600;700&family=Fredoka:wght@600;700&family=Baloo+2:wght@700&family=Days+One&family=Signika:wght@600;700&family=Gabarito:wght@700&family=Chau+Philomene+One&display=swap" rel="stylesheet">
+<style>
+ body{margin:0;background:#fbf7f2;font-family:system-ui;padding:22px 26px 70px;color:#14161c}
+ h1{font:500 12px/1 ui-monospace,monospace;letter-spacing:.2em;text-transform:uppercase;color:#61667a;margin:0 0 14px}
+ .logo{border-bottom:2px solid #14161c;padding-bottom:18px;margin-bottom:8px}
+ .logo img{height:78px}
+ .tag{font:500 11px/1 ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase;color:#61667a;margin:14px 0 2px}
+ .row{padding:14px 0;border-bottom:1px solid #eae4d6}
+ .name{font:500 11px/1.3 ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#61667a;margin-bottom:8px}
+ .line{display:flex;align-items:baseline;gap:26px;flex-wrap:wrap}
+ .word{font-size:60px;line-height:1;color:#017a3c}
+ .hollow{-webkit-text-stroke:2.6px #017a3c;color:transparent;padding-right:8px}
+ .head{font-size:34px;line-height:1;color:#14161c}
+</style></head><body>
+<h1>logotips — ar ko salīdzinām</h1>
+<div class="logo"><img src="/silva-logo.svg" alt="Silva"></div>
+<p class="tag">kandidāti</p>
+<div id="o"></div>
+<script>
+const fonts=[["Baumans",700],["Righteous",400],["Comfortaa",700],["Quicksand",700],["Fredoka",600],["Baloo 2",700],["Days One",400],["Signika",700],["Gabarito",700],["Chau Philomene One",400]];
+document.getElementById('o').innerHTML=fonts.map(([f,w])=>
+ `<div class="row"><div class="name">${f}</div>
+   <div class="line">
+     <span class="word hollow" style="font-family:'${f}';font-weight:${w}">silva</span>
+     <span class="word" style="font-family:'${f}';font-weight:${w}">silva</span>
+     <span class="head" style="font-family:'${f}';font-weight:${w}">tējas namiņš · konditoreja</span>
+   </div></div>`).join('');
+</script></body></html>

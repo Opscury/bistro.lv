@@ -47,7 +47,8 @@ export default function Gallery({ images, alt = "Galerija", featured = 6, column
   );
 }
 
-function Lightbox({ images, alt, index, onIndex, onClose }) {
+/** Lielais skats — lieto gan režģis, gan tējas namiņa lente. */
+export function Lightbox({ images, alt, index, onIndex, onClose }) {
   const total = images.length;
   const closeRef = useRef(null);
   const startX = useRef(null);

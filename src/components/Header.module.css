@@ -45,7 +45,7 @@
 .link {
   font-family: var(--font-head);
   font-variation-settings: "wght" 500, "wdth" 96;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1;
   letter-spacing: -0.005em;
   text-transform: lowercase;

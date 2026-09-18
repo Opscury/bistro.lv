@@ -16,6 +16,11 @@ export const ORDERING_ENABLED =
 // Ieslēgt, kad ir formu serveris un kāds atbild uz pieteikumiem.
 export const ENQUIRY_FORM_ENABLED = false;
 
+// Konditorejas preces logs (klikšķis uz preces -> uznirstošais logs ar
+// lielo bildi, cenu un sastāvu). Pagaidām izslēgts — pārskatīsim pēc
+// palaišanas. Izslēgts rinda paliek rinda: bez klikšķa, bez "vairāk".
+export const ITEM_SHEET_ENABLED = false;
+
 // Sākumlapas sadaļa "par Silvu" (ģimenes uzņēmums · viena virtuve ·
 // četras vietas + divas rindkopas). Pagaidām izslēgta; teksts paliek
 // data/site.js (aboutText). Ieslēgt, kad teksts ir saskaņots.

@@ -10,7 +10,7 @@ import ItemSheet from "../components/konditoreja/ItemSheet.jsx";
 import OrderForm from "../components/konditoreja/OrderForm.jsx";
 import QtyStepper from "../components/konditoreja/QtyStepper.jsx";
 import Img from "../components/Img.jsx";
-import { ORDERING_ENABLED } from "../lib/features.js";
+import { ITEM_SHEET_ENABLED, ORDERING_ENABLED } from "../lib/features.js";
 import { track } from "../lib/analytics.js";
 import ui from "../styles/Page.module.css";
 import styles from "./Konditoreja.module.css";
@@ -65,6 +65,9 @@ function MenuIndex() {
             <a href={`#${cat.id}`}>
               <span>{cat.title}</span>
               <i className={styles.leader} aria-hidden="true" />
+              <span className={styles.indexArrow} aria-hidden="true">
+                →
+              </span>
             </a>
           </li>
         ))}
@@ -81,10 +84,18 @@ function MenuIndex() {
 function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty }) {
   const { item, p } = entry;
   const hasComposition = Boolean(item.allergens?.length);
+  // kamēr preces logs ir izslēgts, rinda nav poga — tikai saturs
+  const Main = ITEM_SHEET_ENABLED ? "button" : "div";
+  const mainProps = ITEM_SHEET_ENABLED
+    ? { type: "button", onClick: onOpen }
+    : {};
 
   return (
     <li className={qty ? `${styles.row} ${styles.rowActive}` : styles.row}>
-      <button type="button" className={styles.rowMain} onClick={onOpen}>
+      <Main
+        className={ITEM_SHEET_ENABLED ? styles.rowMain : `${styles.rowMain} ${styles.rowStatic}`}
+        {...mainProps}
+      >
         {item.img ? (
           <span className={styles.thumbBox}>
             <Img className={styles.thumb} name={item.img} alt="" sizes="(min-width: 700px) 300px, 45vw" />
@@ -102,12 +113,16 @@ function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty }) {
           <span className={styles.rowMeta}>
             <span className={styles.rowPrice}>{p.shortPrice}</span>
             {item.weight && <span className={styles.rowWeight}>{item.weight}</span>}
-            <span className={styles.rowMore}>{hasComposition ? "sastāvs" : "vairāk"}</span>
+            {ITEM_SHEET_ENABLED && (
+              <span className={styles.rowMore}>{hasComposition ? "sastāvs" : "vairāk"}</span>
+            )}
           </span>
         </span>
 
-        <span className="visually-hidden">Apskatīt informāciju par: {item.name}</span>
-      </button>
+        {ITEM_SHEET_ENABLED && (
+          <span className="visually-hidden">Apskatīt informāciju par: {item.name}</span>
+        )}
+      </Main>
 
       {orderMode && (
         <div className={styles.rowAction}>
@@ -248,7 +263,7 @@ export default function Konditoreja() {
         )}
       </div>
 
-      {openEntry && (
+      {ITEM_SHEET_ENABLED && openEntry && (
         <ItemSheet
           entry={openEntry}
           inCart={cart.qtys[openEntry.key]}

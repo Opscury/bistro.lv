@@ -5,14 +5,30 @@
 
 .footer {
   margin-top: clamp(48px, 8vw, 96px);
-  border-top: 1px solid var(--c-rule);
   background: var(--c-bg);
 }
 
 .inner {
   max-width: calc(var(--w-shell) + 2 * var(--gut));
   margin-inline: auto;
-  padding: 28px var(--gut) max(22px, env(safe-area-inset-bottom));
+  padding: 28px var(--gut) 0;
+}
+
+/* kājenes līnijas — vienmēr visā lapas platumā */
+.rule {
+  border: 0;
+  height: 1px;
+  background: var(--c-rule);
+  margin: 0;
+}
+
+/* līnija starp vietu kolonnām un apakšējo rindu */
+.ruleGap {
+  margin-top: 26px;
+}
+
+.innerBottom {
+  padding-bottom: max(22px, env(safe-area-inset-bottom));
 }
 
 .grid {
@@ -59,20 +75,15 @@ a.line:focus-visible {
 }
 
 .bottom {
-  margin-top: 26px;
-  padding-top: 16px;
-  border-top: 1px solid var(--c-rule-soft);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 8px 24px;
 }
 
-/* citās lapās kājene ir tikai šī rinda — bez augšējās atstarpes */
+/* citās lapās kājene ir tikai šī rinda */
 .bottomOnly {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
+  margin-top: -12px;
 }
 
 .facts,

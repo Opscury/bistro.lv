@@ -43,10 +43,29 @@ export const tejasOffer = {
     "No namiņa paveras skaists skats uz pilsētu, upi un upes strūklakām. Visu gadu var sēdēt arī pie āra galdiņiem.",
   ],
   wideShot: "tejas_namins_1_1-6.webp",
-  poster: {
-    photo: "Saldejuma-kokteili.webp",
-    alt: "Saldējuma–piena kokteiļi, 6.00 € / 350 ml: bubble gum, šokolādes, karameļu, matcha, zemeņu, oreo",
-  },
+};
+
+// ---------------------------------------------------------------
+// ZIŅOJUMU DĒLIS tējas namiņa lapā.
+// Šis ir vienīgais, kas jāmaina, kad namiņā ir jauns piedāvājums,
+// akcija vai paziņojums. Lauki:
+//   label  — etiķete kreisajā augšā ("aktuāli", "jaunums", "akcija")
+//   meta   — mazais teksts pa labi: sezona, datumi, "līdz 30.09."
+//   photo  — plakāts no public/img (tikai faila nosaukums)
+//   alt    — kas uz plakāta rakstīts; bez tā to nevar izlasīt neviens,
+//            kas neredz attēlu, un Google arī ne
+//   title, text — neobligāti; ja plakāts pats visu pasaka, atstāj ""
+//   link   — neobligāta saite: { to: "/lapa", label: "…" } iekšējai
+//            vai { href: "https://…", label: "…" } ārējai; citādi null
+// ---------------------------------------------------------------
+export const tejasNotice = {
+  label: "aktuāli",
+  meta: "namiņā šobrīd",
+  photo: "Saldejuma-kokteili.webp",
+  alt: "Saldējuma–piena kokteiļi, 6.00 € / 350 ml: bubble gum, šokolādes, karameļu, matcha, zemeņu, oreo",
+  title: "",
+  text: "",
+  link: null,
 };
 
 // Banketi: teksts pēc oriģinālās vietnes — divi bloki, katrs ar divām

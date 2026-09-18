@@ -250,14 +250,19 @@
 }
 
 /* bez kartītes — atsauksmju tālrunis un e-pasts */
+/* .plain un .requisites stāv bez kartītes rāmja, tāpēc tiem dod tādu
+   pašu kreiso atkāpi kā kartītes iekšpusei (1px rāmis + 22px padding),
+   lai visu triju bloku teksts sākas vienā līnijā */
 .plain {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
+  padding-left: 23px;
 }
 
 .requisites {
+  padding-left: 23px;
   font-family: var(--font-mono);
   font-size: 14px;
   line-height: 1.8;

@@ -72,6 +72,11 @@
   color: var(--c-ink);
 }
 
+/* lapas nosaukums ar lielo sākumburtu: "Bistro", "Tējas namiņš" */
+.title::first-letter {
+  text-transform: uppercase;
+}
+
 .lead {
   max-width: 44ch;
   padding-top: clamp(16px, 3vw, 24px);
@@ -145,13 +150,16 @@
 }
 
 .heading {
-  font-family: var(--font-head);
-  font-variation-settings: "wght" 600, "wdth" 90, "opsz" 40;
+  font-family: var(--font-display);
   font-size: clamp(27px, 6vw, 44px);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
   text-transform: lowercase;
   margin: 0;
+}
+
+.heading::first-letter {
+  text-transform: uppercase;
 }
 
 /* mazāks virsraksts sadaļas iekšienē */
@@ -284,7 +292,7 @@
 
 .leader {
   flex: 1 1 24px;
-  min-width: 24px;
+  min-width: 16px;
   border-bottom: 1px dotted var(--c-rule);
   transform: translateY(-4px);
 }
@@ -363,7 +371,8 @@ a.card:hover .photo {
 .nameRow {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 2px 12px;
   padding-top: 14px;
 }
 
@@ -513,10 +522,27 @@ a.card:hover .arrow {
   margin: 0;
   list-style: none;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 .chips::-webkit-scrollbar {
   display: none;
+}
+
+/* Tukšie gali pa kreisi un pa labi — bez tiem pirmo un pēdējo čipu
+   nav kur aizritināt, un tie paliktu malā. Ar tiem jebkurš čips
+   (arī pirmais un pēdējais) var nostāties tieši joslas vidū. */
+.chips::before,
+.chips::after {
+  content: "";
+  flex: 0 0 50%;
+  height: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chips {
+    scroll-behavior: auto;
+  }
 }
 
 .chip {
@@ -539,13 +565,6 @@ a.card:hover .arrow {
 .chip:hover,
 .chip:focus-visible {
   color: var(--c-green);
-}
-
-@media (min-width: 900px) {
-  .chips {
-    flex-wrap: wrap;
-    overflow: visible;
-  }
 }
 
 .chipActive {

@@ -37,11 +37,9 @@
   object-fit: cover;
 }
 
-/* plakāts — gatavs attēls ar savu tekstu, bez rāmja */
-.poster {
-  display: block;
-  width: 100%;
-  height: auto;
+/* lente: nedaudz gaisa virs tās, pati platuma robeža ir komponentē */
+.rail {
+  padding-top: clamp(18px, 3vw, 26px);
 }
 
 @media (min-width: 700px) {
@@ -57,4 +55,16 @@
   .wideShot {
     aspect-ratio: auto;
   }
+}
+
+/* galerija sākas tur, kur zīmējums jau izgaisis */
+.gallerySection {
+  padding-top: clamp(8px, 2vw, 24px);
+  scroll-margin-top: calc(var(--header-h) + var(--sticky-extra) + 12px);
+}
+
+/* galerijas virsraksts stāv pa vidu, nevis pie kreisās malas */
+.galleryHead {
+  justify-content: center;
+  text-align: center;
 }

@@ -126,9 +126,6 @@ export default function Home() {
             <h2 className={ui.heading} id="vietas">
               vietas pasākumiem
             </h2>
-            <p className={ui.facts}>
-              <Link to="/banketi">banketi un ēdināšana →</Link>
-            </p>
           </div>
           <ul className={styles.venues}>
             {venues.map((v) => (

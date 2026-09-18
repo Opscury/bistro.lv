@@ -40,6 +40,32 @@
   color: var(--c-green);
 }
 
+/* bultiņa kā sākumlapas kartītēm — pabīdās, kad uz rindas uzliek peli */
+.indexArrow {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1;
+  color: var(--c-ink-2);
+  transition: color 0.15s ease, transform 0.25s ease;
+}
+
+.indexList a:hover .indexArrow,
+.indexList a:focus-visible .indexArrow {
+  color: var(--c-green);
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indexArrow {
+    transition: none;
+  }
+
+  .indexList a:hover .indexArrow {
+    transform: none;
+  }
+}
+
 .leader {
   flex: 1;
   min-width: 24px;
@@ -91,6 +117,19 @@
   color: inherit;
   text-align: left;
   cursor: pointer;
+}
+
+/* kamēr preces logs izslēgts — rinda ir tikai saturs, nevis poga */
+.rowStatic {
+  cursor: default;
+}
+
+.rowStatic:hover .thumb {
+  transform: none;
+}
+
+.rowStatic:hover .rowName {
+  color: inherit;
 }
 
 /* Vienāda kaste katram foto: izgrieztais izstrādājums stāv kastes

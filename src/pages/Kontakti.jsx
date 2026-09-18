@@ -173,10 +173,7 @@ export default function Kontakti() {
         </header>
 
         {/* ---------- vietas: trīs kartītes vienā rindā ---------- */}
-        <section className={styles.block} aria-labelledby="k-vietas">
-          <h2 className={styles.label} id="k-vietas">
-            vietas un darba laiks
-          </h2>
+        <section className={styles.block} aria-label="Vietas un darba laiks">
           <ul className={styles.cards}>
             {places.map((l) => (
               <Place key={l.id} line={l} selected={l.id === selectedId} onSelect={select} />

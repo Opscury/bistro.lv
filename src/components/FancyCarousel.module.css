@@ -1,0 +1,248 @@
+/* ---------------------------------------------------------------
+   Tējas namiņa lente — vienīgā vieta vietnē, kur attēli iziet ārpus
+   satura platuma. Vidējais kadrs ir pacelts un ass, kaimiņi atkāpjas
+   dziļumā: skatiens pats atrod, kur jāskatās.
+   --------------------------------------------------------------- */
+
+.wrap {
+  position: relative;
+  margin-inline: calc(var(--bleed, 0px) * -1);
+}
+
+/* skats ir šaurāks par lenti: redzams kadrs un puse no abiem kaimiņiem */
+.view {
+  width: var(--vpw, 100%);
+  max-width: 100%;
+  margin-inline: auto;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  /* kaimiņi izgaist uz malām, nevis nogriežas */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--edge, 12%),
+    #000 calc(100% - var(--edge, 12%)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--edge, 12%),
+    #000 calc(100% - var(--edge, 12%)),
+    transparent 100%
+  );
+}
+
+.viewDrag {
+  cursor: grabbing;
+}
+
+.view:focus-visible {
+  outline: 2px solid var(--c-green-bright);
+  outline-offset: 5px;
+}
+
+.track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  will-change: transform;
+}
+
+.trackGlide {
+  transition: transform 0.62s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.track:not(.trackGlide) .slide,
+.track:not(.trackGlide) .shot,
+.track:not(.trackGlide) .shot img {
+  transition: none;
+}
+
+.slide {
+  flex: 0 0 auto;
+  transition: opacity 0.62s ease, transform 0.62s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.55;
+  transform: scale(0.9);
+  transform-origin: center;
+}
+
+.slideOn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.shot {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--c-rule-soft);
+  overflow: hidden;
+  cursor: inherit;
+  /* pacēlums — vienīgais elements lapā, kas stāv virs papīra */
+  box-shadow: 0 2px 6px rgba(20, 22, 28, 0.06), 0 20px 50px rgba(20, 22, 28, 0.14);
+  transition: box-shadow 0.62s ease;
+}
+
+.slide:not(.slideOn) .shot {
+  box-shadow: none;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transform: scale(1.09);
+  transition: transform 0.82s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* kadrs, kas nostājies vidū, nostājas arī pats savā rāmī */
+.slideOn .shot img {
+  transform: scale(1);
+}
+
+.slideOn .shot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(20, 22, 28, 0.08);
+  pointer-events: none;
+}
+
+/* ---------- bultiņas: stāv uz satura malas, nevis pie loga ---------- */
+
+.arrow {
+  position: absolute;
+  top: calc(50% - 15px);
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  padding: 0 0 4px;
+  border: 0;
+  border-radius: 50%;
+  font-family: var(--font-body);
+  font-size: 27px;
+  line-height: 1;
+  color: var(--c-ink);
+  background: var(--c-paper);
+  box-shadow: 0 1px 2px rgba(20, 22, 28, 0.1), 0 10px 28px rgba(20, 22, 28, 0.16);
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arrow:hover,
+.arrow:focus-visible {
+  background: var(--c-ink);
+  color: var(--c-paper);
+  box-shadow: 0 2px 4px rgba(20, 22, 28, 0.14), 0 14px 34px rgba(20, 22, 28, 0.26);
+}
+
+.prev:hover {
+  transform: translateY(-50%) translateX(-3px);
+}
+
+.next:hover {
+  transform: translateY(-50%) translateX(3px);
+}
+
+/* uz telefona bultiņu nav — tur velk ar pirkstu, un tām nav kur stāvēt */
+@media (max-width: 699px) {
+  .arrow {
+    display: none;
+  }
+}
+
+.prev {
+  left: calc(var(--arrow-x, 0px) - 27px);
+}
+
+.next {
+  right: calc(var(--arrow-x, 0px) - 27px);
+}
+
+/* ---------- skaitītājs un svītriņas ---------- */
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  padding: 20px var(--gut) 0;
+}
+
+.ticks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.tick {
+  display: block;
+  width: 18px;
+  height: 20px;
+  padding: 9px 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.tick::before {
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--c-rule);
+  transition: background-color 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.tick:hover::before {
+  background: var(--c-orn);
+}
+
+.tickOn::before {
+  background: var(--c-ink);
+  transform: scaleY(2);
+}
+
+@media (min-width: 700px) {
+  .tick {
+    width: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trackGlide,
+  .slide,
+  .shot,
+  .shot img,
+  .arrow,
+  .tick::before {
+    transition: none;
+  }
+
+  .slide {
+    opacity: 1;
+    transform: none;
+  }
+
+  .shot img {
+    transform: none;
+  }
+}

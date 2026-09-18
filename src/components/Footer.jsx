@@ -17,6 +17,8 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
+      <hr className={styles.rule} />
+
       <div className={styles.inner}>
         {showPlaces && (
         <div className={styles.grid}>
@@ -60,7 +62,11 @@ export default function Footer() {
           </div>
         </div>
         )}
+      </div>
 
+      {showPlaces && <hr className={`${styles.rule} ${styles.ruleGap}`} />}
+
+      <div className={`${styles.inner} ${styles.innerBottom}`}>
         <div className={showPlaces ? styles.bottom : `${styles.bottom} ${styles.bottomOnly}`}>
           <p className={styles.facts}>
             <span>{company.name}</span>

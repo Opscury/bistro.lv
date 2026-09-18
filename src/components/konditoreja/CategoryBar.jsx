@@ -60,15 +60,18 @@ export default function CategoryBar({ categories }) {
     };
   }, [categories]);
 
-  // aktīvo čipu turēt redzamu horizontālajā joslā
+  // aktīvo čipu vienmēr turēt tieši joslas vidū
   useEffect(() => {
     const list = listRef.current;
     const chip = list?.querySelector(`[data-id="${active}"]`);
-    if (!list || !chip || !visible) return;
+    if (!list || !chip) return;
     const chipLeft =
       chip.getBoundingClientRect().left - list.getBoundingClientRect().left + list.scrollLeft;
     const target = chipLeft - (list.clientWidth - chip.offsetWidth) / 2;
-    list.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
+    const max = list.scrollWidth - list.clientWidth;
+    const left = Math.min(Math.max(0, target), max);
+    // kamēr josla vēl nav parādījusies, novieto bez animācijas
+    list.scrollTo({ left, behavior: visible ? "smooth" : "auto" });
   }, [active, visible]);
 
   return (
