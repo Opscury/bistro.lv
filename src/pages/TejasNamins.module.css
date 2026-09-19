@@ -37,9 +37,11 @@
   object-fit: cover;
 }
 
-/* lente: nedaudz gaisa virs tās, pati platuma robeža ir komponentē */
-.rail {
-  padding-top: clamp(18px, 3vw, 26px);
+/* plakāts — gatavs attēls ar savu tekstu, bez rāmja */
+.poster {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 @media (min-width: 700px) {
@@ -57,10 +59,13 @@
   }
 }
 
-/* galerija sākas tur, kur zīmējums jau izgaisis */
-.gallerySection {
-  padding-top: clamp(8px, 2vw, 24px);
-  scroll-margin-top: calc(var(--header-h) + var(--sticky-extra) + 12px);
+/* ---------------------------------------------------------------
+   Galerija — lente iet ārpus satura platuma, tāpēc tā stāv ārpus
+   čaulas; šeit tikai gaiss virs tās.
+   --------------------------------------------------------------- */
+
+.rail {
+  padding-top: clamp(18px, 3vw, 26px);
 }
 
 /* galerijas virsraksts stāv pa vidu, nevis pie kreisās malas */
