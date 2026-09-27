@@ -2,7 +2,7 @@
 // konditorejas piedāvājums (konditoreja.json) vai bistro ēdienkartes
 // (menu.json). Galeriju attēlu saraksti un tējas namiņa piedāvājums.
 
-import { lines, venues } from "./lines.js";
+import { company, lines, venues } from "./lines.js";
 
 // Izvēlne — tādā pašā secībā kā sākumlapa: bistro un konditoreja
 // (Silvas ikdienas pāris), tējas namiņš, banketi, tad vietas un kontakti.
@@ -31,7 +31,24 @@ export const bistroGroups = {
   text: "Ekskursiju grupām, kolektīviem un sapulcēm — pusdienas bistro zālē vai izbraukumā. Sastādām piedāvājumu pēc jūsu grupas lieluma un laika.",
 };
 
-export const bistroPoster = {
+// ---------------------------------------------------------------
+// AKTUALITĀTE bistro lapā — rāmis bez plakāta, tikai teksts un saite.
+// Kad ir ko paziņot, ieliec `photo` un `alt`, un rāmis rāda plakātu.
+// ---------------------------------------------------------------
+export const bistroNotice = {
+  label: "aktuāli",
+  meta: company.instagramHandle,
+  text: "Jaunumi un nedēļas piedāvājums — mūsu Instagram lapā.",
+  link: { href: company.instagram, label: "Instagram" },
+};
+
+// ---------------------------------------------------------------
+// AKTUALITĀTE konditorejas lapā. Maini `photo` (fails no public/img)
+// un `alt` (kas uz plakāta rakstīts); `meta` ir mazais teksts pa labi.
+// ---------------------------------------------------------------
+export const konditorejaNotice = {
+  label: "aktuāli",
+  meta: "konditorejā",
   photo: "Saldejums-konditoreja.webp",
   alt: "Konditorejā: vaniļas saldējums vafeļu konusā 1.50 € / 65 g, trauciņā 1.95 € / 150 g; saldējuma kokteilis (sula pēc izvēles) 4.00 € / 400 ml",
 };
@@ -43,10 +60,22 @@ export const tejasOffer = {
     "No namiņa paveras skaists skats uz pilsētu, upi un upes strūklakām. Visu gadu var sēdēt arī pie āra galdiņiem.",
   ],
   wideShot: "tejas_namins_1_1-6.webp",
-  poster: {
-    photo: "Saldejuma-kokteili.webp",
-    alt: "Saldējuma–piena kokteiļi, 6.00 € / 350 ml: bubble gum, šokolādes, karameļu, matcha, zemeņu, oreo",
-  },
+};
+
+// ---------------------------------------------------------------
+// AKTUALITĀTE tējas namiņa lapā — to maina biežāk nekā jebko citu.
+// Kad namiņā ir jauns piedāvājums, nomaini tikai šo bloku:
+//   photo — faila nosaukums no public/img
+//   alt   — kas uz plakāta rakstīts (bez tā to neizlasa neviens, kas
+//           neredz attēlu, un Google arī ne)
+//   label — mazā etiķete augšā pa kreisi ("aktuāli", "jaunums")
+//   meta  — mazais teksts pa labi: sezona, datumi, "līdz 30.09."
+// ---------------------------------------------------------------
+export const tejasNotice = {
+  label: "aktuāli",
+  meta: "namiņā šobrīd",
+  photo: "Saldejuma-kokteili.webp",
+  alt: "Saldējuma–piena kokteiļi, 6.00 € / 350 ml: bubble gum, šokolādes, karameļu, matcha, zemeņu, oreo",
 };
 
 export const banketiText = [

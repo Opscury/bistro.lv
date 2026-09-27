@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import Img from "../components/Img.jsx";
 import Masthead from "../components/Masthead.jsx";
+import Notice from "../components/Notice.jsx";
 import WeeklyMenu from "../components/WeeklyMenu.jsx";
 import menu from "../data/menu.json";
-import { company, lineById } from "../data/lines.js";
-import { bistroGroups, bistroPoster } from "../data/site.js";
+import { lineById } from "../data/lines.js";
+import { bistroGroups, bistroNotice } from "../data/site.js";
 import { track } from "../lib/analytics.js";
 import ui from "../styles/Page.module.css";
 import styles from "./Bistro.module.css";
@@ -109,24 +110,9 @@ export default function Bistro() {
               </div>
             </div>
 
-            <Img
-              className={styles.poster}
-              name={bistroPoster.photo}
-              alt={bistroPoster.alt}
-              sizes="(min-width: 600px) 55vw, 100vw"
-            />
+            <Notice {...bistroNotice} />
           </div>
         </section>
-
-        <div className={ui.cta}>
-          <div>
-            <h2 className={ui.ctaTitle}>aktualitātes</h2>
-            <p className={ui.ctaText}>Jaunumi un nedēļas piedāvājums — mūsu Instagram lapā.</p>
-          </div>
-          <a className={ui.btn} href={company.instagram} target="_blank" rel="noreferrer">
-            Instagram ↗
-          </a>
-        </div>
       </div>
     </div>
   );

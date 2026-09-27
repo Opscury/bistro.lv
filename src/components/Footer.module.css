@@ -9,22 +9,30 @@
 }
 
 .inner {
-  max-width: calc(var(--w-shell) + 2 * var(--gut));
+  max-width: var(--w-shell);
   margin-inline: auto;
   padding: 28px var(--gut) 0;
 }
 
-/* kājenes līnijas — vienmēr visā lapas platumā */
+/* Līnijas stāv uz tā paša rāmja kā saturs — tās beidzas tur, kur
+   beidzas teksts, nevis aizskrien līdz loga malām. */
+.rail {
+  max-width: var(--w-shell);
+  margin-inline: auto;
+  padding-inline: var(--gut);
+}
+
+/* Līnija starp vietu kolonnām un apakšējo rindu iet visā loga platumā —
+   tā ir vienīgā, kas rāmi pārtrauc, un tā nodala kājenes apakšu. */
+.ruleFull {
+  margin-top: 26px;
+}
+
 .rule {
   border: 0;
   height: 1px;
   background: var(--c-rule);
   margin: 0;
-}
-
-/* līnija starp vietu kolonnām un apakšējo rindu */
-.ruleGap {
-  margin-top: 26px;
 }
 
 .innerBottom {
@@ -118,8 +126,12 @@ a.line:focus-visible {
 }
 
 @media (min-width: 700px) {
+  /* Kolonnas platas tik, cik to saturs, un izklātas pa visu rāmi: pirmā
+     sāk pie kreisās malas, pēdējā beidzas pie labās. Ar vienādām 1fr
+     kolonnām teksts saspiedās pa kreisi un labajā pusē palika tukšums. */
   .grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
     gap: 24px 32px;
   }
 }

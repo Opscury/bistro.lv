@@ -92,14 +92,6 @@
   text-underline-offset: 4px;
 }
 
-.cardSelected {
-  border-color: var(--c-green-bright);
-}
-
-.cardSelected .addressHint {
-  text-decoration: none;
-}
-
 /* darba laiks: diena | laiks, bez punktu līnijām */
 /* darba laiks aizņem visu brīvo vietu, lai tālrunis visās kartītēs ir apakšā */
 .hours {

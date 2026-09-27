@@ -37,13 +37,6 @@
   object-fit: cover;
 }
 
-/* plakāts — gatavs attēls ar savu tekstu, bez rāmja */
-.poster {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 @media (min-width: 700px) {
   .intro {
     grid-template-columns: repeat(2, minmax(0, 1fr));

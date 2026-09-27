@@ -878,3 +878,9 @@
     transform: none;
   }
 }
+
+/* aktualitātes rāmis zem satura rādītāja — plakāts, nevis siena */
+.notice {
+  max-width: 420px;
+  padding-top: clamp(24px, 4vw, 36px);
+}

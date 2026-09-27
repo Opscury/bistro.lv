@@ -17,7 +17,9 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <hr className={styles.rule} />
+      <div className={styles.rail}>
+        <hr className={styles.rule} />
+      </div>
 
       <div className={styles.inner}>
         {showPlaces && (
@@ -64,7 +66,7 @@ export default function Footer() {
         )}
       </div>
 
-      {showPlaces && <hr className={`${styles.rule} ${styles.ruleGap}`} />}
+      {showPlaces && <hr className={`${styles.rule} ${styles.ruleFull}`} />}
 
       <div className={`${styles.inner} ${styles.innerBottom}`}>
         <div className={showPlaces ? styles.bottom : `${styles.bottom} ${styles.bottomOnly}`}>

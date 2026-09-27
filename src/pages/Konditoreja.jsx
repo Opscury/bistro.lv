@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import data from "../data/konditoreja.json";
 import { itemKey, pricing } from "../data/konditorejaUnits.js";
 import { lineById, telHref } from "../data/lines.js";
+import { konditorejaNotice } from "../data/site.js";
 import useCart from "../hooks/useCart.js";
 import Masthead from "../components/Masthead.jsx";
+import Notice from "../components/Notice.jsx";
 import CategoryBar from "../components/konditoreja/CategoryBar.jsx";
 import CartBar from "../components/konditoreja/CartBar.jsx";
 import ItemSheet from "../components/konditoreja/ItemSheet.jsx";
@@ -182,6 +184,10 @@ export default function Konditoreja() {
       <div className={ui.shell}>
         <Masthead line={line} rule />
         <MenuIndex />
+
+        <div className={styles.notice}>
+          <Notice {...konditorejaNotice} sizes="(min-width: 700px) 420px, 100vw" />
+        </div>
       </div>
 
       {/* fiksēta josla zem galvenes; parādās, kad rādītājs aizritināts */}

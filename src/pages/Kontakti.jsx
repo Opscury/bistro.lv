@@ -113,22 +113,25 @@ function mapEmbedSrc(line) {
 /**
  * Viena vieta kā kartīte: nosaukums, adrese (poga — parāda vietu kartē),
  * darba laiks tabulā, tālrunis apakšā vienā līmenī visās kartītēs.
+ *
+ * Visas trīs kartītes izskatās vienādi un visām raksta vienu un to pašu:
+ * poga ir darbība, nevis stāvoklis. Kuru vietu karte rāda, pasaka pati
+ * karte zemāk — kartītei to nav jāatkārto ar krāsu.
  */
-function Place({ line, selected, onSelect }) {
+function Place({ line, onSelect }) {
   return (
-    <li className={selected ? `${styles.card} ${styles.cardSelected}` : styles.card}>
+    <li className={styles.card}>
       <h3 className={styles.cardName}>{line.name}</h3>
       <button
         type="button"
         className={styles.address}
-        aria-pressed={selected}
         onClick={() => onSelect(line.id)}
         title="Parādīt kartē"
       >
         {line.address.street}
         <br />
         {line.address.city}, {line.address.postal}
-        <span className={styles.addressHint}>{selected ? "kartē ↓" : "parādīt kartē ↓"}</span>
+        <span className={styles.addressHint}>parādīt kartē ↓</span>
       </button>
 
       <dl className={styles.hours}>
@@ -176,14 +179,14 @@ export default function Kontakti() {
         <section className={styles.block} aria-label="Vietas un darba laiks">
           <ul className={styles.cards}>
             {places.map((l) => (
-              <Place key={l.id} line={l} selected={l.id === selectedId} onSelect={select} />
+              <Place key={l.id} line={l} onSelect={select} />
             ))}
           </ul>
 
           {/* karte — rāda izvēlēto vietu; adrese kartītē to pārslēdz */}
           <div className={styles.map} ref={mapRef}>
             <div className={styles.mapHead}>
-              <p className={styles.mapTitle}>
+              <p className={styles.mapTitle} aria-live="polite">
                 <span>Silva, {selected.name}</span>
                 <span className={styles.mapAddress}>
                   {selected.address.street}, {selected.address.city}, {selected.address.postal}

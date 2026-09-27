@@ -15,7 +15,7 @@
 }
 
 .inner {
-  max-width: calc(var(--w-shell) + 2 * var(--gut));
+  max-width: var(--w-shell);
   margin-inline: auto;
   padding: 13px var(--gut) 11px;
   display: flex;
