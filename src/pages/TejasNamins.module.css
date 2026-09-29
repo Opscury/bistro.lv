@@ -50,6 +50,15 @@
   .wideShot {
     aspect-ratio: auto;
   }
+
+  /* bez aktualitātes: foto viens pats visā platumā, zemāks */
+  .pairSolo {
+    grid-template-columns: 1fr;
+  }
+
+  .pairSolo .wideShot {
+    aspect-ratio: 2 / 1;
+  }
 }
 
 /* ---------------------------------------------------------------

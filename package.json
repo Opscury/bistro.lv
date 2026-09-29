@@ -8,6 +8,7 @@
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node scripts/prerender.mjs",
     "build:spa": "vite build",
     "preview": "vite preview",
+    "snapshot": "node scripts/snapshot.mjs",
     "menu": "node scripts/menu-from-pdf.mjs"
   },
   "dependencies": {

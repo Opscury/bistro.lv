@@ -18,7 +18,8 @@
  *   gab     – minimums gabalos precēm ar cenu par gabalu
  *   kgStep  – par cik palielinās daudzums, spiežot "+" (pēc noklusējuma 0.5)
  *
- * Ja mainās veikala noteikumi, jālabo tikai šī tabula.
+ * Minimumus tagad maina adminā (Konditoreja → Kategorijas); API tos sūta
+ * kā category.limits. Šī tabula ir tikai rezerve, ja kategorijai to nav.
  */
 export const CATEGORY_LIMITS = {
   "saldie-klingeri": { kg: 1 },
@@ -69,9 +70,9 @@ function parsePrice(raw) {
  *   minQty: number, step: number, decimals: number, priceText: string
  * }}
  */
-export function pricing(item, categoryId) {
+export function pricing(item, categoryId, categoryLimits) {
   const { unit, min, max } = parsePrice(item.price);
-  const limits = { ...DEFAULT_LIMITS, ...(CATEGORY_LIMITS[categoryId] || {}) };
+  const limits = { ...DEFAULT_LIMITS, ...(categoryLimits || CATEGORY_LIMITS[categoryId] || {}) };
 
   const isKg = unit === "kg";
   return {
@@ -80,7 +81,8 @@ export function pricing(item, categoryId) {
     priceMin: min,
     priceMax: max,
     isRange: min !== null && max !== null && max > min,
-    minQty: isKg ? limits.kg : limits.gab,
+    // precei var būt savs minimums (admin: "Minimālais daudzums")
+    minQty: item.minQty ?? (isKg ? limits.kg : limits.gab),
     step: isKg ? limits.kgStep ?? DEFAULT_LIMITS.kgStep : 1,
     decimals: isKg ? 1 : 0,
     priceText: item.price || "",

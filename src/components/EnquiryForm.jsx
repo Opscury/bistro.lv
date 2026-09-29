@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { sendForm, fieldsToText, SEND_METHOD } from "../lib/sendForm.js";
 import { telHref } from "../data/lines.js";
+import { useSite } from "../lib/content.jsx";
 import { track } from "../lib/analytics.js";
 import ui from "../styles/Page.module.css";
 
@@ -11,10 +12,10 @@ const TYPES = [
   "korporatīvais pasākums", "seminārs vai konference", "kafijas pauze", "cits",
 ];
 
-const VENUES = [
-  "Bistro Silva zāle (līdz 90)",
-  "Pontons (līdz 30)",
-  "Peldterase (līdz 40)",
+// Vietas ar cilvēku skaitu nāk no admin ("Pasākumu vietas"), lai skaitlis nav jāraksta divreiz.
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const venueOptions = (venues) => [
+  ...venues.map((v) => `${cap(v.name)} (līdz ${v.capacity})`),
   "Citur — izbraukums",
   "Vēl nezinu",
 ];
@@ -25,6 +26,7 @@ const VENUES = [
  * ar jautājumiem. Sūta caur lib/sendForm.js.
  */
 export default function EnquiryForm({ line }) {
+  const VENUES = venueOptions(useSite().venues);
   const [values, setValues] = useState(EMPTY);
   const [sent, setSent] = useState(null);
   const [error, setError] = useState(null);

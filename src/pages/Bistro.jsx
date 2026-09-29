@@ -4,8 +4,7 @@ import Masthead from "../components/Masthead.jsx";
 import Notice from "../components/Notice.jsx";
 import WeeklyMenu from "../components/WeeklyMenu.jsx";
 import menu from "../data/menu.json";
-import { lineById } from "../data/lines.js";
-import { bistroGroups, bistroNotice } from "../data/site.js";
+import { lineById, useSite, useTexts } from "../lib/content.jsx";
 import { track } from "../lib/analytics.js";
 import ui from "../styles/Page.module.css";
 import styles from "./Bistro.module.css";
@@ -24,7 +23,7 @@ function MenuCard({ item, id }) {
         onClick={() => track("pdf", { fails: id })}
       >
         <div className={ui.frame}>
-          <Img className={ui.photo} name={item.photo} alt="" sizes="(min-width: 900px) 320px, (min-width: 600px) 50vw, 100vw" />
+          <Img className={ui.photo} image={item.image} name={item.photo} alt={item.alt || ""} sizes="(min-width: 900px) 320px, (min-width: 600px) 50vw, 100vw" />
         </div>
         <div className={ui.nameRow}>
           <h3 className={ui.name} id={headingId}>
@@ -35,16 +34,50 @@ function MenuCard({ item, id }) {
             PDF ↗
           </span>
         </div>
-        <p className={ui.cardMeta}>{item.time ?? " "}</p>
+        <p className={ui.cardMeta}>{item.time || " "}</p>
         <span className="visually-hidden"> (PDF, atveras jaunā logā)</span>
       </a>
     </li>
   );
 }
 
+/**
+ * Aktualitāte bistro lapā: jaunākā aktīvā no admin, vai — ja tādas nav —
+ * Instagram rāmis (tas, kas tur bija vienmēr), lai blakus grupu
+ * ēdināšanai nepaliek tukša vieta.
+ */
+function BistroNotice() {
+  const site = useSite();
+  const t = useTexts();
+  const promo = site.notices?.bistro;
+  if (promo) return <Notice {...promo} />;
+  return (
+    <Notice
+      label={t("bistro.instagram.label")}
+      meta={site.company.instagramHandle}
+      text={t("bistro.instagram.text")}
+      link={{ href: site.company.instagram, label: t("bistro.instagram.link") }}
+    />
+  );
+}
+
 export default function Bistro() {
-  const line = lineById.bistro;
-  const lunch = menu.lunch;
+  const site = useSite();
+  const t = useTexts();
+  const line = lineById(site, "bistro");
+  // Ēdienkaršu kartītes: nosaukums, laiks un bilde no admin; PDF — /menu/*.pdf
+  const card = (kind) => {
+    const photo = site.photos[`bistro.menu.${kind}`];
+    return {
+      ...menu[kind],
+      title: t(`bistro.menu.${kind}.title`) || menu[kind].title,
+      time: t(`bistro.menu.${kind}.time`),
+      image: photo,
+      alt: photo?.alt,
+    };
+  };
+  const lunch = { ...menu.lunch, ...card("lunch") };
+  const groupsPhoto = site.photos["bistro.groups"];
   // menu.json -> lunch.showRows: true rāda nedēļas ēdienkarti lapā kā
   // rindas; pagaidām tikai PDF, kā oriģinālajā vietnē.
   const showRows = lunch.showRows && Array.isArray(lunch.sections) && lunch.sections.length > 0;
@@ -60,13 +93,13 @@ export default function Bistro() {
           <section className={ui.section} aria-labelledby="bistro-menus">
             <div className={ui.sectionHead}>
               <h2 className={ui.heading} id="bistro-menus">
-                ēdienkartes
+                {t("bistro.menus.heading")}
               </h2>
             </div>
             <ul className={styles.menus}>
               <MenuCard item={lunch} id="pusdienas" />
-              <MenuCard item={menu.breakfast} id="brokastis" />
-              <MenuCard item={menu.drinks} id="dzerieni" />
+              <MenuCard item={card("breakfast")} id="brokastis" />
+              <MenuCard item={card("drinks")} id="dzerieni" />
             </ul>
           </section>
         )}
@@ -79,8 +112,8 @@ export default function Bistro() {
               </h2>
             </div>
             <ul className={styles.menus}>
-              <MenuCard item={menu.breakfast} id="brokastis" />
-              <MenuCard item={menu.drinks} id="dzerieni" />
+              <MenuCard item={card("breakfast")} id="brokastis" />
+              <MenuCard item={card("drinks")} id="dzerieni" />
             </ul>
           </section>
         )}
@@ -91,26 +124,25 @@ export default function Bistro() {
               <div className={ui.frame}>
                 <Img
                   className={ui.photo}
-                  name={bistroGroups.photo}
-                  alt={bistroGroups.alt}
+                  image={groupsPhoto}
                   sizes="(min-width: 600px) 45vw, 100vw"
                 />
               </div>
               <div className={ui.nameRow}>
                 <h2 className={ui.name} id="bistro-grupas">
-                  {bistroGroups.title}
+                  {t("bistro.groups.title")}
                 </h2>
               </div>
-              <p className={ui.cardMeta}>{bistroGroups.note}</p>
-              <p className={ui.cardText}>{bistroGroups.text}</p>
+              <p className={ui.cardMeta}>{t("bistro.groups.note")}</p>
+              <p className={ui.cardText}>{t("bistro.groups.text")}</p>
               <div className={`${ui.actions} ${styles.groupsActions}`}>
                 <Link className={`${ui.btn} ${ui.btnGhost}`} to="/kontakti">
-                  Pieteikt grupu
+                  {t("bistro.groups.button")}
                 </Link>
               </div>
             </div>
 
-            <Notice {...bistroNotice} />
+            <BistroNotice />
           </div>
         </section>
       </div>
