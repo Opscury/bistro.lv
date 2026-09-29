@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Img from "../components/Img.jsx";
-import { lines, venues } from "../data/lines.js";
-import { homeTitle, aboutText } from "../data/site.js";
+import { aboutText } from "../data/site.js";
+import { useSite, useTexts } from "../lib/content.jsx";
 import { ABOUT_ENABLED } from "../lib/features.js";
 import ui from "../styles/Page.module.css";
 import styles from "./Home.module.css";
@@ -20,6 +20,7 @@ function LineCard({ line, index }) {
         <div className={ui.frame}>
           <Img
             className={ui.photo}
+            image={line.image}
             name={line.photo}
             alt={line.alt}
             sizes="(min-width: 700px) 494px, 100vw"
@@ -52,6 +53,7 @@ function VenueCard({ venue }) {
       <div className={ui.frame}>
         <Img
           className={ui.photo}
+          image={venue.image}
           name={venue.photo}
           alt={venue.alt}
           sizes="(min-width: 700px) 320px, 100vw"
@@ -88,11 +90,16 @@ function VenueCard({ venue }) {
 }
 
 export default function Home() {
+  const { company, lines, venues } = useSite();
+  const t = useTexts();
+
   return (
     <div className={ui.page}>
       <div className={ui.shell}>
         {/* virsraksts tikai ekrānlasītājam — lapa sākas ar četrām vietām */}
-        <h1 className="visually-hidden">Silva, Jelgava: {homeTitle}</h1>
+        <h1 className="visually-hidden">
+          {company.name}, {company.city}: {t("home.title")}
+        </h1>
 
         {/* četras līnijas: bistro + konditoreja (Silvas ikdiena), tējas namiņš, banketi */}
         <ul className={styles.grid} aria-label="Silvas vietas">
@@ -124,7 +131,7 @@ export default function Home() {
         <section className={ui.section} aria-labelledby="vietas">
           <div className={ui.sectionHead}>
             <h2 className={ui.heading} id="vietas">
-              vietas pasākumiem
+              {t("home.venues.heading")}
             </h2>
           </div>
           <ul className={styles.venues}>

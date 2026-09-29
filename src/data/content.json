@@ -1,0 +1,1637 @@
+{
+  "texts": {
+    "home.title": "brokastis, pusdienas, kūkas, tēja un svinības",
+    "home.line.bistro": "Jauna ēdienkarte katru nedēļu. Darba dienu rītos līdz 11.00 – brokastu piedāvājums.",
+    "home.line.konditoreja": "Kūkas, kliņģeri, smalkmaizītes un viss cits, ko sirds kāro! Nāc baudīt uz vietas vai pasūti.",
+    "home.line.tejas-namins": "Omulīgs namiņš Pasta salā starp Lielupi un Driksu, kur baudīt dzērienus, sāļas uzkodas un saldus našķus.",
+    "home.line.banketi": "Ēdienkartes pielāgotas jebkuram pasākumam. Sazinieties ar mums, lai sastādītu Jums piemērotu ēdienkarti.",
+    "home.venues.heading": "vietas pasākumiem",
+    "bistro.menus.heading": "ēdienkartes",
+    "bistro.menu.lunch.title": "Pusdienu ēdienkarte",
+    "bistro.menu.lunch.time": "11.00–17.00",
+    "bistro.menu.breakfast.title": "Brokastu ēdienkarte",
+    "bistro.menu.breakfast.time": "8.00–11.00",
+    "bistro.menu.drinks.title": "Dzērienkarte",
+    "bistro.menu.drinks.time": "",
+    "bistro.groups.title": "Grupu ēdināšana",
+    "bistro.groups.note": "Pēc pieprasījuma",
+    "bistro.groups.text": "Ekskursiju grupām, kolektīviem un sapulcēm — pusdienas bistro zālē vai izbraukumā. Sastādām piedāvājumu pēc jūsu grupas lieluma un laika.",
+    "bistro.groups.button": "Pieteikt grupu",
+    "bistro.instagram.label": "aktuāli",
+    "bistro.instagram.text": "Jaunumi un nedēļas piedāvājums — mūsu Instagram lapā.",
+    "bistro.instagram.link": "Instagram",
+    "konditoreja.index.label": "Piedāvājums",
+    "konditoreja.min.label": "minimālais pasūtījums",
+    "konditoreja.classic.tag": "silvas klasika",
+    "konditoreja.allergen.note": "Informāciju par alergēniem sniedzam konditorejā un pa tālruni {tālrunis}.",
+    "konditoreja.cta.title": "pasūtījumi",
+    "konditoreja.cta.text": "Kūkas, tortes un citus izstrādājumus pasūtiet pa tālruni vai e-pastu — sazināsimies un visu apstiprināsim. Pasūtījumus pieņemam vismaz {dienas} dienas iepriekš.",
+    "konditoreja.cta.email": "Rakstīt e-pastu",
+    "konditoreja.cta.call": "Zvanīt",
+    "tejas.intro": "Omulīgs tējas namiņš Pilssalas ielā 2A starp Lielupi un Driksu, kur baudīt dažādas tējas, kafiju, saldējumu, gardas kūkas un smalkmaizītes. Ir neliels, bet pārdomāts karsto ēdienu piedāvājums.\n\nNo namiņa paveras skaists skats uz pilsētu, upi un upes strūklakām. Visu gadu var sēdēt arī pie āra galdiņiem.",
+    "tejas.gallery.heading": "galerija",
+    "noma.zale.text": "Bistro Silva 2. stāvā atrodas viesību un semināru zāle, kas ar bīdāmo sienu viegli transformējama divās atsevišķās telpās. Tā ir piemērota semināriem, konferencēm, svinībām un neformāliem pasākumiem līdz 90 cilvēkiem.",
+    "noma.zale.equipment.title": "Zāle ir aprīkota ar visu nepieciešamo veiksmīgam pasākumam:",
+    "noma.zale.equipment": "Tehniskais aprīkojums: ekrāns, apskaņošanas sistēma, WiFi, baltā tāfele.\nPapildu ērtības: garderobe, atsevišķas labierīcības vīriešiem un sievietēm, kondicionieris.",
+    "noma.zale.text2": "Ērti vienu no telpām izmantot sapulču, semināru vai citu aktivitāšu norisei, bet otru – kafijas pauzēm, pusdienām.\n\nMēs nodrošinām pilnu servisu un plašu ēdienkarti, kas ietver plates, uzkodas, pamatēdienus, salātus, zupas, dzērienus un pašu gatavotus konditorejas izstrādājumus. Katram pasākumam izstrādājam individuālu ēdienkarti, ņemot vērā jūsu vēlmes un īpašās vajadzības.",
+    "noma.prices.heading": "zāles īres cenas",
+    "noma.button": "Pieteikt pasākumu",
+    "noma.more.button": "Uzzināt vairāk",
+    "noma.pontons.text": "Pontons Silva, uz Driksas upes Jelgavas centrā, piedāvā gleznainu skatu uz Driksas promenādi un Trīsvienības baznīcas torni, netālu no koncertzāles “Mītava”. Piemērots pasākumiem līdz 30 personām, Pontons piedāvā omulīgu saunu relaksācijai un plašu jumta terasi, kas pieejama labos laikapstākļos.\n\nNetālu atrodas pilsētas stāvlaukums, nodrošinot ērtu piekļuvi viesiem. Par gardām maltītēm un nevainojamu apkalpošanu rūpējas Silva ar savu profesionālo viesmīļu komandu.",
+    "noma.peldterase.text": "Peldterase Driksas upē, blakus koncertzālei “Mītava”, ir ideāla vieta pasākumiem līdz 40 personām. Pieejams arī stāvlaukums. Lielākiem pasākumiem peldterasi var apvienot ar Pontonu Silva, iegūstot vairāk vietas. Par gardiem ēdieniem un laipnu apkalpošanu gādā Silva, nodrošinot pilnvērtīgu svētku pieredzi.",
+    "banketi.menus.title": "pielāgotas ēdienkartes",
+    "banketi.menus.text": "Mēs piedāvājam individuāli pielāgotas ēdienkartes visdažādākajiem pasākumiem – kāzām, bildināšanām, kristībām, jubilejām, bēru mielastiem, kā arī korporatīvajiem pasākumiem, semināriem, konferenču kafijas pauzēm, prezentācijām un citiem nozīmīgiem dzīves notikumiem.\n\nPiedāvājumā ir plates, uzkodas, pamatēdieni, salāti, zupas, karstās uzkodas, dzērieni un pašu gatavoti konditorejas izstrādājumi. Pēc iepriekšējas vienošanās varam nodrošināt arī pasūtījumu piegādi. Neatkarīgi no pasākuma veida, mēs parūpēsimies, lai jūsu svinības būtu īpašas.",
+    "banketi.away.title": "izbraukuma ēdināšana",
+    "banketi.away.text": "Mūsu pakalpojumi pieejami gan Bistro “Silva” telpās Jelgavas centrā, pontonā vai uz peldterases, gan jebkurā citā jums vēlamā vietā – pilī, meža būdiņā, uz ūdens vai citur.\n\nMēs strādājam ar tuvākiem un tālākiem galamērķiem, nodrošinot skaisti noformētus galdus, atbilstošas dekorācijas un profesionālu apkalpošanu, kas padarīs jūsu pasākumu neaizmirstamu. Mūsu komanda parūpēsies, lai jūs pilnībā izbaudītu savu īpašo notikumu.",
+    "banketi.where.heading": "kur",
+    "banketi.where.outside": "izbraukumā — pilī, meža būdiņā, uz ūdens",
+    "banketi.where.outside_value": "pēc vienošanās",
+    "banketi.gallery.heading": "galerija",
+    "banketi.cta.title": "jūsu pasākums",
+    "banketi.cta.text": "Sazinieties ar mums, lai sastādītu Jums piemērotu ēdienkarti.",
+    "banketi.cta.button": "Kontaktēties",
+    "kontakti.map.hint": "parādīt kartē",
+    "kontakti.map.open": "Atvērt Google Maps",
+    "kontakti.banketi.heading": "banketi un pasākumi",
+    "kontakti.banketi.text": "Pasākumu ēdināšana, telpu noma, konditorejas pasūtījumi.",
+    "kontakti.feedback.heading": "atsauksmēm un jautājumiem",
+    "kontakti.requisites.heading": "rekvizīti",
+    "kontakti.form.label": "Ziņa mums",
+    "kontakti.form.title": "Nosūtiet mums ziņu šeit!"
+  },
+  "photos": {
+    "line.bistro": {
+      "src": "/media/foto/sadala_bistro.webp",
+      "srcset": "/media/foto/sadala_bistro-320.webp 320w, /media/foto/sadala_bistro-640.webp 640w, /media/foto/sadala_bistro.webp 1024w",
+      "w": 1024,
+      "h": 1024,
+      "alt": "Trīs bļodas ar pusdienu ēdieniem uz lina galdauta",
+      "name": "sadala_bistro.webp"
+    },
+    "line.konditoreja": {
+      "src": "/media/foto/sadala_konditoreja.webp",
+      "srcset": "/media/foto/sadala_konditoreja-320.webp 320w, /media/foto/sadala_konditoreja-640.webp 640w, /media/foto/sadala_konditoreja.webp 1024w",
+      "w": 1024,
+      "h": 1024,
+      "alt": "Riekstu kēkss ar glazūru uz koka dēlīša",
+      "name": "sadala_konditoreja.webp"
+    },
+    "line.tejas-namins": {
+      "src": "/media/foto/sadala_tejas_namins.webp",
+      "srcset": "/media/foto/sadala_tejas_namins-320.webp 320w, /media/foto/sadala_tejas_namins-640.webp 640w, /media/foto/sadala_tejas_namins.webp 1024w",
+      "w": 1024,
+      "h": 1024,
+      "alt": "Tējas namiņš Pasta salā ziemas vakarā",
+      "name": "sadala_tejas_namins.webp"
+    },
+    "line.banketi": {
+      "src": "/media/foto/sadala_banketi.webp",
+      "srcset": "/media/foto/sadala_banketi-320.webp 320w, /media/foto/sadala_banketi-640.webp 640w, /media/foto/sadala_banketi.webp 1024w",
+      "w": 1024,
+      "h": 1024,
+      "alt": "Klāts svētku galds ar ziediem un dzērieniem",
+      "name": "sadala_banketi.webp"
+    },
+    "venue.zale": {
+      "src": "/media/foto/banketu_zale_1.webp",
+      "srcset": "/media/foto/banketu_zale_1-320.webp 320w, /media/foto/banketu_zale_1-640.webp 640w, /media/foto/banketu_zale_1.webp 1400w",
+      "w": 1400,
+      "h": 788,
+      "alt": "Klāti galdi viesību zālē",
+      "name": "banketu_zale_1.webp"
+    },
+    "venue.pontons": {
+      "src": "/media/foto/sadala_pontons.webp",
+      "srcset": "/media/foto/sadala_pontons-320.webp 320w, /media/foto/sadala_pontons-640.webp 640w, /media/foto/sadala_pontons.webp 1080w",
+      "w": 1080,
+      "h": 1080,
+      "alt": "Pontons uz Driksas saulrietā",
+      "name": "sadala_pontons.webp"
+    },
+    "venue.peldterase": {
+      "src": "/media/foto/sadala_peldterase.webp",
+      "srcset": "/media/foto/sadala_peldterase-320.webp 320w, /media/foto/sadala_peldterase-640.webp 640w, /media/foto/sadala_peldterase.webp 1080w",
+      "w": 1080,
+      "h": 1080,
+      "alt": "Izgaismota peldterase uz ūdens vakarā",
+      "name": "sadala_peldterase.webp"
+    },
+    "bistro.menu.lunch": {
+      "src": "/media/foto/bistro_edienkarte.webp",
+      "srcset": "/media/foto/bistro_edienkarte-320.webp 320w, /media/foto/bistro_edienkarte-640.webp 640w, /media/foto/bistro_edienkarte.webp 1080w",
+      "w": 1080,
+      "h": 1080,
+      "alt": "",
+      "name": "bistro_edienkarte.webp"
+    },
+    "bistro.menu.breakfast": {
+      "src": "/media/foto/bistro_brokastis.webp",
+      "srcset": "/media/foto/bistro_brokastis-320.webp 320w, /media/foto/bistro_brokastis-640.webp 640w, /media/foto/bistro_brokastis.webp 1080w",
+      "w": 1080,
+      "h": 1080,
+      "alt": "",
+      "name": "bistro_brokastis.webp"
+    },
+    "bistro.menu.drinks": {
+      "src": "/media/foto/bistro_dzerienkarte.webp",
+      "srcset": "/media/foto/bistro_dzerienkarte-320.webp 320w, /media/foto/bistro_dzerienkarte-640.webp 640w, /media/foto/bistro_dzerienkarte.webp 1080w",
+      "w": 1080,
+      "h": 1080,
+      "alt": "",
+      "name": "bistro_dzerienkarte.webp"
+    },
+    "bistro.groups": {
+      "src": "/media/foto/grupu_edinasana_bilde.webp",
+      "srcset": "/media/foto/grupu_edinasana_bilde-320.webp 320w, /media/foto/grupu_edinasana_bilde-640.webp 640w, /media/foto/grupu_edinasana_bilde.webp 1080w",
+      "w": 1080,
+      "h": 1080,
+      "alt": "Klāts galds bistro zālē pie loga",
+      "name": "grupu_edinasana_bilde.webp"
+    },
+    "tejas.wide": {
+      "src": "/media/foto/tejas_namins_1_1-6.webp",
+      "srcset": "/media/foto/tejas_namins_1_1-6-320.webp 320w, /media/foto/tejas_namins_1_1-6-640.webp 640w, /media/foto/tejas_namins_1_1-6.webp 1050w",
+      "w": 1050,
+      "h": 504,
+      "alt": "Tējas namiņš vasarā starp kokiem Pasta salā",
+      "name": "tejas_namins_1_1-6.webp"
+    }
+  },
+  "galleries": {
+    "tejasNamins": {
+      "title": "Tējas namiņš",
+      "page": "tejas-namins",
+      "images": [
+        {
+          "src": "/media/galerijas/243208899_4710946462290652_2426781371163989117_n.webp",
+          "srcset": "/media/galerijas/243208899_4710946462290652_2426781371163989117_n-320.webp 320w, /media/galerijas/243208899_4710946462290652_2426781371163989117_n-640.webp 640w, /media/galerijas/243208899_4710946462290652_2426781371163989117_n.webp 1400w",
+          "w": 1400,
+          "h": 990,
+          "alt": "Tējas namiņš 1",
+          "name": "243208899_4710946462290652_2426781371163989117_n.webp"
+        },
+        {
+          "src": "/media/galerijas/330165875_983817183025593_2523595188960381527_n.webp",
+          "srcset": "/media/galerijas/330165875_983817183025593_2523595188960381527_n-320.webp 320w, /media/galerijas/330165875_983817183025593_2523595188960381527_n-640.webp 640w, /media/galerijas/330165875_983817183025593_2523595188960381527_n.webp 720w",
+          "w": 720,
+          "h": 960,
+          "alt": "Tējas namiņš 2",
+          "name": "330165875_983817183025593_2523595188960381527_n.webp"
+        },
+        {
+          "src": "/media/galerijas/331574458_1455555541918629_5994029961482183590_n.webp",
+          "srcset": "/media/galerijas/331574458_1455555541918629_5994029961482183590_n-320.webp 320w, /media/galerijas/331574458_1455555541918629_5994029961482183590_n-640.webp 640w, /media/galerijas/331574458_1455555541918629_5994029961482183590_n.webp 1097w",
+          "w": 1097,
+          "h": 1400,
+          "alt": "Tējas namiņš 3",
+          "name": "331574458_1455555541918629_5994029961482183590_n.webp"
+        },
+        {
+          "src": "/media/galerijas/336388605_770109118042965_7420357224456658501_n.webp",
+          "srcset": "/media/galerijas/336388605_770109118042965_7420357224456658501_n-320.webp 320w, /media/galerijas/336388605_770109118042965_7420357224456658501_n-640.webp 640w, /media/galerijas/336388605_770109118042965_7420357224456658501_n.webp 1050w",
+          "w": 1050,
+          "h": 1400,
+          "alt": "Tējas namiņš 4",
+          "name": "336388605_770109118042965_7420357224456658501_n.webp"
+        },
+        {
+          "src": "/media/galerijas/405766772_1130783288191824_5830210323067750076_n.webp",
+          "srcset": "/media/galerijas/405766772_1130783288191824_5830210323067750076_n-320.webp 320w, /media/galerijas/405766772_1130783288191824_5830210323067750076_n-640.webp 640w, /media/galerijas/405766772_1130783288191824_5830210323067750076_n.webp 1400w",
+          "w": 1400,
+          "h": 789,
+          "alt": "Tējas namiņš 5",
+          "name": "405766772_1130783288191824_5830210323067750076_n.webp"
+        },
+        {
+          "src": "/media/galerijas/423312652_1186739902596162_8584439747643006005_n.webp",
+          "srcset": "/media/galerijas/423312652_1186739902596162_8584439747643006005_n-320.webp 320w, /media/galerijas/423312652_1186739902596162_8584439747643006005_n-640.webp 640w, /media/galerijas/423312652_1186739902596162_8584439747643006005_n.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Tējas namiņš 6",
+          "name": "423312652_1186739902596162_8584439747643006005_n.webp"
+        },
+        {
+          "src": "/media/galerijas/435696566_1224817422121743_8603174521388951275_n.webp",
+          "srcset": "/media/galerijas/435696566_1224817422121743_8603174521388951275_n-320.webp 320w, /media/galerijas/435696566_1224817422121743_8603174521388951275_n-640.webp 640w, /media/galerijas/435696566_1224817422121743_8603174521388951275_n.webp 1400w",
+          "w": 1400,
+          "h": 1050,
+          "alt": "Tējas namiņš 7",
+          "name": "435696566_1224817422121743_8603174521388951275_n.webp"
+        },
+        {
+          "src": "/media/galerijas/448181453_1270366787566806_6680653767805566037_n.webp",
+          "srcset": "/media/galerijas/448181453_1270366787566806_6680653767805566037_n-320.webp 320w, /media/galerijas/448181453_1270366787566806_6680653767805566037_n-640.webp 640w, /media/galerijas/448181453_1270366787566806_6680653767805566037_n.webp 1400w",
+          "w": 1400,
+          "h": 1400,
+          "alt": "Tējas namiņš 8",
+          "name": "448181453_1270366787566806_6680653767805566037_n.webp"
+        }
+      ]
+    },
+    "banketuZale": {
+      "title": "Banketu zāle",
+      "page": "noma",
+      "images": [
+        {
+          "src": "/media/galerijas/banketu_zale_1.webp",
+          "srcset": "/media/galerijas/banketu_zale_1-320.webp 320w, /media/galerijas/banketu_zale_1-640.webp 640w, /media/galerijas/banketu_zale_1.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Banketu zāle 1",
+          "name": "banketu_zale_1.webp"
+        },
+        {
+          "src": "/media/galerijas/banketu_zale_2.webp",
+          "srcset": "/media/galerijas/banketu_zale_2-320.webp 320w, /media/galerijas/banketu_zale_2-640.webp 640w, /media/galerijas/banketu_zale_2.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Banketu zāle 2",
+          "name": "banketu_zale_2.webp"
+        },
+        {
+          "src": "/media/galerijas/banketu_zale_3.webp",
+          "srcset": "/media/galerijas/banketu_zale_3-320.webp 320w, /media/galerijas/banketu_zale_3-640.webp 640w, /media/galerijas/banketu_zale_3.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Banketu zāle 3",
+          "name": "banketu_zale_3.webp"
+        },
+        {
+          "src": "/media/galerijas/banketu_zale_4.webp",
+          "srcset": "/media/galerijas/banketu_zale_4-320.webp 320w, /media/galerijas/banketu_zale_4-640.webp 640w, /media/galerijas/banketu_zale_4.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Banketu zāle 4",
+          "name": "banketu_zale_4.webp"
+        },
+        {
+          "src": "/media/galerijas/banketu_zale_5.webp",
+          "srcset": "/media/galerijas/banketu_zale_5-320.webp 320w, /media/galerijas/banketu_zale_5-640.webp 640w, /media/galerijas/banketu_zale_5.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Banketu zāle 5",
+          "name": "banketu_zale_5.webp"
+        },
+        {
+          "src": "/media/galerijas/banketu_zale_6.webp",
+          "srcset": "/media/galerijas/banketu_zale_6-320.webp 320w, /media/galerijas/banketu_zale_6-640.webp 640w, /media/galerijas/banketu_zale_6.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Banketu zāle 6",
+          "name": "banketu_zale_6.webp"
+        }
+      ]
+    },
+    "pontons": {
+      "title": "Pontons",
+      "page": "noma",
+      "images": [
+        {
+          "src": "/media/galerijas/pontons_1.webp",
+          "srcset": "/media/galerijas/pontons_1-320.webp 320w, /media/galerijas/pontons_1-640.webp 640w, /media/galerijas/pontons_1.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 1",
+          "name": "pontons_1.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_2.webp",
+          "srcset": "/media/galerijas/pontons_2-320.webp 320w, /media/galerijas/pontons_2-640.webp 640w, /media/galerijas/pontons_2.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 2",
+          "name": "pontons_2.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_3.webp",
+          "srcset": "/media/galerijas/pontons_3-320.webp 320w, /media/galerijas/pontons_3-640.webp 640w, /media/galerijas/pontons_3.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 3",
+          "name": "pontons_3.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_14.webp",
+          "srcset": "/media/galerijas/pontons_14-320.webp 320w, /media/galerijas/pontons_14-640.webp 640w, /media/galerijas/pontons_14.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 4",
+          "name": "pontons_14.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_5.webp",
+          "srcset": "/media/galerijas/pontons_5-320.webp 320w, /media/galerijas/pontons_5-640.webp 640w, /media/galerijas/pontons_5.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 5",
+          "name": "pontons_5.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_6.webp",
+          "srcset": "/media/galerijas/pontons_6-320.webp 320w, /media/galerijas/pontons_6-640.webp 640w, /media/galerijas/pontons_6.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 6",
+          "name": "pontons_6.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_13.webp",
+          "srcset": "/media/galerijas/pontons_13-320.webp 320w, /media/galerijas/pontons_13-640.webp 640w, /media/galerijas/pontons_13.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 7",
+          "name": "pontons_13.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_7.webp",
+          "srcset": "/media/galerijas/pontons_7-320.webp 320w, /media/galerijas/pontons_7-640.webp 640w, /media/galerijas/pontons_7.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 8",
+          "name": "pontons_7.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_8.webp",
+          "srcset": "/media/galerijas/pontons_8-320.webp 320w, /media/galerijas/pontons_8-640.webp 640w, /media/galerijas/pontons_8.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 9",
+          "name": "pontons_8.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_9.webp",
+          "srcset": "/media/galerijas/pontons_9-320.webp 320w, /media/galerijas/pontons_9-640.webp 640w, /media/galerijas/pontons_9.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 10",
+          "name": "pontons_9.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_10.webp",
+          "srcset": "/media/galerijas/pontons_10-320.webp 320w, /media/galerijas/pontons_10-640.webp 640w, /media/galerijas/pontons_10.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 11",
+          "name": "pontons_10.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_11.webp",
+          "srcset": "/media/galerijas/pontons_11-320.webp 320w, /media/galerijas/pontons_11-640.webp 640w, /media/galerijas/pontons_11.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 12",
+          "name": "pontons_11.webp"
+        },
+        {
+          "src": "/media/galerijas/pontons_12.webp",
+          "srcset": "/media/galerijas/pontons_12-320.webp 320w, /media/galerijas/pontons_12-640.webp 640w, /media/galerijas/pontons_12.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Pontons 13",
+          "name": "pontons_12.webp"
+        }
+      ]
+    },
+    "peldterase": {
+      "title": "Peldterase",
+      "page": "noma",
+      "images": [
+        {
+          "src": "/media/galerijas/peldterase_1.webp",
+          "srcset": "/media/galerijas/peldterase_1-320.webp 320w, /media/galerijas/peldterase_1-640.webp 640w, /media/galerijas/peldterase_1.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Peldterase 1",
+          "name": "peldterase_1.webp"
+        },
+        {
+          "src": "/media/galerijas/peldterase_2.webp",
+          "srcset": "/media/galerijas/peldterase_2-320.webp 320w, /media/galerijas/peldterase_2-640.webp 640w, /media/galerijas/peldterase_2.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Peldterase 2",
+          "name": "peldterase_2.webp"
+        },
+        {
+          "src": "/media/galerijas/peldterase_3-1.webp",
+          "srcset": "/media/galerijas/peldterase_3-1-320.webp 320w, /media/galerijas/peldterase_3-1-640.webp 640w, /media/galerijas/peldterase_3-1.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Peldterase 3",
+          "name": "peldterase_3-1.webp"
+        },
+        {
+          "src": "/media/galerijas/peldterase_4.webp",
+          "srcset": "/media/galerijas/peldterase_4-320.webp 320w, /media/galerijas/peldterase_4-640.webp 640w, /media/galerijas/peldterase_4.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Peldterase 4",
+          "name": "peldterase_4.webp"
+        },
+        {
+          "src": "/media/galerijas/peldterase_5.webp",
+          "srcset": "/media/galerijas/peldterase_5-320.webp 320w, /media/galerijas/peldterase_5-640.webp 640w, /media/galerijas/peldterase_5.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Peldterase 5",
+          "name": "peldterase_5.webp"
+        },
+        {
+          "src": "/media/galerijas/peldterase_6.webp",
+          "srcset": "/media/galerijas/peldterase_6-320.webp 320w, /media/galerijas/peldterase_6-640.webp 640w, /media/galerijas/peldterase_6.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Peldterase 6",
+          "name": "peldterase_6.webp"
+        },
+        {
+          "src": "/media/galerijas/peldterase_7.webp",
+          "srcset": "/media/galerijas/peldterase_7-320.webp 320w, /media/galerijas/peldterase_7-640.webp 640w, /media/galerijas/peldterase_7.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Peldterase 7",
+          "name": "peldterase_7.webp"
+        },
+        {
+          "src": "/media/galerijas/peldterase_8.webp",
+          "srcset": "/media/galerijas/peldterase_8-320.webp 320w, /media/galerijas/peldterase_8-640.webp 640w, /media/galerijas/peldterase_8.webp 1400w",
+          "w": 1400,
+          "h": 788,
+          "alt": "Peldterase 8",
+          "name": "peldterase_8.webp"
+        }
+      ]
+    },
+    "jubilejas": {
+      "title": "Jubilejas",
+      "page": "banketi",
+      "images": [
+        {
+          "src": "/media/galerijas/jubilejas_1-1.webp",
+          "srcset": "/media/galerijas/jubilejas_1-1-320.webp 320w, /media/galerijas/jubilejas_1-1-640.webp 640w, /media/galerijas/jubilejas_1-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 1",
+          "name": "jubilejas_1-1.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_2.webp",
+          "srcset": "/media/galerijas/jubilejas_2-320.webp 320w, /media/galerijas/jubilejas_2-640.webp 640w, /media/galerijas/jubilejas_2.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 2",
+          "name": "jubilejas_2.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_3.webp",
+          "srcset": "/media/galerijas/jubilejas_3-320.webp 320w, /media/galerijas/jubilejas_3-640.webp 640w, /media/galerijas/jubilejas_3.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 3",
+          "name": "jubilejas_3.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_4.webp",
+          "srcset": "/media/galerijas/jubilejas_4-320.webp 320w, /media/galerijas/jubilejas_4-640.webp 640w, /media/galerijas/jubilejas_4.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 4",
+          "name": "jubilejas_4.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_5.webp",
+          "srcset": "/media/galerijas/jubilejas_5-320.webp 320w, /media/galerijas/jubilejas_5-640.webp 640w, /media/galerijas/jubilejas_5.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 5",
+          "name": "jubilejas_5.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_6.webp",
+          "srcset": "/media/galerijas/jubilejas_6-320.webp 320w, /media/galerijas/jubilejas_6-640.webp 640w, /media/galerijas/jubilejas_6.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 6",
+          "name": "jubilejas_6.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_7.webp",
+          "srcset": "/media/galerijas/jubilejas_7-320.webp 320w, /media/galerijas/jubilejas_7-640.webp 640w, /media/galerijas/jubilejas_7.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 7",
+          "name": "jubilejas_7.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_8.webp",
+          "srcset": "/media/galerijas/jubilejas_8-320.webp 320w, /media/galerijas/jubilejas_8-640.webp 640w, /media/galerijas/jubilejas_8.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 8",
+          "name": "jubilejas_8.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_9.webp",
+          "srcset": "/media/galerijas/jubilejas_9-320.webp 320w, /media/galerijas/jubilejas_9-640.webp 640w, /media/galerijas/jubilejas_9.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 9",
+          "name": "jubilejas_9.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_10.webp",
+          "srcset": "/media/galerijas/jubilejas_10-320.webp 320w, /media/galerijas/jubilejas_10-640.webp 640w, /media/galerijas/jubilejas_10.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 10",
+          "name": "jubilejas_10.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_11.webp",
+          "srcset": "/media/galerijas/jubilejas_11-320.webp 320w, /media/galerijas/jubilejas_11-640.webp 640w, /media/galerijas/jubilejas_11.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 11",
+          "name": "jubilejas_11.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_12.webp",
+          "srcset": "/media/galerijas/jubilejas_12-320.webp 320w, /media/galerijas/jubilejas_12-640.webp 640w, /media/galerijas/jubilejas_12.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 12",
+          "name": "jubilejas_12.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_13.webp",
+          "srcset": "/media/galerijas/jubilejas_13-320.webp 320w, /media/galerijas/jubilejas_13-640.webp 640w, /media/galerijas/jubilejas_13.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 13",
+          "name": "jubilejas_13.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_14.webp",
+          "srcset": "/media/galerijas/jubilejas_14-320.webp 320w, /media/galerijas/jubilejas_14-640.webp 640w, /media/galerijas/jubilejas_14.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 14",
+          "name": "jubilejas_14.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_15.webp",
+          "srcset": "/media/galerijas/jubilejas_15-320.webp 320w, /media/galerijas/jubilejas_15-640.webp 640w, /media/galerijas/jubilejas_15.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 15",
+          "name": "jubilejas_15.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_16.webp",
+          "srcset": "/media/galerijas/jubilejas_16-320.webp 320w, /media/galerijas/jubilejas_16-640.webp 640w, /media/galerijas/jubilejas_16.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 16",
+          "name": "jubilejas_16.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_17.webp",
+          "srcset": "/media/galerijas/jubilejas_17-320.webp 320w, /media/galerijas/jubilejas_17-640.webp 640w, /media/galerijas/jubilejas_17.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 17",
+          "name": "jubilejas_17.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_18.webp",
+          "srcset": "/media/galerijas/jubilejas_18-320.webp 320w, /media/galerijas/jubilejas_18-640.webp 640w, /media/galerijas/jubilejas_18.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 18",
+          "name": "jubilejas_18.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_19.webp",
+          "srcset": "/media/galerijas/jubilejas_19-320.webp 320w, /media/galerijas/jubilejas_19-640.webp 640w, /media/galerijas/jubilejas_19.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 19",
+          "name": "jubilejas_19.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_20.webp",
+          "srcset": "/media/galerijas/jubilejas_20-320.webp 320w, /media/galerijas/jubilejas_20-640.webp 640w, /media/galerijas/jubilejas_20.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 20",
+          "name": "jubilejas_20.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_21.webp",
+          "srcset": "/media/galerijas/jubilejas_21-320.webp 320w, /media/galerijas/jubilejas_21-640.webp 640w, /media/galerijas/jubilejas_21.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 21",
+          "name": "jubilejas_21.webp"
+        },
+        {
+          "src": "/media/galerijas/jubilejas_22.webp",
+          "srcset": "/media/galerijas/jubilejas_22-320.webp 320w, /media/galerijas/jubilejas_22-640.webp 640w, /media/galerijas/jubilejas_22.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Jubilejas 22",
+          "name": "jubilejas_22.webp"
+        }
+      ]
+    },
+    "kazas": {
+      "title": "Kāzas",
+      "page": "banketi",
+      "images": [
+        {
+          "src": "/media/galerijas/kazas_1-1.webp",
+          "srcset": "/media/galerijas/kazas_1-1-320.webp 320w, /media/galerijas/kazas_1-1-640.webp 640w, /media/galerijas/kazas_1-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 1",
+          "name": "kazas_1-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_2-1.webp",
+          "srcset": "/media/galerijas/kazas_2-1-320.webp 320w, /media/galerijas/kazas_2-1-640.webp 640w, /media/galerijas/kazas_2-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 2",
+          "name": "kazas_2-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_3-1.webp",
+          "srcset": "/media/galerijas/kazas_3-1-320.webp 320w, /media/galerijas/kazas_3-1-640.webp 640w, /media/galerijas/kazas_3-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 3",
+          "name": "kazas_3-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_4-1.webp",
+          "srcset": "/media/galerijas/kazas_4-1-320.webp 320w, /media/galerijas/kazas_4-1-640.webp 640w, /media/galerijas/kazas_4-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 4",
+          "name": "kazas_4-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_5-1.webp",
+          "srcset": "/media/galerijas/kazas_5-1-320.webp 320w, /media/galerijas/kazas_5-1-640.webp 640w, /media/galerijas/kazas_5-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 5",
+          "name": "kazas_5-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_6-1.webp",
+          "srcset": "/media/galerijas/kazas_6-1-320.webp 320w, /media/galerijas/kazas_6-1-640.webp 640w, /media/galerijas/kazas_6-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 6",
+          "name": "kazas_6-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_7-1.webp",
+          "srcset": "/media/galerijas/kazas_7-1-320.webp 320w, /media/galerijas/kazas_7-1-640.webp 640w, /media/galerijas/kazas_7-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 7",
+          "name": "kazas_7-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_8-1.webp",
+          "srcset": "/media/galerijas/kazas_8-1-320.webp 320w, /media/galerijas/kazas_8-1-640.webp 640w, /media/galerijas/kazas_8-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 8",
+          "name": "kazas_8-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_9-1.webp",
+          "srcset": "/media/galerijas/kazas_9-1-320.webp 320w, /media/galerijas/kazas_9-1-640.webp 640w, /media/galerijas/kazas_9-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 9",
+          "name": "kazas_9-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_10-1.webp",
+          "srcset": "/media/galerijas/kazas_10-1-320.webp 320w, /media/galerijas/kazas_10-1-640.webp 640w, /media/galerijas/kazas_10-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 10",
+          "name": "kazas_10-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_11-1.webp",
+          "srcset": "/media/galerijas/kazas_11-1-320.webp 320w, /media/galerijas/kazas_11-1-640.webp 640w, /media/galerijas/kazas_11-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 11",
+          "name": "kazas_11-1.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_12.webp",
+          "srcset": "/media/galerijas/kazas_12-320.webp 320w, /media/galerijas/kazas_12-640.webp 640w, /media/galerijas/kazas_12.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 12",
+          "name": "kazas_12.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_13.webp",
+          "srcset": "/media/galerijas/kazas_13-320.webp 320w, /media/galerijas/kazas_13-640.webp 640w, /media/galerijas/kazas_13.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 13",
+          "name": "kazas_13.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_14.webp",
+          "srcset": "/media/galerijas/kazas_14-320.webp 320w, /media/galerijas/kazas_14-640.webp 640w, /media/galerijas/kazas_14.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 14",
+          "name": "kazas_14.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_15.webp",
+          "srcset": "/media/galerijas/kazas_15-320.webp 320w, /media/galerijas/kazas_15-640.webp 640w, /media/galerijas/kazas_15.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 15",
+          "name": "kazas_15.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_16.webp",
+          "srcset": "/media/galerijas/kazas_16-320.webp 320w, /media/galerijas/kazas_16-640.webp 640w, /media/galerijas/kazas_16.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 16",
+          "name": "kazas_16.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_17.webp",
+          "srcset": "/media/galerijas/kazas_17-320.webp 320w, /media/galerijas/kazas_17-640.webp 640w, /media/galerijas/kazas_17.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 17",
+          "name": "kazas_17.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_18.webp",
+          "srcset": "/media/galerijas/kazas_18-320.webp 320w, /media/galerijas/kazas_18-640.webp 640w, /media/galerijas/kazas_18.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 18",
+          "name": "kazas_18.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_19.webp",
+          "srcset": "/media/galerijas/kazas_19-320.webp 320w, /media/galerijas/kazas_19-640.webp 640w, /media/galerijas/kazas_19.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 19",
+          "name": "kazas_19.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_20.webp",
+          "srcset": "/media/galerijas/kazas_20-320.webp 320w, /media/galerijas/kazas_20-640.webp 640w, /media/galerijas/kazas_20.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 20",
+          "name": "kazas_20.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_21.webp",
+          "srcset": "/media/galerijas/kazas_21-320.webp 320w, /media/galerijas/kazas_21-640.webp 640w, /media/galerijas/kazas_21.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 21",
+          "name": "kazas_21.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_22.webp",
+          "srcset": "/media/galerijas/kazas_22-320.webp 320w, /media/galerijas/kazas_22-640.webp 640w, /media/galerijas/kazas_22.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 22",
+          "name": "kazas_22.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_23.webp",
+          "srcset": "/media/galerijas/kazas_23-320.webp 320w, /media/galerijas/kazas_23-640.webp 640w, /media/galerijas/kazas_23.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 23",
+          "name": "kazas_23.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_24.webp",
+          "srcset": "/media/galerijas/kazas_24-320.webp 320w, /media/galerijas/kazas_24-640.webp 640w, /media/galerijas/kazas_24.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 24",
+          "name": "kazas_24.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_25.webp",
+          "srcset": "/media/galerijas/kazas_25-320.webp 320w, /media/galerijas/kazas_25-640.webp 640w, /media/galerijas/kazas_25.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 25",
+          "name": "kazas_25.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_26.webp",
+          "srcset": "/media/galerijas/kazas_26-320.webp 320w, /media/galerijas/kazas_26-640.webp 640w, /media/galerijas/kazas_26.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 26",
+          "name": "kazas_26.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_27.webp",
+          "srcset": "/media/galerijas/kazas_27-320.webp 320w, /media/galerijas/kazas_27-640.webp 640w, /media/galerijas/kazas_27.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 27",
+          "name": "kazas_27.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_28.webp",
+          "srcset": "/media/galerijas/kazas_28-320.webp 320w, /media/galerijas/kazas_28-640.webp 640w, /media/galerijas/kazas_28.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 28",
+          "name": "kazas_28.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_29.webp",
+          "srcset": "/media/galerijas/kazas_29-320.webp 320w, /media/galerijas/kazas_29-640.webp 640w, /media/galerijas/kazas_29.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 29",
+          "name": "kazas_29.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_30.webp",
+          "srcset": "/media/galerijas/kazas_30-320.webp 320w, /media/galerijas/kazas_30-640.webp 640w, /media/galerijas/kazas_30.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 30",
+          "name": "kazas_30.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_31.webp",
+          "srcset": "/media/galerijas/kazas_31-320.webp 320w, /media/galerijas/kazas_31-640.webp 640w, /media/galerijas/kazas_31.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 31",
+          "name": "kazas_31.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_32.webp",
+          "srcset": "/media/galerijas/kazas_32-320.webp 320w, /media/galerijas/kazas_32-640.webp 640w, /media/galerijas/kazas_32.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 32",
+          "name": "kazas_32.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_33.webp",
+          "srcset": "/media/galerijas/kazas_33-320.webp 320w, /media/galerijas/kazas_33-640.webp 640w, /media/galerijas/kazas_33.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 33",
+          "name": "kazas_33.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_34.webp",
+          "srcset": "/media/galerijas/kazas_34-320.webp 320w, /media/galerijas/kazas_34-640.webp 640w, /media/galerijas/kazas_34.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 34",
+          "name": "kazas_34.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_35.webp",
+          "srcset": "/media/galerijas/kazas_35-320.webp 320w, /media/galerijas/kazas_35-640.webp 640w, /media/galerijas/kazas_35.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 35",
+          "name": "kazas_35.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_36.webp",
+          "srcset": "/media/galerijas/kazas_36-320.webp 320w, /media/galerijas/kazas_36-640.webp 640w, /media/galerijas/kazas_36.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 36",
+          "name": "kazas_36.webp"
+        },
+        {
+          "src": "/media/galerijas/kazas_37.webp",
+          "srcset": "/media/galerijas/kazas_37-320.webp 320w, /media/galerijas/kazas_37-640.webp 640w, /media/galerijas/kazas_37.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kāzas 37",
+          "name": "kazas_37.webp"
+        }
+      ]
+    },
+    "korporativie": {
+      "title": "Korporatīvie pasākumi",
+      "page": "banketi",
+      "images": [
+        {
+          "src": "/media/galerijas/korporativie_1.webp",
+          "srcset": "/media/galerijas/korporativie_1-320.webp 320w, /media/galerijas/korporativie_1-640.webp 640w, /media/galerijas/korporativie_1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 1",
+          "name": "korporativie_1.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_2.webp",
+          "srcset": "/media/galerijas/korporativie_2-320.webp 320w, /media/galerijas/korporativie_2-640.webp 640w, /media/galerijas/korporativie_2.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 2",
+          "name": "korporativie_2.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_3.webp",
+          "srcset": "/media/galerijas/korporativie_3-320.webp 320w, /media/galerijas/korporativie_3-640.webp 640w, /media/galerijas/korporativie_3.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 3",
+          "name": "korporativie_3.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_4.webp",
+          "srcset": "/media/galerijas/korporativie_4-320.webp 320w, /media/galerijas/korporativie_4-640.webp 640w, /media/galerijas/korporativie_4.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 4",
+          "name": "korporativie_4.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_5.webp",
+          "srcset": "/media/galerijas/korporativie_5-320.webp 320w, /media/galerijas/korporativie_5-640.webp 640w, /media/galerijas/korporativie_5.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 5",
+          "name": "korporativie_5.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_6.webp",
+          "srcset": "/media/galerijas/korporativie_6-320.webp 320w, /media/galerijas/korporativie_6-640.webp 640w, /media/galerijas/korporativie_6.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 6",
+          "name": "korporativie_6.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_7.webp",
+          "srcset": "/media/galerijas/korporativie_7-320.webp 320w, /media/galerijas/korporativie_7-640.webp 640w, /media/galerijas/korporativie_7.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 7",
+          "name": "korporativie_7.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_8.webp",
+          "srcset": "/media/galerijas/korporativie_8-320.webp 320w, /media/galerijas/korporativie_8-640.webp 640w, /media/galerijas/korporativie_8.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 8",
+          "name": "korporativie_8.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_9.webp",
+          "srcset": "/media/galerijas/korporativie_9-320.webp 320w, /media/galerijas/korporativie_9-640.webp 640w, /media/galerijas/korporativie_9.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 9",
+          "name": "korporativie_9.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_10.webp",
+          "srcset": "/media/galerijas/korporativie_10-320.webp 320w, /media/galerijas/korporativie_10-640.webp 640w, /media/galerijas/korporativie_10.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 10",
+          "name": "korporativie_10.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_11.webp",
+          "srcset": "/media/galerijas/korporativie_11-320.webp 320w, /media/galerijas/korporativie_11-640.webp 640w, /media/galerijas/korporativie_11.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 11",
+          "name": "korporativie_11.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_12.webp",
+          "srcset": "/media/galerijas/korporativie_12-320.webp 320w, /media/galerijas/korporativie_12-640.webp 640w, /media/galerijas/korporativie_12.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 12",
+          "name": "korporativie_12.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_13.webp",
+          "srcset": "/media/galerijas/korporativie_13-320.webp 320w, /media/galerijas/korporativie_13-640.webp 640w, /media/galerijas/korporativie_13.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 13",
+          "name": "korporativie_13.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_14.webp",
+          "srcset": "/media/galerijas/korporativie_14-320.webp 320w, /media/galerijas/korporativie_14-640.webp 640w, /media/galerijas/korporativie_14.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 14",
+          "name": "korporativie_14.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_15.webp",
+          "srcset": "/media/galerijas/korporativie_15-320.webp 320w, /media/galerijas/korporativie_15-640.webp 640w, /media/galerijas/korporativie_15.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 15",
+          "name": "korporativie_15.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_16.webp",
+          "srcset": "/media/galerijas/korporativie_16-320.webp 320w, /media/galerijas/korporativie_16-640.webp 640w, /media/galerijas/korporativie_16.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 16",
+          "name": "korporativie_16.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_17.webp",
+          "srcset": "/media/galerijas/korporativie_17-320.webp 320w, /media/galerijas/korporativie_17-640.webp 640w, /media/galerijas/korporativie_17.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 17",
+          "name": "korporativie_17.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_18.webp",
+          "srcset": "/media/galerijas/korporativie_18-320.webp 320w, /media/galerijas/korporativie_18-640.webp 640w, /media/galerijas/korporativie_18.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 18",
+          "name": "korporativie_18.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_19.webp",
+          "srcset": "/media/galerijas/korporativie_19-320.webp 320w, /media/galerijas/korporativie_19-640.webp 640w, /media/galerijas/korporativie_19.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 19",
+          "name": "korporativie_19.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_20.webp",
+          "srcset": "/media/galerijas/korporativie_20-320.webp 320w, /media/galerijas/korporativie_20-640.webp 640w, /media/galerijas/korporativie_20.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 20",
+          "name": "korporativie_20.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_21.webp",
+          "srcset": "/media/galerijas/korporativie_21-320.webp 320w, /media/galerijas/korporativie_21-640.webp 640w, /media/galerijas/korporativie_21.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 21",
+          "name": "korporativie_21.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_22.webp",
+          "srcset": "/media/galerijas/korporativie_22-320.webp 320w, /media/galerijas/korporativie_22-640.webp 640w, /media/galerijas/korporativie_22.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 22",
+          "name": "korporativie_22.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_23.webp",
+          "srcset": "/media/galerijas/korporativie_23-320.webp 320w, /media/galerijas/korporativie_23-640.webp 640w, /media/galerijas/korporativie_23.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 23",
+          "name": "korporativie_23.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_24.webp",
+          "srcset": "/media/galerijas/korporativie_24-320.webp 320w, /media/galerijas/korporativie_24-640.webp 640w, /media/galerijas/korporativie_24.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 24",
+          "name": "korporativie_24.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_25.webp",
+          "srcset": "/media/galerijas/korporativie_25-320.webp 320w, /media/galerijas/korporativie_25-640.webp 640w, /media/galerijas/korporativie_25.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 25",
+          "name": "korporativie_25.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_26.webp",
+          "srcset": "/media/galerijas/korporativie_26-320.webp 320w, /media/galerijas/korporativie_26-640.webp 640w, /media/galerijas/korporativie_26.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 26",
+          "name": "korporativie_26.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_27.webp",
+          "srcset": "/media/galerijas/korporativie_27-320.webp 320w, /media/galerijas/korporativie_27-640.webp 640w, /media/galerijas/korporativie_27.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 27",
+          "name": "korporativie_27.webp"
+        },
+        {
+          "src": "/media/galerijas/korporativie_28.webp",
+          "srcset": "/media/galerijas/korporativie_28-320.webp 320w, /media/galerijas/korporativie_28-640.webp 640w, /media/galerijas/korporativie_28.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Korporatīvie pasākumi 28",
+          "name": "korporativie_28.webp"
+        }
+      ]
+    },
+    "kafijasPauzes": {
+      "title": "Kafijas pauzes",
+      "page": "banketi",
+      "images": [
+        {
+          "src": "/media/galerijas/kafijas_pauzes_1.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_1-320.webp 320w, /media/galerijas/kafijas_pauzes_1-640.webp 640w, /media/galerijas/kafijas_pauzes_1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 1",
+          "name": "kafijas_pauzes_1.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_2.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_2-320.webp 320w, /media/galerijas/kafijas_pauzes_2-640.webp 640w, /media/galerijas/kafijas_pauzes_2.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 2",
+          "name": "kafijas_pauzes_2.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_3.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_3-320.webp 320w, /media/galerijas/kafijas_pauzes_3-640.webp 640w, /media/galerijas/kafijas_pauzes_3.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 3",
+          "name": "kafijas_pauzes_3.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_4.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_4-320.webp 320w, /media/galerijas/kafijas_pauzes_4-640.webp 640w, /media/galerijas/kafijas_pauzes_4.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 4",
+          "name": "kafijas_pauzes_4.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_5.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_5-320.webp 320w, /media/galerijas/kafijas_pauzes_5-640.webp 640w, /media/galerijas/kafijas_pauzes_5.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 5",
+          "name": "kafijas_pauzes_5.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_6.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_6-320.webp 320w, /media/galerijas/kafijas_pauzes_6-640.webp 640w, /media/galerijas/kafijas_pauzes_6.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 6",
+          "name": "kafijas_pauzes_6.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_7.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_7-320.webp 320w, /media/galerijas/kafijas_pauzes_7-640.webp 640w, /media/galerijas/kafijas_pauzes_7.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 7",
+          "name": "kafijas_pauzes_7.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_8.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_8-320.webp 320w, /media/galerijas/kafijas_pauzes_8-640.webp 640w, /media/galerijas/kafijas_pauzes_8.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 8",
+          "name": "kafijas_pauzes_8.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_9.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_9-320.webp 320w, /media/galerijas/kafijas_pauzes_9-640.webp 640w, /media/galerijas/kafijas_pauzes_9.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 9",
+          "name": "kafijas_pauzes_9.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_10.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_10-320.webp 320w, /media/galerijas/kafijas_pauzes_10-640.webp 640w, /media/galerijas/kafijas_pauzes_10.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 10",
+          "name": "kafijas_pauzes_10.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_11.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_11-320.webp 320w, /media/galerijas/kafijas_pauzes_11-640.webp 640w, /media/galerijas/kafijas_pauzes_11.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 11",
+          "name": "kafijas_pauzes_11.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_12.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_12-320.webp 320w, /media/galerijas/kafijas_pauzes_12-640.webp 640w, /media/galerijas/kafijas_pauzes_12.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 12",
+          "name": "kafijas_pauzes_12.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_13.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_13-320.webp 320w, /media/galerijas/kafijas_pauzes_13-640.webp 640w, /media/galerijas/kafijas_pauzes_13.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 13",
+          "name": "kafijas_pauzes_13.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_14.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_14-320.webp 320w, /media/galerijas/kafijas_pauzes_14-640.webp 640w, /media/galerijas/kafijas_pauzes_14.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 14",
+          "name": "kafijas_pauzes_14.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_15.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_15-320.webp 320w, /media/galerijas/kafijas_pauzes_15-640.webp 640w, /media/galerijas/kafijas_pauzes_15.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 15",
+          "name": "kafijas_pauzes_15.webp"
+        },
+        {
+          "src": "/media/galerijas/kafijas_pauzes_16.webp",
+          "srcset": "/media/galerijas/kafijas_pauzes_16-320.webp 320w, /media/galerijas/kafijas_pauzes_16-640.webp 640w, /media/galerijas/kafijas_pauzes_16.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Kafijas pauzes 16",
+          "name": "kafijas_pauzes_16.webp"
+        }
+      ]
+    },
+    "brokastis": {
+      "title": "Brokastis",
+      "page": "banketi",
+      "images": [
+        {
+          "src": "/media/galerijas/brokastis_1.webp",
+          "srcset": "/media/galerijas/brokastis_1-320.webp 320w, /media/galerijas/brokastis_1-640.webp 640w, /media/galerijas/brokastis_1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 1",
+          "name": "brokastis_1.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_2.webp",
+          "srcset": "/media/galerijas/brokastis_2-320.webp 320w, /media/galerijas/brokastis_2-640.webp 640w, /media/galerijas/brokastis_2.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 2",
+          "name": "brokastis_2.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_3.webp",
+          "srcset": "/media/galerijas/brokastis_3-320.webp 320w, /media/galerijas/brokastis_3-640.webp 640w, /media/galerijas/brokastis_3.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 3",
+          "name": "brokastis_3.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_4.webp",
+          "srcset": "/media/galerijas/brokastis_4-320.webp 320w, /media/galerijas/brokastis_4-640.webp 640w, /media/galerijas/brokastis_4.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 4",
+          "name": "brokastis_4.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_5.webp",
+          "srcset": "/media/galerijas/brokastis_5-320.webp 320w, /media/galerijas/brokastis_5-640.webp 640w, /media/galerijas/brokastis_5.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 5",
+          "name": "brokastis_5.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_6.webp",
+          "srcset": "/media/galerijas/brokastis_6-320.webp 320w, /media/galerijas/brokastis_6-640.webp 640w, /media/galerijas/brokastis_6.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 6",
+          "name": "brokastis_6.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_7.webp",
+          "srcset": "/media/galerijas/brokastis_7-320.webp 320w, /media/galerijas/brokastis_7-640.webp 640w, /media/galerijas/brokastis_7.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 7",
+          "name": "brokastis_7.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_8.webp",
+          "srcset": "/media/galerijas/brokastis_8-320.webp 320w, /media/galerijas/brokastis_8-640.webp 640w, /media/galerijas/brokastis_8.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 8",
+          "name": "brokastis_8.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_9.webp",
+          "srcset": "/media/galerijas/brokastis_9-320.webp 320w, /media/galerijas/brokastis_9-640.webp 640w, /media/galerijas/brokastis_9.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 9",
+          "name": "brokastis_9.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_10.webp",
+          "srcset": "/media/galerijas/brokastis_10-320.webp 320w, /media/galerijas/brokastis_10-640.webp 640w, /media/galerijas/brokastis_10.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 10",
+          "name": "brokastis_10.webp"
+        },
+        {
+          "src": "/media/galerijas/brokastis_11.webp",
+          "srcset": "/media/galerijas/brokastis_11-320.webp 320w, /media/galerijas/brokastis_11-640.webp 640w, /media/galerijas/brokastis_11.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Brokastis 11",
+          "name": "brokastis_11.webp"
+        }
+      ]
+    },
+    "atvaduMielasts": {
+      "title": "Atvadu mielasts",
+      "page": "banketi",
+      "images": [
+        {
+          "src": "/media/galerijas/atvadu_mielasts_1.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_1-320.webp 320w, /media/galerijas/atvadu_mielasts_1-640.webp 640w, /media/galerijas/atvadu_mielasts_1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 1",
+          "name": "atvadu_mielasts_1.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_2.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_2-320.webp 320w, /media/galerijas/atvadu_mielasts_2-640.webp 640w, /media/galerijas/atvadu_mielasts_2.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 2",
+          "name": "atvadu_mielasts_2.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_3.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_3-320.webp 320w, /media/galerijas/atvadu_mielasts_3-640.webp 640w, /media/galerijas/atvadu_mielasts_3.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 3",
+          "name": "atvadu_mielasts_3.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_4.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_4-320.webp 320w, /media/galerijas/atvadu_mielasts_4-640.webp 640w, /media/galerijas/atvadu_mielasts_4.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 4",
+          "name": "atvadu_mielasts_4.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_5.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_5-320.webp 320w, /media/galerijas/atvadu_mielasts_5-640.webp 640w, /media/galerijas/atvadu_mielasts_5.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 5",
+          "name": "atvadu_mielasts_5.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_6.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_6-320.webp 320w, /media/galerijas/atvadu_mielasts_6-640.webp 640w, /media/galerijas/atvadu_mielasts_6.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 6",
+          "name": "atvadu_mielasts_6.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_7.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_7-320.webp 320w, /media/galerijas/atvadu_mielasts_7-640.webp 640w, /media/galerijas/atvadu_mielasts_7.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 7",
+          "name": "atvadu_mielasts_7.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_8.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_8-320.webp 320w, /media/galerijas/atvadu_mielasts_8-640.webp 640w, /media/galerijas/atvadu_mielasts_8.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 8",
+          "name": "atvadu_mielasts_8.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_9.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_9-320.webp 320w, /media/galerijas/atvadu_mielasts_9-640.webp 640w, /media/galerijas/atvadu_mielasts_9.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 9",
+          "name": "atvadu_mielasts_9.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_10.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_10-320.webp 320w, /media/galerijas/atvadu_mielasts_10-640.webp 640w, /media/galerijas/atvadu_mielasts_10.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 10",
+          "name": "atvadu_mielasts_10.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_11.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_11-320.webp 320w, /media/galerijas/atvadu_mielasts_11-640.webp 640w, /media/galerijas/atvadu_mielasts_11.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 11",
+          "name": "atvadu_mielasts_11.webp"
+        },
+        {
+          "src": "/media/galerijas/atvadu_mielasts_12.webp",
+          "srcset": "/media/galerijas/atvadu_mielasts_12-320.webp 320w, /media/galerijas/atvadu_mielasts_12-640.webp 640w, /media/galerijas/atvadu_mielasts_12.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Atvadu mielasts 12",
+          "name": "atvadu_mielasts_12.webp"
+        }
+      ]
+    },
+    "salsmaize": {
+      "title": "Sālsmaize",
+      "page": "banketi",
+      "images": [
+        {
+          "src": "/media/galerijas/salsmaize_1-1.webp",
+          "srcset": "/media/galerijas/salsmaize_1-1-320.webp 320w, /media/galerijas/salsmaize_1-1-640.webp 640w, /media/galerijas/salsmaize_1-1.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Sālsmaize 1",
+          "name": "salsmaize_1-1.webp"
+        },
+        {
+          "src": "/media/galerijas/salsmaize_2.webp",
+          "srcset": "/media/galerijas/salsmaize_2-320.webp 320w, /media/galerijas/salsmaize_2-640.webp 640w, /media/galerijas/salsmaize_2.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Sālsmaize 2",
+          "name": "salsmaize_2.webp"
+        },
+        {
+          "src": "/media/galerijas/salsmaize_3.webp",
+          "srcset": "/media/galerijas/salsmaize_3-320.webp 320w, /media/galerijas/salsmaize_3-640.webp 640w, /media/galerijas/salsmaize_3.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Sālsmaize 3",
+          "name": "salsmaize_3.webp"
+        },
+        {
+          "src": "/media/galerijas/salsmaize_4.webp",
+          "srcset": "/media/galerijas/salsmaize_4-320.webp 320w, /media/galerijas/salsmaize_4-640.webp 640w, /media/galerijas/salsmaize_4.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Sālsmaize 4",
+          "name": "salsmaize_4.webp"
+        },
+        {
+          "src": "/media/galerijas/salsmaize_5.webp",
+          "srcset": "/media/galerijas/salsmaize_5-320.webp 320w, /media/galerijas/salsmaize_5-640.webp 640w, /media/galerijas/salsmaize_5.webp 1080w",
+          "w": 1080,
+          "h": 1080,
+          "alt": "Sālsmaize 5",
+          "name": "salsmaize_5.webp"
+        }
+      ]
+    }
+  },
+  "notices": {
+    "bistro": null,
+    "konditoreja": {
+      "id": 1,
+      "label": "aktuāli",
+      "meta": "konditorejā",
+      "photo": "Saldejums-konditoreja.webp",
+      "alt": "Konditorejā: vaniļas saldējums vafeļu konusā 1.50 € / 65 g, trauciņā 1.95 € / 150 g; saldējuma kokteilis (sula pēc izvēles) 4.00 € / 400 ml",
+      "image": {
+        "src": "/media/aktuali/saldejums-konditoreja.webp",
+        "srcset": "/media/aktuali/saldejums-konditoreja-320.webp 320w, /media/aktuali/saldejums-konditoreja-640.webp 640w, /media/aktuali/saldejums-konditoreja.webp 1024w",
+        "w": 1024,
+        "h": 1024,
+        "alt": "Konditorejā: vaniļas saldējums vafeļu konusā 1.50 € / 65 g, trauciņā 1.95 € / 150 g; saldējuma kokteilis (sula pēc izvēles) 4.00 € / 400 ml",
+        "name": "Saldejums-konditoreja.webp"
+      },
+      "title": null,
+      "text": null,
+      "link": null
+    },
+    "tejas-namins": {
+      "id": 2,
+      "label": "aktuāli",
+      "meta": "namiņā šobrīd",
+      "photo": "Saldejuma-kokteili.webp",
+      "alt": "Saldējuma–piena kokteiļi, 6.00 € / 350 ml: bubble gum, šokolādes, karameļu, matcha, zemeņu, oreo",
+      "image": {
+        "src": "/media/aktuali/saldejuma-kokteili.webp",
+        "srcset": "/media/aktuali/saldejuma-kokteili-320.webp 320w, /media/aktuali/saldejuma-kokteili-640.webp 640w, /media/aktuali/saldejuma-kokteili.webp 1024w",
+        "w": 1024,
+        "h": 1024,
+        "alt": "Saldējuma–piena kokteiļi, 6.00 € / 350 ml: bubble gum, šokolādes, karameļu, matcha, zemeņu, oreo",
+        "name": "Saldejuma-kokteili.webp"
+      },
+      "title": null,
+      "text": null,
+      "link": null
+    }
+  },
+  "rentalPrices": [
+    {
+      "title": "Mazā zāle",
+      "note": null,
+      "rows": [
+        {
+          "name": "Ar ēdināšanu",
+          "price": "30 €/h"
+        },
+        {
+          "name": "Bez ēdināšanas",
+          "size": "no 3 stundām",
+          "price": "40 €/h"
+        },
+        {
+          "name": "Bez ēdināšanas",
+          "size": "1–2 stundas",
+          "price": "50 €/h"
+        }
+      ]
+    },
+    {
+      "title": "Lielā zāle",
+      "note": "ietver arī mazo zāli",
+      "rows": [
+        {
+          "name": "Ar ēdināšanu",
+          "price": "40 €/h"
+        },
+        {
+          "name": "Bez ēdināšanas",
+          "size": "no 3 stundām",
+          "price": "45 €/h"
+        },
+        {
+          "name": "Bez ēdināšanas",
+          "size": "1–2 stundas",
+          "price": "60 €/h"
+        }
+      ]
+    }
+  ]
+}

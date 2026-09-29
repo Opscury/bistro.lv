@@ -1,8 +1,12 @@
 # Netlify: būve, pārrakstīšana un galvenes. Formas (Netlify Forms) ieslēdz
 # ar VITE_NETLIFY_FORMS=true vides mainīgajā (Site settings → Environment).
+#
+# Pirms būves scripts/snapshot.mjs paņem jaunāko saturu no Silvas admin API
+# (SNAPSHOT_API, noklusējums https://opscury.eu.pythonanywhere.com). Ja API
+# nav pieejams, būve turpinās ar repozitorijā esošajiem src/data failiem.
 
 [build]
-  command = "npm run build"
+  command = "node scripts/snapshot.mjs && npm run build"
   publish = "dist"
 
 [build.environment]

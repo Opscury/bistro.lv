@@ -1,10 +1,12 @@
 // Viens avots visām vietām: adreses, darba laiki, tālruņi, e-pasti.
-// Dati ir lines.json (rediģējams arī /admin), šeit — palīgfunkcijas,
-// kas no tiem veido sākumlapas kartītes, mastheadus, Kontaktus,
-// kājeni un JSON-LD. Mainot darba laiku, jālabo tikai lines.json.
+// Dati nāk no Silvas admin (silva-api) caur src/lib/content.jsx; lines.json
+// ir to momentuzņēmums būves brīdī. Šeit — palīgfunkcijas, kas no tiem veido
+// sākumlapas kartītes, Kontaktus, kājeni un JSON-LD. Darba laiku un kontaktus
+// maina tikai adminā ("Darba laiki un kontakti").
 
 import data from "./lines.json";
 
+// Momentuzņēmums — tikai tam, kas nemainās bez jaunas būves (izvēlne, 404).
 export const company = data.company;
 export const lines = data.lines;
 export const venues = data.venues;
@@ -58,6 +60,24 @@ export function hoursRows(line, { long = false } = {}) {
   }));
 }
 
+/** Darba laiks vienā teikumā meta aprakstiem: "darba dienās 8.00–17.00", "katru dienu 11.00–20.00". */
+export function hoursSentence(line) {
+  const open = (line?.hours || []).filter((h) => !h.closed);
+  return open
+    .map((h) => {
+      const days = h.days.length === 7
+        ? "katru dienu"
+        : h.days.join() === "Mo,Tu,We,Th,Fr"
+          ? "darba dienās"
+          : formatDays(h.days, { long: true }).toLowerCase();
+      return `${days} ${formatTime(h.open)}–${formatTime(h.close)}`;
+    })
+    .join(", ");
+}
+
+/** "Driksas iela 9" -> "Driksas ielā 9" (kur? — teikumos) */
+export const streetWhere = (street) => (street || "").replace(/\biela\b/, "ielā");
+
 /** Faktu rinda mastheadam: ["Driksas iela 9, Jelgava", "P.–Pk. 8.00–17.00", ...] */
 export function factList(line) {
   const out = [];
@@ -85,23 +105,33 @@ export function mapLinks(line) {
 }
 
 /** Tālruņi pēc mērķa — Kontaktu lapai un kājenei. */
-export function phoneList() {
-  const out = lines
+export function phoneList(site) {
+  const out = site.lines
     .filter((l) => l.phone)
     .map((l) => ({ label: l.phoneLabel || cap(l.name), value: l.phone }));
-  out.push({ label: "Atsauksmēm", value: company.feedbackPhone });
+  out.push({ label: "Atsauksmēm", value: site.company.feedbackPhone });
   return out;
 }
 
-export function emailList() {
+export function emailList(site) {
+  const banketi = site.lines.find((l) => l.id === "banketi");
   return [
-    { label: "Banketu un konditorejas pasūtījumiem", value: lineById.banketi.email },
-    { label: "Atsauksmēm", value: company.feedbackEmail },
+    { label: "Banketu un konditorejas pasūtījumiem", value: banketi?.email },
+    { label: "Atsauksmēm", value: site.company.feedbackEmail },
   ];
 }
 
+/** Vietas bilde pilnā adresē (JSON-LD): public/img vai /media. */
+function photoUrl(site, line) {
+  const url = site.company.url;
+  if (line.photo) return `${url}/img/${line.photo}`;
+  if (line.image?.src) return line.image.src.startsWith("http") ? line.image.src : `${url}${line.image.src}`;
+  return undefined;
+}
+
 /** JSON-LD: organizācija + katra vieta ar darba laiku. */
-export function jsonLd() {
+export function jsonLd(site) {
+  const { company } = site;
   const org = {
     "@type": "Organization",
     "@id": `${company.url}/#org`,
@@ -113,14 +143,14 @@ export function jsonLd() {
     sameAs: [company.instagram],
     address: { "@type": "PostalAddress", addressLocality: company.city, addressCountry: "LV" },
   };
-  const places = lines
+  const places = site.lines
     .filter((l) => l.address)
     .map((l) => ({
       "@type": l.schemaType,
       "@id": `${company.url}${l.path}#place`,
-      name: `Silva ${l.name}`,
+      name: `${company.name} ${l.name}`,
       url: `${company.url}${l.path}`,
-      image: `${company.url}/img/${l.photo}`,
+      image: photoUrl(site, l),
       parentOrganization: { "@id": org["@id"] },
       telephone: l.phone || undefined,
       email: l.email || undefined,
@@ -141,16 +171,18 @@ export function jsonLd() {
           closes: h.close,
         })),
     }));
-  const banketi = lineById.banketi;
-  places.push({
-    "@type": "FoodService",
-    "@id": `${company.url}${banketi.path}#service`,
-    name: "Silva banketi",
-    url: `${company.url}${banketi.path}`,
-    provider: { "@id": org["@id"] },
-    telephone: banketi.phone,
-    email: banketi.email,
-    areaServed: "Jelgava, Zemgale",
-  });
+  const banketi = site.lines.find((l) => l.id === "banketi");
+  if (banketi) {
+    places.push({
+      "@type": "FoodService",
+      "@id": `${company.url}${banketi.path}#service`,
+      name: `${company.name} banketi`,
+      url: `${company.url}${banketi.path}`,
+      provider: { "@id": org["@id"] },
+      telephone: banketi.phone,
+      email: banketi.email,
+      areaServed: "Jelgava, Zemgale",
+    });
+  }
   return { "@context": "https://schema.org", "@graph": [org, ...places] };
 }

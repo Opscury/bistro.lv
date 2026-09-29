@@ -1,21 +1,23 @@
 import { Link } from "react-router-dom";
 import Img from "./Img.jsx";
+import { Lines } from "./Paragraphs.jsx";
 import styles from "./Notice.module.css";
 
 /**
  * Aktualitātes rāmis — vieta, kur karājas tas, kas šobrīd notiek:
  * sezonas piedāvājums, jaunums, plakāts. Rāmis pats ir kluss (balts
  * papīrs, mata līnija, viena zaļa svītra augšā); skaļš ir saturs, ko
- * tajā ieliek. Tas pats rāmis derēs arī citām lapām.
+ * tajā ieliek. Saturu maina adminā: "Aktualitātes (plakāti)".
  *
  * label — mazā etiķete augšā pa kreisi ("aktuāli", "jaunums")
  * meta  — mazais teksts pa labi: sezona, datumi, "līdz 30.09."
- * photo — plakāts no public/img (tikai faila nosaukums)
+ * image — plakāts no admin ({src, srcset, w, h, alt, name}); photo — fails no public/img
  * alt   — kas uz plakāta rakstīts
  * title, text, link — neobligāti; ja plakāts pats visu pasaka, izlaid
  */
-export default function Notice({ label, meta, photo, alt, title, text, link, sizes }) {
-  if (!photo && !title && !text) return null;
+export default function Notice({ label, meta, photo, image, alt, title, text, link, sizes }) {
+  const poster = image || photo;
+  if (!poster && !title && !text) return null;
 
   return (
     <figure className={styles.notice}>
@@ -24,12 +26,13 @@ export default function Notice({ label, meta, photo, alt, title, text, link, siz
         {meta && <span className={styles.meta}>{meta}</span>}
       </figcaption>
 
-      {photo && (
+      {poster && (
         <div className={styles.frame}>
           <Img
             className={styles.poster}
-            name={photo}
-            alt={alt}
+            image={image || undefined}
+            name={image ? undefined : photo}
+            alt={alt ?? ""}
             sizes={sizes || "(min-width: 700px) 460px, 100vw"}
           />
         </div>
@@ -38,7 +41,7 @@ export default function Notice({ label, meta, photo, alt, title, text, link, siz
       {(title || text || link) && (
         <div className={styles.foot}>
           {title && <h3 className={styles.title}>{title}</h3>}
-          {text && <p className={styles.text}>{text}</p>}
+          {text && <p className={styles.text}><Lines text={text} /></p>}
           {link &&
             (link.to ? (
               <Link className={styles.link} to={link.to}>

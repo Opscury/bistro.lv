@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import Img from "./Img.jsx";
+import Img, { imgKey } from "./Img.jsx";
+import { altFor } from "./Gallery.jsx";
 import styles from "./Slideshow.module.css";
 
 /**
@@ -54,9 +55,9 @@ export default function Slideshow({ images, alt = "", ratio = "4 / 3", sizes = "
         {images.map((src, i) =>
           visible.has(i) ? (
             <Img
-              key={src}
-              name={src}
-              alt={`${alt} ${i + 1}`}
+              key={imgKey(src)}
+              image={src}
+              alt={altFor(images, alt, i)}
               sizes={sizes}
               className={i === index ? styles.slideActive : styles.slide}
               loading={i === index ? "eager" : "lazy"}

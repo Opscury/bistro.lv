@@ -10,7 +10,8 @@ kļūst par gatavu HTML (prerender), attēli dabū mazākas kopijas, un
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
+npm run dev        # http://localhost:5173 (/api, /media, /admin -> lokālais Django :8000)
+npm run snapshot   # src/data/*.json no admin API (SNAPSHOT_API=http://127.0.0.1:8000 lokāli)
 npm run build      # dist/ — klienta būve + prerender + attēlu kopijas
 npm run preview    # rāda dist/ tā, kā to rādīs hostings
 npm run menu -- "ceļš/uz/Bistro-edienkarte-15.09.-21.09.pdf"   # nedēļas ēdienkarte
@@ -28,22 +29,24 @@ src/
   entry-server.jsx         servera ieeja prerender skriptam
   App.jsx                  ceļi + 404
   data/
-    lines.json             VIENS AVOTS: vietas, adreses, darba laiki, tālruņi, e-pasti
+    lines.json             momentuzņēmums no admin: uzņēmums, vietas, darba laiki, kontakti
+    content.json           momentuzņēmums no admin: teksti, foto, galerijas, aktualitātes, nomas cenas
+    konditoreja.json       momentuzņēmums no admin: kategorijas, preces, minimumi, alergēni
     lines.js               palīgi: faktu rindas, darba laika formāts, JSON-LD
-    menu.json              bistro ēdienkartes (nedēļas HTML rindas + PDF, brokastis, dzērieni)
-    konditoreja.json       118 preces 10 kategorijās, klasika, cenu datums, saldējums
-    konditorejaUnits.js    cenu parsēšana, minimālie daudzumi
-    meta.js                katras lapas <title>, apraksts, OG attēls
-    site.js                izvēlne, teksti, galeriju saraksti
+    menu.json              bistro nedēļas ēdienkartes rindas (izslēgtas) un PDF saites
+    konditorejaUnits.js    cenu parsēšana, minimālo daudzumu rezerve
+    meta.js                katras lapas <title>, apraksts (fakti no datiem), OG attēls
+    site.js                izvēlne; izslēgtās sadaļas "par silvu" teksts
   styles/global.css        fonti (@font-face), marķieri, līniju klasteri
   styles/Page.module.css   kopīgie būvbloki: masthead, fakti, rindas, pogas, formas
   components/              Header, Footer, Layout, Masthead, Img, Gallery, Slideshow,
                            PriceRows, WeeklyMenu, EnquiryForm, konditoreja/*
   pages/                   viena lapa = .jsx + .module.css tikai izkārtojumam
   hooks/                   useCart (grozs), usePageMeta (title/meta pārlūkā)
-  lib/                     sendForm (formu transports), features (slēdži),
-                           orderSubmit, pickup, analytics
+  lib/                     content.jsx (saturs: momentuzņēmums -> /api), sendForm,
+                           features (slēdži), orderSubmit, pickup, analytics
 scripts/
+  snapshot.mjs             pirms būves: /api/site/ + /api/konditoreja/ -> src/data/*.json
   prerender.mjs            dist/<ceļš>/index.html katram ceļam, 404.html, sitemap
   vite-plugin-img.mjs      attēlu kopijas 320/640 px + __IMG_MANIFEST__
   menu-from-pdf.mjs        PDF -> menu.json
@@ -52,7 +55,6 @@ public/
   menu/                    pusdienas.pdf, brokastis.pdf, dzerieni.pdf (stabili nosaukumi)
   fonts/                   Bricolage Grotesque, Inter, DM Mono (woff2, pašu serverī)
   og/                      kopīgošanas attēli 1200×630
-  admin/                   Decap CMS (satura rediģēšana bez koda)
   silva-logo.svg, favicon.svg
 docs/                      pārskats un izmaiņu apraksts
 ```
@@ -75,15 +77,31 @@ tās aizpilda pēc 2. viļņa koncepta testa — bez pārbūves.
 
 ## Kā mainīt saturu
 
-Trīs ceļi, no vienkāršākā:
+**bistro.lv/admin** — Silvas admin (Django, repozitorijs `silva-api`, serveris
+PythonAnywhere; Netlify pārsūta `/admin/*`, `/api/*`, `/media/*`, `/static/*`
+un `/menu/*.pdf`). Tur darbinieki maina aktualitātes, darba laikus un
+kontaktus, konditorejas preces, galerijas, foto un tekstus. Instrukcija:
+`silva-api/docs/instrukcija.md`.
 
-1. **/admin** (Decap CMS) — formas, kas raksta `src/data/*.json` tieši
-   GitHub repozitorijā; katrs saglabājums = jauna būve. Jāieslēdz vienreiz
-   Netlify: Identity (Invite only) + Git Gateway, tad uzaicina redaktorus.
-2. **JSON faili** `src/data/` — darba laiki (`lines.json`), ēdienkartes
-   (`menu.json`), preces un cenas (`konditoreja.json`). Pēc labošanas —
-   commit, hostings pārbūvē.
-3. **Nedēļas ēdienkarte no PDF**: `npm run menu -- fails.pdf` nolasa
+Kā saturs nonāk lapā (`src/lib/content.jsx`):
+
+1. Būvējot `scripts/snapshot.mjs` paņem jaunāko saturu no API un pārraksta
+   `src/data/lines.json`, `content.json`, `konditoreja.json`. Ja API nav
+   pieejams — brīdinājums, būve turpinās ar esošajiem failiem.
+2. Statiskais HTML un pirmā izdruka pārlūkā ir no šiem failiem (nekas
+   nelēkā, Google redz pilnu lapu).
+3. Pēc ielādes pārlūks pieprasa `/api/site/` (konditorejā arī
+   `/api/konditoreja/`) ar 4 s limitu un, ja atbilde ir pareiza, parāda
+   jaunāko. Ja API nav, ir lēns vai atbild dīvaini, paliek momentuzņēmums —
+   bez kļūdām un "ielādējas". Izmaiņas adminā vietnē redzamas ~1 minūtes laikā.
+
+Bildes: kamēr bilde ir tā pati, kas `public/img/` (API lauks `image.name`),
+`<Img>` to rāda no vietnes pašas; adminā nomainītas bildes nāk no `/media/`.
+
+Kodā paliek tikai struktūra: izvēlne, ceļi, dizains, slēdži un izslēgtās
+sadaļas (pasūtīšana, banketu forma, "par silvu", nedēļas ēdienkartes rindas).
+
+**Nedēļas ēdienkarte no PDF**: `npm run menu -- fails.pdf` nolasa
    PDF, uzraksta `menu.json` un nokopē PDF uz `public/menu/pusdienas.pdf`.
    Datumus ņem no faila nosaukuma (`…-15.09.-21.09.pdf`) vai
    `--no 2026-09-15 --lidz 2026-09-21`. PDF pirms tam vēlams eksportēt

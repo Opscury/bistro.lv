@@ -9,6 +9,9 @@ import imgVariants from "./scripts/vite-plugin-img.mjs";
  * (prerender rezultāts), nevis vienmēr dist/index.html. Netlify un
  * Cloudflare Pages to dara paši; šeit tas vajadzīgs tikai pārbaudei.
  */
+// Ceļi, kas iet uz Django (skat. proxy zemāk) — tos neapkalpo no dist/.
+const PROXIED = ["/api", "/media", "/admin", "/static"];
+
 function previewPrerendered() {
   return {
     name: "silva-preview-prerendered",
@@ -16,7 +19,8 @@ function previewPrerendered() {
       const dist = path.resolve(server.config.root, server.config.build.outDir);
       server.middlewares.use((req, res, next) => {
         const url = (req.url || "/").split("?")[0];
-        if (url !== "/" && !path.extname(url)) {
+        const proxied = PROXIED.some((p) => url === p || url.startsWith(`${p}/`));
+        if (url !== "/" && !path.extname(url) && !proxied) {
           const file = path.join(dist, url.replace(/\/$/, ""), "index.html");
           if (fs.existsSync(file)) {
             res.setHeader("Content-Type", "text/html; charset=utf-8");
@@ -37,6 +41,14 @@ function previewPrerendered() {
   };
 }
 
+// Izstrādē (npm run dev / preview) /api, /media, /admin un /static iet uz
+// lokālo Django (silva-api: python manage.py runserver) — tāpat kā Netlify
+// tos pārsūta uz PythonAnywhere. Cits serveris: API_PROXY=https://… npm run dev
+const API_PROXY = process.env.API_PROXY || "http://127.0.0.1:8000";
+const proxy = Object.fromEntries(PROXIED.map((p) => [p, { target: API_PROXY, changeOrigin: true }]));
+
 export default defineConfig({
   plugins: [react(), imgVariants(), previewPrerendered()],
+  server: { proxy },
+  preview: { proxy },
 });

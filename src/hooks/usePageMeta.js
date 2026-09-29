@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { metaFor, SITE_URL } from "../data/meta.js";
+import { useSite } from "../lib/content.jsx";
 
 function setMeta(selector, attr, value) {
   let el = document.head.querySelector(selector);
@@ -20,8 +21,9 @@ function setMeta(selector, attr, value) {
  */
 export default function usePageMeta() {
   const { pathname } = useLocation();
+  const site = useSite();
   useEffect(() => {
-    const m = metaFor(pathname);
+    const m = metaFor(pathname, site);
     document.title = m.title;
     setMeta('meta[name="description"]', "content", m.description);
     setMeta('link[rel="canonical"]', "href", `${SITE_URL}${pathname === "/" ? "/" : pathname}`);
@@ -30,5 +32,5 @@ export default function usePageMeta() {
     setMeta('meta[property="og:url"]', "content", `${SITE_URL}${pathname}`);
     setMeta('meta[property="og:image"]', "content", `${SITE_URL}${m.og}`);
     setMeta('meta[name="robots"]', "content", m.noindex ? "noindex" : "index,follow");
-  }, [pathname]);
+  }, [pathname, site]);
 }

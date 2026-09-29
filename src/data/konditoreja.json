@@ -8,51 +8,193 @@
       "id": "saldie-klingeri",
       "title": "Saldie kliņģeri",
       "note": "Pasūtījuma minimālais daudzums 1 kg",
+      "limits": {
+        "kg": 1
+      },
       "items": [
         {
+          "id": 1,
           "img": "klingeris_veja_zirdzins.webp",
           "name": "Vēja zirdziņš",
+          "desc": null,
           "price": "14.00 €/1 kg",
-          "classic": true
+          "weight": null,
+          "classic": true,
+          "image": {
+            "src": "/media/konditoreja/klingeris_veja_zirdzins.webp",
+            "srcset": "/media/konditoreja/klingeris_veja_zirdzins-320.webp 320w, /media/konditoreja/klingeris_veja_zirdzins-640.webp 640w, /media/konditoreja/klingeris_veja_zirdzins.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Vēja zirdziņš",
+            "name": "klingeris_veja_zirdzins.webp"
+          },
+          "unit": "kg",
+          "priceMin": 14,
+          "priceMax": 14,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 2,
           "img": "abolu_bananu_bruklenu.webp",
           "name": "Ābolu, banānu, brūkleņu",
-          "price": "14.00 €/1 kg"
+          "desc": null,
+          "price": "14.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/abolu_bananu_bruklenu.webp",
+            "srcset": "/media/konditoreja/abolu_bananu_bruklenu-320.webp 320w, /media/konditoreja/abolu_bananu_bruklenu-640.webp 640w, /media/konditoreja/abolu_bananu_bruklenu.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Ābolu, banānu, brūkleņu",
+            "name": "abolu_bananu_bruklenu.webp"
+          },
+          "unit": "kg",
+          "priceMin": 14,
+          "priceMax": 14,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 3,
           "img": "rabarberu-zemenu_ar_varito_kremu-1.webp",
           "name": "Rabarberu – zemeņu",
           "desc": "Ar vārīto krēmu",
-          "price": "14.00 €/1 kg"
+          "price": "14.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/rabarberu-zemenu_ar_varito_kremu-1.webp",
+            "srcset": "/media/konditoreja/rabarberu-zemenu_ar_varito_kremu-1-320.webp 320w, /media/konditoreja/rabarberu-zemenu_ar_varito_kremu-1-640.webp 640w, /media/konditoreja/rabarberu-zemenu_ar_varito_kremu-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Rabarberu – zemeņu",
+            "name": "rabarberu-zemenu_ar_varito_kremu-1.webp"
+          },
+          "unit": "kg",
+          "priceMin": 14,
+          "priceMax": 14,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 4,
           "img": "biezpienae28093marcipana.webp",
           "name": "Biezpiena – marcipāna",
-          "price": "14.00 €/1 kg"
+          "desc": null,
+          "price": "14.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/biezpienae28093marcipana.webp",
+            "srcset": "/media/konditoreja/biezpienae28093marcipana-320.webp 320w, /media/konditoreja/biezpienae28093marcipana-640.webp 640w, /media/konditoreja/biezpienae28093marcipana.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Biezpiena – marcipāna",
+            "name": "biezpienae28093marcipana.webp"
+          },
+          "unit": "kg",
+          "priceMin": 14,
+          "priceMax": 14,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 5,
           "img": "ar_varito_kremu_un_drumstalam-1.webp",
           "name": "Tradicionālais",
           "desc": "Ar vārīto krēmu un drumstalām",
-          "price": "12.00 €/1 kg"
+          "price": "12.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/ar_varito_kremu_un_drumstalam-1.webp",
+            "srcset": "/media/konditoreja/ar_varito_kremu_un_drumstalam-1-320.webp 320w, /media/konditoreja/ar_varito_kremu_un_drumstalam-1-640.webp 640w, /media/konditoreja/ar_varito_kremu_un_drumstalam-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Tradicionālais",
+            "name": "ar_varito_kremu_un_drumstalam-1.webp"
+          },
+          "unit": "kg",
+          "priceMin": 12,
+          "priceMax": 12,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 6,
           "img": "tradicionalais_ar_sokoladi.webp",
           "name": "Tradicionālais",
           "desc": "Ar vārīto krēmu un šokolādi",
-          "price": "13.00 €/1 kg"
+          "price": "13.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/tradicionalais_ar_sokoladi.webp",
+            "srcset": "/media/konditoreja/tradicionalais_ar_sokoladi-320.webp 320w, /media/konditoreja/tradicionalais_ar_sokoladi-640.webp 640w, /media/konditoreja/tradicionalais_ar_sokoladi.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Tradicionālais",
+            "name": "tradicionalais_ar_sokoladi.webp"
+          },
+          "unit": "kg",
+          "priceMin": 13,
+          "priceMax": 13,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 7,
           "img": "kanela_ar_varito_kremu_2.webp",
           "name": "Kanēļa",
           "desc": "Ar vārīto krēmu",
-          "price": "13.00 €/1 kg"
+          "price": "13.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kanela_ar_varito_kremu_2.webp",
+            "srcset": "/media/konditoreja/kanela_ar_varito_kremu_2-320.webp 320w, /media/konditoreja/kanela_ar_varito_kremu_2-640.webp 640w, /media/konditoreja/kanela_ar_varito_kremu_2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Kanēļa",
+            "name": "kanela_ar_varito_kremu_2.webp"
+          },
+          "unit": "kg",
+          "priceMin": 13,
+          "priceMax": 13,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 8,
           "img": "klingeris_ziemassvetku.webp",
           "name": "Ziemassvētku",
-          "price": "13.00 €/1 kg"
+          "desc": null,
+          "price": "13.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/klingeris_ziemassvetku.webp",
+            "srcset": "/media/konditoreja/klingeris_ziemassvetku-320.webp 320w, /media/konditoreja/klingeris_ziemassvetku-640.webp 640w, /media/konditoreja/klingeris_ziemassvetku.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Ziemassvētku",
+            "name": "klingeris_ziemassvetku.webp"
+          },
+          "unit": "kg",
+          "priceMin": 13,
+          "priceMax": 13,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     },
@@ -60,41 +202,147 @@
       "id": "salie-klingeri",
       "title": "Sāļie kliņģeri",
       "note": "Pasūtījuma minimālais daudzums 1 kg",
+      "limits": {
+        "kg": 1
+      },
       "items": [
         {
+          "id": 9,
           "img": "salais_ar_cukgalu.webp",
           "name": "Sāļais",
           "desc": "Ar žāvētu cūkgaļu",
-          "price": "14.00 €/1 kg"
+          "price": "14.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/salais_ar_cukgalu.webp",
+            "srcset": "/media/konditoreja/salais_ar_cukgalu-320.webp 320w, /media/konditoreja/salais_ar_cukgalu-640.webp 640w, /media/konditoreja/salais_ar_cukgalu.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Sāļais",
+            "name": "salais_ar_cukgalu.webp"
+          },
+          "unit": "kg",
+          "priceMin": 14,
+          "priceMax": 14,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 10,
           "img": "salais_ar_vistu.webp",
           "name": "Sāļais",
           "desc": "Ar vārītu vistas gaļu",
-          "price": "14.00 €/1 kg"
+          "price": "14.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/salais_ar_vistu.webp",
+            "srcset": "/media/konditoreja/salais_ar_vistu-320.webp 320w, /media/konditoreja/salais_ar_vistu-640.webp 640w, /media/konditoreja/salais_ar_vistu.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Sāļais",
+            "name": "salais_ar_vistu.webp"
+          },
+          "unit": "kg",
+          "priceMin": 14,
+          "priceMax": 14,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 11,
           "img": "tunca-zalumu.webp",
           "name": "Tunča – zaļumu",
-          "price": "14.00 €/1 kg"
+          "desc": null,
+          "price": "14.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/tunca-zalumu.webp",
+            "srcset": "/media/konditoreja/tunca-zalumu-320.webp 320w, /media/konditoreja/tunca-zalumu-640.webp 640w, /media/konditoreja/tunca-zalumu.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Tunča – zaļumu",
+            "name": "tunca-zalumu.webp"
+          },
+          "unit": "kg",
+          "priceMin": 14,
+          "priceMax": 14,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 12,
           "img": "pikantais_tunca.webp",
           "name": "Pikantais tunča",
           "desc": "Ar tomātu mērci",
-          "price": "13.00 €/1 kg"
+          "price": "13.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/pikantais_tunca.webp",
+            "srcset": "/media/konditoreja/pikantais_tunca-320.webp 320w, /media/konditoreja/pikantais_tunca-640.webp 640w, /media/konditoreja/pikantais_tunca.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Pikantais tunča",
+            "name": "pikantais_tunca.webp"
+          },
+          "unit": "kg",
+          "priceMin": 13,
+          "priceMax": 13,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 13,
           "img": "vegetarais_ar_darzeniem.webp",
           "name": "Veģetārais",
           "desc": "Ar dārzeņiem",
-          "price": "12.00 €/1 kg"
+          "price": "12.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/vegetarais_ar_darzeniem.webp",
+            "srcset": "/media/konditoreja/vegetarais_ar_darzeniem-320.webp 320w, /media/konditoreja/vegetarais_ar_darzeniem-640.webp 640w, /media/konditoreja/vegetarais_ar_darzeniem.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Veģetārais",
+            "name": "vegetarais_ar_darzeniem.webp"
+          },
+          "unit": "kg",
+          "priceMin": 12,
+          "priceMax": 12,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 14,
           "img": "ar_ceptiem_sampinjoniem_un_sieru-2.webp",
           "name": "Veģetārais",
           "desc": "Ar ceptiem šampinjoniem un sieru",
-          "price": "13.00 €/1 kg"
+          "price": "13.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/ar_ceptiem_sampinjoniem_un_sieru-2.webp",
+            "srcset": "/media/konditoreja/ar_ceptiem_sampinjoniem_un_sieru-2-320.webp 320w, /media/konditoreja/ar_ceptiem_sampinjoniem_un_sieru-2-640.webp 640w, /media/konditoreja/ar_ceptiem_sampinjoniem_un_sieru-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Veģetārais",
+            "name": "ar_ceptiem_sampinjoniem_un_sieru-2.webp"
+          },
+          "unit": "kg",
+          "priceMin": 13,
+          "priceMax": 13,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     },
@@ -102,51 +350,216 @@
       "id": "platsmaizes",
       "title": "Plātsmaizes",
       "note": "Pasūtījuma minimālais daudzums 500 g",
+      "limits": {
+        "kg": 0.5
+      },
       "items": [
         {
+          "id": 15,
           "img": "abolu-drumstalu_platsmaize.webp",
           "name": "Ābolu – drumstalu",
-          "price": "8.00 €/1 kg"
+          "desc": null,
+          "price": "8.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/abolu-drumstalu_platsmaize.webp",
+            "srcset": "/media/konditoreja/abolu-drumstalu_platsmaize-320.webp 320w, /media/konditoreja/abolu-drumstalu_platsmaize-640.webp 640w, /media/konditoreja/abolu-drumstalu_platsmaize.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Ābolu – drumstalu",
+            "name": "abolu-drumstalu_platsmaize.webp"
+          },
+          "unit": "kg",
+          "priceMin": 8,
+          "priceMax": 8,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 16,
           "img": "abolu_platsmaize-1.webp",
           "name": "Ābolu",
-          "price": "9.50 €/1 kg"
+          "desc": null,
+          "price": "9.50 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/abolu_platsmaize-1.webp",
+            "srcset": "/media/konditoreja/abolu_platsmaize-1-320.webp 320w, /media/konditoreja/abolu_platsmaize-1-640.webp 640w, /media/konditoreja/abolu_platsmaize-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Ābolu",
+            "name": "abolu_platsmaize-1.webp"
+          },
+          "unit": "kg",
+          "priceMin": 9.5,
+          "priceMax": 9.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 17,
           "img": "abolu_krejuma.webp",
           "name": "Ābolu – krējuma",
-          "price": "10.00 €/1 kg"
+          "desc": null,
+          "price": "10.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/abolu_krejuma.webp",
+            "srcset": "/media/konditoreja/abolu_krejuma-320.webp 320w, /media/konditoreja/abolu_krejuma-640.webp 640w, /media/konditoreja/abolu_krejuma.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Ābolu – krējuma",
+            "name": "abolu_krejuma.webp"
+          },
+          "unit": "kg",
+          "priceMin": 10,
+          "priceMax": 10,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 18,
           "img": "rabarberue28093krejuma-1.webp",
           "name": "Rabarberu – krējuma",
-          "price": "11.00 €/1 kg"
+          "desc": null,
+          "price": "11.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/rabarberue28093krejuma-1.webp",
+            "srcset": "/media/konditoreja/rabarberue28093krejuma-1-320.webp 320w, /media/konditoreja/rabarberue28093krejuma-1-640.webp 640w, /media/konditoreja/rabarberue28093krejuma-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Rabarberu – krējuma",
+            "name": "rabarberue28093krejuma-1.webp"
+          },
+          "unit": "kg",
+          "priceMin": 11,
+          "priceMax": 11,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 19,
           "img": "rabarberue28093drumstalu.webp",
           "name": "Rabarberu – drumstalu",
-          "price": "9.50 €/1 kg"
+          "desc": null,
+          "price": "9.50 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/rabarberue28093drumstalu.webp",
+            "srcset": "/media/konditoreja/rabarberue28093drumstalu-320.webp 320w, /media/konditoreja/rabarberue28093drumstalu-640.webp 640w, /media/konditoreja/rabarberue28093drumstalu.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Rabarberu – drumstalu",
+            "name": "rabarberue28093drumstalu.webp"
+          },
+          "unit": "kg",
+          "priceMin": 9.5,
+          "priceMax": 9.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 20,
           "img": "biezpiena_ar_rozinem.webp",
           "name": "Biezpiena ar rozīnēm",
-          "price": "11.00 €/1 kg"
+          "desc": null,
+          "price": "11.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/biezpiena_ar_rozinem.webp",
+            "srcset": "/media/konditoreja/biezpiena_ar_rozinem-320.webp 320w, /media/konditoreja/biezpiena_ar_rozinem-640.webp 640w, /media/konditoreja/biezpiena_ar_rozinem.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Biezpiena ar rozīnēm",
+            "name": "biezpiena_ar_rozinem.webp"
+          },
+          "unit": "kg",
+          "priceMin": 11,
+          "priceMax": 11,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 21,
           "img": "biezpiena.webp",
           "name": "Biezpiena",
-          "price": "12.00 €/1 kg"
+          "desc": null,
+          "price": "12.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/biezpiena.webp",
+            "srcset": "/media/konditoreja/biezpiena-320.webp 320w, /media/konditoreja/biezpiena-640.webp 640w, /media/konditoreja/biezpiena.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Biezpiena",
+            "name": "biezpiena.webp"
+          },
+          "unit": "kg",
+          "priceMin": 12,
+          "priceMax": 12,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 22,
           "img": "sala_platsmaize-2.webp",
           "name": "Sāļā",
-          "price": "12.00 €/1 kg"
+          "desc": null,
+          "price": "12.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/sala_platsmaize-2.webp",
+            "srcset": "/media/konditoreja/sala_platsmaize-2-320.webp 320w, /media/konditoreja/sala_platsmaize-2-640.webp 640w, /media/konditoreja/sala_platsmaize-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Sāļā",
+            "name": "sala_platsmaize-2.webp"
+          },
+          "unit": "kg",
+          "priceMin": 12,
+          "priceMax": 12,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 23,
           "img": "burkanu-valriekstu_kekss-1.webp",
           "name": "Burkānu – valriekstu kēkss",
-          "price": "14.00 €/1 kg"
+          "desc": null,
+          "price": "14.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/burkanu-valriekstu_kekss-1.webp",
+            "srcset": "/media/konditoreja/burkanu-valriekstu_kekss-1-320.webp 320w, /media/konditoreja/burkanu-valriekstu_kekss-1-640.webp 640w, /media/konditoreja/burkanu-valriekstu_kekss-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Burkānu – valriekstu kēkss",
+            "name": "burkanu-valriekstu_kekss-1.webp"
+          },
+          "unit": "kg",
+          "priceMin": 14,
+          "priceMax": 14,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     },
@@ -154,103 +567,354 @@
       "id": "piradzini",
       "title": "Pīrādziņi",
       "note": "Pasūtījuma minimālais daudzums 10 gab.",
+      "limits": {
+        "gab": 10
+      },
       "items": [
         {
+          "id": 24,
           "img": "speka_piradzins.webp",
           "name": "Speķa pīrādziņš",
-          "weight": "25 g",
+          "desc": null,
           "price": "0.50 €",
-          "classic": true
+          "weight": "25 g",
+          "classic": true,
+          "image": {
+            "src": "/media/konditoreja/speka_piradzins.webp",
+            "srcset": "/media/konditoreja/speka_piradzins-320.webp 320w, /media/konditoreja/speka_piradzins-640.webp 640w, /media/konditoreja/speka_piradzins.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Speķa pīrādziņš",
+            "name": "speka_piradzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 25,
           "img": "buljona_piradzins.webp",
           "name": "Buljona pīrādziņš",
+          "desc": null,
+          "price": "0.50 €",
           "weight": "30 g",
-          "price": "0.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/buljona_piradzins.webp",
+            "srcset": "/media/konditoreja/buljona_piradzins-320.webp 320w, /media/konditoreja/buljona_piradzins-640.webp 640w, /media/konditoreja/buljona_piradzins.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Buljona pīrādziņš",
+            "name": "buljona_piradzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 26,
           "img": "kartainas_miklas_speka_piradzins.webp",
           "name": "Kārtainās mīklas speķa pīrādziņš",
+          "desc": null,
+          "price": "0.50 €",
           "weight": "25 g",
-          "price": "0.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kartainas_miklas_speka_piradzins.webp",
+            "srcset": "/media/konditoreja/kartainas_miklas_speka_piradzins-320.webp 320w, /media/konditoreja/kartainas_miklas_speka_piradzins-640.webp 640w, /media/konditoreja/kartainas_miklas_speka_piradzins.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Kārtainās mīklas speķa pīrādziņš",
+            "name": "kartainas_miklas_speka_piradzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 27,
           "img": "kartainas_miklas_radzins.webp",
           "name": "Kārtainās mīklas radziņš",
           "desc": "Ar gaļu un sieru",
+          "price": "0.55 €",
           "weight": "30 g",
-          "price": "0.55 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kartainas_miklas_radzins.webp",
+            "srcset": "/media/konditoreja/kartainas_miklas_radzins-320.webp 320w, /media/konditoreja/kartainas_miklas_radzins-640.webp 640w, /media/konditoreja/kartainas_miklas_radzins.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Kārtainās mīklas radziņš",
+            "name": "kartainas_miklas_radzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.55,
+          "priceMax": 0.55,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 28,
           "img": "siera_radzins-1.webp",
           "name": "Siera radziņš",
+          "desc": null,
+          "price": "0.45 €",
           "weight": "25 g",
-          "price": "0.45 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/siera_radzins-1.webp",
+            "srcset": "/media/konditoreja/siera_radzins-1-320.webp 320w, /media/konditoreja/siera_radzins-1-640.webp 640w, /media/konditoreja/siera_radzins-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Siera radziņš",
+            "name": "siera_radzins-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.45,
+          "priceMax": 0.45,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 29,
           "img": "strudele_ar_sampinjoniem.webp",
           "name": "Štrūdele ar šampinjoniem",
+          "desc": null,
+          "price": "0.60 €",
           "weight": "20 g",
-          "price": "0.60 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/strudele_ar_sampinjoniem.webp",
+            "srcset": "/media/konditoreja/strudele_ar_sampinjoniem-320.webp 320w, /media/konditoreja/strudele_ar_sampinjoniem-640.webp 640w, /media/konditoreja/strudele_ar_sampinjoniem.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Štrūdele ar šampinjoniem",
+            "name": "strudele_ar_sampinjoniem.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.6,
+          "priceMax": 0.6,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 30,
           "img": "kapostu-olu_piradzins.webp",
           "name": "Kāpostu – olas pīrādziņš",
+          "desc": null,
+          "price": "0.45 €",
           "weight": "25 g",
-          "price": "0.45 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kapostu-olu_piradzins.webp",
+            "srcset": "/media/konditoreja/kapostu-olu_piradzins-320.webp 320w, /media/konditoreja/kapostu-olu_piradzins-640.webp 640w, /media/konditoreja/kapostu-olu_piradzins.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Kāpostu – olas pīrādziņš",
+            "name": "kapostu-olu_piradzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.45,
+          "priceMax": 0.45,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 31,
           "img": "kapostu_piradzins.webp",
           "name": "Kāpostu pīrādziņš",
+          "desc": null,
+          "price": "0.45 €",
           "weight": "25 g",
-          "price": "0.45 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kapostu_piradzins.webp",
+            "srcset": "/media/konditoreja/kapostu_piradzins-320.webp 320w, /media/konditoreja/kapostu_piradzins-640.webp 640w, /media/konditoreja/kapostu_piradzins.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Kāpostu pīrādziņš",
+            "name": "kapostu_piradzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.45,
+          "priceMax": 0.45,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 32,
           "img": "pavasara_piradzins_ar_olu.webp",
           "name": "Pavasara pīrādziņš",
           "desc": "Ar olu un lociņiem",
+          "price": "0.50 €",
           "weight": "25 g",
-          "price": "0.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/pavasara_piradzins_ar_olu.webp",
+            "srcset": "/media/konditoreja/pavasara_piradzins_ar_olu-320.webp 320w, /media/konditoreja/pavasara_piradzins_ar_olu-640.webp 640w, /media/konditoreja/pavasara_piradzins_ar_olu.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Pavasara pīrādziņš",
+            "name": "pavasara_piradzins_ar_olu.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 33,
           "img": "vasaras_piradzins_ar_olu-1.webp",
           "name": "Vasaras pīrādziņš",
           "desc": "Ar olu un ceptiem sīpoliem",
+          "price": "0.50 €",
           "weight": "30 g",
-          "price": "0.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/vasaras_piradzins_ar_olu-1.webp",
+            "srcset": "/media/konditoreja/vasaras_piradzins_ar_olu-1-320.webp 320w, /media/konditoreja/vasaras_piradzins_ar_olu-1-640.webp 640w, /media/konditoreja/vasaras_piradzins_ar_olu-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Vasaras pīrādziņš",
+            "name": "vasaras_piradzins_ar_olu-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 34,
           "img": "vasaras_piradzins_ar_senem-1.webp",
           "name": "Vasaras pīrādziņš",
           "desc": "Ar sēnēm un ceptiem sīpoliem",
+          "price": "0.60 €",
           "weight": "35 g",
-          "price": "0.60 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/vasaras_piradzins_ar_senem-1.webp",
+            "srcset": "/media/konditoreja/vasaras_piradzins_ar_senem-1-320.webp 320w, /media/konditoreja/vasaras_piradzins_ar_senem-1-640.webp 640w, /media/konditoreja/vasaras_piradzins_ar_senem-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Vasaras pīrādziņš",
+            "name": "vasaras_piradzins_ar_senem-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.6,
+          "priceMax": 0.6,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 35,
           "img": "vasaras_piradzins_ar_tunci-3.webp",
           "name": "Vasaras pīrādziņš",
           "desc": "Ar tunci",
+          "price": "0.65 €",
           "weight": "35 g",
-          "price": "0.65 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/vasaras_piradzins_ar_tunci-3.webp",
+            "srcset": "/media/konditoreja/vasaras_piradzins_ar_tunci-3-320.webp 320w, /media/konditoreja/vasaras_piradzins_ar_tunci-3-640.webp 640w, /media/konditoreja/vasaras_piradzins_ar_tunci-3.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Vasaras pīrādziņš",
+            "name": "vasaras_piradzins_ar_tunci-3.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.65,
+          "priceMax": 0.65,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 36,
           "img": "picas_piradzins-1.webp",
           "name": "Picas pīrādziņš",
+          "desc": null,
+          "price": "0.50 €",
           "weight": "30 g",
-          "price": "0.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/picas_piradzins-1.webp",
+            "srcset": "/media/konditoreja/picas_piradzins-1-320.webp 320w, /media/konditoreja/picas_piradzins-1-640.webp 640w, /media/konditoreja/picas_piradzins-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Picas pīrādziņš",
+            "name": "picas_piradzins-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 37,
           "img": "burkanu_maizite-1.webp",
           "name": "Burkānu maizīte",
+          "desc": null,
+          "price": "0.45 €",
           "weight": "30 g",
-          "price": "0.45 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/burkanu_maizite-1.webp",
+            "srcset": "/media/konditoreja/burkanu_maizite-1-320.webp 320w, /media/konditoreja/burkanu_maizite-1-640.webp 640w, /media/konditoreja/burkanu_maizite-1.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Burkānu maizīte",
+            "name": "burkanu_maizite-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.45,
+          "priceMax": 0.45,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 38,
           "img": "salais_klingeritis.webp",
           "name": "Sāļais kliņģerītis",
           "desc": "Ar ķimenēm",
+          "price": "0.50 €",
           "weight": "35 g",
-          "price": "0.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/salais_klingeritis.webp",
+            "srcset": "/media/konditoreja/salais_klingeritis-320.webp 320w, /media/konditoreja/salais_klingeritis-640.webp 640w, /media/konditoreja/salais_klingeritis.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Sāļais kliņģerītis",
+            "name": "salais_klingeritis.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     },
@@ -258,44 +922,147 @@
       "id": "smalkmaizites",
       "title": "Smalkmaizītes",
       "note": "Pasūtījuma minimālais daudzums 10 gab.",
+      "limits": {
+        "gab": 10
+      },
       "items": [
         {
+          "id": 39,
           "img": "veja_zirdzins_maizite.webp",
           "name": "Vēja zirdziņš",
           "desc": "Ogu maizīte",
+          "price": "0.70 €",
           "weight": "45 g",
-          "price": "0.70€"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/veja_zirdzins_maizite.webp",
+            "srcset": "/media/konditoreja/veja_zirdzins_maizite-320.webp 320w, /media/konditoreja/veja_zirdzins_maizite-640.webp 640w, /media/konditoreja/veja_zirdzins_maizite.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Vēja zirdziņš",
+            "name": "veja_zirdzins_maizite.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.7,
+          "priceMax": 0.7,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 40,
           "img": "karamelu_maizite-1.webp",
           "name": "Karameļu maizīte",
+          "desc": null,
+          "price": "0.50 €",
           "weight": "30 g",
-          "price": "0.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/karamelu_maizite-1.webp",
+            "srcset": "/media/konditoreja/karamelu_maizite-1-320.webp 320w, /media/konditoreja/karamelu_maizite-1-640.webp 640w, /media/konditoreja/karamelu_maizite-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Karameļu maizīte",
+            "name": "karamelu_maizite-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 41,
           "img": "magonu_bulcina_ar_sokoladi.webp",
           "name": "Magoņu maizīte",
           "desc": "Ar šokolādes glazūru",
+          "price": "0.55 €",
           "weight": "30 g",
-          "price": "0.55 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/magonu_bulcina_ar_sokoladi.webp",
+            "srcset": "/media/konditoreja/magonu_bulcina_ar_sokoladi-320.webp 320w, /media/konditoreja/magonu_bulcina_ar_sokoladi-640.webp 640w, /media/konditoreja/magonu_bulcina_ar_sokoladi.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Magoņu maizīte",
+            "name": "magonu_bulcina_ar_sokoladi.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.55,
+          "priceMax": 0.55,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 42,
           "img": "kanela_maizite.webp",
           "name": "Kanēļa maizīte",
+          "desc": null,
+          "price": "0.45 €",
           "weight": "25 g",
-          "price": "0.45 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kanela_maizite.webp",
+            "srcset": "/media/konditoreja/kanela_maizite-320.webp 320w, /media/konditoreja/kanela_maizite-640.webp 640w, /media/konditoreja/kanela_maizite.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Kanēļa maizīte",
+            "name": "kanela_maizite.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.45,
+          "priceMax": 0.45,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 43,
           "img": "biezpiena_citronu.webp",
           "name": "Biezpiena – citronu maizīte",
+          "desc": null,
+          "price": "0.50 €",
           "weight": "25 g",
-          "price": "0.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/biezpiena_citronu.webp",
+            "srcset": "/media/konditoreja/biezpiena_citronu-320.webp 320w, /media/konditoreja/biezpiena_citronu-640.webp 640w, /media/konditoreja/biezpiena_citronu.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Biezpiena – citronu maizīte",
+            "name": "biezpiena_citronu.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 44,
           "img": "kafijas_maizite-3.webp",
           "name": "Kafijas maizīte",
+          "desc": null,
+          "price": "0.50 €",
           "weight": "30 g",
-          "price": "0.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kafijas_maizite-3.webp",
+            "srcset": "/media/konditoreja/kafijas_maizite-3-320.webp 320w, /media/konditoreja/kafijas_maizite-3-640.webp 640w, /media/konditoreja/kafijas_maizite-3.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Kafijas maizīte",
+            "name": "kafijas_maizite-3.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.5,
+          "priceMax": 0.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     },
@@ -303,58 +1070,217 @@
       "id": "cepumi",
       "title": "Cepumi",
       "note": "Pasūtījuma minimālais daudzums 500 g",
+      "limits": {
+        "kg": 0.5,
+        "gab": 10
+      },
       "items": [
         {
+          "id": 45,
           "img": "asorti.webp",
           "name": "Asorti",
-          "price": "17.00 €/1 kg"
+          "desc": null,
+          "price": "17.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/asorti.webp",
+            "srcset": "/media/konditoreja/asorti-320.webp 320w, /media/konditoreja/asorti-640.webp 640w, /media/konditoreja/asorti.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Asorti",
+            "name": "asorti.webp"
+          },
+          "unit": "kg",
+          "priceMin": 17,
+          "priceMax": 17,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 46,
           "img": "mandelu_sirsninas.webp",
           "name": "Mandeļu sirsniņas",
-          "price": "18.50 €/1 kg"
+          "desc": null,
+          "price": "18.50 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/mandelu_sirsninas.webp",
+            "srcset": "/media/konditoreja/mandelu_sirsninas-320.webp 320w, /media/konditoreja/mandelu_sirsninas-640.webp 640w, /media/konditoreja/mandelu_sirsninas.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Mandeļu sirsniņas",
+            "name": "mandelu_sirsninas.webp"
+          },
+          "unit": "kg",
+          "priceMin": 18.5,
+          "priceMax": 18.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 47,
           "img": "buca.webp",
           "name": "Buča",
           "desc": "Ar vārītu iebiezināto pienu",
-          "price": "18.00 €/1 kg"
+          "price": "18.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/buca.webp",
+            "srcset": "/media/konditoreja/buca-320.webp 320w, /media/konditoreja/buca-640.webp 640w, /media/konditoreja/buca.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Buča",
+            "name": "buca.webp"
+          },
+          "unit": "kg",
+          "priceMin": 18,
+          "priceMax": 18,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 48,
           "img": "vines_pirkstini.webp",
           "name": "Vīnes pirkstiņi",
           "desc": "Ar trifeļu pildījumu",
-          "price": "17.00 €/1 kg"
+          "price": "17.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/vines_pirkstini.webp",
+            "srcset": "/media/konditoreja/vines_pirkstini-320.webp 320w, /media/konditoreja/vines_pirkstini-640.webp 640w, /media/konditoreja/vines_pirkstini.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Vīnes pirkstiņi",
+            "name": "vines_pirkstini.webp"
+          },
+          "unit": "kg",
+          "priceMin": 17,
+          "priceMax": 17,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 49,
           "img": "riekstins.webp",
           "name": "Riekstiņš",
+          "desc": null,
+          "price": "0.55 €",
           "weight": "25 g",
-          "price": "0.55 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/riekstins.webp",
+            "srcset": "/media/konditoreja/riekstins-320.webp 320w, /media/konditoreja/riekstins-640.webp 640w, /media/konditoreja/riekstins.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Riekstiņš",
+            "name": "riekstins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.55,
+          "priceMax": 0.55,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 50,
           "img": "sokolades_cipsu_lielcepums.webp",
           "name": "Šokolādes čipsu lielcepums",
+          "desc": null,
+          "price": "1.10 €",
           "weight": "50 g",
-          "price": "1.10 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/sokolades_cipsu_lielcepums.webp",
+            "srcset": "/media/konditoreja/sokolades_cipsu_lielcepums-320.webp 320w, /media/konditoreja/sokolades_cipsu_lielcepums-640.webp 640w, /media/konditoreja/sokolades_cipsu_lielcepums.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Šokolādes čipsu lielcepums",
+            "name": "sokolades_cipsu_lielcepums.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.1,
+          "priceMax": 1.1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 51,
           "img": "mandelu_cepums_florence.webp",
           "name": "Florence",
           "desc": "Mandeļu cepums",
+          "price": "0.75 €",
           "weight": "35 g",
-          "price": "0.75 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/mandelu_cepums_florence.webp",
+            "srcset": "/media/konditoreja/mandelu_cepums_florence-320.webp 320w, /media/konditoreja/mandelu_cepums_florence-640.webp 640w, /media/konditoreja/mandelu_cepums_florence.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Florence",
+            "name": "mandelu_cepums_florence.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.75,
+          "priceMax": 0.75,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 52,
           "img": "siera_pikantie.webp",
           "name": "Siera pikantie",
-          "price": "18.50 €/1 kg"
+          "desc": null,
+          "price": "18.50 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/siera_pikantie.webp",
+            "srcset": "/media/konditoreja/siera_pikantie-320.webp 320w, /media/konditoreja/siera_pikantie-640.webp 640w, /media/konditoreja/siera_pikantie.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Siera pikantie",
+            "name": "siera_pikantie.webp"
+          },
+          "unit": "kg",
+          "priceMin": 18.5,
+          "priceMax": 18.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 53,
           "img": "pikantais_siera_radzins.webp",
           "name": "Pikantais siera radziņš",
+          "desc": null,
+          "price": "0.95 €",
           "weight": "40 g",
-          "price": "0.95 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/pikantais_siera_radzins.webp",
+            "srcset": "/media/konditoreja/pikantais_siera_radzins-320.webp 320w, /media/konditoreja/pikantais_siera_radzins-640.webp 640w, /media/konditoreja/pikantais_siera_radzins.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Pikantais siera radziņš",
+            "name": "pikantais_siera_radzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.95,
+          "priceMax": 0.95,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     },
@@ -362,235 +1288,814 @@
       "id": "mazas-kucinas",
       "title": "Mazās kūciņas",
       "note": "Pasūtījuma minimālais daudzums 10 gab.",
+      "limits": {
+        "gab": 10
+      },
       "items": [
         {
+          "id": 54,
           "img": "avenu_laivina-2.webp",
           "name": "Aveņu laiviņa",
           "desc": "Ar iebiezinātā piena krēmu",
-          "weight": "45 g",
           "price": "1.05 €",
-          "classic": true
+          "weight": "45 g",
+          "classic": true,
+          "image": {
+            "src": "/media/konditoreja/avenu_laivina-2.webp",
+            "srcset": "/media/konditoreja/avenu_laivina-2-320.webp 320w, /media/konditoreja/avenu_laivina-2-640.webp 640w, /media/konditoreja/avenu_laivina-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Aveņu laiviņa",
+            "name": "avenu_laivina-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.05,
+          "priceMax": 1.05,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 55,
           "img": "avenu-iebiezinata_piena_krema_grozins-3.webp",
           "name": "Aveņu groziņš",
           "desc": "Ar iebiezinātā piena krēmu",
+          "price": "0.85 €",
           "weight": "35 g",
-          "price": "0.85 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/avenu-iebiezinata_piena_krema_grozins-3.webp",
+            "srcset": "/media/konditoreja/avenu-iebiezinata_piena_krema_grozins-3-320.webp 320w, /media/konditoreja/avenu-iebiezinata_piena_krema_grozins-3-640.webp 640w, /media/konditoreja/avenu-iebiezinata_piena_krema_grozins-3.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Aveņu groziņš",
+            "name": "avenu-iebiezinata_piena_krema_grozins-3.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.85,
+          "priceMax": 0.85,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 56,
           "img": "zemenu-iebiezinata_piena_krema_grozins-2.webp",
           "name": "Zemeņu groziņš",
           "desc": "Ar iebiezinātā piena krēmu",
+          "price": "0.80 €",
           "weight": "30 g",
-          "price": "0.80 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/zemenu-iebiezinata_piena_krema_grozins-2.webp",
+            "srcset": "/media/konditoreja/zemenu-iebiezinata_piena_krema_grozins-2-320.webp 320w, /media/konditoreja/zemenu-iebiezinata_piena_krema_grozins-2-640.webp 640w, /media/konditoreja/zemenu-iebiezinata_piena_krema_grozins-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Zemeņu groziņš",
+            "name": "zemenu-iebiezinata_piena_krema_grozins-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.8,
+          "priceMax": 0.8,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 57,
           "img": "kivi_grozins.webp",
           "name": "Kivi groziņš",
           "desc": "Ar vārīto krēmu",
+          "price": "0.85 €",
           "weight": "35 g",
-          "price": "0.85 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kivi_grozins.webp",
+            "srcset": "/media/konditoreja/kivi_grozins-320.webp 320w, /media/konditoreja/kivi_grozins-640.webp 640w, /media/konditoreja/kivi_grozins.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Kivi groziņš",
+            "name": "kivi_grozins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.85,
+          "priceMax": 0.85,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 58,
           "img": "mandarinu_laivina.webp",
           "name": "Mandarīnu laiviņa",
           "desc": "Ar vārīto krēmu",
+          "price": "0.95 €",
           "weight": "55 g",
-          "price": "0.95 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/mandarinu_laivina.webp",
+            "srcset": "/media/konditoreja/mandarinu_laivina-320.webp 320w, /media/konditoreja/mandarinu_laivina-640.webp 640w, /media/konditoreja/mandarinu_laivina.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Mandarīnu laiviņa",
+            "name": "mandarinu_laivina.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.95,
+          "priceMax": 0.95,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 59,
           "img": "grozins_ar_varito_kremu_un_mandariniem-1.webp",
           "name": "Mandarīnu groziņš",
           "desc": "Ar vārīto krēmu",
+          "price": "0.90 €",
           "weight": "45 g",
-          "price": "0.90 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/grozins_ar_varito_kremu_un_mandariniem-1.webp",
+            "srcset": "/media/konditoreja/grozins_ar_varito_kremu_un_mandariniem-1-320.webp 320w, /media/konditoreja/grozins_ar_varito_kremu_un_mandariniem-1-640.webp 640w, /media/konditoreja/grozins_ar_varito_kremu_un_mandariniem-1.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Mandarīnu groziņš",
+            "name": "grozins_ar_varito_kremu_un_mandariniem-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.9,
+          "priceMax": 0.9,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 60,
           "img": "auglu-putukrejuma_grozins_liels.webp",
           "name": "Augļu – putukrējuma groziņš",
           "desc": "Vidējais",
+          "price": "1.05 €",
           "weight": "50 g",
-          "price": "1.05 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/auglu-putukrejuma_grozins_liels.webp",
+            "srcset": "/media/konditoreja/auglu-putukrejuma_grozins_liels-320.webp 320w, /media/konditoreja/auglu-putukrejuma_grozins_liels-640.webp 640w, /media/konditoreja/auglu-putukrejuma_grozins_liels.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Augļu – putukrējuma groziņš",
+            "name": "auglu-putukrejuma_grozins_liels.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.05,
+          "priceMax": 1.05,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 61,
           "img": "auglu-putukrejuma_grozins_mazs.webp",
           "name": "Augļu – putukrējuma groziņš",
           "desc": "Mazais",
+          "price": "0.75 €",
           "weight": "25 g",
-          "price": "0.75 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/auglu-putukrejuma_grozins_mazs.webp",
+            "srcset": "/media/konditoreja/auglu-putukrejuma_grozins_mazs-320.webp 320w, /media/konditoreja/auglu-putukrejuma_grozins_mazs-640.webp 640w, /media/konditoreja/auglu-putukrejuma_grozins_mazs.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Augļu – putukrējuma groziņš",
+            "name": "auglu-putukrejuma_grozins_mazs.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.75,
+          "priceMax": 0.75,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 62,
           "img": "grozins_dzervenu_marcipana.webp",
           "name": "Dzērveņu – marcipāna groziņš",
+          "desc": null,
+          "price": "0.85 €",
           "weight": "30 g",
-          "price": "0.85 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/grozins_dzervenu_marcipana.webp",
+            "srcset": "/media/konditoreja/grozins_dzervenu_marcipana-320.webp 320w, /media/konditoreja/grozins_dzervenu_marcipana-640.webp 640w, /media/konditoreja/grozins_dzervenu_marcipana.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Dzērveņu – marcipāna groziņš",
+            "name": "grozins_dzervenu_marcipana.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.85,
+          "priceMax": 0.85,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 63,
           "img": "grozins_marcipana_ar_varito_kremu-2.webp",
           "name": "Marcipāna groziņš",
           "desc": "Ar vārīto krēmu",
+          "price": "0.70 €",
           "weight": "25 g",
-          "price": "0.70 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/grozins_marcipana_ar_varito_kremu-2.webp",
+            "srcset": "/media/konditoreja/grozins_marcipana_ar_varito_kremu-2-320.webp 320w, /media/konditoreja/grozins_marcipana_ar_varito_kremu-2-640.webp 640w, /media/konditoreja/grozins_marcipana_ar_varito_kremu-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Marcipāna groziņš",
+            "name": "grozins_marcipana_ar_varito_kremu-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.7,
+          "priceMax": 0.7,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 64,
           "img": "valriekstu_grozins.webp",
           "name": "Valriekstu – karameļu groziņš",
+          "desc": null,
+          "price": "0.65 €",
           "weight": "25 g",
-          "price": "0.65 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/valriekstu_grozins.webp",
+            "srcset": "/media/konditoreja/valriekstu_grozins-320.webp 320w, /media/konditoreja/valriekstu_grozins-640.webp 640w, /media/konditoreja/valriekstu_grozins.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Valriekstu – karameļu groziņš",
+            "name": "valriekstu_grozins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.65,
+          "priceMax": 0.65,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 65,
           "img": "karamelu_grozins.webp",
           "name": "Karameļu groziņš",
+          "desc": null,
+          "price": "0.65 €",
           "weight": "30 g",
-          "price": "0.65 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/karamelu_grozins.webp",
+            "srcset": "/media/konditoreja/karamelu_grozins-320.webp 320w, /media/konditoreja/karamelu_grozins-640.webp 640w, /media/konditoreja/karamelu_grozins.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Karameļu groziņš",
+            "name": "karamelu_grozins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.65,
+          "priceMax": 0.65,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 66,
           "img": "grozins_meringa-citrona-1.webp",
           "name": "Meringa – citronu krēma groziņš",
+          "desc": null,
+          "price": "0.80 €",
           "weight": "25 g",
-          "price": "0.80 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/grozins_meringa-citrona-1.webp",
+            "srcset": "/media/konditoreja/grozins_meringa-citrona-1-320.webp 320w, /media/konditoreja/grozins_meringa-citrona-1-640.webp 640w, /media/konditoreja/grozins_meringa-citrona-1.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Meringa – citronu krēma groziņš",
+            "name": "grozins_meringa-citrona-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.8,
+          "priceMax": 0.8,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 67,
           "img": "zefira_grozins.webp",
           "name": "Zefīra groziņš",
+          "desc": null,
+          "price": "0.85 €",
           "weight": "35 g",
-          "price": "0.85 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/zefira_grozins.webp",
+            "srcset": "/media/konditoreja/zefira_grozins-320.webp 320w, /media/konditoreja/zefira_grozins-640.webp 640w, /media/konditoreja/zefira_grozins.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Zefīra groziņš",
+            "name": "zefira_grozins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.85,
+          "priceMax": 0.85,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 68,
           "img": "canolli.webp",
           "name": "Cannoli",
           "desc": "Ar Ricotta sieru",
+          "price": "0.90 €",
           "weight": "30 g",
-          "price": "0.90 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/canolli.webp",
+            "srcset": "/media/konditoreja/canolli-320.webp 320w, /media/konditoreja/canolli-640.webp 640w, /media/konditoreja/canolli.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Cannoli",
+            "name": "canolli.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.9,
+          "priceMax": 0.9,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 69,
           "img": "eklera_pufs_ar_mascarpone-2.webp",
           "name": "Eklērpufs",
           "desc": "Ar maskarpone krēmu",
+          "price": "1.00 €",
           "weight": "25 g",
-          "price": "1.00 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/eklera_pufs_ar_mascarpone-2.webp",
+            "srcset": "/media/konditoreja/eklera_pufs_ar_mascarpone-2-320.webp 320w, /media/konditoreja/eklera_pufs_ar_mascarpone-2-640.webp 640w, /media/konditoreja/eklera_pufs_ar_mascarpone-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Eklērpufs",
+            "name": "eklera_pufs_ar_mascarpone-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1,
+          "priceMax": 1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 70,
           "img": "vecriga_maza.webp",
           "name": "Vecrīga",
+          "desc": null,
+          "price": "0.75 €",
           "weight": "30 g",
-          "price": "0.75 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/vecriga_maza.webp",
+            "srcset": "/media/konditoreja/vecriga_maza-320.webp 320w, /media/konditoreja/vecriga_maza-640.webp 640w, /media/konditoreja/vecriga_maza.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Vecrīga",
+            "name": "vecriga_maza.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.75,
+          "priceMax": 0.75,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 71,
           "img": "eklers_mazs.webp",
           "name": "Eklers",
+          "desc": null,
+          "price": "0.85 €",
           "weight": "30 g",
-          "price": "0.85 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/eklers_mazs.webp",
+            "srcset": "/media/konditoreja/eklers_mazs-320.webp 320w, /media/konditoreja/eklers_mazs-640.webp 640w, /media/konditoreja/eklers_mazs.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Eklers",
+            "name": "eklers_mazs.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.85,
+          "priceMax": 0.85,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 72,
           "img": "skudru_puznis.webp",
           "name": "Skudru pūznis",
+          "desc": null,
+          "price": "0.95 €",
           "weight": "50 g",
-          "price": "0.95 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/skudru_puznis.webp",
+            "srcset": "/media/konditoreja/skudru_puznis-320.webp 320w, /media/konditoreja/skudru_puznis-640.webp 640w, /media/konditoreja/skudru_puznis.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Skudru pūznis",
+            "name": "skudru_puznis.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.95,
+          "priceMax": 0.95,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 73,
           "img": "mandelu_radzins.webp",
           "name": "Mandeļu radziņš",
+          "desc": null,
+          "price": "1.10 €",
           "weight": "30 g",
-          "price": "1.10 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/mandelu_radzins.webp",
+            "srcset": "/media/konditoreja/mandelu_radzins-320.webp 320w, /media/konditoreja/mandelu_radzins-640.webp 640w, /media/konditoreja/mandelu_radzins.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Mandeļu radziņš",
+            "name": "mandelu_radzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.1,
+          "priceMax": 1.1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 74,
           "img": "kuka_pistaciju-siera_maza-1.webp",
           "name": "Siera – pistāciju kūciņa",
+          "desc": null,
+          "price": "1.10 €",
           "weight": "40 g",
-          "price": "1.10 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kuka_pistaciju-siera_maza-1.webp",
+            "srcset": "/media/konditoreja/kuka_pistaciju-siera_maza-1-320.webp 320w, /media/konditoreja/kuka_pistaciju-siera_maza-1-640.webp 640w, /media/konditoreja/kuka_pistaciju-siera_maza-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Siera – pistāciju kūciņa",
+            "name": "kuka_pistaciju-siera_maza-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.1,
+          "priceMax": 1.1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 75,
           "img": "kucina_siera-zemenu_maza-1.webp",
           "name": "Siera – zemeņu kūciņa",
+          "desc": null,
+          "price": "1.00 €",
           "weight": "38 g",
-          "price": "1.00 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kucina_siera-zemenu_maza-1.webp",
+            "srcset": "/media/konditoreja/kucina_siera-zemenu_maza-1-320.webp 320w, /media/konditoreja/kucina_siera-zemenu_maza-1-640.webp 640w, /media/konditoreja/kucina_siera-zemenu_maza-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Siera – zemeņu kūciņa",
+            "name": "kucina_siera-zemenu_maza-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1,
+          "priceMax": 1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 76,
           "img": "miljonars.webp",
           "name": "Miljonārs",
+          "desc": null,
+          "price": "1.00 €",
           "weight": "30 g",
-          "price": "1.00 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/miljonars.webp",
+            "srcset": "/media/konditoreja/miljonars-320.webp 320w, /media/konditoreja/miljonars-640.webp 640w, /media/konditoreja/miljonars.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Miljonārs",
+            "name": "miljonars.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1,
+          "priceMax": 1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 77,
           "img": "siera_braunijs_mazais-2.webp",
           "name": "Siera braunijs",
+          "desc": null,
+          "price": "0.95 €",
           "weight": "25 g",
-          "price": "0.95 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/siera_braunijs_mazais-2.webp",
+            "srcset": "/media/konditoreja/siera_braunijs_mazais-2-320.webp 320w, /media/konditoreja/siera_braunijs_mazais-2-640.webp 640w, /media/konditoreja/siera_braunijs_mazais-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Siera braunijs",
+            "name": "siera_braunijs_mazais-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.95,
+          "priceMax": 0.95,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 78,
           "img": "sokolades-valriekstu_ar_ogam.webp",
           "name": "Šokolādes – valriekstu ar ogām",
+          "desc": null,
+          "price": "1.30 €",
           "weight": "35 g",
-          "price": "1.30 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/sokolades-valriekstu_ar_ogam.webp",
+            "srcset": "/media/konditoreja/sokolades-valriekstu_ar_ogam-320.webp 320w, /media/konditoreja/sokolades-valriekstu_ar_ogam-640.webp 640w, /media/konditoreja/sokolades-valriekstu_ar_ogam.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Šokolādes – valriekstu ar ogām",
+            "name": "sokolades-valriekstu_ar_ogam.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.3,
+          "priceMax": 1.3,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 79,
           "img": "sarkanais_samts.webp",
           "name": "Sarkanais samts",
+          "desc": null,
+          "price": "0.75 €",
           "weight": "25 g",
-          "price": "0.75 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/sarkanais_samts.webp",
+            "srcset": "/media/konditoreja/sarkanais_samts-320.webp 320w, /media/konditoreja/sarkanais_samts-640.webp 640w, /media/konditoreja/sarkanais_samts.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Sarkanais samts",
+            "name": "sarkanais_samts.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.75,
+          "priceMax": 0.75,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 80,
           "img": "biezpiena_avenu_kucina-2.webp",
           "name": "Biezpiena – aveņu",
           "desc": "Ar balto šokolādi",
+          "price": "1.05 €",
           "weight": "30 g",
-          "price": "1.05 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/biezpiena_avenu_kucina-2.webp",
+            "srcset": "/media/konditoreja/biezpiena_avenu_kucina-2-320.webp 320w, /media/konditoreja/biezpiena_avenu_kucina-2-640.webp 640w, /media/konditoreja/biezpiena_avenu_kucina-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Biezpiena – aveņu",
+            "name": "biezpiena_avenu_kucina-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.05,
+          "priceMax": 1.05,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 81,
           "img": "biezpiena_dzeltena_kucina.webp",
           "name": "Biezpiena dzeltenā kūciņa",
+          "desc": null,
+          "price": "0.75 €",
           "weight": "30 g",
-          "price": "0.75 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/biezpiena_dzeltena_kucina.webp",
+            "srcset": "/media/konditoreja/biezpiena_dzeltena_kucina-320.webp 320w, /media/konditoreja/biezpiena_dzeltena_kucina-640.webp 640w, /media/konditoreja/biezpiena_dzeltena_kucina.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Biezpiena dzeltenā kūciņa",
+            "name": "biezpiena_dzeltena_kucina.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.75,
+          "priceMax": 0.75,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 82,
           "img": "burkankuka_ar_mascarpone-4.webp",
           "name": "Burkānkūka",
           "desc": "Ar maskarpone krēmu",
+          "price": "1.05 €",
           "weight": "35 g",
-          "price": "1.05 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/burkankuka_ar_mascarpone-4.webp",
+            "srcset": "/media/konditoreja/burkankuka_ar_mascarpone-4-320.webp 320w, /media/konditoreja/burkankuka_ar_mascarpone-4-640.webp 640w, /media/konditoreja/burkankuka_ar_mascarpone-4.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Burkānkūka",
+            "name": "burkankuka_ar_mascarpone-4.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.05,
+          "priceMax": 1.05,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 83,
           "img": "burkanu_keksins_mazais.webp",
           "name": "Burkānu kēkss",
           "desc": "Ar skābā krējuma micīti",
+          "price": "0.70 €",
           "weight": "20 g",
-          "price": "0.70 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/burkanu_keksins_mazais.webp",
+            "srcset": "/media/konditoreja/burkanu_keksins_mazais-320.webp 320w, /media/konditoreja/burkanu_keksins_mazais-640.webp 640w, /media/konditoreja/burkanu_keksins_mazais.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Burkānu kēkss",
+            "name": "burkanu_keksins_mazais.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.7,
+          "priceMax": 0.7,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 84,
           "img": "maskarpones-citronu.webp",
           "name": "Maskarpones – citronu",
           "desc": "Ar marakujas želeju",
+          "price": "0.95 €",
           "weight": "25 g",
-          "price": "0.95 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/maskarpones-citronu.webp",
+            "srcset": "/media/konditoreja/maskarpones-citronu-320.webp 320w, /media/konditoreja/maskarpones-citronu-640.webp 640w, /media/konditoreja/maskarpones-citronu.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Maskarpones – citronu",
+            "name": "maskarpones-citronu.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.95,
+          "priceMax": 0.95,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 85,
           "img": "apelsinu_kucina.webp",
           "name": "Apelsīnu kūciņa",
           "desc": "Ar putukrējuma krēmu un šokolādes biskvītu",
+          "price": "0.95 €",
           "weight": "30 g",
-          "price": "0.95 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/apelsinu_kucina.webp",
+            "srcset": "/media/konditoreja/apelsinu_kucina-320.webp 320w, /media/konditoreja/apelsinu_kucina-640.webp 640w, /media/konditoreja/apelsinu_kucina.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Apelsīnu kūciņa",
+            "name": "apelsinu_kucina.webp"
+          },
+          "unit": "gab",
+          "priceMin": 0.95,
+          "priceMax": 0.95,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 86,
           "img": "mellenu_kucina.webp",
           "name": "Melleņu kūciņa",
           "desc": "Ar skābā krējuma krēmu",
+          "price": "1.00 €",
           "weight": "30 g",
-          "price": "1.00 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/mellenu_kucina.webp",
+            "srcset": "/media/konditoreja/mellenu_kucina-320.webp 320w, /media/konditoreja/mellenu_kucina-640.webp 640w, /media/konditoreja/mellenu_kucina.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Melleņu kūciņa",
+            "name": "mellenu_kucina.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1,
+          "priceMax": 1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 87,
           "img": "dzervenu-putukrejuma_ar_dzervenu_zelejas_kartinu.webp",
           "name": "Dzērveņu – putukrējuma",
           "desc": "Ar dzērveņu želejas kārtiņu",
+          "price": "1.00 €",
           "weight": "30 g",
-          "price": "1.00 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/dzervenu-putukrejuma_ar_dzervenu_zelejas_kartinu.webp",
+            "srcset": "/media/konditoreja/dzervenu-putukrejuma_ar_dzervenu_zelejas_kartinu-320.webp 320w, /media/konditoreja/dzervenu-putukrejuma_ar_dzervenu_zelejas_kartinu-640.webp 640w, /media/konditoreja/dzervenu-putukrejuma_ar_dzervenu_zelejas_kartinu.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Dzērveņu – putukrējuma",
+            "name": "dzervenu-putukrejuma_ar_dzervenu_zelejas_kartinu.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1,
+          "priceMax": 1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 88,
           "img": "kucina_kafijas_pupina-1.webp",
           "name": "Kafijas pupiņa",
+          "desc": null,
+          "price": "1.10 €",
           "weight": "30 g",
-          "price": "1.10 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kucina_kafijas_pupina-1.webp",
+            "srcset": "/media/konditoreja/kucina_kafijas_pupina-1-320.webp 320w, /media/konditoreja/kucina_kafijas_pupina-1-640.webp 640w, /media/konditoreja/kucina_kafijas_pupina-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Kafijas pupiņa",
+            "name": "kucina_kafijas_pupina-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.1,
+          "priceMax": 1.1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     },
@@ -598,133 +2103,469 @@
       "id": "kukas",
       "title": "Kūkas",
       "note": "Pasūtījuma minimālais daudzums 5 gab.",
+      "limits": {
+        "gab": 5
+      },
       "items": [
         {
+          "id": 89,
           "img": "vecriga_liela.webp",
           "name": "Vecrīga",
+          "desc": null,
+          "price": "1.40 €",
           "weight": "65 g",
-          "price": "1.40 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/vecriga_liela.webp",
+            "srcset": "/media/konditoreja/vecriga_liela-320.webp 320w, /media/konditoreja/vecriga_liela-640.webp 640w, /media/konditoreja/vecriga_liela.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Vecrīga",
+            "name": "vecriga_liela.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.4,
+          "priceMax": 1.4,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 90,
           "img": "eklers_liels.webp",
           "name": "Eklērs",
+          "desc": null,
+          "price": "1.50 €",
           "weight": "60 g",
-          "price": "1.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/eklers_liels.webp",
+            "srcset": "/media/konditoreja/eklers_liels-320.webp 320w, /media/konditoreja/eklers_liels-640.webp 640w, /media/konditoreja/eklers_liels.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Eklērs",
+            "name": "eklers_liels.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.5,
+          "priceMax": 1.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 91,
           "img": "medus_kuka.webp",
           "name": "Medus kūka",
+          "desc": null,
+          "price": "2.00 €",
           "weight": "100 g",
-          "price": "2.00 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/medus_kuka.webp",
+            "srcset": "/media/konditoreja/medus_kuka-320.webp 320w, /media/konditoreja/medus_kuka-640.webp 640w, /media/konditoreja/medus_kuka.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Medus kūka",
+            "name": "medus_kuka.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2,
+          "priceMax": 2,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 92,
           "img": "biezpiena_majina_2.webp",
           "name": "Biezpiena mājiņa",
+          "desc": null,
+          "price": "2.10 €",
           "weight": "100 g",
-          "price": "2.10 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/biezpiena_majina_2.webp",
+            "srcset": "/media/konditoreja/biezpiena_majina_2-320.webp 320w, /media/konditoreja/biezpiena_majina_2-640.webp 640w, /media/konditoreja/biezpiena_majina_2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Biezpiena mājiņa",
+            "name": "biezpiena_majina_2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2.1,
+          "priceMax": 2.1,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 93,
           "img": "siera-pistaciju_kuka_liela-2.webp",
           "name": "Siera – pistāciju kūka",
+          "desc": null,
+          "price": "2.30 €",
           "weight": "85 g",
-          "price": "2.30 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/siera-pistaciju_kuka_liela-2.webp",
+            "srcset": "/media/konditoreja/siera-pistaciju_kuka_liela-2-320.webp 320w, /media/konditoreja/siera-pistaciju_kuka_liela-2-640.webp 640w, /media/konditoreja/siera-pistaciju_kuka_liela-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Siera – pistāciju kūka",
+            "name": "siera-pistaciju_kuka_liela-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2.3,
+          "priceMax": 2.3,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 94,
           "img": "siera-zemenu_kuka_liela-2.webp",
           "name": "Siera  – zemeņu kūka",
+          "desc": null,
+          "price": "2.20 €",
           "weight": "100 g",
-          "price": "2.20 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/siera-zemenu_kuka_liela-2.webp",
+            "srcset": "/media/konditoreja/siera-zemenu_kuka_liela-2-320.webp 320w, /media/konditoreja/siera-zemenu_kuka_liela-2-640.webp 640w, /media/konditoreja/siera-zemenu_kuka_liela-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Siera  – zemeņu kūka",
+            "name": "siera-zemenu_kuka_liela-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2.2,
+          "priceMax": 2.2,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 95,
           "img": "siera_braunijs.webp",
           "name": "Siera braunijs",
           "desc": "Ar sāļo karameli",
+          "price": "2.00 €",
           "weight": "85 g",
-          "price": "2.00 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/siera_braunijs.webp",
+            "srcset": "/media/konditoreja/siera_braunijs-320.webp 320w, /media/konditoreja/siera_braunijs-640.webp 640w, /media/konditoreja/siera_braunijs.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Siera braunijs",
+            "name": "siera_braunijs.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2,
+          "priceMax": 2,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 96,
           "img": "kuka_karamelu_siera.webp",
           "name": "Karameļu siera kūka",
+          "desc": null,
+          "price": "2.75 €",
           "weight": "110 g",
-          "price": "2.75 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/kuka_karamelu_siera.webp",
+            "srcset": "/media/konditoreja/kuka_karamelu_siera-320.webp 320w, /media/konditoreja/kuka_karamelu_siera-640.webp 640w, /media/konditoreja/kuka_karamelu_siera.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Karameļu siera kūka",
+            "name": "kuka_karamelu_siera.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2.75,
+          "priceMax": 2.75,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 97,
           "img": "riekstu-sokolades_kuka.webp",
           "name": "Riekstu – šokolādes kūka",
+          "desc": null,
+          "price": "2.30 €",
           "weight": "95 g",
-          "price": "2.30 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/riekstu-sokolades_kuka.webp",
+            "srcset": "/media/konditoreja/riekstu-sokolades_kuka-320.webp 320w, /media/konditoreja/riekstu-sokolades_kuka-640.webp 640w, /media/konditoreja/riekstu-sokolades_kuka.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Riekstu – šokolādes kūka",
+            "name": "riekstu-sokolades_kuka.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2.3,
+          "priceMax": 2.3,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 98,
           "img": "sarkanais_samts_kuka.webp",
           "name": "Sarkanais samts",
+          "desc": null,
+          "price": "2.50 €",
           "weight": "120 g",
-          "price": "2.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/sarkanais_samts_kuka.webp",
+            "srcset": "/media/konditoreja/sarkanais_samts_kuka-320.webp 320w, /media/konditoreja/sarkanais_samts_kuka-640.webp 640w, /media/konditoreja/sarkanais_samts_kuka.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Sarkanais samts",
+            "name": "sarkanais_samts_kuka.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2.5,
+          "priceMax": 2.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 99,
           "img": "pavlova.webp",
           "name": "Pavlova",
+          "desc": null,
+          "price": "3.00 €",
           "weight": "100 g",
-          "price": "3.00 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/pavlova.webp",
+            "srcset": "/media/konditoreja/pavlova-320.webp 320w, /media/konditoreja/pavlova-640.webp 640w, /media/konditoreja/pavlova.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Pavlova",
+            "name": "pavlova.webp"
+          },
+          "unit": "gab",
+          "priceMin": 3,
+          "priceMax": 3,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 100,
           "img": "lielcepums_mila_sirds-2.webp",
           "name": "Mīļā sirds",
           "desc": "Ar mandeļu masu un balto šokolādi",
+          "price": "3.20 €",
           "weight": "100 g",
-          "price": "3.20 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/lielcepums_mila_sirds-2.webp",
+            "srcset": "/media/konditoreja/lielcepums_mila_sirds-2-320.webp 320w, /media/konditoreja/lielcepums_mila_sirds-2-640.webp 640w, /media/konditoreja/lielcepums_mila_sirds-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Mīļā sirds",
+            "name": "lielcepums_mila_sirds-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 3.2,
+          "priceMax": 3.2,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 101,
           "img": "zefira_radzins.webp",
           "name": "Zefīra radziņš ar šokolādi",
+          "desc": null,
+          "price": "1.40 €",
           "weight": "50 g",
-          "price": "1.40 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/zefira_radzins.webp",
+            "srcset": "/media/konditoreja/zefira_radzins-320.webp 320w, /media/konditoreja/zefira_radzins-640.webp 640w, /media/konditoreja/zefira_radzins.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Zefīra radziņš ar šokolādi",
+            "name": "zefira_radzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.4,
+          "priceMax": 1.4,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 102,
           "img": "karamelu_radzins.webp",
           "name": "Karameļu radziņš",
+          "desc": null,
+          "price": "1.55 €",
           "weight": "65 g",
-          "price": "1.55 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/karamelu_radzins.webp",
+            "srcset": "/media/konditoreja/karamelu_radzins-320.webp 320w, /media/konditoreja/karamelu_radzins-640.webp 640w, /media/konditoreja/karamelu_radzins.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Karameļu radziņš",
+            "name": "karamelu_radzins.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.55,
+          "priceMax": 1.55,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 103,
           "img": "karamelu_kekss.webp",
           "name": "Karameļu kēkss",
           "desc": "Ar karameļu pildījumu, Toffee glazūru",
+          "price": "2.40 €",
           "weight": "120 g",
-          "price": "2.40 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/karamelu_kekss.webp",
+            "srcset": "/media/konditoreja/karamelu_kekss-320.webp 320w, /media/konditoreja/karamelu_kekss-640.webp 640w, /media/konditoreja/karamelu_kekss.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Karameļu kēkss",
+            "name": "karamelu_kekss.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2.4,
+          "priceMax": 2.4,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 104,
           "img": "sokolades_kekss-2.webp",
           "name": "Šokolādes kēkss",
           "desc": "Ar šokolādes pildījumu",
+          "price": "2.40 €",
           "weight": "120 g",
-          "price": "2.40 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/sokolades_kekss-2.webp",
+            "srcset": "/media/konditoreja/sokolades_kekss-2-320.webp 320w, /media/konditoreja/sokolades_kekss-2-640.webp 640w, /media/konditoreja/sokolades_kekss-2.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Šokolādes kēkss",
+            "name": "sokolades_kekss-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2.4,
+          "priceMax": 2.4,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 105,
           "img": "stiligais_kekss-2.webp",
           "name": "“Stilīgais” kēkss",
+          "desc": null,
+          "price": "1.90 €",
           "weight": "65 g",
-          "price": "1.90 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/stiligais_kekss-2.webp",
+            "srcset": "/media/konditoreja/stiligais_kekss-2-320.webp 320w, /media/konditoreja/stiligais_kekss-2-640.webp 640w, /media/konditoreja/stiligais_kekss-2.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "“Stilīgais” kēkss",
+            "name": "stiligais_kekss-2.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.9,
+          "priceMax": 1.9,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 106,
           "img": "smaragda_kekss.webp",
           "name": "Smaragda kēkss",
           "desc": "Ar maskarpone – pistāciju krēmu",
+          "price": "2.60 €",
           "weight": "75 g",
-          "price": "2.60 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/smaragda_kekss.webp",
+            "srcset": "/media/konditoreja/smaragda_kekss-320.webp 320w, /media/konditoreja/smaragda_kekss-640.webp 640w, /media/konditoreja/smaragda_kekss.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Smaragda kēkss",
+            "name": "smaragda_kekss.webp"
+          },
+          "unit": "gab",
+          "priceMin": 2.6,
+          "priceMax": 2.6,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 107,
           "img": "grozins_zefira_tels_eglite.webp",
           "name": "Zefīra tēls",
           "desc": "Eglīte",
+          "price": "1.50 €",
           "weight": "40 g",
-          "price": "1.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/grozins_zefira_tels_eglite.webp",
+            "srcset": "/media/konditoreja/grozins_zefira_tels_eglite-320.webp 320w, /media/konditoreja/grozins_zefira_tels_eglite-640.webp 640w, /media/konditoreja/grozins_zefira_tels_eglite.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Zefīra tēls",
+            "name": "grozins_zefira_tels_eglite.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.5,
+          "priceMax": 1.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 108,
           "img": "grozins_zefira_tels_sniegavirs-1.webp",
           "name": "Zefīra tēls",
           "desc": "Sniegavīrs",
+          "price": "1.50 €",
           "weight": "40 g",
-          "price": "1.50 €"
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/grozins_zefira_tels_sniegavirs-1.webp",
+            "srcset": "/media/konditoreja/grozins_zefira_tels_sniegavirs-1-320.webp 320w, /media/konditoreja/grozins_zefira_tels_sniegavirs-1-640.webp 640w, /media/konditoreja/grozins_zefira_tels_sniegavirs-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Zefīra tēls",
+            "name": "grozins_zefira_tels_sniegavirs-1.webp"
+          },
+          "unit": "gab",
+          "priceMin": 1.5,
+          "priceMax": 1.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     },
@@ -732,54 +2573,217 @@
       "id": "tortes",
       "title": "Tortes, tartes, ruletes",
       "note": "Standarta tortes minimālais svars 800-900 g",
+      "limits": {
+        "kg": 0.8,
+        "kgStep": 0.1
+      },
       "items": [
         {
+          "id": 109,
           "img": "medus_torte_bruklenu-2.webp",
           "name": "Medus torte",
           "desc": "Ar brūkleņu ievārījumu",
-          "price": "20.00 €/1 kg"
+          "price": "20.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/medus_torte_bruklenu-2.webp",
+            "srcset": "/media/konditoreja/medus_torte_bruklenu-2-320.webp 320w, /media/konditoreja/medus_torte_bruklenu-2-640.webp 640w, /media/konditoreja/medus_torte_bruklenu-2.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Medus torte",
+            "name": "medus_torte_bruklenu-2.webp"
+          },
+          "unit": "kg",
+          "priceMin": 20,
+          "priceMax": 20,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 110,
           "img": "medus_kuka-1.webp",
           "name": "Medus torte",
-          "price": "19.00 €/1 kg"
+          "desc": null,
+          "price": "19.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/medus_kuka-1.webp",
+            "srcset": "/media/konditoreja/medus_kuka-1-320.webp 320w, /media/konditoreja/medus_kuka-1-640.webp 640w, /media/konditoreja/medus_kuka-1.webp 1400w",
+            "w": 1400,
+            "h": 1400,
+            "alt": "Medus torte",
+            "name": "medus_kuka-1.webp"
+          },
+          "unit": "kg",
+          "priceMin": 19,
+          "priceMax": 19,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 111,
           "img": "jogurta-kirsu_torte.webp",
           "name": "Jogurta – ķiršu torte",
-          "price": "19.50 €/1 kg"
+          "desc": null,
+          "price": "19.50 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/jogurta-kirsu_torte.webp",
+            "srcset": "/media/konditoreja/jogurta-kirsu_torte-320.webp 320w, /media/konditoreja/jogurta-kirsu_torte-640.webp 640w, /media/konditoreja/jogurta-kirsu_torte.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Jogurta – ķiršu torte",
+            "name": "jogurta-kirsu_torte.webp"
+          },
+          "unit": "kg",
+          "priceMin": 19.5,
+          "priceMax": 19.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 112,
           "img": "biezpiena_torte_ar_avenem.webp",
           "name": "Biezpiena torte",
           "desc": "Ar avenēm želejā",
-          "price": "18.00 €/1 kg"
+          "price": "18.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/biezpiena_torte_ar_avenem.webp",
+            "srcset": "/media/konditoreja/biezpiena_torte_ar_avenem-320.webp 320w, /media/konditoreja/biezpiena_torte_ar_avenem-640.webp 640w, /media/konditoreja/biezpiena_torte_ar_avenem.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Biezpiena torte",
+            "name": "biezpiena_torte_ar_avenem.webp"
+          },
+          "unit": "kg",
+          "priceMin": 18,
+          "priceMax": 18,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 113,
           "img": "torte_kafijas.webp",
           "name": "Kafijas putukrējuma torte",
-          "price": "20.00 €/1 kg"
+          "desc": null,
+          "price": "20.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/torte_kafijas.webp",
+            "srcset": "/media/konditoreja/torte_kafijas-320.webp 320w, /media/konditoreja/torte_kafijas-640.webp 640w, /media/konditoreja/torte_kafijas.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Kafijas putukrējuma torte",
+            "name": "torte_kafijas.webp"
+          },
+          "unit": "kg",
+          "priceMin": 20,
+          "priceMax": 20,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 114,
           "img": "torte_sarkanais_samts-1.webp",
           "name": "Sarkanais samts",
-          "price": "20.00 €/1 kg"
+          "desc": null,
+          "price": "20.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/torte_sarkanais_samts-1.webp",
+            "srcset": "/media/konditoreja/torte_sarkanais_samts-1-320.webp 320w, /media/konditoreja/torte_sarkanais_samts-1-640.webp 640w, /media/konditoreja/torte_sarkanais_samts-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Sarkanais samts",
+            "name": "torte_sarkanais_samts-1.webp"
+          },
+          "unit": "kg",
+          "priceMin": 20,
+          "priceMax": 20,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 115,
           "img": "torte_sokolades_ar_bananiem-1.webp",
           "name": "Šokolādes torte ar banāniem",
-          "price": "20.50 €/1 kg"
+          "desc": null,
+          "price": "20.50 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/torte_sokolades_ar_bananiem-1.webp",
+            "srcset": "/media/konditoreja/torte_sokolades_ar_bananiem-1-320.webp 320w, /media/konditoreja/torte_sokolades_ar_bananiem-1-640.webp 640w, /media/konditoreja/torte_sokolades_ar_bananiem-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Šokolādes torte ar banāniem",
+            "name": "torte_sokolades_ar_bananiem-1.webp"
+          },
+          "unit": "kg",
+          "priceMin": 20.5,
+          "priceMax": 20.5,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 116,
           "img": "avenu_tarte.webp",
           "name": "Aveņu tarte",
           "desc": "Ar vārīto kremu",
-          "price": "18.00 €/1 kg"
+          "price": "18.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/avenu_tarte.webp",
+            "srcset": "/media/konditoreja/avenu_tarte-320.webp 320w, /media/konditoreja/avenu_tarte-640.webp 640w, /media/konditoreja/avenu_tarte.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Aveņu tarte",
+            "name": "avenu_tarte.webp"
+          },
+          "unit": "kg",
+          "priceMin": 18,
+          "priceMax": 18,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         },
         {
+          "id": 117,
           "img": "bavarijas_rulete.webp",
           "name": "Bavārijas rulete",
-          "price": "19.00 €/1 kg"
+          "desc": null,
+          "price": "19.00 €/1 kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/bavarijas_rulete.webp",
+            "srcset": "/media/konditoreja/bavarijas_rulete-320.webp 320w, /media/konditoreja/bavarijas_rulete-640.webp 640w, /media/konditoreja/bavarijas_rulete.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Bavārijas rulete",
+            "name": "bavarijas_rulete.webp"
+          },
+          "unit": "kg",
+          "priceMin": 19,
+          "priceMax": 19,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     },
@@ -787,11 +2791,32 @@
       "id": "pasutijumu-tortes",
       "title": "Personalizētas tortes",
       "note": null,
+      "limits": {
+        "kg": 1
+      },
       "items": [
         {
+          "id": 118,
           "img": "lieldienu_torte-1.webp",
           "name": "Pasūtījumu tortes",
-          "price": "25.00-30.00 €/kg"
+          "desc": null,
+          "price": "25.00-30.00 €/kg",
+          "weight": null,
+          "classic": false,
+          "image": {
+            "src": "/media/konditoreja/lieldienu_torte-1.webp",
+            "srcset": "/media/konditoreja/lieldienu_torte-1-320.webp 320w, /media/konditoreja/lieldienu_torte-1-640.webp 640w, /media/konditoreja/lieldienu_torte-1.webp 1080w",
+            "w": 1080,
+            "h": 1080,
+            "alt": "Pasūtījumu tortes",
+            "name": "lieldienu_torte-1.webp"
+          },
+          "unit": "kg",
+          "priceMin": 25,
+          "priceMax": 30,
+          "minQty": null,
+          "allergens": null,
+          "diet": []
         }
       ]
     }

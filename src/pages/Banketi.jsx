@@ -2,15 +2,28 @@ import { Link } from "react-router-dom";
 import EnquiryForm from "../components/EnquiryForm.jsx";
 import Gallery from "../components/Gallery.jsx";
 import Masthead from "../components/Masthead.jsx";
-import { lineById, venues, telHref } from "../data/lines.js";
-import { banketiGalleries, banketiText, galleries } from "../data/site.js";
+import Paragraphs from "../components/Paragraphs.jsx";
+import { telHref } from "../data/lines.js";
+import { lineById, useSite, useTexts } from "../lib/content.jsx";
 import { track } from "../lib/analytics.js";
 import { ENQUIRY_FORM_ENABLED } from "../lib/features.js";
 import ui from "../styles/Page.module.css";
 import styles from "./Banketi.module.css";
 
 export default function Banketi() {
-  const line = lineById.banketi;
+  const site = useSite();
+  const t = useTexts();
+  const line = lineById(site, "banketi");
+  const { venues } = site;
+  // teksts pēc oriģinālās vietnes: pielāgotas ēdienkartes, izbraukuma ēdināšana
+  const banketiText = [
+    { id: "edienkartes", title: t("banketi.menus.title"), text: t("banketi.menus.text") },
+    { id: "izbraukums", title: t("banketi.away.title"), text: t("banketi.away.text") },
+  ];
+  // Banketu galerijas — tās, kuru lapa adminā ir "Banketi", admin secībā
+  const galleries = Object.entries(site.galleries)
+    .filter(([, g]) => g.page === "banketi" && g.images.length > 0)
+    .map(([key, g]) => ({ key, ...g }));
 
   return (
     <div className={ui.page} data-cluster={line.cluster}>
@@ -29,12 +42,10 @@ export default function Banketi() {
             {i === 1 ? (
               <div className={styles.about}>
                 <div className={ui.prose}>
-                  {block.paragraphs.map((p) => (
-                    <p key={p}>{p}</p>
-                  ))}
+                  <Paragraphs text={block.text} />
                 </div>
                 <div>
-                  <h3 className={ui.sub}>kur</h3>
+                  <h3 className={ui.sub}>{t("banketi.where.heading")}</h3>
                   <ul className={ui.rows}>
                     {venues.map((v) => (
                       <li key={v.id} className={ui.row}>
@@ -52,40 +63,40 @@ export default function Banketi() {
                       </li>
                     ))}
                     <li className={ui.row}>
-                      <span className={ui.rowLabel}>izbraukumā — pilī, meža būdiņā, uz ūdens</span>
+                      <span className={ui.rowLabel}>{t("banketi.where.outside")}</span>
                       <i className={ui.leader} aria-hidden="true" />
-                      <span className={`${ui.rowValue} ${ui.rowMuted}`}>pēc vienošanās</span>
+                      <span className={`${ui.rowValue} ${ui.rowMuted}`}>{t("banketi.where.outside_value")}</span>
                     </li>
                   </ul>
                 </div>
               </div>
             ) : (
               <div className={ui.prose}>
-                {block.paragraphs.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
+                <Paragraphs text={block.text} />
               </div>
             )}
           </section>
         ))}
 
+        {galleries.length > 0 && (
         <section className={ui.section} aria-labelledby="banketi-galerija">
           <div className={ui.sectionHead}>
             <h2 className={ui.heading} id="banketi-galerija">
-              galerija
+              {t("banketi.gallery.heading")}
             </h2>
           </div>
           <ul className={styles.grid}>
-            {banketiGalleries.map((item) => (
+            {galleries.map((item) => (
               <li key={item.key} className={styles.block}>
                 <h3 className={`${ui.sub} ${styles.blockName}`}>
-                  {item.title} <em>({galleries[item.key].length})</em>
+                  {item.title} <em>({item.images.length})</em>
                 </h3>
-                <Gallery images={galleries[item.key]} alt={item.title} featured={4} columns={2} />
+                <Gallery images={item.images} alt={item.title} featured={4} columns={2} />
               </li>
             ))}
           </ul>
         </section>
+        )}
 
         {ENQUIRY_FORM_ENABLED ? (
           <section className={`${ui.section} ${styles.enquiry}`} id="pieteikums" aria-labelledby="banketi-pieteikums">
@@ -114,8 +125,8 @@ export default function Banketi() {
         ) : (
           <div className={ui.cta} id="pieteikums">
             <div>
-              <h2 className={ui.ctaTitle}>jūsu pasākums</h2>
-              <p className={ui.ctaText}>Sazinieties ar mums, lai sastādītu Jums piemērotu ēdienkarti.</p>
+              <h2 className={ui.ctaTitle}>{t("banketi.cta.title")}</h2>
+              <p className={ui.ctaText}>{t("banketi.cta.text")}</p>
               <p className={ui.facts}>
                 <a href={telHref(line.phone)} onClick={() => track("zvans", { vieta: "banketi" })}>
                   {line.phone}
@@ -124,7 +135,7 @@ export default function Banketi() {
               </p>
             </div>
             <Link className={ui.btn} to="/kontakti">
-              Kontaktēties
+              {t("banketi.cta.button")}
             </Link>
           </div>
         )}

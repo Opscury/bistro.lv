@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import { ContentProvider } from "./lib/content.jsx";
 import Home from "./pages/Home.jsx";
 import Bistro from "./pages/Bistro.jsx";
 import Konditoreja from "./pages/Konditoreja.jsx";
@@ -12,7 +13,7 @@ import NotFound from "./pages/NotFound.jsx";
 
 export default function App() {
   return (
-    <>
+    <ContentProvider>
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
@@ -26,6 +27,6 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </>
+    </ContentProvider>
   );
 }

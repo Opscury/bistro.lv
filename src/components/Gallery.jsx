@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import Img from "./Img.jsx";
+import Img, { imgKey, imgSrc } from "./Img.jsx";
 import styles from "./Gallery.module.css";
 
 /**
@@ -7,7 +7,8 @@ import styles from "./Gallery.module.css";
  * lielais skats (lightbox) visai kopai. Aizstāj slaidrādes ar "1 / 37":
  * pārlūks ielādē tikai režģa sīktēlus, pārējo — kad atver.
  *
- * images: ["fails.webp", …]; featured: cik rādīt režģī (6);
+ * images: bildes no admin ({src, srcset, w, h, alt, name}) vai ["fails.webp", …];
+ * featured: cik rādīt režģī (6);
  * columns: 2 | 3 | 4; alt: kopas nosaukums.
  */
 export default function Gallery({ images, alt = "Galerija", featured = 6, columns = 3 }) {
@@ -23,14 +24,14 @@ export default function Gallery({ images, alt = "Galerija", featured = 6, column
         aria-label={alt}
       >
         {shown.map((src, i) => (
-          <li key={src}>
+          <li key={imgKey(src)}>
             <button
               type="button"
               className={styles.thumb}
               onClick={() => setOpen(i)}
               aria-label={`${alt}, ${i + 1}. attēls — atvērt lielāku`}
             >
-              <Img name={src} alt="" sizes="(min-width: 700px) 320px, 50vw" />
+              <Img image={src} alt="" sizes="(min-width: 700px) 320px, 50vw" />
               {i === shown.length - 1 && rest > 0 && (
                 <span className={styles.more} aria-hidden="true">
                   +{rest}
@@ -46,6 +47,9 @@ export default function Gallery({ images, alt = "Galerija", featured = 6, column
     </>
   );
 }
+
+/** Bildes apraksts lielajā skatā: adminā ierakstītais vai "Kāzas 3". */
+export const altFor = (images, alt, i) => (typeof images[i] === "object" && images[i]?.alt) || `${alt} ${i + 1}`;
 
 /** Lielais skats — lieto gan režģis, gan tējas namiņa lente. */
 export function Lightbox({ images, alt, index, onIndex, onClose }) {
@@ -76,9 +80,8 @@ export function Lightbox({ images, alt, index, onIndex, onClose }) {
   // iepriekš ielādē kaimiņus
   useEffect(() => {
     [index - 1, index + 1].forEach((i) => {
-      const src = images[(i + total) % total];
       const im = new Image();
-      im.src = `/img/${src}`;
+      im.src = imgSrc(images[(i + total) % total]);
     });
   }, [index, images, total]);
 
@@ -101,9 +104,9 @@ export function Lightbox({ images, alt, index, onIndex, onClose }) {
         ✕
       </button>
       <Img
-        key={images[index]}
-        name={images[index]}
-        alt={`${alt} ${index + 1}`}
+        key={imgKey(images[index])}
+        image={images[index]}
+        alt={altFor(images, alt, index)}
         sizes="100vw"
         loading="eager"
         className={styles.big}
