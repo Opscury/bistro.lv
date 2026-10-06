@@ -6,6 +6,7 @@ import { konditorejaNotice } from "../data/site.js";
 import useCart from "../hooks/useCart.js";
 import Masthead from "../components/Masthead.jsx";
 import Notice from "../components/Notice.jsx";
+import { liveNotice } from "../data/notices.js";
 import CategoryBar from "../components/konditoreja/CategoryBar.jsx";
 import CartBar from "../components/konditoreja/CartBar.jsx";
 import ItemSheet from "../components/konditoreja/ItemSheet.jsx";
@@ -186,7 +187,7 @@ export default function Konditoreja() {
         <MenuIndex />
 
         <div className={styles.notice}>
-          <Notice {...konditorejaNotice} sizes="(min-width: 700px) 420px, 100vw" />
+          <Notice {...liveNotice(konditorejaNotice, "konditoreja")} sizes="(min-width: 700px) 420px, 100vw" />
         </div>
       </div>
 

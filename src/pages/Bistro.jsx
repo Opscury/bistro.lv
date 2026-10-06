@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Img from "../components/Img.jsx";
 import Masthead from "../components/Masthead.jsx";
 import Notice from "../components/Notice.jsx";
+import { liveNotice } from "../data/notices.js";
 import WeeklyMenu from "../components/WeeklyMenu.jsx";
 import menu from "../data/menu.json";
 import { lineById } from "../data/lines.js";
@@ -110,7 +111,7 @@ export default function Bistro() {
               </div>
             </div>
 
-            <Notice {...bistroNotice} />
+            <Notice {...liveNotice(bistroNotice, "bistro")} />
           </div>
         </section>
       </div>

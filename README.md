@@ -21,7 +21,7 @@ npm run menu -- "ceļš/uz/Bistro-edienkarte-15.09.-21.09.pdf"   # nedēļas ēd
 ## Kas kur
 
 ```
-index.html                 galva: meta, fonti (preload), slēptās Netlify formas
+index.html                 galva: meta, slēptās Netlify formas (fontu preload ieliek vite-plugin-theme)
 netlify.toml               būve, galvenes; public/_redirects — vecās adreses, SPA
 src/
   main.jsx                 hydrate (prerender) vai render (dev)
@@ -35,7 +35,9 @@ src/
     konditorejaUnits.js    cenu parsēšana, minimālie daudzumi
     meta.js                katras lapas <title>, apraksts, OG attēls
     site.js                izvēlne, teksti, galeriju saraksti
-  styles/global.css        fonti (@font-face), marķieri, līniju klasteri
+    theme.json             fontu izvēle — momentuzņēmums no Django admin (/theme.json)
+    notices.json           "aktuāli" Instagram ieraksti no admina (/notices.json); notices.js tos uzliek rāmjiem
+  styles/global.css        marķieri, līniju klasteri (fontus ģenerē vite-plugin-theme)
   styles/Page.module.css   kopīgie būvbloki: masthead, fakti, rindas, pogas, formas
   components/              Header, Footer, Layout, Masthead, Img, Gallery, Slideshow,
                            PriceRows, WeeklyMenu, EnquiryForm, konditoreja/*
@@ -47,10 +49,13 @@ scripts/
   prerender.mjs            dist/<ceļš>/index.html katram ceļam, 404.html, sitemap
   vite-plugin-img.mjs      attēlu kopijas 320/640 px + __IMG_MANIFEST__
   menu-from-pdf.mjs        PDF -> menu.json
+  snapshot.mjs             pirms būves: Django /theme.json un /notices.json -> src/data/ (kļūdas gadījumā paliek vecie)
+  theme.mjs                theme.json pārbaude, @font-face + --font-* ģenerēšana
+  vite-plugin-theme.mjs    `virtual:theme.css` + virsrakstu fonta preload
 public/
   img/                     attēli (oriģināli līdz 1400 px, WebP)
   menu/                    pusdienas.pdf, brokastis.pdf, dzerieni.pdf (stabili nosaukumi)
-  fonts/                   Bricolage Grotesque, Inter, DM Mono (woff2, pašu serverī)
+  fonts/                   visi izvēlamie fonti (woff2, latin + latin-ext, OFL), pašu serverī
   og/                      kopīgošanas attēli 1200×630
   admin/                   Decap CMS (satura rediģēšana bez koda)
   silva-logo.svg, favicon.svg
@@ -61,10 +66,17 @@ docs/                      pārskats un izmaiņu apraksts
 
 Krēmīgs fons `#fbf7f2`, tinte `#14161c`, otrās pakāpes teksts `#565b69`,
 mazais teksts `#61667a` (5.1:1), zaļā `#017a3c` pogām un saitēm,
-logotipa zaļā `#019047` tikai kontūrām un fokusa gredzeniem. Bricolage
-Grotesque (mazie burti) virsrakstiem, Inter tekstam, DM Mono faktiem un
-cipariem. Viss ir `global.css` un `Page.module.css`; lapu moduļi nes tikai
-izkārtojumu.
+logotipa zaļā `#019047` tikai kontūrām un fokusa gredzeniem. Viss ir
+`global.css` un `Page.module.css`; lapu moduļi nes tikai izkārtojumu.
+
+**Fonti** — trīs lomas, katrai savs mainīgais: `--font-head` (virsraksti,
+noklusējums Bricolage Grotesque; sadaļu virsrakstu biezums `--heading-weight`),
+`--font-body` (Inter), `--font-mono` (DM Mono — etiķetes, cenas, datumi).
+Citus fontu nosaukumus CSS nerakstīt — tikai šos mainīgos. Izvēle ir Django
+adminā (**Vietnes izskats → Fonti**, tikai superlietotājam); saglabājot tas
+palaiž Netlify būvi, un `snapshot.mjs` paņem jauno izvēli. Saraksts ar
+izvēlamajiem fontiem — `silva-api/design/fonts.py`; jauns fonts = woff2 faili
+`public/fonts/` + ieraksts tur.
 
 **Līniju klasteri** (zīmola arhitektūra — Configured Hybrid): bistro un
 konditoreja ir pati Silva; tējas namiņš un banketi ir Silvas atbalstītas

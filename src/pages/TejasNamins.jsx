@@ -2,6 +2,7 @@ import FancyCarousel from "../components/FancyCarousel.jsx";
 import Img from "../components/Img.jsx";
 import Masthead from "../components/Masthead.jsx";
 import Notice from "../components/Notice.jsx";
+import { liveNotice } from "../data/notices.js";
 import { lineById } from "../data/lines.js";
 import { galleries, tejasNotice, tejasOffer } from "../data/site.js";
 import ui from "../styles/Page.module.css";
@@ -33,7 +34,7 @@ export default function TejasNamins() {
                 loading="eager"
               />
             </div>
-            <Notice {...tejasNotice} sizes="(min-width: 700px) 460px, 100vw" />
+            <Notice {...liveNotice(tejasNotice, "tejas-namins")} sizes="(min-width: 700px) 460px, 100vw" />
           </div>
         </section>
 

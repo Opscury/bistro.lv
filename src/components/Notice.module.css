@@ -51,6 +51,33 @@
   height: auto;
 }
 
+/* ---- Instagram ieraksts (admins → Aktuāli) ----
+   Instagram pats zīmē rāmi un ēnu; mēs to noņemam, lai rāmis ir viens —
+   mūsējais. Līdz ielādei redzama tikai saite. */
+
+.instagram {
+  min-height: 120px;
+}
+
+.instagram :global(.instagram-media),
+.instagram :global(iframe) {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.instagram :global(blockquote) > a {
+  display: inline-block;
+  padding: 10px 1px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--c-green);
+}
+
 /* ---- neobligātais teksts zem plakāta ---- */
 
 .foot {

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Img from "./Img.jsx";
+import InstagramEmbed from "./InstagramEmbed.jsx";
 import styles from "./Notice.module.css";
 
 /**
@@ -13,9 +14,11 @@ import styles from "./Notice.module.css";
  * photo — plakāts no public/img (tikai faila nosaukums)
  * alt   — kas uz plakāta rakstīts
  * title, text, link — neobligāti; ja plakāts pats visu pasaka, izlaid
+ * instagram — { url, captioned } no admina (data/notices.js); rāda ierakstu
+ *             plakāta vietā
  */
-export default function Notice({ label, meta, photo, alt, title, text, link, sizes }) {
-  if (!photo && !title && !text) return null;
+export default function Notice({ label, meta, photo, alt, title, text, link, sizes, instagram }) {
+  if (!photo && !title && !text && !instagram) return null;
 
   return (
     <figure className={styles.notice}>
@@ -24,7 +27,9 @@ export default function Notice({ label, meta, photo, alt, title, text, link, siz
         {meta && <span className={styles.meta}>{meta}</span>}
       </figcaption>
 
-      {photo && (
+      {instagram ? (
+        <InstagramEmbed url={instagram.url} captioned={instagram.captioned} />
+      ) : photo && (
         <div className={styles.frame}>
           <Img
             className={styles.poster}

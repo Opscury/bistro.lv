@@ -150,10 +150,11 @@
 }
 
 .heading {
-  font-family: var(--font-display);
+  font-family: var(--font-head);
+  font-weight: var(--heading-weight, 700);
   font-size: clamp(27px, 6vw, 44px);
   line-height: 1.05;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.02em;
   text-transform: lowercase;
   margin: 0;
 }

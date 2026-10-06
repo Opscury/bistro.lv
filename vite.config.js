@@ -3,6 +3,7 @@ import path from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import imgVariants from "./scripts/vite-plugin-img.mjs";
+import theme from "./scripts/vite-plugin-theme.mjs";
 
 /**
  * `vite preview` rāda dist/ tāpat kā hostings: /bistro -> dist/bistro/index.html
@@ -38,5 +39,5 @@ function previewPrerendered() {
 }
 
 export default defineConfig({
-  plugins: [react(), imgVariants(), previewPrerendered()],
+  plugins: [react(), imgVariants(), theme(), previewPrerendered()],
 });

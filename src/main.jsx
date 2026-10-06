@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import { initAnalytics } from "./lib/analytics.js";
 import "./styles/global.css";
+import "virtual:theme.css";
 
 const root = document.getElementById("root");
 const app = (

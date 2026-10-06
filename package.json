@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node scripts/prerender.mjs",
+    "build": "node scripts/snapshot.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node scripts/prerender.mjs",
     "build:spa": "vite build",
     "preview": "vite preview",
-    "menu": "node scripts/menu-from-pdf.mjs"
+    "menu": "node scripts/menu-from-pdf.mjs",
+    "snapshot": "node scripts/snapshot.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",
