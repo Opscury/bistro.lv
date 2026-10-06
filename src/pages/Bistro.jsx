@@ -136,7 +136,7 @@ export default function Bistro() {
               <p className={ui.cardMeta}>{t("bistro.groups.note")}</p>
               <p className={ui.cardText}>{t("bistro.groups.text")}</p>
               <div className={`${ui.actions} ${styles.groupsActions}`}>
-                <Link className={`${ui.btn} ${ui.btnGhost}`} to="/kontakti">
+                <Link className={`${ui.btn} ${ui.btnGhost}`} to="/kontakti#forma">
                   {t("bistro.groups.button")}
                 </Link>
               </div>

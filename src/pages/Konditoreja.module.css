@@ -884,3 +884,24 @@
   max-width: 420px;
   padding-top: clamp(24px, 4vw, 36px);
 }
+
+/* Lielā ekrānā rādītājs un aktualitāte stāv blakus — rādītājs pa
+   kreisi vienā kolonnā, plakāts pa labi —, lai blakus plakātam nav tukšuma.
+   Bez aktualitātes rādītājs paliek pilnā platumā divās kolonnās. */
+@media (min-width: 900px) {
+  .topWithNotice {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 0 64px;
+    align-items: start;
+  }
+
+  .topWithNotice .indexList {
+    columns: 1;
+  }
+
+  .topWithNotice .notice {
+    max-width: none;
+    padding-top: 14px;
+  }
+}

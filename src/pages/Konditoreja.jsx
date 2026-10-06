@@ -149,12 +149,11 @@ function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty, classicTag })
  * Aktualitāte zem rādītāja. Ja adminā nav aktīvas, rāmja nav vispār —
  * rādītājs un piedāvājums vienkārši seko viens otram.
  */
-function KonditorejaNotice() {
-  const promo = useSite().notices?.konditoreja;
+function KonditorejaNotice({ promo }) {
   if (!promo) return null;
   return (
     <div className={styles.notice}>
-      <Notice {...promo} sizes="(min-width: 700px) 420px, 100vw" />
+      <Notice {...promo} sizes="(min-width: 900px) 380px, (min-width: 700px) 420px, 100vw" />
     </div>
   );
 }
@@ -164,6 +163,7 @@ export default function Konditoreja() {
   const t = useTexts();
   const data = useKonditoreja();
   const categories = data.categories;
+  const promo = site.notices?.konditoreja;
   const line = lineById(site, "konditoreja");
   // pasūtījumu tālrunis un e-pasts — konditorejas vietas kontakti (admin)
   const orderPhone = line?.phone || data.orderPhone;
@@ -203,9 +203,11 @@ export default function Konditoreja() {
     <div className={ui.page} data-cluster={line.cluster}>
       <div className={ui.shell}>
         <Masthead line={line} rule />
-        <MenuIndex categories={categories} />
-
-        <KonditorejaNotice />
+        {/* lielā ekrānā: rādītājs pa kreisi, aktualitāte pa labi */}
+        <div className={promo ? `${styles.top} ${styles.topWithNotice}` : styles.top}>
+          <MenuIndex categories={categories} />
+          <KonditorejaNotice promo={promo} />
+        </div>
       </div>
 
       {/* fiksēta josla zem galvenes; parādās, kad rādītājs aizritināts */}

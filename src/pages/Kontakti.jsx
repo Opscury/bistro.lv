@@ -262,7 +262,8 @@ export default function Kontakti() {
             </section>
           </div>
 
-          <div className={styles.side}>
+          {/* id="forma": pogas citās lapās ved uz /kontakti#forma */}
+          <div className={styles.side} id="forma">
             <ContactForm />
             {ENQUIRY_FORM_ENABLED && (
               <p className={ui.note}>

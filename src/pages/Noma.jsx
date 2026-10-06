@@ -48,7 +48,7 @@ function Venue({ venue, gallery, children }) {
             {t("noma.more.button")} ↗
           </a>
         )}
-        <Link className={ui.btn} to="/kontakti">
+        <Link className={ui.btn} to="/kontakti#forma">
           {t("noma.button")}
         </Link>
       </div>
@@ -124,7 +124,7 @@ export default function Noma() {
             ))}
           </div>
           <div className={`${ui.actions} ${styles.venueActions}`}>
-            <Link className={ui.btn} to="/kontakti">
+            <Link className={ui.btn} to="/kontakti#forma">
               {t("noma.button")}
             </Link>
           </div>

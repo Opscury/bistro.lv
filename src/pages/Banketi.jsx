@@ -134,7 +134,7 @@ export default function Banketi() {
                 <a href={`mailto:${line.email}`}>{line.email}</a>
               </p>
             </div>
-            <Link className={ui.btn} to="/kontakti">
+            <Link className={ui.btn} to="/kontakti#forma">
               {t("banketi.cta.button")}
             </Link>
           </div>
