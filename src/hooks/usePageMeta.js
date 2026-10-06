@@ -20,7 +20,8 @@ function setMeta(selector, attr, value) {
  * tāpēc pirmajā ielādē nekas nemainās.
  */
 export default function usePageMeta() {
-  const { pathname } = useLocation();
+  const { pathname: raw } = useLocation();
+  const pathname = raw.length > 1 ? raw.replace(/\/+$/, "") : raw;
   const site = useSite();
   useEffect(() => {
     const m = metaFor(pathname, site);

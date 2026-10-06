@@ -6,7 +6,7 @@ import imgVariants from "./scripts/vite-plugin-img.mjs";
 import theme from "./scripts/vite-plugin-theme.mjs";
 
 /**
- * `vite preview` rāda dist/ tāpat kā hostings: /bistro -> dist/bistro/index.html
+ * `vite preview` rāda dist/ tāpat kā hostings: /bistro -> dist/bistro.html
  * (prerender rezultāts), nevis vienmēr dist/index.html. Netlify un
  * Cloudflare Pages to dara paši; šeit tas vajadzīgs tikai pārbaudei.
  */
@@ -22,7 +22,7 @@ function previewPrerendered() {
         const url = (req.url || "/").split("?")[0];
         const proxied = PROXIED.some((p) => url === p || url.startsWith(`${p}/`));
         if (url !== "/" && !path.extname(url) && !proxied) {
-          const file = path.join(dist, url.replace(/\/$/, ""), "index.html");
+          const file = path.join(dist, `${url.replace(/\/$/, "")}.html`);
           if (fs.existsSync(file)) {
             res.setHeader("Content-Type", "text/html; charset=utf-8");
             res.end(fs.readFileSync(file));

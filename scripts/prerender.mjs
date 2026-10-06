@@ -3,7 +3,7 @@
 
    `npm run build` vispirms būvē pārlūka versiju (dist/), tad servera
    versiju (dist/server/), un šis skripts katram ceļam no data/meta.js
-   uzraksta dist/<ceļš>/index.html ar gatavu saturu, pareizu <title>,
+   uzraksta dist/<ceļš>.html ar gatavu saturu, pareizu <title>,
    aprakstu, og: tagiem un kanonisko saiti. Pēc tam pārlūkā React to
    pārņem (hydrate). Rezultāts: meklētāji un saišu priekšskatījumi redz
    īstu lapu, nevis tukšu <div id="root">.
@@ -72,7 +72,9 @@ for (const [route, meta] of Object.entries(routesMeta)) {
       ? path.join(dist, "index.html")
       : route === "/404"
         ? path.join(dist, "404.html")
-        : path.join(dist, route.slice(1), "index.html");
+        : // dist/bistro.html, nevis dist/bistro/index.html: tad Netlify /bistro
+          // rāda bez pāradresēšanas uz /bistro/ (mape liktu pievienot slīpsvītru)
+          path.join(dist, `${route.slice(1)}.html`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, html);
   written++;

@@ -74,5 +74,7 @@ export const routesMeta = buildRoutesMeta(siteSnapshot);
 
 export function metaFor(pathname, site = siteSnapshot) {
   const meta = site === siteSnapshot ? routesMeta : buildRoutesMeta(site);
-  return meta[pathname] || meta["/404"];
+  // "/bistro/" = "/bistro" (vecās saites, hostinga pāradresācijas)
+  const clean = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  return meta[clean] || meta["/404"];
 }
