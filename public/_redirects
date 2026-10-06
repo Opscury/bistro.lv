@@ -12,9 +12,10 @@
 /menu/dzerienu-karte-*      /menu/dzerieni.pdf    301
 /wp-content/uploads/*       /                     302
 
-# Silva admin (Django serverī PythonAnywhere) — ēdienkaršu PDF un admin.
-# "200!" = piespiedu pārsūtīšana, jo public/menu/*.pdf un public/admin/
-# (Decap) vēl ir repozitorijā un citādi tiktu rādīti tie.
+# Silva admin (Django serverī PythonAnywhere): satura API, bildes,
+# ēdienkaršu PDF un pats admin. "200!" = piespiedu pārsūtīšana — arī tad,
+# ja public/ ir fails ar tādu pašu ceļu (public/menu/*.pdf ir repozitorijā).
+/api/*               https://opscury.eu.pythonanywhere.com/api/:splat          200!
 /menu/pusdienas.pdf  https://opscury.eu.pythonanywhere.com/menu/pusdienas.pdf  200!
 /menu/brokastis.pdf  https://opscury.eu.pythonanywhere.com/menu/brokastis.pdf  200!
 /menu/dzerieni.pdf   https://opscury.eu.pythonanywhere.com/menu/dzerieni.pdf   200!

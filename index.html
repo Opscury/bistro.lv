@@ -23,21 +23,6 @@
   <body>
     <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
-    <!-- Redaktoru uzaicinājuma saites (Netlify Identity) nonāk uz sākumlapu:
-         tikai tad ielādē pieteikšanās logu un aizved uz /admin/. -->
-    <script>
-      if (/(invite|recovery|confirmation)_token=/.test(location.hash)) {
-        var s = document.createElement("script");
-        s.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
-        s.onload = function () {
-          window.netlifyIdentity.on("init", function (u) {
-            if (!u) window.netlifyIdentity.on("login", function () { location.href = "/admin/"; });
-          });
-        };
-        document.head.appendChild(s);
-      }
-    </script>
-
     <!-- Netlify Forms atpazīst formas būvējot pēc šīm slēptajām kopijām.
          Lauku nosaukumi sakrīt ar lib/sendForm.js sūtītajiem. -->
     <form name="kontakti" netlify netlify-honeypot="bot-field" hidden>

@@ -16,8 +16,9 @@ const app = (
 );
 
 // Būvētajā vietnē katrs ceļš jau ir gatavs HTML (scripts/prerender.mjs),
-// tāpēc React to "atdzīvina", nevis zīmē no jauna. Izstrādē root ir tukšs.
-if (root.hasChildNodes()) {
+// tāpēc React to "atdzīvina", nevis zīmē no jauna. Izstrādē root ir tukšs
+// (tajā ir tikai komentārs <!--app-html-->, tāpēc skatās elementus).
+if (root.firstElementChild) {
   hydrateRoot(root, app);
 } else {
   createRoot(root).render(app);

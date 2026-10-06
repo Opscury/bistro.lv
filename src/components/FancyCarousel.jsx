@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import Img from "./Img.jsx";
+import Img, { imgKey } from "./Img.jsx";
 import { Lightbox } from "./Gallery.jsx";
 import styles from "./FancyCarousel.module.css";
 
@@ -161,7 +161,7 @@ export default function FancyCarousel({ images, alt = "Galerija" }) {
               const on = i === pos;
               return (
                 <li
-                  key={`${src}-${i}`}
+                  key={`${imgKey(src)}-${i}`}
                   className={on ? `${styles.slide} ${styles.slideOn}` : styles.slide}
                   style={{ width: `${m.sw}px`, marginRight: `${m.gap}px` }}
                   aria-hidden={i < n || i >= n * 2 ? "true" : undefined}
@@ -182,7 +182,7 @@ export default function FancyCarousel({ images, alt = "Galerija" }) {
                     }
                   >
                     <Img
-                      name={src}
+                      image={src}
                       alt=""
                       sizes="(min-width: 700px) 780px, 88vw"
                       loading={i >= n - 1 && i <= n + 2 ? "eager" : "lazy"}
@@ -218,7 +218,7 @@ export default function FancyCarousel({ images, alt = "Galerija" }) {
           </p>
           <ol className={styles.ticks}>
             {images.map((src, i) => (
-              <li key={src}>
+              <li key={imgKey(src)}>
                 <button
                   type="button"
                   className={i === index ? `${styles.tick} ${styles.tickOn}` : styles.tick}

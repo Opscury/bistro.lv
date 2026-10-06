@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { company, lines, hoursRows, mapLinks, telHref } from "../data/lines.js";
+import { hoursRows, mapLinks, telHref } from "../data/lines.js";
+import { useSite, useTexts } from "../lib/content.jsx";
 import { sendForm, fieldsToText, SEND_METHOD } from "../lib/sendForm.js";
 import { track } from "../lib/analytics.js";
 import { ENQUIRY_FORM_ENABLED } from "../lib/features.js";
@@ -8,11 +9,13 @@ import ui from "../styles/Page.module.css";
 import styles from "./Kontakti.module.css";
 
 function ContactForm() {
+  const { lines } = useSite();
+  const t = useTexts();
   const [sent, setSent] = useState(null);
   const [error, setError] = useState(null);
   const [busy, setBusy] = useState(false);
   const [values, setValues] = useState({ name: "", phone: "", email: "", message: "" });
-  const to = lines.find((l) => l.id === "banketi").email;
+  const to = lines.find((l) => l.id === "banketi")?.email || "";
 
   const update = (field) => (e) => setValues((v) => ({ ...v, [field]: e.target.value }));
 
@@ -43,7 +46,7 @@ function ContactForm() {
   if (sent) {
     return (
       <div className={ui.slip} aria-live="polite">
-        <p className={`${ui.label} ${ui.slipHead}`}>Ziņa mums</p>
+        <p className={`${ui.label} ${ui.slipHead}`}>{t("kontakti.form.label")}</p>
         <h3 className={ui.sentTitle}>{sent === "mailto" ? "vēstule sagatavota" : "ziņa nosūtīta"}</h3>
         <p className={ui.sentText}>
           {sent === "mailto"
@@ -64,8 +67,8 @@ function ContactForm() {
 
   return (
     <form className={ui.slip} onSubmit={handleSubmit} name="kontakti">
-      <p className={`${ui.label} ${ui.slipHead}`}>Ziņa mums</p>
-      <p className={ui.slipTitle}>Nosūtiet mums ziņu šeit!</p>
+      <p className={`${ui.label} ${ui.slipHead}`}>{t("kontakti.form.label")}</p>
+      <p className={ui.slipTitle}>{t("kontakti.form.title")}</p>
 
       <div className={ui.formRow}>
         <label className={ui.field}>
@@ -105,8 +108,8 @@ function ContactForm() {
 }
 
 /** Google Maps iegultā karte bez API atslēgas — "q=…&output=embed". */
-function mapEmbedSrc(line) {
-  const q = encodeURIComponent(`Silva ${line.name}, ${line.address.street}, ${line.address.city}, Latvia`);
+function mapEmbedSrc(line, brand) {
+  const q = encodeURIComponent(`${brand} ${line.name}, ${line.address.street}, ${line.address.city}, Latvia`);
   return `https://www.google.com/maps?q=${q}&z=16&hl=lv&output=embed`;
 }
 
@@ -118,7 +121,7 @@ function mapEmbedSrc(line) {
  * poga ir darbība, nevis stāvoklis. Kuru vietu karte rāda, pasaka pati
  * karte zemāk — kartītei to nav jāatkārto ar krāsu.
  */
-function Place({ line, onSelect }) {
+function Place({ line, onSelect, hint }) {
   return (
     <li className={styles.card}>
       <h3 className={styles.cardName}>{line.name}</h3>
@@ -131,7 +134,7 @@ function Place({ line, onSelect }) {
         {line.address.street}
         <br />
         {line.address.city}, {line.address.postal}
-        <span className={styles.addressHint}>parādīt kartē ↓</span>
+        <span className={styles.addressHint}>{hint} ↓</span>
       </button>
 
       <dl className={styles.hours}>
@@ -155,9 +158,11 @@ function Place({ line, onSelect }) {
 }
 
 export default function Kontakti() {
+  const { company, lines } = useSite();
+  const t = useTexts();
   const places = lines.filter((l) => l.address);
   const banketi = lines.find((l) => l.id === "banketi");
-  const [selectedId, setSelectedId] = useState(places[0].id);
+  const [selectedId, setSelectedId] = useState(places[0]?.id);
   const selected = places.find((l) => l.id === selectedId) ?? places[0];
   const mapRef = useRef(null);
 
@@ -179,7 +184,7 @@ export default function Kontakti() {
         <section className={styles.block} aria-label="Vietas un darba laiks">
           <ul className={styles.cards}>
             {places.map((l) => (
-              <Place key={l.id} line={l} onSelect={select} />
+              <Place key={l.id} line={l} onSelect={select} hint={t("kontakti.map.hint")} />
             ))}
           </ul>
 
@@ -187,20 +192,20 @@ export default function Kontakti() {
           <div className={styles.map} ref={mapRef}>
             <div className={styles.mapHead}>
               <p className={styles.mapTitle} aria-live="polite">
-                <span>Silva, {selected.name}</span>
+                <span>{`${company.name}, ${selected.name}`}</span>
                 <span className={styles.mapAddress}>
                   {selected.address.street}, {selected.address.city}, {selected.address.postal}
                 </span>
               </p>
               <a className={styles.mapOpen} href={mapLinks(selected).google} target="_blank" rel="noreferrer">
-                Atvērt Google Maps ↗
+                {t("kontakti.map.open")} ↗
               </a>
             </div>
             <iframe
               key={selected.id}
               className={styles.mapFrame}
-              src={mapEmbedSrc(selected)}
-              title={`Karte: Silva ${selected.name}, ${selected.address.street}`}
+              src={mapEmbedSrc(selected, company.name)}
+              title={`Karte: ${company.name} ${selected.name}, ${selected.address.street}`}
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
@@ -213,11 +218,11 @@ export default function Kontakti() {
           <div className={styles.info}>
             <section className={styles.block} aria-labelledby="k-banketi">
               <h2 className={styles.label} id="k-banketi">
-                banketi un pasākumi
+                {t("kontakti.banketi.heading")}
               </h2>
               <div className={styles.card}>
                 <h3 className={styles.cardName}>{banketi.name}</h3>
-                <p className={styles.cardText}>Pasākumu ēdināšana, telpu noma, konditorejas pasūtījumi.</p>
+                <p className={styles.cardText}>{t("kontakti.banketi.text")}</p>
                 <a className={styles.phone} href={telHref(banketi.phone)} onClick={() => track("zvans", { vieta: "banketi" })}>
                   {banketi.phone}
                 </a>
@@ -233,7 +238,7 @@ export default function Kontakti() {
 
             <section className={styles.block} aria-labelledby="k-atsauksmes">
               <h2 className={styles.label} id="k-atsauksmes">
-                atsauksmēm un jautājumiem
+                {t("kontakti.feedback.heading")}
               </h2>
               <div className={styles.plain}>
                 <a className={styles.phone} href={telHref(company.feedbackPhone)}>
@@ -247,7 +252,7 @@ export default function Kontakti() {
 
             <section className={styles.block} aria-labelledby="k-rekviziti" id="rekviziti">
               <h2 className={styles.label} id="k-rekviziti">
-                rekvizīti
+                {t("kontakti.requisites.heading")}
               </h2>
               <div className={styles.requisites}>
                 {company.requisites.map((line) => (

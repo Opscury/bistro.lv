@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import data from "../data/konditoreja.json";
 import { itemKey, pricing } from "../data/konditorejaUnits.js";
-import { lineById, telHref } from "../data/lines.js";
-import { konditorejaNotice } from "../data/site.js";
+import { telHref } from "../data/lines.js";
 import useCart from "../hooks/useCart.js";
+import { lineById, useKonditoreja, useSite, useTexts } from "../lib/content.jsx";
 import Masthead from "../components/Masthead.jsx";
 import Notice from "../components/Notice.jsx";
-import { liveNotice } from "../data/notices.js";
 import CategoryBar from "../components/konditoreja/CategoryBar.jsx";
 import CartBar from "../components/konditoreja/CartBar.jsx";
 import ItemSheet from "../components/konditoreja/ItemSheet.jsx";
@@ -18,49 +16,49 @@ import { track } from "../lib/analytics.js";
 import ui from "../styles/Page.module.css";
 import styles from "./Konditoreja.module.css";
 
-const categories = data.categories;
-const ORDER_PHONE = data.orderPhone;
-const ORDER_EMAIL = data.orderEmail;
-
 /**
  * Noslēgums, kamēr pasūtījumu sistēma ir izslēgta: tālrunis un e-pasts.
- * Kad ORDERING_ENABLED = true, tā vietā ir forma.
+ * Kad ORDERING_ENABLED = true, tā vietā ir forma. Tālrunis un e-pasts —
+ * no "Darba laiki un kontakti" (konditoreja), teksti — no admin.
  */
-function PhoneOrderCta() {
+function PhoneOrderCta({ phone, email, leadDays }) {
+  const t = useTexts();
   return (
     <div className={ui.cta}>
       <div>
-        <h2 className={ui.ctaTitle}>pasūtījumi</h2>
-        <p className={ui.ctaText}>
-          Kūkas, tortes un citus izstrādājumus pasūtiet pa tālruni vai e-pastu — sazināsimies un
-          visu apstiprināsim. Pasūtījumus pieņemam vismaz {data.leadDays} dienas iepriekš.
-        </p>
+        <h2 className={ui.ctaTitle}>{t("konditoreja.cta.title")}</h2>
+        <p className={ui.ctaText}>{t("konditoreja.cta.text", { dienas: leadDays })}</p>
         <p className={ui.facts}>
-          <a href={telHref(ORDER_PHONE)}>{ORDER_PHONE}</a>
-          <a href={`mailto:${ORDER_EMAIL}`}>{ORDER_EMAIL}</a>
+          {phone && <a href={telHref(phone)}>{phone}</a>}
+          {email && <a href={`mailto:${email}`}>{email}</a>}
         </p>
       </div>
       <div className={ui.actions}>
-        <a
-          className={`${ui.btn} ${ui.btnGhost}`}
-          href={`mailto:${ORDER_EMAIL}?subject=${encodeURIComponent("Konditorejas pasūtījums")}`}
-        >
-          Rakstīt e-pastu
-        </a>
-        <a className={ui.btn} href={telHref(ORDER_PHONE)} onClick={() => track("zvans", { vieta: "konditoreja" })}>
-          Zvanīt
-        </a>
+        {email && (
+          <a
+            className={`${ui.btn} ${ui.btnGhost}`}
+            href={`mailto:${email}?subject=${encodeURIComponent("Konditorejas pasūtījums")}`}
+          >
+            {t("konditoreja.cta.email")}
+          </a>
+        )}
+        {phone && (
+          <a className={ui.btn} href={telHref(phone)} onClick={() => track("zvans", { vieta: "konditoreja" })}>
+            {t("konditoreja.cta.call")}
+          </a>
+        )}
       </div>
     </div>
   );
 }
 
 /** Satura rādītājs ar punktu līnijām. */
-function MenuIndex() {
+function MenuIndex({ categories }) {
+  const t = useTexts();
   return (
     <nav className={styles.index} aria-label="Piedāvājuma sadaļas">
       <p className={ui.label} id="piedavajums">
-        Piedāvājums
+        {t("konditoreja.index.label")}
       </p>
       <ol className={styles.indexList}>
         {categories.map((cat) => (
@@ -84,7 +82,7 @@ function MenuIndex() {
  *   pārlūkošana — kompakta šūna režģī, bez pogām
  *   pasūtīšana  — platāka rinda ar pievienošanas vadīklu
  */
-function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty }) {
+function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty, classicTag }) {
   const { item, p } = entry;
   const hasComposition = Boolean(item.allergens?.length);
   // kamēr preces logs ir izslēgts, rinda nav poga — tikai saturs
@@ -99,9 +97,9 @@ function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty }) {
         className={ITEM_SHEET_ENABLED ? styles.rowMain : `${styles.rowMain} ${styles.rowStatic}`}
         {...mainProps}
       >
-        {item.img ? (
+        {item.image || item.img ? (
           <span className={styles.thumbBox}>
-            <Img className={styles.thumb} name={item.img} alt="" sizes="(min-width: 700px) 300px, 45vw" />
+            <Img className={styles.thumb} image={item.image} name={item.img} alt="" sizes="(min-width: 700px) 300px, 45vw" />
           </span>
         ) : (
           <span className={styles.thumbEmpty} aria-hidden="true" />
@@ -110,7 +108,7 @@ function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty }) {
         <span className={styles.rowText}>
           <span className={styles.rowName}>
             {item.name}
-            {item.classic && <span className={ui.tag}>silvas klasika</span>}
+            {item.classic && <span className={ui.tag}>{classicTag}</span>}
           </span>
           {item.desc && <span className={styles.rowDesc}>{item.desc}</span>}
           <span className={styles.rowMeta}>
@@ -147,8 +145,29 @@ function MenuRow({ entry, qty, orderMode, onOpen, onAdd, onSetQty }) {
   );
 }
 
+/**
+ * Aktualitāte zem rādītāja. Ja adminā nav aktīvas, rāmja nav vispār —
+ * rādītājs un piedāvājums vienkārši seko viens otram.
+ */
+function KonditorejaNotice() {
+  const promo = useSite().notices?.konditoreja;
+  if (!promo) return null;
+  return (
+    <div className={styles.notice}>
+      <Notice {...promo} sizes="(min-width: 700px) 420px, 100vw" />
+    </div>
+  );
+}
+
 export default function Konditoreja() {
-  const line = lineById.konditoreja;
+  const site = useSite();
+  const t = useTexts();
+  const data = useKonditoreja();
+  const categories = data.categories;
+  const line = lineById(site, "konditoreja");
+  // pasūtījumu tālrunis un e-pasts — konditorejas vietas kontakti (admin)
+  const orderPhone = line?.phone || data.orderPhone;
+  const orderEmail = line?.email || data.orderEmail;
   const cart = useCart();
   const [openEntry, setOpenEntry] = useState(null);
   const [formOpen, setFormOpen] = useState(false);
@@ -184,11 +203,9 @@ export default function Konditoreja() {
     <div className={ui.page} data-cluster={line.cluster}>
       <div className={ui.shell}>
         <Masthead line={line} rule />
-        <MenuIndex />
+        <MenuIndex categories={categories} />
 
-        <div className={styles.notice}>
-          <Notice {...liveNotice(konditorejaNotice, "konditoreja")} sizes="(min-width: 700px) 420px, 100vw" />
-        </div>
+        <KonditorejaNotice />
       </div>
 
       {/* fiksēta josla zem galvenes; parādās, kad rādītājs aizritināts */}
@@ -205,7 +222,7 @@ export default function Konditoreja() {
                 {cat.note && (
                   <p className={ui.facts}>
                     <span>
-                      minimālais pasūtījums{" "}
+                      {t("konditoreja.min.label")}{" "}
                       {cat.note
                         .replace(/^Pasūtījuma minimālais daudzums\s*/i, "")
                         .replace(/^Standarta tortes minimālais svars\s*/i, "")}
@@ -217,7 +234,7 @@ export default function Konditoreja() {
               <ul className={listClass}>
                 {cat.items.map((item) => {
                   const key = itemKey(cat.id, item);
-                  const p = pricing(item, cat.id);
+                  const p = pricing(item, cat.id, cat.limits);
                   const entry = { item, p, categoryId: cat.id, categoryTitle: cat.title, key };
                   return (
                     <MenuRow
@@ -228,6 +245,7 @@ export default function Konditoreja() {
                       onOpen={() => setOpenEntry(entry)}
                       onAdd={() => cart.add(key)}
                       onSetQty={(v) => cart.setQty(key, v)}
+                      classicTag={t("konditoreja.classic.tag")}
                     />
                   );
                 })}
@@ -236,11 +254,9 @@ export default function Konditoreja() {
           ))}
         </div>
 
-        <p className={ui.note}>
-          Informāciju par alergēniem sniedzam konditorejā un pa tālruni {ORDER_PHONE}.
-        </p>
+        <p className={ui.note}>{t("konditoreja.allergen.note", { "tālrunis": orderPhone })}</p>
 
-        {!ORDERING_ENABLED && <PhoneOrderCta />}
+        {!ORDERING_ENABLED && <PhoneOrderCta phone={orderPhone} email={orderEmail} leadDays={data.leadDays} />}
 
         {ORDERING_ENABLED && (
           <div className={ui.cta}>

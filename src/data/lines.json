@@ -49,9 +49,18 @@
         }
       ],
       "phone": null,
+      "phoneLabel": null,
       "email": null,
       "photo": "sadala_bistro.webp",
       "alt": "Trīs bļodas ar pusdienu ēdieniem uz lina galdauta",
+      "image": {
+        "src": "/media/foto/sadala_bistro.webp",
+        "srcset": "/media/foto/sadala_bistro-320.webp 320w, /media/foto/sadala_bistro-640.webp 640w, /media/foto/sadala_bistro.webp 1024w",
+        "w": 1024,
+        "h": 1024,
+        "alt": "Trīs bļodas ar pusdienu ēdieniem uz lina galdauta",
+        "name": "sadala_bistro.webp"
+      },
       "desc": "Jauna ēdienkarte katru nedēļu. Darba dienu rītos līdz 11.00 – brokastu piedāvājums."
     },
     {
@@ -97,6 +106,14 @@
       "email": "banketins@inbox.lv",
       "photo": "sadala_konditoreja.webp",
       "alt": "Riekstu kēkss ar glazūru uz koka dēlīša",
+      "image": {
+        "src": "/media/foto/sadala_konditoreja.webp",
+        "srcset": "/media/foto/sadala_konditoreja-320.webp 320w, /media/foto/sadala_konditoreja-640.webp 640w, /media/foto/sadala_konditoreja.webp 1024w",
+        "w": 1024,
+        "h": 1024,
+        "alt": "Riekstu kēkss ar glazūru uz koka dēlīša",
+        "name": "sadala_konditoreja.webp"
+      },
       "desc": "Kūkas, kliņģeri, smalkmaizītes un viss cits, ko sirds kāro! Nāc baudīt uz vietas vai pasūti."
     },
     {
@@ -130,6 +147,14 @@
       "email": null,
       "photo": "sadala_tejas_namins.webp",
       "alt": "Tējas namiņš Pasta salā ziemas vakarā",
+      "image": {
+        "src": "/media/foto/sadala_tejas_namins.webp",
+        "srcset": "/media/foto/sadala_tejas_namins-320.webp 320w, /media/foto/sadala_tejas_namins-640.webp 640w, /media/foto/sadala_tejas_namins.webp 1024w",
+        "w": 1024,
+        "h": 1024,
+        "alt": "Tējas namiņš Pasta salā ziemas vakarā",
+        "name": "sadala_tejas_namins.webp"
+      },
       "desc": "Omulīgs namiņš Pasta salā starp Lielupi un Driksu, kur baudīt dzērienus, sāļas uzkodas un saldus našķus."
     },
     {
@@ -145,6 +170,14 @@
       "email": "banketins@inbox.lv",
       "photo": "sadala_banketi.webp",
       "alt": "Klāts svētku galds ar ziediem un dzērieniem",
+      "image": {
+        "src": "/media/foto/sadala_banketi.webp",
+        "srcset": "/media/foto/sadala_banketi-320.webp 320w, /media/foto/sadala_banketi-640.webp 640w, /media/foto/sadala_banketi.webp 1024w",
+        "w": 1024,
+        "h": 1024,
+        "alt": "Klāts svētku galds ar ziediem un dzērieniem",
+        "name": "sadala_banketi.webp"
+      },
       "desc": "Ēdienkartes pielāgotas jebkuram pasākumam. Sazinieties ar mums, lai sastādītu Jums piemērotu ēdienkarti."
     }
   ],
@@ -152,34 +185,64 @@
     {
       "id": "zale",
       "name": "viesību zāle",
+      "title": "viesību un semināru zāle",
       "path": "/noma",
+      "href": null,
+      "site": null,
       "capacity": 90,
       "where": "Bistro Silva, 2. stāvs",
       "photo": "banketu_zale_1.webp",
       "alt": "Klāti galdi viesību zālē",
-      "desc": "Bīdāmā siena, ekrāns, apskaņošana, WiFi. Semināriem, konferencēm un svinībām.",
-      "title": "viesību un semināru zāle"
+      "image": {
+        "src": "/media/foto/banketu_zale_1.webp",
+        "srcset": "/media/foto/banketu_zale_1-320.webp 320w, /media/foto/banketu_zale_1-640.webp 640w, /media/foto/banketu_zale_1.webp 1400w",
+        "w": 1400,
+        "h": 788,
+        "alt": "Klāti galdi viesību zālē",
+        "name": "banketu_zale_1.webp"
+      },
+      "desc": "Bīdāmā siena, ekrāns, apskaņošana, WiFi. Semināriem, konferencēm un svinībām."
     },
     {
       "id": "pontons",
       "name": "pontons",
+      "title": null,
+      "path": null,
       "href": "https://www.pontons.lv/",
       "site": "pontons.lv",
       "capacity": 30,
       "where": "uz Driksas, Jelgavas centrā",
       "photo": "sadala_pontons.webp",
       "alt": "Pontons uz Driksas saulrietā",
+      "image": {
+        "src": "/media/foto/sadala_pontons.webp",
+        "srcset": "/media/foto/sadala_pontons-320.webp 320w, /media/foto/sadala_pontons-640.webp 640w, /media/foto/sadala_pontons.webp 1080w",
+        "w": 1080,
+        "h": 1080,
+        "alt": "Pontons uz Driksas saulrietā",
+        "name": "sadala_pontons.webp"
+      },
       "desc": "Banketu zāle mierīgajos Driksas ūdeņos ar saunu un jumta terasi."
     },
     {
       "id": "peldterase",
       "name": "peldterase",
+      "title": null,
+      "path": null,
       "href": "https://www.peldterase.lv/",
       "site": "peldterase.lv",
       "capacity": 40,
       "where": "uz Driksas, Jelgavas centrā",
       "photo": "sadala_peldterase.webp",
       "alt": "Izgaismota peldterase uz ūdens vakarā",
+      "image": {
+        "src": "/media/foto/sadala_peldterase.webp",
+        "srcset": "/media/foto/sadala_peldterase-320.webp 320w, /media/foto/sadala_peldterase-640.webp 640w, /media/foto/sadala_peldterase.webp 1080w",
+        "w": 1080,
+        "h": 1080,
+        "alt": "Izgaismota peldterase uz ūdens vakarā",
+        "name": "sadala_peldterase.webp"
+      },
       "desc": "Pasākumi uz ūdens; lielākiem pasākumiem apvienojama ar pontonu."
     }
   ]

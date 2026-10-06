@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { company, lines, hoursRows, telHref } from "../data/lines.js";
+import { hoursRows, telHref } from "../data/lines.js";
+import { useSite } from "../lib/content.jsx";
 import styles from "./Footer.module.css";
 
 /**
@@ -10,6 +11,7 @@ import styles from "./Footer.module.css";
  */
 export default function Footer() {
   const { pathname } = useLocation();
+  const { company, lines } = useSite();
   const showPlaces = pathname === "/";
   const year = new Date().getFullYear();
   const places = lines.filter((l) => l.address);
@@ -46,22 +48,28 @@ export default function Footer() {
             </div>
           ))}
 
+          {banketi && (
           <div className={styles.col}>
             <Link to={banketi.path} className={styles.colTitle}>
               {banketi.name}
             </Link>
             <p className={styles.mono}>
-              <a className={styles.line} href={telHref(banketi.phone)}>
-                {banketi.phone}
-              </a>
-              <a className={styles.line} href={`mailto:${banketi.email}`}>
-                {banketi.email}
-              </a>
+              {banketi.phone && (
+                <a className={styles.line} href={telHref(banketi.phone)}>
+                  {banketi.phone}
+                </a>
+              )}
+              {banketi.email && (
+                <a className={styles.line} href={`mailto:${banketi.email}`}>
+                  {banketi.email}
+                </a>
+              )}
               <Link className={styles.line} to="/noma">
                 telpu noma →
               </Link>
             </p>
           </div>
+          )}
         </div>
         )}
       </div>
