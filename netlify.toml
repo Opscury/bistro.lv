@@ -6,7 +6,7 @@
 # nav pieejams, būve turpinās ar repozitorijā esošajiem src/data failiem.
 
 [build]
-  command = "node scripts/snapshot.mjs && npm run build"
+  command = "npm run build"   # npm run build pats vispirms palaiž scripts/snapshot.mjs
   publish = "dist"
 
 [build.environment]
