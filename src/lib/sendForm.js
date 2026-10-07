@@ -42,9 +42,14 @@ export async function sendForm(formName, fields, mail) {
     const res = await fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ form: formName, ...clean }),
+      // t = ms kopš lapas ielādes: serveris uzskata ļoti ātrus sūtījumus par robotiem
+      body: JSON.stringify({ form: formName, ...clean, t: String(Math.round(performance.now())) }),
     });
-    if (!res.ok) throw new Error(`send failed: ${res.status}`);
+    if (!res.ok) {
+      const err = new Error(`send failed: ${res.status}`);
+      err.userMessage = await serverMessage(res);
+      throw err;
+    }
     return { method: "api" };
   }
 
@@ -63,6 +68,19 @@ export async function sendForm(formName, fields, mail) {
     `mailto:${mail.to}?subject=${encodeURIComponent(mail.subject)}` +
     `&body=${encodeURIComponent(mail.body)}`;
   return { method: "mailto" };
+}
+
+/** Servera kļūda cilvēkam saprotamā veidā (vai null — tad forma rāda savu tekstu). */
+async function serverMessage(res) {
+  if (res.status === 429) return "Pārāk daudz ziņu īsā laikā. Lūdzu, mēģiniet vēlāk vai rakstiet mums uz e-pastu.";
+  if (res.status !== 400) return null;
+  try {
+    const data = await res.json(); // {lauks: ["ziņa"]}
+    const first = Object.values(data).flat().find((m) => typeof m === "string");
+    return first || null;
+  } catch {
+    return null;
+  }
 }
 
 /** Salasāms teksts no laukiem — mailto rezervei un e-pasta saturam. */

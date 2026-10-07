@@ -36,8 +36,8 @@ function ContactForm() {
       });
       track("forma", { veids: "kontakti" });
       setSent(res.method);
-    } catch {
-      setError(`Ziņu neizdevās nosūtīt. Rakstiet uz ${to}.`);
+    } catch (err) {
+      setError(err?.userMessage || `Ziņu neizdevās nosūtīt. Rakstiet uz ${to}.`);
     } finally {
       setBusy(false);
     }

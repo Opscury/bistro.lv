@@ -30,11 +30,11 @@ const ContentContext = createContext({
   wantKonditoreja: () => {},
 });
 
-async function fetchJson(url) {
+async function fetchJson(url, init = {}) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
-    const res = await fetch(url, { signal: ctrl.signal, headers: { Accept: "application/json" } });
+    const res = await fetch(url, { ...init, signal: ctrl.signal, headers: { Accept: "application/json" } });
     if (!res.ok) return null;
     return await res.json();
   } catch {
@@ -75,7 +75,9 @@ export function ContentProvider({ children }) {
   const wantKonditoreja = useCallback(() => {
     if (konditorejaRequested.current) return;
     konditorejaRequested.current = true;
-    fetchJson("/api/konditoreja/").then((data) => {
+    // no-cache: pārlūks vienmēr jautā serverim (Django pats kešo 60 s un
+    // notīra pēc saglabāšanas), lai admina slēdži parādās uzreiz pēc pārlādes
+    fetchJson("/api/konditoreja/", { cache: "no-cache" }).then((data) => {
       if (validKonditoreja(data)) setKonditoreja(data);
     });
   }, []);

@@ -11,14 +11,14 @@ import ItemSheet from "../components/konditoreja/ItemSheet.jsx";
 import OrderForm from "../components/konditoreja/OrderForm.jsx";
 import QtyStepper from "../components/konditoreja/QtyStepper.jsx";
 import Img from "../components/Img.jsx";
-import { ITEM_SHEET_ENABLED, ORDERING_ENABLED } from "../lib/features.js";
+import { ITEM_SHEET_ENABLED, orderingOn } from "../lib/features.js";
 import { track } from "../lib/analytics.js";
 import ui from "../styles/Page.module.css";
 import styles from "./Konditoreja.module.css";
 
 /**
  * Noslēgums, kamēr pasūtījumu sistēma ir izslēgta: tālrunis un e-pasts.
- * Kad ORDERING_ENABLED = true, tā vietā ir forma. Tālrunis un e-pasts —
+ * Kad pasūtījumi ieslēgti (admin), tā vietā ir forma. Tālrunis un e-pasts —
  * no "Darba laiki un kontakti" (konditoreja), teksti — no admin.
  */
 function PhoneOrderCta({ phone, email, leadDays }) {
@@ -163,6 +163,8 @@ export default function Konditoreja() {
   const t = useTexts();
   const data = useKonditoreja();
   const categories = data.categories;
+  // admin → Konditorejas iestatījumi → "Tiešsaistes pasūtījumi ieslēgti"
+  const ORDERING_ENABLED = orderingOn(data);
   const promo = site.notices?.konditoreja;
   const line = lineById(site, "konditoreja");
   // pasūtījumu tālrunis un e-pasts — konditorejas vietas kontakti (admin)
@@ -179,8 +181,13 @@ export default function Konditoreja() {
 
   useEffect(() => {
     if (ORDERING_ENABLED && cart.ready && cart.lines.length > 0) setOrderMode(true);
+    // ja admin pasūtījumus izslēdz, režīms aizveras (grozs paliek pārlūkā)
+    if (!ORDERING_ENABLED) {
+      setOrderMode(false);
+      setFormOpen(false);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cart.ready]);
+  }, [cart.ready, ORDERING_ENABLED]);
 
   // Kad režīms ieslēdzas, klients jāaizved atpakaļ pie precēm.
   const enableOrderMode = () => {

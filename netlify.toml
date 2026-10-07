@@ -11,6 +11,9 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # Formas (Kontakti, Konditoreja, Banketi) sūta uz Silvas admin API
+  # (Django: saglabā "Pieteikumos" un nosūta e-pastu). Tukšs = mailto.
+  VITE_FORM_ENDPOINT = "/api/enquiry/"
 
 [[headers]]
   for = "/fonts/*"

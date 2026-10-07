@@ -40,9 +40,10 @@ export default function OrderForm({ cart, orderMode, onEnableOrderMode, onClose,
       });
       track("forma", { veids: orderMode ? "pasutijums" : "zina" });
       setSent(res.method);
-    } catch {
+    } catch (err) {
       setError(
-        `Pieteikumu neizdevās nosūtīt. Lūdzam zvanīt ${ORDER_PHONE} vai rakstīt uz ${ORDER_EMAIL}.`
+        err?.userMessage ||
+          `Pieteikumu neizdevās nosūtīt. Lūdzam zvanīt ${ORDER_PHONE} vai rakstīt uz ${ORDER_EMAIL}.`
       );
     } finally {
       setBusy(false);

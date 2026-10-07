@@ -1,15 +1,16 @@
 // Iespēju slēdži — ieslēdz un izslēdz vietnes daļas, nedzēšot kodu.
 
-import { FORMS_ENABLED } from "./sendForm.js";
-
 // Konditorejas pasūtījumu sistēma (grozs, pasūtījuma lapa, lipīgā josla,
-// "Pievienot" preces logā). Ieslēdzas pati, tiklīdz formām ir īsts
-// serveris (VITE_FORM_ENDPOINT vai VITE_NETLIFY_FORMS) — ar mailto tā
-// zaudētu pasūtījumus. Ja gribi to turēt izslēgtu arī ar serveri,
-// ieliec .env: VITE_ORDERING=off. Pirms ieslēgšanas: kas atbild uz
-// pasūtījumiem un cik ātri.
-export const ORDERING_ENABLED =
-  FORMS_ENABLED && import.meta.env.VITE_ORDERING !== "off";
+// "Pievienot" preces logā). Ieslēdz un izslēdz adminā: Konditorejas
+// iestatījumi → "Tiešsaistes pasūtījumi ieslēgti" (/api/konditoreja/ →
+// orderingEnabled). Mainās bez jaunas būves. Šis ir tikai avārijas slēdzis
+// būvei: VITE_ORDERING=off to izslēdz neatkarīgi no admina.
+// Bez formu servera (VITE_FORM_ENDPOINT) pasūtījums aiziet caur mailto.
+export const ORDERING_ALLOWED = import.meta.env.VITE_ORDERING !== "off";
+
+/** Vai pasūtījumi ieslēgti — no konditorejas datiem (admin). */
+export const orderingOn = (konditorejaData) =>
+  ORDERING_ALLOWED && konditorejaData?.orderingEnabled === true;
 
 // Banketu pieteikuma forma banketu lapā (datums, viesi, veids, vieta).
 // Pagaidām izslēgta — tās vietā tālrunis, e-pasts un poga uz Kontaktiem.
