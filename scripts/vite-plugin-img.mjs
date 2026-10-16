@@ -21,7 +21,8 @@ const VARIANT = /-(\d{3,4})\.webp$/;
 
 export default function imgVariants({
   dir = "public/img",
-  widths = [320, 640],
+  // 800 un 960: telefonam ar 2x ekrānu nav jāņem viss oriģināls (līdz 1400 px)
+  widths = [320, 640, 800, 960],
   quality = 78,
   cacheDir = "node_modules/.cache/silva-img",
 } = {}) {

@@ -83,7 +83,11 @@ ${faces.join("\n")}
 }
 
 /** Virsrakstu fonts ir redzams uzreiz, tāpēc to ielādē iepriekš (abi burtu komplekti). */
+// Izslēgta (16.10.2026): 180 KB fontu konkurēja ar CSS un galveno bildi lēnā
+// mobilajā tīklā (FCP ~3 s). font-display: swap tāpat parāda tekstu uzreiz.
+const PRELOAD_HEAD_FONT = false;
 export function preloadTags(t) {
+  if (!PRELOAD_HEAD_FONT) return [];
   return t.fonts.head.faces.map((face) => ({
     tag: "link",
     attrs: { rel: "preload", href: `/fonts/${face.file}`, as: "font", type: "font/woff2", crossorigin: "" },

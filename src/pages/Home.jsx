@@ -23,8 +23,8 @@ function LineCard({ line, index }) {
             image={line.image}
             name={line.photo}
             alt={line.alt}
-            sizes="(min-width: 700px) 494px, 100vw"
-            loading={index < 2 ? "eager" : "lazy"}
+            sizes="(min-width: 700px) 494px, calc(100vw - 40px)"
+            loading={index === 0 ? "eager" : "lazy"}
             fetchPriority={index === 0 ? "high" : "auto"}
           />
         </div>
