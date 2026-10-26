@@ -633,14 +633,6 @@
           "h": 1080,
           "alt": "Jubilejas 21",
           "name": "jubilejas_21.webp"
-        },
-        {
-          "src": "/media/galerijas/jubilejas_22.webp",
-          "srcset": "/media/galerijas/jubilejas_22-320.webp 320w, /media/galerijas/jubilejas_22-640.webp 640w, /media/galerijas/jubilejas_22.webp 1080w",
-          "w": 1080,
-          "h": 1080,
-          "alt": "Jubilejas 22",
-          "name": "jubilejas_22.webp"
         }
       ]
     },
@@ -1554,7 +1546,24 @@
     }
   },
   "notices": {
-    "bistro": null,
+    "bistro": {
+      "id": 3,
+      "label": "aktuāli",
+      "meta": "@bistro_silva",
+      "photo": null,
+      "alt": "",
+      "image": null,
+      "title": null,
+      "text": null,
+      "link": {
+        "href": "https://www.instagram.com/bistro_silva/",
+        "label": "Instagram"
+      },
+      "instagram": {
+        "url": "https://www.instagram.com/reel/DaEms8nMte8/",
+        "captioned": true
+      }
+    },
     "konditoreja": {
       "id": 1,
       "label": "aktuāli",
@@ -1571,7 +1580,8 @@
       },
       "title": null,
       "text": null,
-      "link": null
+      "link": null,
+      "instagram": null
     },
     "tejas-namins": {
       "id": 2,
@@ -1589,7 +1599,8 @@
       },
       "title": null,
       "text": null,
-      "link": null
+      "link": null,
+      "instagram": null
     }
   },
   "rentalPrices": [

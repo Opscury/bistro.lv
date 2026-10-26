@@ -3,6 +3,7 @@
   "orderPhone": "+371 20 20 21 17",
   "orderEmail": "banketins@inbox.lv",
   "leadDays": 2,
+  "orderingEnabled": false,
   "categories": [
     {
       "id": "saldie-klingeri",
